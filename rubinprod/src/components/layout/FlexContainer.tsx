@@ -29,7 +29,6 @@ const StyledFlexContainer = styled.div<StyledFlexContainerProps>`
     justify-content: ${(props) => props.$horizontalAlign};
     min-height: ${(props) => props.$minHeight};
     width: 100%;
-    border: 1px solid red;
 `
 
 export const FlexContainer = ({

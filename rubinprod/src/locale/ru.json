@@ -1,5 +1,8 @@
 {
-    "landing": {
-        "button": "Get Started"
+    "mainPage": {
+        "title_name": "Rubin",
+        "header": "Production",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Done tristique arc purus, sit amet dapibus turpis pellentesque bibendum. Sed non tristique.",
+        "button": "Work together"
     }
 }
