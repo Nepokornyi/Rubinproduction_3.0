@@ -1,21 +1,32 @@
-import { Button } from '../../../components/Button/Button'
 import { Header } from '../../../components/Header/Header'
-import { Text } from '../../../components/Text/Text'
+
 import { FlexContainer } from '../../../components/layout/FlexContainer'
 
+import { useTranslation } from 'react-i18next'
+import { Button } from '../../../components/Button/Button'
+import { RubinTitle } from './components/RubinTitle'
+
+import background from '../../../assets/mainBackground.png'
+import styled from 'styled-components'
+
+const StyledFlexContainerBackground = styled(FlexContainer)`
+    background-image: url(${background});
+    background-repeat: no-repeat;
+    background-size: cover;
+`
+
 export const MainSection = () => {
+    const { t } = useTranslation()
+
     return (
-        <FlexContainer minHeight="100vh" center direction="column">
+        <StyledFlexContainerBackground
+            minHeight="100vh"
+            justifyContent="center"
+            direction="column"
+        >
             <Header />
-            <Text variant="h1">
-                Rubin <br />
-                production
-            </Text>
-            <Text variant="p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                tristique arcu purus
-            </Text>
-            <Button>Click me</Button>
-        </FlexContainer>
+            <RubinTitle />
+            <Button>{t('mainPage.button')}</Button>
+        </StyledFlexContainerBackground>
     )
 }

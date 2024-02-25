@@ -17,15 +17,17 @@ type TextProps = {
     fontWeight?: FontWeight
     textTransform?: TextTransform
     textAlign?: TextAlign
+    className?: string
 }
 
-const StyledText = styled.div<TextProps>`
+const StyledText = styled.span<TextProps>`
     font-family: ${(props) => props.fontFamily || 'Montserrat, sans-serif'};
     color: ${(props) => props.color || '#fff'};
     font-weight: ${(props) => props.fontWeight || '400'};
     text-transform: ${(props) => props.textTransform || 'none'};
     text-align: ${(props) => props.textAlign || 'inherit'};
     ${(props) => props.variant && variantStyles[props.variant]}
+    padding: 0 25px;
 `
 
 export const Text = ({ children, ...props }: TextProps) => {
