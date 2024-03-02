@@ -1,3 +1,14 @@
+import { FlexContainer } from '../../../components/layout/FlexContainer'
+import { ParallaxContainer } from './components/ParallaxContainer'
+
 export const AboutSection = () => {
-    return <div>AboutSection</div>
+    return (
+        <FlexContainer
+            minHeight="100vh"
+            direction="column"
+            justifyContent="center"
+        >
+            <ParallaxContainer />
+        </FlexContainer>
+    )
 }
