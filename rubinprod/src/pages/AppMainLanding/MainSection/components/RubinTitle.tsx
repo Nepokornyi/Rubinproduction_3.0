@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
 
-import logo from '../../../../assets/icoRubinprod.svg'
+import logo from '../../../../assets/img/icoRubinprod.svg'
 import { useTranslation } from 'react-i18next'
 
 const HeadingText = styled(Text)`
@@ -15,8 +15,6 @@ const RedText = styled.span`
 const SubHeadingText = styled(Text)`
     margin-top: 10px;
     margin-bottom: 20px;
-    @media (max-width: 400px) {
-    }
 `
 
 export const RubinTitle = () => {

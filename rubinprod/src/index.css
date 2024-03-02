@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Grunges";
+  src: url('./assets/fonts/Grunges_Free.ttf');
+}
+
 :root {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;

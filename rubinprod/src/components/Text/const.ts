@@ -11,7 +11,7 @@ export type VariantStyles =
 export type FontWeight = '300' | '400' | '500' | '600' | '700'
 export type TextTransform = 'capitalize' | 'lowercase' | 'uppercase'
 export type TextAlign = 'center' | 'left' | 'right'
-export type FontFamily = 'Montserrat' | 'Open Sans' | 'Cormorant'
+export type FontFamily = 'Montserrat' | 'Open Sans' | 'Grunges'
 
 export const variantStyles = {
     h1: css`
@@ -30,7 +30,7 @@ export const variantStyles = {
         }
     `,
     h2: css`
-        font-size: clamps(30px, 3.5vw, 75px);
+        font-size: clamp(40px, 8vw + 1rem, 80px);
         font-weight: 700;
     `,
     p: css`

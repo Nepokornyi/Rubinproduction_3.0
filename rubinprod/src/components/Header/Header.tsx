@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 import { FlexContainer } from '../layout/FlexContainer'
 import { HamburgerIcon } from './HamburgerIcon'
-import logo from '../../assets/icoRubinprod.svg'
+import logo from '../../assets/img/icoRubinprod.svg'
 
 const StyledHeader = styled(FlexContainer)`
     position: fixed;
     top: 0;
     padding: 25px;
+    z-index: 100;
 `
 
 export const Header = () => {
