@@ -50,7 +50,7 @@ export const ScrollParallaxText = ({
     const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`)
 
     const directionFactor = useRef<number>(1)
-    useAnimationFrame((t, delta) => {
+    useAnimationFrame((_t, delta) => {
         let moveBy = directionFactor.current * baseVelocity * (delta / 1000)
 
         if (velocityFactor.get() < 0) {

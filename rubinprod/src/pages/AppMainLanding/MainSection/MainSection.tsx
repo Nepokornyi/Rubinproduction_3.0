@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { Button } from '../../../components/Button/Button'
 import { RubinTitle } from './components/RubinTitle'
 
-import background from '../../../assets/mainBackground.png'
+import background from '../../../assets/img/mainBackground.png'
 import styled from 'styled-components'
 
 const StyledFlexContainerBackground = styled(FlexContainer)`

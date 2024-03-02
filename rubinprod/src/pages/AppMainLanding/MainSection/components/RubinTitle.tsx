@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
 
-import logo from '../../../../assets/icoRubinprod.svg'
+import logo from '../../../../assets/img/icoRubinprod.svg'
 import { useTranslation } from 'react-i18next'
 
 const HeadingText = styled(Text)`
