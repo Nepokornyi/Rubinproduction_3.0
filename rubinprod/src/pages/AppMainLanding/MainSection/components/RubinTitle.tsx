@@ -15,8 +15,6 @@ const RedText = styled.span`
 const SubHeadingText = styled(Text)`
     margin-top: 10px;
     margin-bottom: 20px;
-    @media (max-width: 400px) {
-    }
 `
 
 export const RubinTitle = () => {

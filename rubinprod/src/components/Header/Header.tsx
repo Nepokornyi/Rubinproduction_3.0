@@ -7,6 +7,7 @@ const StyledHeader = styled(FlexContainer)`
     position: fixed;
     top: 0;
     padding: 25px;
+    z-index: 100;
 `
 
 export const Header = () => {
