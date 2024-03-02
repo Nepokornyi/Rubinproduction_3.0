@@ -17,6 +17,7 @@ type TextProps = {
     fontWeight?: FontWeight
     textTransform?: TextTransform
     textAlign?: TextAlign
+    paddingOverride?: string
     className?: string
 }
 
@@ -27,9 +28,10 @@ const StyledText = styled.span<TextProps>`
     text-transform: ${(props) => props.textTransform || 'none'};
     text-align: ${(props) => props.textAlign || 'inherit'};
     ${(props) => props.variant && variantStyles[props.variant]}
-    padding: 0 25px;
+    padding: ${(props) => props.paddingOverride};
 `
 
-export const Text = ({ children, ...props }: TextProps) => {
-    return <StyledText {...props}>{children}</StyledText>
+export const Text = ({ children, paddingOverride, ...props }: TextProps) => {
+    const paddingValue = paddingOverride ?? '0 25px';
+    return <StyledText paddingOverride={paddingValue} {...props}>{children}</StyledText>
 }

@@ -4,5 +4,10 @@
         "header": "Production",
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Done tristique arc purus, sit amet dapibus turpis pellentesque bibendum. Sed non tristique.",
         "button": "Work together"
+    },
+    "aboutPage": {
+        "title": "Creating <1>the best</1> videos for you",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique arcu purus, sit amet dapibus turpis pellentesque bibendum. Sed non tristique ipsum.",
+        "clients": "Our clients"
     }
 }
