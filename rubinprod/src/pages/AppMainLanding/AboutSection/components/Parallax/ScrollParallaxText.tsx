@@ -10,8 +10,8 @@ import {
 } from 'framer-motion'
 import { ReactNode, useRef } from 'react'
 import styled from 'styled-components'
-import { Text } from '../../../../components/Text/Text'
-import { Box } from '../../../../components/layout/Box'
+import { Text } from '../../../../../components/Text/Text'
+import { Box } from '../../../../../components/layout/Box'
 
 type ScrollParallaxTextProps = {
     children: ReactNode

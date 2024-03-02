@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FlexContainer } from '../../../../components/layout/FlexContainer'
+import { FlexContainer } from '../../../../../components/layout/FlexContainer'
 import { useEffect, useState } from 'react'
 import { ScrollParallaxText } from './ScrollParallaxText'
 
