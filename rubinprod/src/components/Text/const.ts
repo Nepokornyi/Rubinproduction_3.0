@@ -3,6 +3,7 @@ import { css } from 'styled-components'
 export type VariantStyles =
     | 'h1'
     | 'h2'
+    | 'h3'
     | 'p'
     | 'nav'
     | 'socials'
@@ -31,6 +32,10 @@ export const variantStyles = {
     `,
     h2: css`
         font-size: clamp(40px, 8vw + 1rem, 80px);
+        font-weight: 700;
+    `,
+    h3: css`
+        font-size: clamp(40px, 6.5vw + 1rem, 80px);
         font-weight: 700;
     `,
     p: css`
