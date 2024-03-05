@@ -30,12 +30,11 @@ export const LogoCarousel = () => {
         <FlexContainer>
             <Swiper
                 slidesPerView={3}
-                freeMode={true}
-                loop={true}
+                loop
                 modules={[Autoplay]}
                 autoplay={{ delay: 2500 }}
-                observer={true}
-                observeParents={true}
+                observer
+                observeParents
             >
                 <StyledSwiperSlide>
                     <StyledImage src={niceBoy} />
