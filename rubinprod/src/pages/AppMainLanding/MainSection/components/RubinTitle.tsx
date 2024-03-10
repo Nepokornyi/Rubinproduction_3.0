@@ -27,7 +27,7 @@ export const RubinTitle = () => {
                     <img src={logo} />
                     {t('mainPage.title_name')} <br />
                 </RedText>
-                {t('mainPage.header')}
+                {t('mainPage.subtitle')}
             </HeadingText>
             <SubHeadingText variant="p">{t('mainPage.content')}</SubHeadingText>
         </>

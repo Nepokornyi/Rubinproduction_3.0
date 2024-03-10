@@ -10,6 +10,7 @@ type FlexContainerProps = {
     justifyContent?: HorizontalAlign
     alignItems?: VerticalAlign
     center?: boolean
+    gap?: string
 
     className?: string
 }
@@ -19,6 +20,7 @@ type StyledFlexContainerProps = {
     $horizontalAlign: HorizontalAlign
     $verticalAlign: VerticalAlign
     $minHeight: string
+    $gap?: string
 }
 
 const StyledFlexContainer = styled.div<StyledFlexContainerProps>`
@@ -27,6 +29,7 @@ const StyledFlexContainer = styled.div<StyledFlexContainerProps>`
     flex-direction: ${(props) => props.$direction};
     align-items: ${(props) => props.$verticalAlign};
     justify-content: ${(props) => props.$horizontalAlign};
+    gap: ${(props) => props.$gap};
     min-height: ${(props) => props.$minHeight};
     width: 100%;
 `
@@ -38,6 +41,7 @@ export const FlexContainer = ({
     justifyContent: horizontalAlignPassed,
     alignItems: verticalAlignPassed,
     center = false,
+    gap = '0',
     className,
 }: FlexContainerProps) => {
     const defaultAlign = center ? 'center' : 'none'
@@ -50,6 +54,7 @@ export const FlexContainer = ({
             $horizontalAlign={horizontalAlign}
             $verticalAlign={verticalAlign}
             $minHeight={minHeight}
+            $gap={gap}
             className={className}
         >
             {children}
