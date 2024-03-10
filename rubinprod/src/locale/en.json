@@ -19,5 +19,13 @@
         "subtitle": "About your project",
         "agreement": "I agree with terms...",
         "submit": "Send request"
+    },
+    "footer": {
+        "socials": {
+            "behance": "Behance",
+            "instagram": "Instagram",
+            "youtube": "Youtube"
+        },
+        "copyright": "© rubin production 2024"
     }
 }
