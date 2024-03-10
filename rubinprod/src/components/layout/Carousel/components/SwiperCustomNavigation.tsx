@@ -1,7 +1,7 @@
 import { useSwiper } from 'swiper/react'
 import { FlexContainer } from '../../FlexContainer'
 import styled from 'styled-components'
-import { SmallArrowLeft, SmallArrowRight } from '../../../Button/SmallArrow'
+import { SmallArrowLeft, SmallArrowRight } from '../../../Arrow/SmallArrow'
 
 const StyledFlexContainer = styled(FlexContainer)`
     width: 100%;

@@ -6,7 +6,9 @@ type BoxProps = {
     className?: string
 }
 
-const StyledBox = styled.div``
+const StyledBox = styled.div`
+    position: relative;
+`
 
 export const Box = ({ children, className }: BoxProps) => {
     return <StyledBox className={className}>{children}</StyledBox>
