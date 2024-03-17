@@ -31,7 +31,7 @@ export const variantStyles = {
         }
     `,
     h2: css`
-        font-size: clamp(40px, 8vw + 1rem, 80px);
+        font-size: clamp(40px, 7.5vw + 1rem, 80px);
         font-weight: 700;
     `,
     h3: css`

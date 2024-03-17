@@ -5,7 +5,15 @@ import styled from 'styled-components'
 
 import niceBoy from '../../../assets/img/icoNiceBoy.svg'
 import ccc from '../../../assets/img/icoCCC.svg'
-import bolt from '../../../assets/img/icoBolt.svg'
+import bolt from '../../../assets/img/icoBolt.png'
+import eliteVoyage from '../../../assets/img/icoEliteVoyage.png'
+import euroCenter from '../../../assets/img/icoEuroCenter.png'
+import firstClass from '../../../assets/img/icoFirstClass.png'
+import gCar from '../../../assets/img/icoGCar.png'
+import groost from '../../../assets/img/icoGroost.png'
+import sekuron from '../../../assets/img/icoSekuron.png'
+import thomasArsov from '../../../assets/img/icoTomasArsov.png'
+import vA from '../../../assets/img/icoVA.png'
 
 import 'swiper/css'
 import 'swiper/css/autoplay'
@@ -46,7 +54,28 @@ export const LogoCarousel = () => {
                     <StyledImage src={bolt} />
                 </StyledSwiperSlide>
                 <StyledSwiperSlide>
-                    <StyledImage src={bolt} />
+                    <StyledImage src={eliteVoyage} />
+                </StyledSwiperSlide>
+                <StyledSwiperSlide>
+                    <StyledImage src={euroCenter} />
+                </StyledSwiperSlide>
+                <StyledSwiperSlide>
+                    <StyledImage src={firstClass} />
+                </StyledSwiperSlide>
+                <StyledSwiperSlide>
+                    <StyledImage src={gCar} />
+                </StyledSwiperSlide>
+                <StyledSwiperSlide>
+                    <StyledImage src={groost} />
+                </StyledSwiperSlide>
+                <StyledSwiperSlide>
+                    <StyledImage src={sekuron} />
+                </StyledSwiperSlide>
+                <StyledSwiperSlide>
+                    <StyledImage src={thomasArsov} />
+                </StyledSwiperSlide>
+                <StyledSwiperSlide>
+                    <StyledImage src={vA} />
                 </StyledSwiperSlide>
             </Swiper>
         </FlexContainer>

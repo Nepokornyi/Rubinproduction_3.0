@@ -1,18 +1,19 @@
+import styled from 'styled-components'
 import { LogoCarousel } from '../../../components/layout/Carousel/LogoCarousel'
 import { FlexContainer } from '../../../components/layout/FlexContainer'
 import { AboutTitle } from './components/AboutTitle'
 import { ParallaxContainer } from './components/Parallax/ParallaxContainer'
 
+const StyledFlexContainer = styled(FlexContainer)`
+    padding: 150px 0px 100px 0;
+`
+
 export const AboutSection = () => {
     return (
-        <FlexContainer
-            minHeight="100vh"
-            direction="column"
-            justifyContent="center"
-        >
+        <StyledFlexContainer direction="column" justifyContent="center">
             <ParallaxContainer />
             <AboutTitle />
             <LogoCarousel />
-        </FlexContainer>
+        </StyledFlexContainer>
     )
 }

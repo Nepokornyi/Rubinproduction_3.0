@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Header } from '../../../components/Header/Header'
 
 import { FlexContainer } from '../../../components/layout/FlexContainer'
@@ -17,6 +18,7 @@ const StyledFlexContainerBackground = styled(FlexContainer)`
 
 export const MainSection = () => {
     const { t } = useTranslation()
+    const targetRef = useRef<HTMLDivElement>(null)
 
     return (
         <StyledFlexContainerBackground
@@ -24,8 +26,8 @@ export const MainSection = () => {
             justifyContent="center"
             direction="column"
         >
-            <Header />
-            <RubinTitle />
+            <Header targetRef={targetRef} />
+            <RubinTitle ref={targetRef} />
             <Button>{t('mainPage.button')}</Button>
         </StyledFlexContainerBackground>
     )

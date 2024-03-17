@@ -4,7 +4,9 @@ import { FlexContainer } from '../../../components/layout/FlexContainer'
 import { PortfolioCarousel } from '../../../components/layout/Carousel/PortfolioCarousel'
 import styled from 'styled-components'
 
-const StyledFlexContainer = styled(FlexContainer)``
+const StyledFlexContainer = styled(FlexContainer)`
+    padding-top: 50px;
+`
 
 export const WorkSection = () => {
     const { t } = useTranslation()

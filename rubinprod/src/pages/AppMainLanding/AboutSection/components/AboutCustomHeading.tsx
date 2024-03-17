@@ -1,29 +1,40 @@
-import { Trans } from 'react-i18next'
 import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
+import { AnimatedCircleText } from './AnimatedCircleText'
 
 const HeadingText = styled(Text)`
     line-height: 1.1;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-wrap: balance;
+`
+const StyledSpan = styled.span`
+    background-color: #141316;
+    position: relative;
+`
+
+const SpecialText = styled(Text)`
+    display: inline-block;
 `
 
 export const AboutCustomHeading = () => {
     return (
-        <HeadingText variant="h2" textTransform="uppercase">
-            <Trans i18nKey="aboutPage.title">
-                Creating
-                <Text
-                    paddingOverride="0 10px 0 10px"
+        <>
+            <HeadingText variant="h2" textTransform="uppercase">
+                <StyledSpan>
+                    Creating
+                    <AnimatedCircleText />
+                </StyledSpan>{' '}
+                <SpecialText
+                    paddingOverride="0 17px 0 0"
                     variant="h2"
                     textTransform={'uppercase'}
                     fontFamily="Grunges"
                 >
                     the best
-                </Text>
-                videos for you
-            </Trans>
-        </HeadingText>
+                </SpecialText>
+                <br />
+                <StyledSpan>videos for you</StyledSpan>
+            </HeadingText>
+        </>
     )
 }
