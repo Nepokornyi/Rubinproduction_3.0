@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Text } from '../../../components/Text/Text'
 import { FlexContainer } from '../../../components/layout/FlexContainer'
-import { PortfolioCarousel } from '../../../components/layout/Carousel/PortfolioCarousel'
+import { PortfolioCarousel } from '../../../components/layout/Carousel/components/PortfolioCarousel/PortfolioCarousel'
 import styled from 'styled-components'
 
 const StyledFlexContainer = styled(FlexContainer)`

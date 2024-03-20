@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { LogoCarousel } from '../../../components/layout/Carousel/LogoCarousel'
+import { LogoCarousel } from '../../../components/layout/Carousel/components/LogoCarousel/LogoCarousel'
 import { FlexContainer } from '../../../components/layout/FlexContainer'
 import { AboutTitle } from './components/AboutTitle'
 import { ParallaxContainer } from './components/Parallax/ParallaxContainer'
