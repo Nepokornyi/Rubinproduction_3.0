@@ -73,10 +73,6 @@ export const SliderEffect = ({
     loader.crossOrigin = 'anonymous'
 
     newImages.forEach((img: Element) => {
-        const imgl = new Image()
-        imgl.onload = () => {
-            console.log(img.clientWidth, img.clientHeight)
-        }
         image = loader.load(img.getAttribute('src') + '?v=' + Date.now())
         image.magFilter = image.minFilter = THREE.LinearFilter
         image.anisotropy = renderer.capabilities.getMaxAnisotropy()
