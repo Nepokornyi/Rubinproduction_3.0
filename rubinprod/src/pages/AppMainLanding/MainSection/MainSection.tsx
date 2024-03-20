@@ -9,6 +9,8 @@ import { RubinTitle } from './components/RubinTitle'
 
 import background from '../../../assets/img/mainBackground.png'
 import styled from 'styled-components'
+import { Socials } from './components/Socials'
+import { Contacts } from './components/Contacts'
 
 const StyledFlexContainerBackground = styled(FlexContainer)`
     background-image: url(${background});
@@ -27,8 +29,10 @@ export const MainSection = () => {
             direction="column"
         >
             <Header targetRef={targetRef} />
+            <Contacts />
             <RubinTitle ref={targetRef} />
             <Button>{t('mainPage.button')}</Button>
+            <Socials />
         </StyledFlexContainerBackground>
     )
 }
