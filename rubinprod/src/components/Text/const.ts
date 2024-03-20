@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { CSSProp, css } from 'styled-components'
 
 export type VariantStyles =
     | 'h1'
@@ -7,14 +7,13 @@ export type VariantStyles =
     | 'p'
     | 'nav'
     | 'socials'
-    | 'contacts'
     | 'button'
 export type FontWeight = '300' | '400' | '500' | '600' | '700'
 export type TextTransform = 'capitalize' | 'lowercase' | 'uppercase'
 export type TextAlign = 'center' | 'left' | 'right'
 export type FontFamily = 'Montserrat' | 'Open Sans' | 'Grunges'
 
-export const variantStyles = {
+export const variantStyles: Record<VariantStyles, CSSProp> = {
     h1: css`
         font-size: clamp(40px, 8vw + 1rem, 120px);
         font-weight: 700;
@@ -47,12 +46,9 @@ export const variantStyles = {
         font-weight: 400;
     `,
     socials: css`
-        font-size: clamp(9px, 2.5vw, 20px);
+        font-size: clamp(14px, 2.5vw, 18px);
         font-weight: 400;
-    `,
-    contacts: css`
-        font-size: clamp(12px, 2.5vw, 20px);
-        font-weight: 400;
+        text-transform: uppercase;
     `,
     button: css`
         font-size: clamp(18px, 1.5vw, 26px);
