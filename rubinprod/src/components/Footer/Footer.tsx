@@ -33,7 +33,7 @@ export const Footer = () => {
 
             <Text
                 textAlign="center"
-                variant="p"
+                variant="socials"
                 textTransform="uppercase"
                 color={'#6E6E6E'}
                 paddingOverride="0 0 15px 0"

@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Header } from '../../../components/Header/Header'
 
 import { FlexContainer } from '../../../components/layout/FlexContainer'
@@ -8,6 +9,9 @@ import { RubinTitle } from './components/RubinTitle'
 
 import background from '../../../assets/img/mainBackground.png'
 import styled from 'styled-components'
+import { Socials } from './components/Socials'
+import { Contacts } from './components/Contacts'
+import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 
 const StyledFlexContainerBackground = styled(FlexContainer)`
     background-image: url(${background});
@@ -17,6 +21,18 @@ const StyledFlexContainerBackground = styled(FlexContainer)`
 
 export const MainSection = () => {
     const { t } = useTranslation()
+    const targetRef = useRef<HTMLDivElement>(null)
+
+    const isDesktopLayout = useBreakpointBiggerThan('sm')
+
+    const renderLayoutContent = isDesktopLayout ? null : (
+        <>
+            <Contacts />
+            <RubinTitle ref={targetRef} />
+            <Button>{t('mainPage.button')}</Button>
+            <Socials />
+        </>
+    )
 
     return (
         <StyledFlexContainerBackground
@@ -24,9 +40,8 @@ export const MainSection = () => {
             justifyContent="center"
             direction="column"
         >
-            <Header />
-            <RubinTitle />
-            <Button>{t('mainPage.button')}</Button>
+            <Header targetRef={targetRef} />
+            {renderLayoutContent}
         </StyledFlexContainerBackground>
     )
 }
