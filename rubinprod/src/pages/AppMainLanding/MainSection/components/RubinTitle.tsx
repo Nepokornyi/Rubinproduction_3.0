@@ -6,20 +6,19 @@ import { useTranslation } from 'react-i18next'
 import { ReactNode, forwardRef } from 'react'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
 import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
+import { LayoutFlexContainerProps } from '../../../../components/layout/types'
 
 type RubinTitleProps = {
     button?: ReactNode
     contacts?: ReactNode
 }
 
-type SubHeadingTextProps = {
-    $isDesktopLayout?: boolean
-}
-
-const StyledContainer = styled.div`
+const StyledContainer = styled.div<LayoutFlexContainerProps>`
     display: flex;
     flex-direction: column;
     gap: 25px;
+    margin-left: ${(props) =>
+        props.$isDesktopLayout && 'clamp(5%, 1.5vw, 10%)'};
 `
 
 const HeadingText = styled(Text)`
@@ -34,10 +33,12 @@ const RedText = styled.span`
     }
 `
 
-const SubHeadingText = styled(Text)<SubHeadingTextProps>`
+const SubHeadingText = styled(Text)<LayoutFlexContainerProps>`
     margin-top: 10px;
     margin-bottom: 20px;
-    max-width: ${(props) => props.$isDesktopLayout && '400px'};
+    max-width: ${(props) => props.$isDesktopLayout && '510px'};
+    word-spacing: ${(props) => props.$isDesktopLayout && '2.5px'};
+    line-height: ${(props) => props.$isDesktopLayout && '2'};
 `
 
 export const RubinTitle = forwardRef<HTMLDivElement, RubinTitleProps>(
@@ -58,9 +59,9 @@ export const RubinTitle = forwardRef<HTMLDivElement, RubinTitleProps>(
         )
 
         return (
-            <StyledContainer ref={ref}>
+            <StyledContainer $isDesktopLayout={isDesktopLayout} ref={ref}>
                 <HeadingText variant="h1" textTransform="uppercase">
-                    <FlexContainer alignItems="center">
+                    <FlexContainer gap="20px" alignItems="center">
                         <RedText>
                             <img src={logo} />
                             {t('mainPage.title_name')}

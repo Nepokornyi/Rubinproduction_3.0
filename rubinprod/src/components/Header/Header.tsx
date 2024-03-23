@@ -28,7 +28,6 @@ const StyledHeader = styled(FlexContainer)<StyledHeaderProps>`
     background-color: ${(props) => props.backgroundColor || 'transparent'};
     box-shadow: ${(props) => props.boxShadow || 'none'};
     transition: background-color 0.5s, box-shadow 0.5s;
-    border: 1px solid blue;
 `
 
 export const Header = ({ targetRef }: HeaderProps) => {

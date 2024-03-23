@@ -25,11 +25,12 @@ const StyledFlexContainerBackground = styled(
 
 const StyledDesktopFlexContainer = styled(FlexContainer)`
     width: 85%;
-    border: 1px solid blue;
 `
 
 const StyledButton = styled(Button)`
+    width: 100%;
     margin: 0;
+    padding-left: 25px;
 `
 
 export const MainSection = () => {
