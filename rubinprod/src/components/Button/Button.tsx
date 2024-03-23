@@ -20,7 +20,7 @@ const StyledButton = styled.button`
     position: relative;
     text-align: left;
     border: 2px solid #d91e37;
-    padding: 15px 0;
+    padding: 15px;
     margin: 15px 75px 0 25px;
     cursor: pointer;
 `
@@ -30,7 +30,7 @@ export const Button = ({ children, ...props }: ButtonProps) => {
     const renderContent = isDisabled ? (
         <Spinner />
     ) : (
-        <Text textTransform="uppercase" variant="button">
+        <Text textTransform="uppercase" paddingOverride="0" variant="button">
             {children}
         </Text>
     )

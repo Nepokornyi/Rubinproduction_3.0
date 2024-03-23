@@ -8,3 +8,8 @@ export type HorizontalAlign =
     | 'space-evenly'
     | 'none'
 export type VerticalAlign = 'start' | 'center' | 'end' | 'none'
+
+
+export type LayoutFlexContainerProps = {
+    $isDesktopLayout?: boolean
+}
