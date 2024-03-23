@@ -22,7 +22,7 @@ const StyledHeader = styled(FlexContainer)<StyledHeaderProps>`
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: ${(props) => props.$isDesktopLayout && '90%'};
+    width: ${(props) => props.$isDesktopLayout && '85%'};
     padding: 25px;
     z-index: 100;
     background-color: ${(props) => props.backgroundColor || 'transparent'};
@@ -34,7 +34,7 @@ const StyledHeader = styled(FlexContainer)<StyledHeaderProps>`
 export const Header = ({ targetRef }: HeaderProps) => {
     const { style } = useHeaderStyleObserver({ targetRef })
 
-    const isDesktopLayout = useBreakpointBiggerThan('sm')
+    const isDesktopLayout = useBreakpointBiggerThan('md')
 
     const logoSrc = isDesktopLayout ? bigLogo : smallLogo
     const renderMenu = isDesktopLayout ? <HeaderMenu /> : <HamburgerIcon />

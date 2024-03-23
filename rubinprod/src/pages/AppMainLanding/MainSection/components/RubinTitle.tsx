@@ -12,9 +12,14 @@ type RubinTitleProps = {
     contacts?: ReactNode
 }
 
+type SubHeadingTextProps = {
+    $isDesktopLayout?: boolean
+}
+
 const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
+    gap: 25px;
 `
 
 const HeadingText = styled(Text)`
@@ -29,19 +34,25 @@ const RedText = styled.span`
     }
 `
 
-const SubHeadingText = styled(Text)`
+const SubHeadingText = styled(Text)<SubHeadingTextProps>`
     margin-top: 10px;
     margin-bottom: 20px;
+    max-width: ${(props) => props.$isDesktopLayout && '400px'};
 `
 
 export const RubinTitle = forwardRef<HTMLDivElement, RubinTitleProps>(
     (props, ref) => {
         const { t } = useTranslation()
 
-        const isDesktopLayout = useBreakpointBiggerThan('sm')
+        const isDesktopLayout = useBreakpointBiggerThan('md')
 
         const renderContacts = isDesktopLayout ? (
-            <></>
+            <FlexContainer justifyContent="space-around">
+                {props.contacts}
+                <SubHeadingText $isDesktopLayout variant="p">
+                    {t('mainPage.content')}
+                </SubHeadingText>
+            </FlexContainer>
         ) : (
             <SubHeadingText variant="p">{t('mainPage.content')}</SubHeadingText>
         )

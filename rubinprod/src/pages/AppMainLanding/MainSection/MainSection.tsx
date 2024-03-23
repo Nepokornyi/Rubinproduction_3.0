@@ -24,7 +24,7 @@ const StyledFlexContainerBackground = styled(
 `
 
 const StyledDesktopFlexContainer = styled(FlexContainer)`
-    width: 90%;
+    width: 85%;
     border: 1px solid blue;
 `
 
@@ -36,7 +36,7 @@ export const MainSection = () => {
     const { t } = useTranslation()
     const targetRef = useRef<HTMLDivElement>(null)
 
-    const isDesktopLayout = useBreakpointBiggerThan('sm')
+    const isDesktopLayout = useBreakpointBiggerThan('md')
 
     const renderLayoutContent = isDesktopLayout ? (
         <StyledDesktopFlexContainer>

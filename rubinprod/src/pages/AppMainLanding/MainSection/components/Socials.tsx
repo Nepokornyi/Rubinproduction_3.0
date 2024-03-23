@@ -21,7 +21,7 @@ const StyledLink = styled.a`
 `
 
 export const Socials = () => {
-    const isDesktopLayout = useBreakpointBiggerThan('sm')
+    const isDesktopLayout = useBreakpointBiggerThan('md')
 
     const justifyContent = isDesktopLayout ? 'space-between' : 'space-evenly'
 
@@ -30,7 +30,7 @@ export const Socials = () => {
             $isDesktopLayout={isDesktopLayout}
             alignItems="center"
             justifyContent={justifyContent}
-            gap="20px"
+            gap="45px"
         >
             <StyledLink href="http://">
                 <Text variant="socials" paddingOverride="0" color="#6e6e6e">
