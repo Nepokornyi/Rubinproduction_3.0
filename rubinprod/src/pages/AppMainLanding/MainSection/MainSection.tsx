@@ -12,11 +12,24 @@ import styled from 'styled-components'
 import { Socials } from './components/Socials'
 import { Contacts } from './components/Contacts'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
+import { LayoutFlexContainerProps } from '../../../components/layout/types'
 
-const StyledFlexContainerBackground = styled(FlexContainer)`
+const StyledFlexContainerBackground = styled(
+    FlexContainer
+)<LayoutFlexContainerProps>`
     background-image: url(${background});
     background-repeat: no-repeat;
     background-size: cover;
+    align-items: ${(props) => (props.$isDesktopLayout ? 'center' : 'initial')};
+`
+
+const StyledDesktopFlexContainer = styled(FlexContainer)`
+    width: 90%;
+    border: 1px solid blue;
+`
+
+const StyledButton = styled(Button)`
+    margin: 0;
 `
 
 export const MainSection = () => {
@@ -25,7 +38,15 @@ export const MainSection = () => {
 
     const isDesktopLayout = useBreakpointBiggerThan('sm')
 
-    const renderLayoutContent = isDesktopLayout ? null : (
+    const renderLayoutContent = isDesktopLayout ? (
+        <StyledDesktopFlexContainer>
+            <Socials />
+            <RubinTitle
+                button={<StyledButton>{t('mainPage.button')}</StyledButton>}
+                contacts={<Contacts />}
+            />
+        </StyledDesktopFlexContainer>
+    ) : (
         <>
             <Contacts />
             <RubinTitle ref={targetRef} />
@@ -36,6 +57,7 @@ export const MainSection = () => {
 
     return (
         <StyledFlexContainerBackground
+            $isDesktopLayout={isDesktopLayout}
             minHeight="100vh"
             justifyContent="center"
             direction="column"
