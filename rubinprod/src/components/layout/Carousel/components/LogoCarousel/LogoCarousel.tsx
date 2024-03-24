@@ -20,6 +20,10 @@ import 'swiper/css/autoplay'
 
 // TODO: refactor component, it's in layout folder. Make more generic and reusable or move to another folder
 
+const StyledSwiper = styled(Swiper)`
+    max-width: 850px;
+`
+
 const StyledSwiperSlide = styled(SwiperSlide)`
     display: flex;
     justify-content: center;
@@ -27,7 +31,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 `
 
 const StyledImage = styled.img`
-    height: 30px;
+    height: clamp(30px, 3vw, 40px);
     width: auto;
 `
 
@@ -36,7 +40,7 @@ const StyledImage = styled.img`
 export const LogoCarousel = () => {
     return (
         <FlexContainer>
-            <Swiper
+            <StyledSwiper
                 slidesPerView={3}
                 loop
                 modules={[Autoplay]}
@@ -77,7 +81,7 @@ export const LogoCarousel = () => {
                 <StyledSwiperSlide>
                     <StyledImage src={vA} />
                 </StyledSwiperSlide>
-            </Swiper>
+            </StyledSwiper>
         </FlexContainer>
     )
 }

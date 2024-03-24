@@ -30,11 +30,12 @@ const StyledScroller = styled(Box)`
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
+    gap: 325px;
 `
 
 export const ScrollParallaxText = ({
     children,
-    baseVelocity = 6.5,
+    baseVelocity = 2.5,
 }: ScrollParallaxTextProps) => {
     const baseX = useMotionValue(0)
     const { scrollY } = useScroll()
@@ -47,7 +48,8 @@ export const ScrollParallaxText = ({
         clamp: false,
     })
 
-    const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`)
+    // There's a correlation between wrapping values and amount of text elements rendered
+    const x = useTransform(baseX, (v) => `${wrap(-10, -50, v)}%`)
 
     const directionFactor = useRef<number>(1)
     useAnimationFrame((_t, delta) => {
@@ -71,6 +73,18 @@ export const ScrollParallaxText = ({
                 className={'scroller'}
                 style={{ x }}
             >
+                <Text textTransform="uppercase" fontWeight="600">
+                    {children}
+                </Text>
+                <Text textTransform="uppercase" fontWeight="600">
+                    {children}
+                </Text>
+                <Text textTransform="uppercase" fontWeight="600">
+                    {children}
+                </Text>
+                <Text textTransform="uppercase" fontWeight="600">
+                    {children}
+                </Text>
                 <Text textTransform="uppercase" fontWeight="600">
                     {children}
                 </Text>
