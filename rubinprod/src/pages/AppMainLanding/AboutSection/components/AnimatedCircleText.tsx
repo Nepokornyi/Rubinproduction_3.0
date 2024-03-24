@@ -2,19 +2,17 @@ import { motion } from 'framer-motion'
 
 import styled from 'styled-components'
 import { Box } from '../../../../components/layout/Box'
+import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
+import { LayoutFlexContainerProps } from '../../../../components/layout/types'
 
 // TODO: Add proper position later, when
-const StyledBox = styled(Box)`
+const StyledBox = styled(Box)<LayoutFlexContainerProps>`
     position: absolute;
-    top: 15px;
-    right: -62.5px;
+    top: ${(props) => (props.$isDesktopLayout ? 'auto' : '15px')};
+    right: ${(props) => (props.$isDesktopLayout ? 'auto' : '-62.5px')};
+    bottom: ${(props) => (props.$isDesktopLayout ? '-150px' : 'auto')};
+    left: ${(props) => (props.$isDesktopLayout ? '-62.5px' : 'auto')};
     z-index: -1;
-    @media (min-width: 615px) {
-        top: auto;
-        right: auto;
-        bottom: -150px;
-        left: -62.5px;
-    }
 `
 
 const StyledSvg = styled.svg`
@@ -33,8 +31,10 @@ const animationProps = {
 }
 
 export const AnimatedCircleText = () => {
+    const isDesktopLayout = useBreakpointBiggerThan('md')
+
     return (
-        <StyledBox>
+        <StyledBox $isDesktopLayout={isDesktopLayout}>
             <StyledSvg
                 as={motion.svg}
                 animate={animationProps}
