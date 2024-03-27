@@ -1,33 +1,48 @@
-import { useTranslation } from 'react-i18next'
-import { Text } from '../../../components/Text/Text'
 import { FlexContainer } from '../../../components/layout/FlexContainer'
 import { PortfolioCarousel } from '../../../components/layout/Carousel/components/PortfolioCarousel/PortfolioCarousel'
 import styled from 'styled-components'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
+import { WorkGridPortfolio } from './components/WorkGridPortfolio/WorkGridPortfolio'
+import { WorkTitle } from './components/WorkTitle'
+import { Box } from '../../../components/layout/Box'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding-top: 50px;
 `
 
+const TitleGrid = styled(Box)`
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    margin-bottom: 25px;
+`
+const TitleContainer = styled(Box)`
+    grid-area: 1 / 2 / 1 / 3;
+`
+
 export const WorkSection = () => {
-    const { t } = useTranslation()
+    const isDesktopLayout = useBreakpointBiggerThan('md')
 
-    const isDesktopLayout = useBreakpointBiggerThan('sm')
-
-    const renderLayoutContent = isDesktopLayout ? null : (
+    const renderLayoutContent = isDesktopLayout ? (
+        <WorkGridPortfolio
+            title={
+                <TitleGrid>
+                    <TitleContainer>
+                        <WorkTitle />
+                    </TitleContainer>
+                </TitleGrid>
+            }
+        />
+    ) : (
         <>
-            <Text variant="h3" textTransform="uppercase">
-                <Text fontFamily="Grunges" paddingOverride="5px">
-                    our
-                </Text>
-                {t('workPage.title')}
-            </Text>
-            <Text variant="p">{t('workPage.description')}</Text>
+            <WorkTitle />
             <PortfolioCarousel />
         </>
     )
+
     return (
-        <StyledFlexContainer direction="column">
+        <StyledFlexContainer center={isDesktopLayout} direction="column">
             {renderLayoutContent}
         </StyledFlexContainer>
     )
