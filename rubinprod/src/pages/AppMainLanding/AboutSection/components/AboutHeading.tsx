@@ -11,7 +11,7 @@ const HeadingText = styled(Text)<LayoutFlexContainerProps>`
     text-align: ${(props) => props.$isDesktopLayout && 'center'};
 `
 const StyledSpan = styled.span`
-    background-color: #141316;
+    background-color: #0c0c0c;
     position: relative;
 `
 

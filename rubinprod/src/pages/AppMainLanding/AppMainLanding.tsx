@@ -4,6 +4,7 @@ import { ShowReelSection } from './ShowReelSection/ShowReelSection'
 import { WorkSection } from './WorkSection/WorkSection'
 import { ContactSection } from './ContactSection/ContactSection'
 import { Footer } from '../../components/Footer/Footer'
+import { Gradient } from '../../components/Gradient/Gradient'
 
 export const AppMainLanding = () => {
     return (
@@ -11,8 +12,10 @@ export const AppMainLanding = () => {
             <MainSection />
             <AboutSection />
             <ShowReelSection />
-            <WorkSection />
-            <ContactSection />
+            <Gradient>
+                <WorkSection />
+                <ContactSection />
+            </Gradient>
             <Footer />
         </>
     )
