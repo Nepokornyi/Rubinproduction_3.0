@@ -6,11 +6,18 @@ import { InputProps } from './types'
 const StyledInput = styled.input`
     background-color: transparent;
     margin: 15px 25px;
+    padding-bottom: 10px;
     border: none;
     border-bottom: 2px solid white;
+    font-size: clamp(12px, 2.5vw, 18px);
     &:focus {
         outline: none;
         border-bottom: 2px solid #d91e37;
+    }
+    &::placeholder{
+        text-transform: uppercase;
+        opacity: 0.3;
+        font-weight: 600;
     }
 `
 

@@ -16,6 +16,8 @@ const StyledCheckbox = styled.input`
 
 const StyledLabel = styled.label`
     text-transform: uppercase;
+    opacity: 0.5;
+    font-weight: 600;
     font-size: clamp(12px, 2.5vw, 18px);
 `
 

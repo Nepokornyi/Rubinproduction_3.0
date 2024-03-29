@@ -6,9 +6,7 @@ import { Box } from '../layout/Box'
 import { Text } from '../Text/Text'
 import { useTranslation } from 'react-i18next'
 
-const StyledFlexContainer = styled(FlexContainer)`
-    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
-`
+const StyledFlexContainer = styled(FlexContainer)``
 
 const StyledBox = styled(Box)`
     padding: 50px 25px;
