@@ -1,12 +1,20 @@
 import { HTMLAttributes, forwardRef } from 'react'
 import styled from 'styled-components'
 
-const StyledArrowRight = styled.i`
+interface ArrowRefProps extends HTMLAttributes<HTMLElement> {
+    isFullWidth?: boolean
+}
+
+type ArrowProps = {
+    $isFullWidth?: boolean
+}
+
+const StyledArrowRight = styled.i<ArrowProps>`
     & {
         box-sizing: border-box;
         position: relative;
         display: block;
-        width: 80px;
+        width: ${(props) => (props.$isFullWidth ? '100%' : '80px')};
         height: 22px;
     }
     &::after,
@@ -26,7 +34,7 @@ const StyledArrowRight = styled.i`
         bottom: 7px;
     }
     &::before {
-        width: 75px;
+        width: ${(props) => (props.$isFullWidth ? '100%' : '75px')};
         height: 2px;
         bottom: 10px;
         background: currentColor;
@@ -67,19 +75,18 @@ const StyledCustomArrowDown = styled.i`
     }
 `
 
-const ArrowRight = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
-    (props, ref) => {
-        return (
-            <>
-                <StyledArrowRight
-                    {...props}
-                    ref={ref}
-                    icon-role="arrow-right"
-                />
-            </>
-        )
-    }
-)
+const ArrowRight = forwardRef<HTMLElement, ArrowRefProps>((props, ref) => {
+    return (
+        <>
+            <StyledArrowRight
+                {...props}
+                ref={ref}
+                icon-role="arrow-right"
+                $isFullWidth={props.isFullWidth}
+            />
+        </>
+    )
+})
 
 const CustomArrowDown = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
     (props, ref) => {

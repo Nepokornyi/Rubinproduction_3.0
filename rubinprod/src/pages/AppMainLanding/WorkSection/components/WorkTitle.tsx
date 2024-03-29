@@ -11,8 +11,8 @@ const StyledRelativeText = styled(Text)<LayoutFlexContainerProps>`
 
 const StyledAbsoluteText = styled(Text)<LayoutFlexContainerProps>`
     position: ${(props) => props.$isDesktopLayout && 'absolute'};
-    top: -10px;
-    left: -130px;
+    top: 0px;
+    left: -100px;
 `
 
 const StyledText = styled(Text)<LayoutFlexContainerProps>`
@@ -31,12 +31,13 @@ export const WorkTitle = () => {
         <>
             <StyledRelativeText
                 $isDesktopLayout={isDesktopLayout}
-                variant="h3"
+                variant="h2"
                 textTransform="uppercase"
             >
                 <StyledAbsoluteText
                     $isDesktopLayout={isDesktopLayout}
                     fontFamily="Grunges"
+                    variant="h3"
                     paddingOverride="5px"
                 >
                     our

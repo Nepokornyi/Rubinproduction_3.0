@@ -6,9 +6,24 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { FormSchema, formSchema } from '../const'
 import { Checkbox } from '../../../../components/Input/Checkbox'
 import { useTranslation } from 'react-i18next'
+import styled from 'styled-components'
+import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
+import { LayoutFlexContainerProps } from '../../../../components/layout/types'
+
+const StyledForm = styled.form<LayoutFlexContainerProps>`
+    width: ${(props) => (props.$isDesktopLayout ? '40%' : '100%')};
+`
+
+const StyledButton = styled(Button)<LayoutFlexContainerProps>`
+    background-color: ${(props) => props.$isDesktopLayout && 'black'};
+    border: ${(props) => props.$isDesktopLayout && 'none'};
+`
 
 export const ContactForm = () => {
     const { t } = useTranslation()
+
+    const isDesktopLayout = useBreakpointBiggerThan('md')
+    const isLargeDesktopLayout = useBreakpointBiggerThan('lg')
 
     const {
         register,
@@ -31,7 +46,10 @@ export const ContactForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <StyledForm
+            $isDesktopLayout={isLargeDesktopLayout}
+            onSubmit={handleSubmit(onSubmit)}
+        >
             <FlexContainer direction="column" gap={'10px'}>
                 <Input
                     {...register('name')}
@@ -52,10 +70,14 @@ export const ContactForm = () => {
                     error={errors.terms?.message}
                 />
 
-                <Button disabled={isSubmitting} type={'submit'}>
+                <StyledButton
+                    $isDesktopLayout={isDesktopLayout}
+                    disabled={isSubmitting}
+                    type={'submit'}
+                >
                     {t('contactPage.submit')}
-                </Button>
+                </StyledButton>
             </FlexContainer>
-        </form>
+        </StyledForm>
     )
 }
