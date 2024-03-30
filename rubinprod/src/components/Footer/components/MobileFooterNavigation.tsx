@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Text } from '../Text/Text'
+import { Text } from '../../Text/Text'
 import { useTranslation } from 'react-i18next'
 
 const StyledNav = styled.nav`
@@ -18,7 +18,7 @@ const StyledLink = styled.a`
     }
 `
 
-export const FooterNavigation = () => {
+export const MobileFooterNavigation = () => {
     const { t } = useTranslation()
 
     return (
