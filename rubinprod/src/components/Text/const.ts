@@ -17,10 +17,6 @@ export const variantStyles: Record<VariantStyles, CSSProp> = {
     h1: css`
         font-size: clamp(40px, 7.5vw + 1rem, 130px);
         font-weight: 700;
-        &::first-letter {
-            opacity: 0;
-            font-size: clamp(45px, 8vw + 1rem, 140px);
-        }
         img {
             position: absolute;
             left: -10px;

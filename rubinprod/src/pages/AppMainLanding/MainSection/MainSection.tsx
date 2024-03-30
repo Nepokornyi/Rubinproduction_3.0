@@ -21,6 +21,7 @@ const StyledFlexContainerBackground = styled(
     background-repeat: no-repeat;
     background-size: cover;
     align-items: ${(props) => (props.$isDesktopLayout ? 'center' : 'initial')};
+    padding: 200px 0 125px 0;
 `
 
 const StyledDesktopFlexContainer = styled(FlexContainer)`

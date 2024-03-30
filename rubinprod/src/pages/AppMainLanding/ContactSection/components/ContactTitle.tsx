@@ -5,10 +5,7 @@ import styled from 'styled-components'
 import { ArrowRight, CustomArrowDown } from '../../../../components/Arrow/Arrow'
 import { Box } from '../../../../components/layout/Box'
 import { LayoutFlexContainerProps } from '../../../../components/layout/types'
-import {
-    useBreakpointBiggerThan,
-    useCurrentBreakpoint,
-} from '../../../../helpers/useCurrentBreakpoint'
+import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
 
 const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
     width: ${(props) => (props.$isDesktopLayout ? '40%' : '100%')};
@@ -37,8 +34,6 @@ export const ContactTitle = () => {
 
     const isDesktopLayout = useBreakpointBiggerThan('md')
     const isLargeDesktopLayout = useBreakpointBiggerThan('lg')
-
-    console.log(useCurrentBreakpoint())
 
     const renderArrowDown = !isDesktopLayout && <StyledCustomArrowDown />
     const renderArrowLeft = isDesktopLayout && (
