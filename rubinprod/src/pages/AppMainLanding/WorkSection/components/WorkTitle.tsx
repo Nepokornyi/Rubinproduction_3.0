@@ -23,8 +23,7 @@ const StyledText = styled(Text)<LayoutFlexContainerProps>`
 export const WorkTitle = () => {
     const { t } = useTranslation()
 
-    const isDesktopLayout = useBreakpointBiggerThan('md')
-    const isLargeDesktopLayout = useBreakpointBiggerThan('lg')
+    const isDesktopLayout = useBreakpointBiggerThan('sm')
     const textBreakpoint = isDesktopLayout && <br />
 
     return (
@@ -45,7 +44,7 @@ export const WorkTitle = () => {
                 {t('workPage.title')}
             </StyledRelativeText>
             {textBreakpoint}
-            <StyledText $isDesktopLayout={isLargeDesktopLayout} variant="p">
+            <StyledText $isDesktopLayout={isDesktopLayout} variant="p">
                 {t('workPage.description')}
             </StyledText>
         </>
