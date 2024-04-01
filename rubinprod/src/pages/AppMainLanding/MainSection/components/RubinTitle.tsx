@@ -37,8 +37,6 @@ const SubHeadingText = styled(Text)<LayoutFlexContainerProps>`
     margin-top: 10px;
     margin-bottom: 20px;
     max-width: ${(props) => props.$isDesktopLayout && '510px'};
-    word-spacing: ${(props) => props.$isDesktopLayout && '2.5px'};
-    line-height: ${(props) => props.$isDesktopLayout && '2'};
 `
 
 export const RubinTitle = forwardRef<HTMLDivElement, RubinTitleProps>(
