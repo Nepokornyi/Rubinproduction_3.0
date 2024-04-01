@@ -47,7 +47,7 @@ const StyledCustomArrowDown = styled.i`
         position: relative;
         display: block;
         width: 22px;
-        height: clamp(100px, 25vw, 130px);
+        height: clamp(80px, 20vw, 100px);
     }
     &::after,
     &::before {
@@ -68,7 +68,7 @@ const StyledCustomArrowDown = styled.i`
     &::before {
         width: 2px;
         height: 120px; /* Lengthened for vertical orientation */
-        height: clamp(100px, 25vw, 130px);
+        height: clamp(80px, 20vw, 100px);
         left: 10px;
         bottom: 13px;
         background: currentColor;
