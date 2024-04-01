@@ -9,6 +9,7 @@ import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoin
 
 const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
     width: ${(props) => (props.$isDesktopLayout ? '40%' : '100%')};
+    max-width: 550px;
 `
 
 const StyledText = styled(Text)<LayoutFlexContainerProps>`
