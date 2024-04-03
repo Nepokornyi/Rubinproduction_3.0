@@ -13,6 +13,7 @@ type FlexContainerProps = {
     gap?: string
 
     className?: string
+    id?: string
 }
 
 type StyledFlexContainerProps = {
@@ -43,6 +44,7 @@ export const FlexContainer = ({
     center = false,
     gap = '0',
     className,
+    id,
 }: FlexContainerProps) => {
     const defaultAlign = center ? 'center' : 'none'
     const horizontalAlign = horizontalAlignPassed ?? defaultAlign
@@ -56,6 +58,7 @@ export const FlexContainer = ({
             $minHeight={minHeight}
             $gap={gap}
             className={className}
+            id={id}
         >
             {children}
         </StyledFlexContainer>

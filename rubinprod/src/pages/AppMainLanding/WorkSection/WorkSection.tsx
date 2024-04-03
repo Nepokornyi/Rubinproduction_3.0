@@ -54,7 +54,11 @@ export const WorkSection = () => {
     )
 
     return (
-        <StyledFlexContainer center={isDesktopLayout} direction="column">
+        <StyledFlexContainer
+            id="portfolio"
+            center={isDesktopLayout}
+            direction="column"
+        >
             {renderLayoutContent}
         </StyledFlexContainer>
     )

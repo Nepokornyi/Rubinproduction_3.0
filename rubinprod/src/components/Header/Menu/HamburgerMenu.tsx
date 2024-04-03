@@ -1,9 +1,16 @@
 import { AnimatePresence, motion, useCycle } from 'framer-motion'
 import styled from 'styled-components'
 import { Box } from '../../layout/Box'
-import config from './config'
+import config from './config/configIcon'
 import { FlexContainer } from '../../layout/FlexContainer'
 import { Text } from '../../Text/Text'
+import { HashLink as Link } from 'react-router-hash-link'
+
+import {
+    containerVariants,
+    linkVariants,
+    menuVariants,
+} from './config/configDropdown'
 
 const HamburgerContainer = styled(Box)`
     cursor: pointer;
@@ -26,59 +33,13 @@ const Navigation = styled(Box)`
     transform-origin: top;
 `
 
-const menuVariants = {
-    initial: {
-        scaleY: 0,
-    },
-    animate: {
-        scaleY: 1,
-        transition: {
-            duration: 0.5,
-            ease: [0.12, 0, 0.39, 0],
-        },
-    },
-    exit: {
-        scaleY: 0,
-        transition: {
-            delay: 0.5,
-            duration: 0.5,
-            ease: [0.12, 0, 0.39, 0],
-        },
-    },
-}
+const LinkAnimationBox = styled(Box)`
+    overflow: hidden;
 
-const containerVariants = {
-    initial: {
-        transition: {
-            staggerChildren: 0.09,
-            staggerDirection: -1,
-        },
-    },
-    open: {
-        transition: {
-            delayChildren: 0.3,
-            staggerChildren: 0.09,
-            staggerDirection: 1,
-        },
-    },
-}
-
-const linkVariants = {
-    initial: {
-        y: '30vh',
-        transition: {
-            duration: 0.5,
-            ease: [0.37, 0, 0.63, 1],
-        },
-    },
-    open: {
-        y: 0,
-        transition: {
-            duration: 0.7,
-            ease: [0, 0.55, 0.45, 1],
-        },
-    },
-}
+    a {
+        text-decoration: none;
+    }
+`
 
 export const HamburgerMenu = () => {
     const { container, lines, animations } = config
@@ -129,21 +90,33 @@ export const HamburgerMenu = () => {
                                 animate="open"
                                 exit="initial"
                             >
-                                <div style={{ overflow: 'hidden' }}>
+                                <LinkAnimationBox>
                                     <motion.li variants={linkVariants}>
-                                        <Text variant="h3">About</Text>
+                                        <Link
+                                            to="#about"
+                                            smooth
+                                            onClick={() => toggleOpen()}
+                                        >
+                                            <Text variant="h3">About</Text>
+                                        </Link>
                                     </motion.li>
-                                </div>
-                                <div style={{ overflow: 'hidden' }}>
+                                </LinkAnimationBox>
+                                <LinkAnimationBox>
                                     <motion.li variants={linkVariants}>
-                                        <Text variant="h3">Portfolio</Text>
+                                        <Link
+                                            to="#portfolio"
+                                            smooth
+                                            onClick={() => toggleOpen()}
+                                        >
+                                            <Text variant="h3">Portfolio</Text>
+                                        </Link>
                                     </motion.li>
-                                </div>
-                                <div style={{ overflow: 'hidden' }}>
+                                </LinkAnimationBox>
+                                <LinkAnimationBox>
                                     <motion.li variants={linkVariants}>
                                         <Text variant="h3">Rus/Ger</Text>
                                     </motion.li>
-                                </div>
+                                </LinkAnimationBox>
                             </motion.ul>
                         </FlexContainer>
                     </Navigation>

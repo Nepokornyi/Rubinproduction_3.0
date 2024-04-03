@@ -12,7 +12,8 @@ import { LayoutFlexContainerProps } from '../../../../components/layout/types'
 
 const StyledForm = styled.form<LayoutFlexContainerProps>`
     width: ${(props) => (props.$isDesktopLayout ? '40%' : '100%')};
-    max-width: 550px;
+    max-width: ${(props) => props.$isDesktopLayout && '550px'};
+
 `
 
 const StyledButton = styled(Button)<LayoutFlexContainerProps>`

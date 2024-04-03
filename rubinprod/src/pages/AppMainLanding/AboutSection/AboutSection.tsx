@@ -11,7 +11,11 @@ const StyledFlexContainer = styled(FlexContainer)`
 
 export const AboutSection = () => {
     return (
-        <StyledFlexContainer direction="column" justifyContent="center">
+        <StyledFlexContainer
+            id="about"
+            direction="column"
+            justifyContent="center"
+        >
             <ParallaxContainer />
             <AboutHeading />
             <AboutContent />

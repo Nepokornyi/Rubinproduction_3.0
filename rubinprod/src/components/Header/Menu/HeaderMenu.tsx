@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Text } from '../../Text/Text'
+import { HashLink as Link } from 'react-router-hash-link'
 
 const StyledHeaderMenu = styled.nav`
     ul {
@@ -11,6 +12,10 @@ const StyledHeaderMenu = styled.nav`
     ul > li {
         cursor: pointer;
     }
+
+    a {
+        text-decoration: none;
+    }
 `
 
 export const HeaderMenu = () => {
@@ -18,22 +23,26 @@ export const HeaderMenu = () => {
         <StyledHeaderMenu>
             <ul>
                 <li>
-                    <Text
-                        paddingOverride="0"
-                        textTransform="uppercase"
-                        variant="nav"
-                    >
-                        About
-                    </Text>
+                    <Link to="#about" smooth>
+                        <Text
+                            paddingOverride="0"
+                            textTransform="uppercase"
+                            variant="nav"
+                        >
+                            About
+                        </Text>
+                    </Link>
                 </li>
                 <li>
-                    <Text
-                        paddingOverride="0"
-                        textTransform="uppercase"
-                        variant="nav"
-                    >
-                        Portfolio
-                    </Text>
+                    <Link to="#portfolio" smooth>
+                        <Text
+                            paddingOverride="0"
+                            textTransform="uppercase"
+                            variant="nav"
+                        >
+                            Portfolio
+                        </Text>
+                    </Link>
                 </li>
                 <li>
                     <Text
