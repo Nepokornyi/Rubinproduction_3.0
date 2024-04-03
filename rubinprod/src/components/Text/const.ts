@@ -36,6 +36,10 @@ export const variantStyles: Record<VariantStyles, CSSProp> = {
     p: css`
         font-size: clamp(14px, 2.5vw, 16px);
         font-weight: 500;
+        @media (min-width: 576px) {
+            word-spacing: 2.5px;
+            line-height: 2;
+        }
     `,
     nav: css`
         font-size: clamp(14px, 2.5vw, 18px);

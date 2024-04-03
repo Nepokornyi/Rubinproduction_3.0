@@ -3,7 +3,7 @@ import { Box } from '../../layout/Box'
 import { FlexContainer } from '../../layout/FlexContainer'
 import { Text } from '../../Text/Text'
 import { useTranslation } from 'react-i18next'
-import logo from '../../../assets/img/icoRubinprodWhite.svg'
+import logo from '../../../assets/img/icoRubinprodGray.svg'
 import { MobileFooterNavigation } from './MobileFooterNavigation'
 
 const StyledBox = styled(Box)`

@@ -4,7 +4,7 @@ import { FlexContainer } from '../../layout/FlexContainer'
 
 import styled from 'styled-components'
 import { Box } from '../../layout/Box'
-import logo from '../../../assets/img/icoRubinprodWhite.svg'
+import logo from '../../../assets/img/icoRubinprodGray.svg'
 import { DesktopFooterNavigation } from './DesktopFooterNavigation'
 import { LayoutFlexContainerProps } from '../../layout/types'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'

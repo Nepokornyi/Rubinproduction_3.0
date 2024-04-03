@@ -8,8 +8,6 @@ import { LayoutFlexContainerProps } from '../../../../components/layout/types'
 
 const StyledClientsDescription = styled(Text)<LayoutFlexContainerProps>`
     max-width: 450px;
-    word-spacing: 2.5px;
-    line-height: 2;
 `
 
 const StyledDesktopFlexContainer = styled(FlexContainer)`

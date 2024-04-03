@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { FlexContainer } from '../layout/FlexContainer'
-import { HamburgerIcon } from './Menu/HamburgerIcon'
+// import { HamburgerIcon } from './Menu/HamburgerIcon'
 import smallLogo from '../../assets/img/icoRubinprodSmall.svg'
 import bigLogo from '../../assets/img/icoRubinprod.svg'
 import { useHeaderStyleObserver } from '../../pages/AppMainLanding/hooks/useHeaderStyleObserver'
@@ -8,6 +8,7 @@ import { RefObject } from 'react'
 import { useBreakpointBiggerThan } from '../../helpers/useCurrentBreakpoint'
 import { HeaderMenu } from './Menu/HeaderMenu'
 import { LayoutFlexContainerProps } from '../layout/types'
+import { HamburgerMenu } from './Menu/HamburgerMenu'
 
 type StyledHeaderProps = LayoutFlexContainerProps & {
     backgroundColor?: string
@@ -36,7 +37,7 @@ export const Header = ({ targetRef }: HeaderProps) => {
     const isDesktopLayout = useBreakpointBiggerThan('md')
 
     const logoSrc = isDesktopLayout ? bigLogo : smallLogo
-    const renderMenu = isDesktopLayout ? <HeaderMenu /> : <HamburgerIcon />
+    const renderMenu = isDesktopLayout ? <HeaderMenu /> : <HamburgerMenu />
 
     return (
         <StyledHeader
@@ -45,7 +46,7 @@ export const Header = ({ targetRef }: HeaderProps) => {
             $isDesktopLayout={isDesktopLayout}
             {...style}
         >
-            <img src={logoSrc} />
+            <img src={logoSrc} style={{ zIndex: 2 }} />
             {renderMenu}
         </StyledHeader>
     )
