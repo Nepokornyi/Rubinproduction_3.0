@@ -33,9 +33,6 @@ export const WorkSection = () => {
     const isTabletLayout = smallBreakpoint || mediumBreakpoint
     const isDesktopLayout = useBreakpointBiggerThan('sm')
 
-    console.log(useCurrentBreakpoint())
-    console.log('isTabletLayout', isTabletLayout)
-
     const renderLayoutContent = isDesktopLayout ? (
         <WorkGridPortfolio
             title={

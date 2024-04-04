@@ -17,6 +17,10 @@ const CallToActionGridItem = styled(Box)<CallToActionGridItemProps>`
     align-items: start;
     max-width: ${(props) => props.$isTabletLayout && '470px'};
 `
+const BoxWrapper = styled(Box)`
+    width: 100%;
+`
+
 const StyledButton = styled(Button)`
     margin-left: 0;
     width: 90%;
@@ -33,7 +37,9 @@ export const WorkGridCallToAction = () => {
                 Regardless of the projects complexity, we will provide a cost
                 estimate during the first consultation.
             </Text>
-            <StyledButton>Work together</StyledButton>
+            <BoxWrapper>
+                <StyledButton>Work together</StyledButton>
+            </BoxWrapper>
         </CallToActionGridItem>
     )
 }
