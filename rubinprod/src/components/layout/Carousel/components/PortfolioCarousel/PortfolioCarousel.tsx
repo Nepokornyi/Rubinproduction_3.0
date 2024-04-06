@@ -17,6 +17,7 @@ import logoEliteVoyage from '../../../../../assets/img/work/workEliteVoyage.png'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
+import { RevealBlock } from '../../../../animations/reveal/RevealBlock'
 
 // type Effect = {
 //     material: ShaderMaterial
@@ -73,29 +74,43 @@ export const PortfolioCarousel = () => {
                 loop
             >
                 <StyledSwiperSlide $isOdd>
-                    <SwiperSlideBackground src={scooty} alt="scooty case" />
-                    <StyledLogo src={logoScooty} alt="scooty logo" />
+                    <RevealBlock delay={0.25} blockColor="#0C0C0C">
+                        <SwiperSlideBackground src={scooty} alt="scooty case" />
+                        <StyledLogo src={logoScooty} alt="scooty logo" />
+                    </RevealBlock>
                 </StyledSwiperSlide>
 
                 <StyledSwiperSlide $isOdd={false}>
-                    <SwiperSlideBackground
-                        src={gamechanger}
-                        alt="gamechanger case"
-                    />
-                    <StyledLogo src={logoGamechanger} alt="gamechanger logo" />
+                    <RevealBlock delay={0.25} blockColor="#0C0C0C">
+                        <SwiperSlideBackground
+                            src={gamechanger}
+                            alt="gamechanger case"
+                        />
+                        <StyledLogo
+                            src={logoGamechanger}
+                            alt="gamechanger logo"
+                        />
+                    </RevealBlock>
                 </StyledSwiperSlide>
 
                 <StyledSwiperSlide $isOdd>
-                    <SwiperSlideBackground
-                        src={elitvoyage}
-                        alt="elitvoyage case"
-                    />
-                    <StyledLogo src={logoEliteVoyage} alt="elitvoyage logo" />
+                    <RevealBlock delay={0.25} blockColor="#0C0C0C">
+                        <SwiperSlideBackground
+                            src={elitvoyage}
+                            alt="elitvoyage case"
+                        />
+                        <StyledLogo
+                            src={logoEliteVoyage}
+                            alt="elitvoyage logo"
+                        />
+                    </RevealBlock>
                 </StyledSwiperSlide>
 
                 <StyledSwiperSlide $isOdd={false}>
-                    <SwiperSlideBackground src={scooty} alt="scooty case" />
-                    <StyledLogo src={logoScooty} alt="scooty logo" />
+                    <RevealBlock delay={0.25} blockColor="#0C0C0C">
+                        <SwiperSlideBackground src={scooty} alt="scooty case" />
+                        <StyledLogo src={logoScooty} alt="scooty logo" />
+                    </RevealBlock>
                 </StyledSwiperSlide>
 
                 <SwiperCustomNavigation />

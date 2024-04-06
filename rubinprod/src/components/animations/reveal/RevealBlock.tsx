@@ -3,14 +3,20 @@ import styled from 'styled-components'
 import { Box } from '../../layout/Box'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import {
-    revealColorBlockTransition,
+    getRevealColorBlockTransition,
+    getRevealContainerTransition,
     revealColorBlockVariants,
-    revealContainerTransition,
     revealContainerVariants,
 } from './config'
 
 type RevealBlockProps = {
     children: React.ReactNode
+    blockColor?: string
+    delay?: number
+}
+
+type MotionColorBlockProps = {
+    $blockColor?: string
 }
 
 export const MotionContainer = styled(Box)`
@@ -20,17 +26,22 @@ export const MotionContainer = styled(Box)`
     height: 100%;
 `
 
-export const MotionColorBlock = styled.div`
+export const MotionColorBlock = styled.div<MotionColorBlockProps>`
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #d91e37;
+    background-color: ${(props) =>
+        props.$blockColor ? props.$blockColor : '#d91e37'};
     z-index: 100;
 `
 
-export const RevealBlock = ({ children }: RevealBlockProps) => {
+export const RevealBlock = ({
+    children,
+    blockColor = '#d91e37',
+    delay,
+}: RevealBlockProps) => {
     const ref = useRef(null)
 
     const isInView = useInView(ref)
@@ -54,15 +65,16 @@ export const RevealBlock = ({ children }: RevealBlockProps) => {
             variants={revealContainerVariants}
             initial="hidden"
             animate={mainControls}
-            transition={revealContainerTransition}
+            transition={getRevealContainerTransition(delay)}
         >
             {children}
             <MotionColorBlock
+                $blockColor={blockColor}
                 as={motion.div}
                 variants={revealColorBlockVariants}
                 initial="hidden"
                 animate={slideControls}
-                transition={revealColorBlockTransition}
+                transition={getRevealColorBlockTransition(delay)}
             />
         </MotionContainer>
     )

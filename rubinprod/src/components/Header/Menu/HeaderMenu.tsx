@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { HashLink as Link } from 'react-router-hash-link'
 import { AnimatedLink } from '../../animations/words/AnimatedLink'
+import { Reveal } from '../../animations/reveal/Reveal'
 
 const StyledHeaderMenu = styled.nav`
     ul {
@@ -27,16 +28,22 @@ export const HeaderMenu = () => {
             <ul>
                 <li>
                     <Link to="#about" smooth>
-                        <AnimatedLink title={'About'} />
+                        <Reveal delay={0.2} y={-25}>
+                            <AnimatedLink title={'About'} />
+                        </Reveal>
                     </Link>
                 </li>
                 <li>
                     <Link to="#portfolio" smooth>
-                        <AnimatedLink title={'Portfolio'} />
+                        <Reveal delay={0.75} y={-20}>
+                            <AnimatedLink title={'Portfolio'} />
+                        </Reveal>
                     </Link>
                 </li>
                 <li>
-                    <AnimatedLink title={'Rus/Ger'} />
+                    <Reveal delay={1} y={-15}>
+                        <AnimatedLink title={'Rus/Ger'} />
+                    </Reveal>
                 </li>
             </ul>
         </StyledHeaderMenu>

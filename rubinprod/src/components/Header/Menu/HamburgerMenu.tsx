@@ -11,8 +11,10 @@ import {
     linkVariants,
     menuVariants,
 } from './config/configDropdown'
+import { Reveal } from '../../animations/reveal/Reveal'
 
 const HamburgerContainer = styled(Box)`
+    position: relative;
     cursor: pointer;
     z-index: 2;
 `
@@ -24,7 +26,7 @@ const Line = styled(Box)`
 
 const Navigation = styled(Box)`
     position: absolute;
-    background-color: #000;
+    background-color: #0c0c0c;
     opacity: 1;
     width: 100%;
     height: 100vh;
@@ -47,81 +49,85 @@ export const HamburgerMenu = () => {
 
     return (
         <>
-            <HamburgerContainer
-                as={motion.div}
-                style={{ width: container.width, height: container.height }}
-                className="container"
-                onClick={() => toggleOpen()}
-                variants={animations.container}
-                initial="initial"
-                animate="animate"
-            >
-                {animations.lines.map((_, index) => {
-                    return (
-                        <Line
-                            as={motion.div}
-                            key={index}
-                            className="line"
-                            style={{
-                                height: lines.size,
-                            }}
-                            variants={animations.lines[index]}
-                            initial="initial"
-                            animate={open ? 'opened' : 'initial'}
-                        />
-                    )
-                })}
-            </HamburgerContainer>
-
-            {/* Animate Presence continues animation on component unmount */}
-            <AnimatePresence>
-                {open && (
-                    <Navigation
-                        as={motion.div}
-                        variants={menuVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                    >
-                        <FlexContainer center minHeight="100vh">
-                            <motion.ul
-                                variants={containerVariants}
+            <Reveal delay={0.5}>
+                <HamburgerContainer
+                    as={motion.div}
+                    style={{ width: container.width, height: container.height }}
+                    className="container"
+                    onClick={() => toggleOpen()}
+                    variants={animations.container}
+                    initial="initial"
+                    animate="animate"
+                >
+                    {animations.lines.map((_, index) => {
+                        return (
+                            <Line
+                                as={motion.div}
+                                key={index}
+                                className="line"
+                                style={{
+                                    height: lines.size,
+                                }}
+                                variants={animations.lines[index]}
                                 initial="initial"
-                                animate="open"
-                                exit="initial"
-                            >
-                                <LinkAnimationBox>
-                                    <motion.li variants={linkVariants}>
-                                        <Link
-                                            to="#about"
-                                            smooth
-                                            onClick={() => toggleOpen()}
-                                        >
-                                            <Text variant="h3">About</Text>
-                                        </Link>
-                                    </motion.li>
-                                </LinkAnimationBox>
-                                <LinkAnimationBox>
-                                    <motion.li variants={linkVariants}>
-                                        <Link
-                                            to="#portfolio"
-                                            smooth
-                                            onClick={() => toggleOpen()}
-                                        >
-                                            <Text variant="h3">Portfolio</Text>
-                                        </Link>
-                                    </motion.li>
-                                </LinkAnimationBox>
-                                <LinkAnimationBox>
-                                    <motion.li variants={linkVariants}>
-                                        <Text variant="h3">Rus/Ger</Text>
-                                    </motion.li>
-                                </LinkAnimationBox>
-                            </motion.ul>
-                        </FlexContainer>
-                    </Navigation>
-                )}
-            </AnimatePresence>
+                                animate={open ? 'opened' : 'initial'}
+                            />
+                        )
+                    })}
+                </HamburgerContainer>
+
+                {/* Animate Presence continues animation on component unmount */}
+                <AnimatePresence>
+                    {open && (
+                        <Navigation
+                            as={motion.div}
+                            variants={menuVariants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                        >
+                            <FlexContainer center minHeight="100vh">
+                                <motion.ul
+                                    variants={containerVariants}
+                                    initial="initial"
+                                    animate="open"
+                                    exit="initial"
+                                >
+                                    <LinkAnimationBox>
+                                        <motion.li variants={linkVariants}>
+                                            <Link
+                                                to="#about"
+                                                smooth
+                                                onClick={() => toggleOpen()}
+                                            >
+                                                <Text variant="h3">About</Text>
+                                            </Link>
+                                        </motion.li>
+                                    </LinkAnimationBox>
+                                    <LinkAnimationBox>
+                                        <motion.li variants={linkVariants}>
+                                            <Link
+                                                to="#portfolio"
+                                                smooth
+                                                onClick={() => toggleOpen()}
+                                            >
+                                                <Text variant="h3">
+                                                    Portfolio
+                                                </Text>
+                                            </Link>
+                                        </motion.li>
+                                    </LinkAnimationBox>
+                                    <LinkAnimationBox>
+                                        <motion.li variants={linkVariants}>
+                                            <Text variant="h3">Rus/Ger</Text>
+                                        </motion.li>
+                                    </LinkAnimationBox>
+                                </motion.ul>
+                            </FlexContainer>
+                        </Navigation>
+                    )}
+                </AnimatePresence>
+            </Reveal>
         </>
     )
 }

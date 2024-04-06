@@ -16,7 +16,7 @@ export const useHeaderStyleObserver = ({
                     setStyle({})
                 } else {
                     setStyle({
-                        backgroundColor: '#141316',
+                        backgroundColor: '#0C0C0C',
                         boxShadow: '0px -10px 75px -10px rgba(217,30,55,1)',
                     })
                 }

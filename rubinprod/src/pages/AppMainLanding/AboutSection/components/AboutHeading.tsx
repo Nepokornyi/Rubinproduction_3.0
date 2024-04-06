@@ -3,6 +3,7 @@ import { Text } from '../../../../components/Text/Text'
 import { AnimatedCircleText } from './AnimatedCircleText'
 import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
 import { LayoutFlexContainerProps } from '../../../../components/layout/types'
+import { Reveal } from '../../../../components/animations/reveal/Reveal'
 
 const HeadingText = styled(Text)<LayoutFlexContainerProps>`
     line-height: 1.1;
@@ -31,21 +32,25 @@ export const AboutHeading = () => {
                 variant="h2"
                 textTransform="uppercase"
             >
-                <StyledSpan>
-                    Creating
-                    <AnimatedCircleText />
-                </StyledSpan>{' '}
-                {renderCustomTextBreak}
-                <SpecialText
-                    paddingOverride="0 17px 0 0"
-                    variant="h2"
-                    textTransform={'uppercase'}
-                    fontFamily="Grunges"
-                >
-                    the best
-                </SpecialText>
-                <br />
-                <StyledSpan>videos {renderCustomTextBreak} for you</StyledSpan>
+                <Reveal removeRepeatedReveal={false} y={25}>
+                    <StyledSpan>
+                        Creating
+                        <AnimatedCircleText />
+                    </StyledSpan>{' '}
+                    {renderCustomTextBreak}
+                    <SpecialText
+                        paddingOverride="0 17px 0 0"
+                        variant="h2"
+                        textTransform={'uppercase'}
+                        fontFamily="Grunges"
+                    >
+                        the best
+                    </SpecialText>
+                    <br />
+                    <StyledSpan>
+                        videos {renderCustomTextBreak} for you
+                    </StyledSpan>
+                </Reveal>
             </HeadingText>
         </>
     )

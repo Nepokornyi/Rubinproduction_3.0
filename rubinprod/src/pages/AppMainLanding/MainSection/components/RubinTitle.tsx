@@ -7,6 +7,7 @@ import { ReactNode, forwardRef } from 'react'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
 import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
 import { LayoutFlexContainerProps } from '../../../../components/layout/types'
+import { Reveal } from '../../../../components/animations/reveal/Reveal'
 
 type RubinTitleProps = {
     button?: ReactNode
@@ -48,25 +49,37 @@ export const RubinTitle = forwardRef<HTMLDivElement, RubinTitleProps>(
         const renderContacts = isDesktopLayout ? (
             <FlexContainer justifyContent="space-around">
                 {props.contacts}
+
                 <SubHeadingText $isDesktopLayout variant="p">
-                    {t('mainPage.content')}
+                    <Reveal delay={1.5} x={-30}>
+                        {t('mainPage.content')}
+                    </Reveal>
                 </SubHeadingText>
             </FlexContainer>
         ) : (
-            <SubHeadingText variant="p">{t('mainPage.content')}</SubHeadingText>
+            <SubHeadingText variant="p">
+                {' '}
+                <Reveal delay={1.5} x={-30}>
+                    {t('mainPage.content')}
+                </Reveal>
+            </SubHeadingText>
         )
 
         return (
             <StyledContainer $isDesktopLayout={isDesktopLayout} ref={ref}>
                 <HeadingText variant="h1" textTransform="uppercase">
-                    <FlexContainer gap="20px" alignItems="center">
-                        <RedText>
-                            <img src={logo} />
-                            {t('mainPage.title_name')}
-                        </RedText>
-                        {props.button}
-                    </FlexContainer>
-                    {t('mainPage.subtitle')}
+                    <Reveal delay={1.25} x={-25}>
+                        <FlexContainer gap="20px" alignItems="center">
+                            <RedText>
+                                <img src={logo} />
+                                {t('mainPage.title_name')}
+                            </RedText>
+                            {props.button}
+                        </FlexContainer>
+                    </Reveal>
+                    <Reveal delay={1.4} x={-50}>
+                        {t('mainPage.subtitle')}
+                    </Reveal>
                 </HeadingText>
                 {renderContacts}
             </StyledContainer>

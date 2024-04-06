@@ -9,19 +9,23 @@ import {
     MotionContainer,
 } from '../animations/reveal/RevealBlock'
 import {
-    revealColorBlockTransition,
+    getRevealColorBlockTransition,
+    getRevealContainerTransition,
     revealColorBlockVariants,
-    revealContainerTransition,
     revealContainerVariants,
 } from '../animations/reveal/config'
+import { Reveal } from '../animations/reveal/Reveal'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     children: ReactNode
+    transitionDelay?: number
+    removeRepeatedReveal?: boolean
+    blockColor?: string
 }
 
 const StyledArrowRight = styled(ArrowRight)`
     position: absolute;
-    right: -35px;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
 `
@@ -36,7 +40,13 @@ const StyledButton = styled.button`
     cursor: pointer;
 `
 
-export const Button = ({ children, ...props }: ButtonProps) => {
+export const Button = ({
+    children,
+    removeRepeatedReveal = true,
+    transitionDelay = 0,
+    blockColor,
+    ...props
+}: ButtonProps) => {
     const ref = useRef(null)
 
     const isInView = useInView(ref)
@@ -48,10 +58,11 @@ export const Button = ({ children, ...props }: ButtonProps) => {
             mainControls.start('visible')
             slideControls.start('visible')
         } else {
+            if (removeRepeatedReveal) return
             mainControls.start('hidden')
             slideControls.start('hidden')
         }
-    }, [isInView, mainControls, slideControls])
+    }, [isInView, mainControls, slideControls, removeRepeatedReveal])
 
     const isDisabled = props.disabled
     const renderContent = isDisabled ? (
@@ -70,17 +81,31 @@ export const Button = ({ children, ...props }: ButtonProps) => {
                 variants={revealContainerVariants}
                 initial="hidden"
                 animate={mainControls}
-                transition={revealContainerTransition}
+                transition={getRevealContainerTransition(transitionDelay)}
             >
                 <StyledButton {...props}>
                     {renderContent}
-                    <StyledArrowRight />
+                    <Reveal
+                        style={{
+                            position: 'absolute',
+                            right: '-35px',
+                            top: '50%',
+                            transform: 'translateY(-50%)',
+                        }}
+                        delay={transitionDelay + 0.65}
+                        x={-35}
+                    >
+                        <StyledArrowRight />
+                    </Reveal>
                     <MotionColorBlock
                         as={motion.div}
                         variants={revealColorBlockVariants}
                         initial="hidden"
                         animate={slideControls}
-                        transition={revealColorBlockTransition}
+                        $blockColor={blockColor}
+                        transition={getRevealColorBlockTransition(
+                            transitionDelay + 0.15
+                        )}
                     />
                 </StyledButton>
             </MotionContainer>

@@ -3,6 +3,7 @@ import { Text } from '../../../../components/Text/Text'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
 import { LayoutFlexContainerProps } from '../../../../components/layout/types'
 import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
+import { Reveal } from '../../../../components/animations/reveal/Reveal'
 
 const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
     position: ${(props) => !props.$isDesktopLayout && 'absolute'};
@@ -31,14 +32,18 @@ export const Contacts = () => {
             justifyContent="center"
         >
             <StyledLink href="tel:+420111222333">
-                <Text variant="socials" color="#6e6e6e">
-                    +420 111 222 333
-                </Text>
+                <Reveal delay={1.1} x={25}>
+                    <Text variant="socials" color="#6e6e6e">
+                        +420 111 222 333
+                    </Text>
+                </Reveal>
             </StyledLink>
             <StyledLink href="mailto: nikita.rubin@rubinproduction.eu">
-                <Text variant="socials" color="#6e6e6e">
-                    info@email.eu
-                </Text>
+                <Reveal delay={1.25} x={30}>
+                    <Text variant="socials" color="#6e6e6e">
+                        info@email.eu
+                    </Text>
+                </Reveal>
             </StyledLink>
         </StyledFlexContainer>
     )

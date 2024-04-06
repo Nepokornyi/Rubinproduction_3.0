@@ -17,6 +17,7 @@ import vA from '../../../../../assets/img/icoVA.png'
 
 import 'swiper/css'
 import 'swiper/css/autoplay'
+import { Reveal } from '../../../../animations/reveal/Reveal'
 
 // TODO: refactor component, it's in layout folder. Make more generic and reusable or move to another folder
 
@@ -39,49 +40,51 @@ const StyledImage = styled.img`
 
 export const LogoCarousel = () => {
     return (
-        <FlexContainer>
-            <StyledSwiper
-                slidesPerView={3}
-                loop
-                modules={[Autoplay]}
-                autoplay={{ delay: 2500 }}
-                observer
-                observeParents
-            >
-                <StyledSwiperSlide>
-                    <StyledImage src={niceBoy} />
-                </StyledSwiperSlide>
-                <StyledSwiperSlide>
-                    <StyledImage src={ccc} />
-                </StyledSwiperSlide>
-                <StyledSwiperSlide>
-                    <StyledImage src={bolt} />
-                </StyledSwiperSlide>
-                <StyledSwiperSlide>
-                    <StyledImage src={eliteVoyage} />
-                </StyledSwiperSlide>
-                <StyledSwiperSlide>
-                    <StyledImage src={euroCenter} />
-                </StyledSwiperSlide>
-                <StyledSwiperSlide>
-                    <StyledImage src={firstClass} />
-                </StyledSwiperSlide>
-                <StyledSwiperSlide>
-                    <StyledImage src={gCar} />
-                </StyledSwiperSlide>
-                <StyledSwiperSlide>
-                    <StyledImage src={groost} />
-                </StyledSwiperSlide>
-                <StyledSwiperSlide>
-                    <StyledImage src={sekuron} />
-                </StyledSwiperSlide>
-                <StyledSwiperSlide>
-                    <StyledImage src={thomasArsov} />
-                </StyledSwiperSlide>
-                <StyledSwiperSlide>
-                    <StyledImage src={vA} />
-                </StyledSwiperSlide>
-            </StyledSwiper>
-        </FlexContainer>
+        <Reveal y={25} removeRepeatedReveal={false}>
+            <FlexContainer>
+                <StyledSwiper
+                    slidesPerView={3}
+                    loop
+                    modules={[Autoplay]}
+                    autoplay={{ delay: 2500 }}
+                    observer
+                    observeParents
+                >
+                    <StyledSwiperSlide>
+                        <StyledImage src={niceBoy} />
+                    </StyledSwiperSlide>
+                    <StyledSwiperSlide>
+                        <StyledImage src={ccc} />
+                    </StyledSwiperSlide>
+                    <StyledSwiperSlide>
+                        <StyledImage src={bolt} />
+                    </StyledSwiperSlide>
+                    <StyledSwiperSlide>
+                        <StyledImage src={eliteVoyage} />
+                    </StyledSwiperSlide>
+                    <StyledSwiperSlide>
+                        <StyledImage src={euroCenter} />
+                    </StyledSwiperSlide>
+                    <StyledSwiperSlide>
+                        <StyledImage src={firstClass} />
+                    </StyledSwiperSlide>
+                    <StyledSwiperSlide>
+                        <StyledImage src={gCar} />
+                    </StyledSwiperSlide>
+                    <StyledSwiperSlide>
+                        <StyledImage src={groost} />
+                    </StyledSwiperSlide>
+                    <StyledSwiperSlide>
+                        <StyledImage src={sekuron} />
+                    </StyledSwiperSlide>
+                    <StyledSwiperSlide>
+                        <StyledImage src={thomasArsov} />
+                    </StyledSwiperSlide>
+                    <StyledSwiperSlide>
+                        <StyledImage src={vA} />
+                    </StyledSwiperSlide>
+                </StyledSwiper>
+            </FlexContainer>
+        </Reveal>
     )
 }
