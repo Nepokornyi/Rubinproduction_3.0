@@ -2,6 +2,11 @@ import styled from 'styled-components'
 import { HashLink as Link } from 'react-router-hash-link'
 import { AnimatedLink } from '../../animations/words/AnimatedLink'
 import { Reveal } from '../../animations/reveal/Reveal'
+import { AppLandingVariants } from '../Header'
+
+type HeaderMenuProps = {
+    variants?: AppLandingVariants
+}
 
 const StyledHeaderMenu = styled.nav`
     ul {
@@ -22,26 +27,36 @@ const StyledHeaderMenu = styled.nav`
     }
 `
 
-export const HeaderMenu = () => {
+export const HeaderMenu = ({ variants = 'main' }: HeaderMenuProps) => {
     return (
         <StyledHeaderMenu>
             <ul>
+                {variants === 'case' && (
+                    <li>
+                        <Link to="/" smooth>
+                            <Reveal y={-25}>
+                                <AnimatedLink title={'Home'} />
+                            </Reveal>
+                        </Link>
+                    </li>
+                )}
+
                 <li>
                     <Link to="#about" smooth>
-                        <Reveal delay={0.2} y={-25}>
+                        <Reveal delay={0.2} y={-20}>
                             <AnimatedLink title={'About'} />
                         </Reveal>
                     </Link>
                 </li>
                 <li>
                     <Link to="#portfolio" smooth>
-                        <Reveal delay={0.75} y={-20}>
+                        <Reveal delay={0.75} y={-15}>
                             <AnimatedLink title={'Portfolio'} />
                         </Reveal>
                     </Link>
                 </li>
                 <li>
-                    <Reveal delay={1} y={-15}>
+                    <Reveal delay={1} y={-10}>
                         <AnimatedLink title={'Rus/Ger'} />
                     </Reveal>
                 </li>

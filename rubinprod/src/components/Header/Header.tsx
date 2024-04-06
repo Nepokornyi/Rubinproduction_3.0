@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 import { FlexContainer } from '../layout/FlexContainer'
-// import { HamburgerIcon } from './Menu/HamburgerIcon'
-import smallLogo from '../../assets/img/icoRubinprodSmall.svg'
-import bigLogo from '../../assets/img/icoRubinprod.svg'
+
 import { useHeaderStyleObserver } from '../../pages/AppMainLanding/hooks/useHeaderStyleObserver'
 import { RefObject } from 'react'
 import { useBreakpointBiggerThan } from '../../helpers/useCurrentBreakpoint'
@@ -11,12 +9,20 @@ import { LayoutFlexContainerProps } from '../layout/types'
 import { HamburgerMenu } from './Menu/HamburgerMenu'
 import { Reveal } from '../animations/reveal/Reveal'
 
+import bigLogoRed from '../../assets/img/icoRubinprod.svg'
+import smallLogoRed from '../../assets/img/icoRubinprodSmall.svg'
+import bigLogoWhite from '../../assets/img/icoRubinpodWhite.svg'
+import smallLogoWhite from '../../assets/img/icoRubinprodSmallWhite.svg'
+
+export type AppLandingVariants = 'main' | 'case'
+
 type StyledHeaderProps = LayoutFlexContainerProps & {
     backgroundColor?: string
     boxShadow?: string
 }
 type HeaderProps = {
     targetRef: RefObject<HTMLDivElement>
+    variants?: AppLandingVariants
 }
 
 const StyledHeader = styled(FlexContainer)<StyledHeaderProps>`
@@ -32,13 +38,21 @@ const StyledHeader = styled(FlexContainer)<StyledHeaderProps>`
     transition: background-color 0.5s, box-shadow 0.5s;
 `
 
-export const Header = ({ targetRef }: HeaderProps) => {
+export const Header = ({ targetRef, variants = 'main' }: HeaderProps) => {
     const { style } = useHeaderStyleObserver({ targetRef })
 
     const isDesktopLayout = useBreakpointBiggerThan('md')
 
+    const bigLogo = variants === 'main' ? bigLogoRed : bigLogoWhite
+    const smallLogo = variants === 'main' ? smallLogoRed : smallLogoWhite
+
     const logoSrc = isDesktopLayout ? bigLogo : smallLogo
-    const renderMenu = isDesktopLayout ? <HeaderMenu /> : <HamburgerMenu />
+
+    const renderMenu = isDesktopLayout ? (
+        <HeaderMenu variants={variants} />
+    ) : (
+        <HamburgerMenu variants={variants} />
+    )
 
     return (
         <StyledHeader

@@ -1,5 +1,6 @@
-import { Text } from '../../components/Text/Text'
 import { motion } from 'framer-motion'
+import { ScootyMainSection } from './ScootyMainSection/ScootyMainSection'
+import { Footer } from '../../components/Footer/Footer'
 
 export const AppScootyLanding = () => {
     return (
@@ -9,7 +10,16 @@ export const AppScootyLanding = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-            <Text>scooty</Text>
+            <ScootyMainSection />
+            <>ScootyAbout</>
+            <>ScootyShowReel</>
+            <>ScootyServices</>
+            <>ScootySocials</>
+            <>ScootyClip</>
+            <>ScootySolution</>
+            <>ScootyFeedback</>
+            <>ScootyContact</>
+            <Footer />
         </motion.div>
     )
 }
