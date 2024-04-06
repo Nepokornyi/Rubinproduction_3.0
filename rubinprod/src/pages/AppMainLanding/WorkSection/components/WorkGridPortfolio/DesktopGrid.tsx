@@ -5,6 +5,7 @@ import { WorkGridCallToAction } from './WorkGridCallToAction'
 import portfolioLeft from '../../../../../assets/img/portfolioLeft.png'
 import portfolioRight from '../../../../../assets/img/portfolioRight.png'
 import { RevealBlock } from '../../../../../components/animations/reveal/RevealBlock'
+import { Link } from 'react-router-dom'
 
 const WorkGridContainer = styled(Box)`
     width: 80%;
@@ -35,33 +36,45 @@ const GridImage = styled.img`
     object-fit: cover;
 `
 
+const StyledLink = styled(Link)`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+`
+
 export const DesktopGrid = () => {
     return (
-        <WorkGridContainer>
-            <ExpandedGridItem>
-                <RevealBlock>
-                    <GridImage src={portfolioLeft} />
-                </RevealBlock>
-            </ExpandedGridItem>
+        <>
+            <WorkGridContainer>
+                <ExpandedGridItem>
+                    <RevealBlock>
+                        <GridImage src={portfolioLeft} />
+                        <StyledLink to="/scooty" />
+                    </RevealBlock>
+                </ExpandedGridItem>
 
-            <RightGridItem>
-                <RevealBlock>
-                    <GridImage src={portfolioRight} />
-                </RevealBlock>
-            </RightGridItem>
-            <RightGridItem>
-                <RevealBlock>
-                    <GridImage src={portfolioRight} />
-                </RevealBlock>
-            </RightGridItem>
+                <RightGridItem>
+                    <RevealBlock>
+                        <GridImage src={portfolioRight} />
+                        <StyledLink to="/gamechanger" />
+                    </RevealBlock>
+                </RightGridItem>
+                <RightGridItem>
+                    <RevealBlock>
+                        <GridImage src={portfolioRight} />
+                        <StyledLink to="/elitevoyage" />
+                    </RevealBlock>
+                </RightGridItem>
 
-            <LeftGridItem>
-                <RevealBlock>
-                    <GridImage src={portfolioRight} />
-                </RevealBlock>
-            </LeftGridItem>
+                <LeftGridItem>
+                    <RevealBlock>
+                        <GridImage src={portfolioRight} />
+                        <StyledLink to="/scooty" />
+                    </RevealBlock>
+                </LeftGridItem>
 
-            <WorkGridCallToAction />
-        </WorkGridContainer>
+                <WorkGridCallToAction />
+            </WorkGridContainer>
+        </>
     )
 }

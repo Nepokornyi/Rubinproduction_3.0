@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom/client'
 import { App } from './App.tsx'
 import './index.css'
 import './i18n.ts'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <App />
+        <Router>
+            <Routes>
+                <Route path="/*" element={<App />} />
+            </Routes>
+        </Router>
     </React.StrictMode>
 )

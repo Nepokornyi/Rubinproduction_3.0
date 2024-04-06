@@ -1,14 +1,29 @@
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import { AppMainLanding } from './pages/AppMainLanding/AppMainLanding'
+import { AppScootyLanding } from './pages/AppScootyCase/AppScootyLanding'
+import { AnimatePresence } from 'framer-motion'
+import { AppGameChangerLanding } from './pages/AppGameChangerCase/AppGameChangerLanding'
+import { AppEliteVoyageLanding } from './pages/AppEliteVoyageCase/AppEliteVoyageLanding'
 
 export const App = () => {
+    const location = useLocation()
+
     return (
         <>
-            <Router>
-                <Routes>
-                    <Route path="/" element={<AppMainLanding />} />
+            <AnimatePresence mode="wait">
+                <Routes location={location} key={location.pathname}>
+                    <Route index element={<AppMainLanding />} />
+                    <Route path={'/scooty'} element={<AppScootyLanding />} />
+                    <Route
+                        path={'/gamechanger'}
+                        element={<AppGameChangerLanding />}
+                    />
+                    <Route
+                        path={'/elitevoyage'}
+                        element={<AppEliteVoyageLanding />}
+                    />
                 </Routes>
-            </Router>
+            </AnimatePresence>
         </>
     )
 }

@@ -18,6 +18,8 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
 import { RevealBlock } from '../../../../animations/reveal/RevealBlock'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 // type Effect = {
 //     material: ShaderMaterial
@@ -26,6 +28,12 @@ import { RevealBlock } from '../../../../animations/reveal/RevealBlock'
 
 // TODO: check for optimization in future
 // TODO: big work for effects in progress
+
+const StyledLink = styled(Link)`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+`
 
 export const PortfolioCarousel = () => {
     // const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0)
@@ -77,6 +85,7 @@ export const PortfolioCarousel = () => {
                     <RevealBlock delay={0.25} blockColor="#0C0C0C">
                         <SwiperSlideBackground src={scooty} alt="scooty case" />
                         <StyledLogo src={logoScooty} alt="scooty logo" />
+                        <StyledLink to="/scooty" />
                     </RevealBlock>
                 </StyledSwiperSlide>
 
@@ -90,6 +99,7 @@ export const PortfolioCarousel = () => {
                             src={logoGamechanger}
                             alt="gamechanger logo"
                         />
+                        <StyledLink to="/gamechanger" />
                     </RevealBlock>
                 </StyledSwiperSlide>
 
@@ -103,6 +113,7 @@ export const PortfolioCarousel = () => {
                             src={logoEliteVoyage}
                             alt="elitvoyage logo"
                         />
+                        <StyledLink to="/elitevoyage" />
                     </RevealBlock>
                 </StyledSwiperSlide>
 
@@ -110,6 +121,7 @@ export const PortfolioCarousel = () => {
                     <RevealBlock delay={0.25} blockColor="#0C0C0C">
                         <SwiperSlideBackground src={scooty} alt="scooty case" />
                         <StyledLogo src={logoScooty} alt="scooty logo" />
+                        <StyledLink to="/scooty" />
                     </RevealBlock>
                 </StyledSwiperSlide>
 
