@@ -4,6 +4,7 @@ import { WorkGridCallToAction } from './WorkGridCallToAction'
 
 import portfolioLeft from '../../../../../assets/img/portfolioLeft.png'
 import portfolioRight from '../../../../../assets/img/portfolioRight.png'
+import { RevealBlock } from '../../../../../components/animations/reveal/RevealBlock'
 
 const WorkGridContainer = styled(Box)`
     width: 80%;
@@ -38,18 +39,26 @@ export const DesktopGrid = () => {
     return (
         <WorkGridContainer>
             <ExpandedGridItem>
-                <GridImage src={portfolioLeft} />
+                <RevealBlock>
+                    <GridImage src={portfolioLeft} />
+                </RevealBlock>
             </ExpandedGridItem>
 
             <RightGridItem>
-                <GridImage src={portfolioRight} />
+                <RevealBlock>
+                    <GridImage src={portfolioRight} />
+                </RevealBlock>
             </RightGridItem>
             <RightGridItem>
-                <GridImage src={portfolioRight} />
+                <RevealBlock>
+                    <GridImage src={portfolioRight} />
+                </RevealBlock>
             </RightGridItem>
 
             <LeftGridItem>
-                <GridImage src={portfolioRight} />
+                <RevealBlock>
+                    <GridImage src={portfolioRight} />
+                </RevealBlock>
             </LeftGridItem>
 
             <WorkGridCallToAction />

@@ -5,6 +5,7 @@ import { Text } from '../../../../components/Text/Text'
 import { useTranslation } from 'react-i18next'
 import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
 import { LayoutFlexContainerProps } from '../../../../components/layout/types'
+import { Reveal } from '../../../../components/animations/reveal/Reveal'
 
 const StyledClientsDescription = styled(Text)<LayoutFlexContainerProps>`
     max-width: 450px;
@@ -42,22 +43,58 @@ export const AboutContent = () => {
                 textTransform="uppercase"
                 fontWeight="600"
             >
-                {t('aboutPage.clients')}
-                <StyledArrowDown $isDesktopLayout />
+                <Reveal removeRepeatedReveal={false} x={-25}>
+                    {t('aboutPage.clients')}
+                </Reveal>
+                <Reveal
+                    style={{
+                        width: '80px',
+                        height: '22px',
+                        position: 'absolute',
+                        left: '115px',
+                        top: '0',
+                    }}
+                    delay={0.35}
+                    removeRepeatedReveal={false}
+                >
+                    <StyledArrowDown $isDesktopLayout />
+                </Reveal>
             </StyledClientsTitle>
+
             <StyledClientsDescription variant="p">
-                {t('aboutPage.description')}
+                <Reveal removeRepeatedReveal={false} x={25}>
+                    {t('aboutPage.description')}
+                </Reveal>
             </StyledClientsDescription>
         </StyledDesktopFlexContainer>
     )
 
     const mobileContent = (
         <>
-            <Text variant="p">{t('aboutPage.description')}</Text>
+            <Text variant="p">
+                <Reveal y={25} removeRepeatedReveal={false}>
+                    {t('aboutPage.description')}
+                </Reveal>
+            </Text>
             <FlexContainer justifyContent="center">
                 <StyledClientsTitle textTransform="uppercase" fontWeight="600">
-                    {t('aboutPage.clients')}
-                    <StyledArrowDown />
+                    <Reveal y={-25} removeRepeatedReveal={false}>
+                        {t('aboutPage.clients')}
+                    </Reveal>
+                    <Reveal
+                        style={{
+                            width: '80px',
+                            height: '22px',
+                            position: 'absolute',
+                            right: '145px',
+                            top: '0',
+                        }}
+                        delay={0.35}
+                        y={25}
+                        removeRepeatedReveal={false}
+                    >
+                        <StyledArrowDown />
+                    </Reveal>
                 </StyledClientsTitle>
             </FlexContainer>
         </>

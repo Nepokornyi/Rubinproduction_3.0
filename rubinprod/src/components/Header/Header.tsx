@@ -9,6 +9,7 @@ import { useBreakpointBiggerThan } from '../../helpers/useCurrentBreakpoint'
 import { HeaderMenu } from './Menu/HeaderMenu'
 import { LayoutFlexContainerProps } from '../layout/types'
 import { HamburgerMenu } from './Menu/HamburgerMenu'
+import { Reveal } from '../animations/reveal/Reveal'
 
 type StyledHeaderProps = LayoutFlexContainerProps & {
     backgroundColor?: string
@@ -46,7 +47,9 @@ export const Header = ({ targetRef }: HeaderProps) => {
             $isDesktopLayout={isDesktopLayout}
             {...style}
         >
-            <img src={logoSrc} style={{ zIndex: 2 }} />
+            <Reveal style={{ zIndex: 2 }} delay={0.25}>
+                <img src={logoSrc} style={{ zIndex: 2 }} />
+            </Reveal>
             {renderMenu}
         </StyledHeader>
     )

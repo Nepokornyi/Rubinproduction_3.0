@@ -6,6 +6,7 @@ import { ArrowRight, CustomArrowDown } from '../../../../components/Arrow/Arrow'
 import { Box } from '../../../../components/layout/Box'
 import { LayoutFlexContainerProps } from '../../../../components/layout/types'
 import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
+import { Reveal } from '../../../../components/animations/reveal/Reveal'
 
 const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
     width: ${(props) => (props.$isDesktopLayout ? '40%' : '100%')};
@@ -53,26 +54,32 @@ export const ContactTitle = () => {
             alignItems="start"
         >
             <Box>
-                <Text
-                    variant="h2"
-                    paddingOverride={applyCustomLayoutPadding}
-                    textTransform="uppercase"
-                >
-                    {t('contactPage.title')}
-                </Text>
-                <Box>
-                    <StyledText
-                        $isDesktopLayout={isDesktopLayout}
-                        variant="h3"
-                        textTransform="uppercase"
+                <Reveal x={-25} removeRepeatedReveal={false}>
+                    <Text
+                        variant="h2"
                         paddingOverride={applyCustomLayoutPadding}
-                        fontFamily="Grunges"
+                        textTransform="uppercase"
                     >
-                        {t('contactPage.subtitle')}
-                        {renderArrowDown}
-                    </StyledText>
+                        {t('contactPage.title')}
+                    </Text>
+                </Reveal>
+                <Box>
+                    <Reveal removeRepeatedReveal={false} x={-30}>
+                        <StyledText
+                            $isDesktopLayout={isDesktopLayout}
+                            variant="h3"
+                            textTransform="uppercase"
+                            paddingOverride={applyCustomLayoutPadding}
+                            fontFamily="Grunges"
+                        >
+                            {t('contactPage.subtitle')}
+                            {renderArrowDown}
+                        </StyledText>
+                    </Reveal>
                 </Box>
-                {renderArrowLeft}
+                <Reveal x={-45} removeRepeatedReveal={false}>
+                    {renderArrowLeft}
+                </Reveal>
             </Box>
         </StyledFlexContainer>
     )

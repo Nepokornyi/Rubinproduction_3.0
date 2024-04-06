@@ -10,13 +10,12 @@ type ArrowProps = {
 }
 
 const StyledArrowRight = styled.i<ArrowProps>`
-    & {
-        box-sizing: border-box;
-        position: relative;
-        display: block;
-        width: ${(props) => (props.$isFullWidth ? '100%' : '80px')};
-        height: 22px;
-    }
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: ${(props) => (props.$isFullWidth ? '100%' : '80px')};
+    height: 22px;
+
     &::after,
     &::before {
         content: '';

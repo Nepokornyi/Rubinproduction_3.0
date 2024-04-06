@@ -4,6 +4,7 @@ import { Box } from '../../../../../components/layout/Box'
 import portfolioLeft from '../../../../../assets/img/portfolioLeft.png'
 import portfolioRight from '../../../../../assets/img/portfolioRight.png'
 import { WorkGridCallToAction } from './WorkGridCallToAction'
+import { RevealBlock } from '../../../../../components/animations/reveal/RevealBlock'
 
 const WorkGridContainer = styled(Box)`
     width: 80%;
@@ -30,18 +31,26 @@ export const TabletGrid = () => {
     return (
         <WorkGridContainer>
             <Box>
-                <GridImage src={portfolioLeft} />
+                <RevealBlock>
+                    <GridImage src={portfolioLeft} />
+                </RevealBlock>
             </Box>
 
             <Box>
-                <GridImage src={portfolioRight} />
+                <RevealBlock>
+                    <GridImage src={portfolioRight} />
+                </RevealBlock>
             </Box>
             <Box>
-                <GridImage src={portfolioRight} />
+                <RevealBlock>
+                    <GridImage src={portfolioRight} />
+                </RevealBlock>
             </Box>
 
             <Box>
-                <GridImage src={portfolioRight} />
+                <RevealBlock>
+                    <GridImage src={portfolioRight} />
+                </RevealBlock>
             </Box>
             <WorkGridCallToAction />
         </WorkGridContainer>

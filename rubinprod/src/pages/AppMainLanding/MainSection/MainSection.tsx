@@ -13,6 +13,7 @@ import { Socials } from './components/Socials'
 import { Contacts } from './components/Contacts'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 import { LayoutFlexContainerProps } from '../../../components/layout/types'
+import { Reveal } from '../../../components/animations/reveal/Reveal'
 
 const StyledFlexContainerBackground = styled(
     FlexContainer
@@ -22,6 +23,7 @@ const StyledFlexContainerBackground = styled(
     background-size: cover;
     align-items: ${(props) => (props.$isDesktopLayout ? 'center' : 'initial')};
     padding: 200px 0 125px 0;
+    overflow: hidden;
 `
 
 const StyledDesktopFlexContainer = styled(FlexContainer)`
@@ -36,7 +38,7 @@ const StyledButton = styled(Button)`
 
 export const MainSection = () => {
     const { t } = useTranslation()
-    const targetRef = useRef<HTMLDivElement>(null)
+    const targetRef = useRef(null)
 
     const isDesktopLayout = useBreakpointBiggerThan('md')
 
@@ -44,15 +46,21 @@ export const MainSection = () => {
         <StyledDesktopFlexContainer>
             <Socials />
             <RubinTitle
-                button={<StyledButton>{t('mainPage.button')}</StyledButton>}
+                button={
+                    <StyledButton transitionDelay={1.5}>
+                        {t('mainPage.button')}
+                    </StyledButton>
+                }
                 contacts={<Contacts />}
             />
         </StyledDesktopFlexContainer>
     ) : (
         <>
             <Contacts />
-            <RubinTitle ref={targetRef} />
-            <Button>{t('mainPage.button')}</Button>
+            <Reveal delay={1.25}>
+                <RubinTitle ref={targetRef} />
+            </Reveal>
+            <Button transitionDelay={2.65}>{t('mainPage.button')}</Button>
             <Socials />
         </>
     )

@@ -1,6 +1,6 @@
 const container = {
-    width: 45,
-    height: 30,
+    width: 35,
+    height: 20,
 }
 
 const lines = {
