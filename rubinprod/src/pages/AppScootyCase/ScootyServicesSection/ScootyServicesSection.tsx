@@ -16,6 +16,9 @@ const Card = styled(Box)`
 
     ul {
         list-style: none;
+        li {
+            margin-top: 10px;
+        }
     }
 `
 

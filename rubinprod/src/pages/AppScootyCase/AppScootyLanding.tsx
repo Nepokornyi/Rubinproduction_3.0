@@ -4,6 +4,8 @@ import { Footer } from '../../components/Footer/Footer'
 import { ScootyAboutSection } from './ScootyAboutSection/ScootyAboutSection'
 import { ScootyShowReelSection } from './ScootyShowReelSection/ScootyShowReelSection'
 import { ScootyServicesSection } from './ScootyServicesSection/ScootyServicesSection'
+import { ScootySocialsSection } from './ScootySocialsSection/ScootySocialsSection'
+import { ScootyClipSection } from './ScootyClipSection/ScootyClipSection'
 
 export const AppScootyLanding = () => {
     return (
@@ -17,8 +19,8 @@ export const AppScootyLanding = () => {
             <ScootyAboutSection />
             <ScootyShowReelSection />
             <ScootyServicesSection />
-            <>ScootySocials</>
-            <>ScootyClip</>
+            <ScootySocialsSection />
+            <ScootyClipSection />
             <>ScootySolution</>
             <>ScootyFeedback</>
             <>ScootyContact</>
