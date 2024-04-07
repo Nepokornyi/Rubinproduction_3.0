@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { ScootyMainSection } from './ScootyMainSection/ScootyMainSection'
 import { Footer } from '../../components/Footer/Footer'
 import { ScootyAboutSection } from './ScootyAboutSection/ScootyAboutSection'
-import { ScootyShowReel } from './ScootyShowReel/ScootyShowReel'
+import { ScootyShowReelSection } from './ScootyShowReelSection/ScootyShowReelSection'
 
 export const AppScootyLanding = () => {
     return (
@@ -14,7 +14,7 @@ export const AppScootyLanding = () => {
         >
             <ScootyMainSection />
             <ScootyAboutSection />
-            <ScootyShowReel />
+            <ScootyShowReelSection />
             <>ScootyServices</>
             <>ScootySocials</>
             <>ScootyClip</>

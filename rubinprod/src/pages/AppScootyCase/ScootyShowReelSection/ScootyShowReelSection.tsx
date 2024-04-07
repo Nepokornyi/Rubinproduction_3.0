@@ -50,7 +50,7 @@ const StyledImage = styled.img`
     object-fit: cover;
 `
 
-export const ScootyShowReel = () => {
+export const ScootyShowReelSection = () => {
     return (
         <StyledFlexContainer>
             <ShowReelGrid>
