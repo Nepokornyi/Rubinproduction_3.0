@@ -6,6 +6,7 @@ import { ScootyShowReelSection } from './ScootyShowReelSection/ScootyShowReelSec
 import { ScootyServicesSection } from './ScootyServicesSection/ScootyServicesSection'
 import { ScootySocialsSection } from './ScootySocialsSection/ScootySocialsSection'
 import { ScootyClipSection } from './ScootyClipSection/ScootyClipSection'
+import { ScootySolutionSection } from './ScootySolutionSection/ScootySolutionSection'
 
 export const AppScootyLanding = () => {
     return (
@@ -21,7 +22,7 @@ export const AppScootyLanding = () => {
             <ScootyServicesSection />
             <ScootySocialsSection />
             <ScootyClipSection />
-            <>ScootySolution</>
+            <ScootySolutionSection />
             <>ScootyFeedback</>
             <>ScootyContact</>
             <Footer />
