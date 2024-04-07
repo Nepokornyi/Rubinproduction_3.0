@@ -7,6 +7,7 @@ import { ScootyServicesSection } from './ScootyServicesSection/ScootyServicesSec
 import { ScootySocialsSection } from './ScootySocialsSection/ScootySocialsSection'
 import { ScootyClipSection } from './ScootyClipSection/ScootyClipSection'
 import { ScootySolutionSection } from './ScootySolutionSection/ScootySolutionSection'
+import { ScootyFeedbackSection } from './ScootyFeedbackSection/ScootyFeedbackSection'
 
 export const AppScootyLanding = () => {
     return (
@@ -23,7 +24,7 @@ export const AppScootyLanding = () => {
             <ScootySocialsSection />
             <ScootyClipSection />
             <ScootySolutionSection />
-            <>ScootyFeedback</>
+            <ScootyFeedbackSection />
             <>ScootyContact</>
             <Footer />
         </motion.div>

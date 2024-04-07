@@ -16,7 +16,7 @@ export const AboutSection = () => {
             direction="column"
             justifyContent="center"
         >
-            <ParallaxContainer />
+            <ParallaxContainer text="Full cycle video production" />
             <AboutHeading />
             <AboutContent />
             <LogoCarousel />

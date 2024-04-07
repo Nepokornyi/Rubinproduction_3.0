@@ -12,10 +12,12 @@ import { ReactNode, useRef } from 'react'
 import styled from 'styled-components'
 import { Text } from '../../../../../components/Text/Text'
 import { Box } from '../../../../../components/layout/Box'
+import { AppLandingVariants } from '../../../../../components/Header/Header'
 
 type ScrollParallaxTextProps = {
     children: ReactNode
     baseVelocity?: number
+    variant?: AppLandingVariants
 }
 
 const StyledParallaxContainer = styled(Box)`
@@ -36,7 +38,10 @@ const StyledScroller = styled(Box)`
 export const ScrollParallaxText = ({
     children,
     baseVelocity = 2.5,
+    variant = 'main',
 }: ScrollParallaxTextProps) => {
+    const fontVariant = variant === 'main' ? 'Montserrat' : 'Grunges'
+
     const baseX = useMotionValue(0)
     const { scrollY } = useScroll()
     const scrollVelocity = useVelocity(scrollY)
@@ -73,28 +78,60 @@ export const ScrollParallaxText = ({
                 className={'scroller'}
                 style={{ x }}
             >
-                <Text textTransform="uppercase" fontWeight="600">
+                <Text
+                    fontFamily={fontVariant}
+                    textTransform="uppercase"
+                    fontWeight="600"
+                >
                     {children}
                 </Text>
-                <Text textTransform="uppercase" fontWeight="600">
+                <Text
+                    fontFamily={fontVariant}
+                    textTransform="uppercase"
+                    fontWeight="600"
+                >
                     {children}
                 </Text>
-                <Text textTransform="uppercase" fontWeight="600">
+                <Text
+                    fontFamily={fontVariant}
+                    textTransform="uppercase"
+                    fontWeight="600"
+                >
                     {children}
                 </Text>
-                <Text textTransform="uppercase" fontWeight="600">
+                <Text
+                    fontFamily={fontVariant}
+                    textTransform="uppercase"
+                    fontWeight="600"
+                >
                     {children}
                 </Text>
-                <Text textTransform="uppercase" fontWeight="600">
+                <Text
+                    fontFamily={fontVariant}
+                    textTransform="uppercase"
+                    fontWeight="600"
+                >
                     {children}
                 </Text>
-                <Text textTransform="uppercase" fontWeight="600">
+                <Text
+                    fontFamily={fontVariant}
+                    textTransform="uppercase"
+                    fontWeight="600"
+                >
                     {children}
                 </Text>
-                <Text textTransform="uppercase" fontWeight="600">
+                <Text
+                    fontFamily={fontVariant}
+                    textTransform="uppercase"
+                    fontWeight="600"
+                >
                     {children}
                 </Text>
-                <Text textTransform="uppercase" fontWeight="600">
+                <Text
+                    fontFamily={fontVariant}
+                    textTransform="uppercase"
+                    fontWeight="600"
+                >
                     {children}
                 </Text>
             </StyledScroller>
