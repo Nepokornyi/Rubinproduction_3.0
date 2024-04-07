@@ -3,6 +3,8 @@ import { GameChangerMainSection } from './GameChangerMainSection/GameChangerMain
 import { GameChangerAboutSection } from './GameChangerAboutSection/GameChangerAboutSection'
 import { GameChangerShowReelSection } from './GameChangerShowReelSection/GameChangerShowReelSection'
 import { GameChangerServicesSection } from './GameChangerServicesSection/GameChangerServicesSection'
+import { ContactSection } from '../AppMainLanding/ContactSection/ContactSection'
+import { GameChangerFeedbackSection } from './GameChangerFeedbackSection/GameChangerFeedbackSection'
 
 export const AppGameChangerLanding = () => {
     return (
@@ -18,6 +20,9 @@ export const AppGameChangerLanding = () => {
             <GameChangerServicesSection />
             {/* marketing */}
             <GameChangerShowReelSection variant="second" />
+            {/* marketing */}
+            <GameChangerFeedbackSection />
+            <ContactSection color={'#7055EC'} />
         </motion.div>
     )
 }
