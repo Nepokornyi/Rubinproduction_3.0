@@ -5,6 +5,8 @@ import { GameChangerShowReelSection } from './GameChangerShowReelSection/GameCha
 import { GameChangerServicesSection } from './GameChangerServicesSection/GameChangerServicesSection'
 import { ContactSection } from '../AppMainLanding/ContactSection/ContactSection'
 import { GameChangerFeedbackSection } from './GameChangerFeedbackSection/GameChangerFeedbackSection'
+import { GameChangerMarketingSection } from './GameChangerMarketingSection/GameChangerMarketingSection'
+import { GameChangerMotionDesignSection } from './GameChangerMotionDesingSection/GameChangerMotionDesignSection'
 
 export const AppGameChangerLanding = () => {
     return (
@@ -18,9 +20,9 @@ export const AppGameChangerLanding = () => {
             <GameChangerAboutSection />
             <GameChangerShowReelSection variant="first" />
             <GameChangerServicesSection />
-            {/* marketing */}
+            <GameChangerMarketingSection />
             <GameChangerShowReelSection variant="second" />
-            {/* marketing */}
+            <GameChangerMotionDesignSection />
             <GameChangerFeedbackSection />
             <ContactSection color={'#7055EC'} />
         </motion.div>
