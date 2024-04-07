@@ -20,7 +20,7 @@ export const ScootyAboutSection = () => {
 
     return (
         <StyledFlexContainer
-            id="#about"
+            id="about"
             $isDesktopLayout={isDesktopLayout}
             justifyContent="center"
             gap="20px"
