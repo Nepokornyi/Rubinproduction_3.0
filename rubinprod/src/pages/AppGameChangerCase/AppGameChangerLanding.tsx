@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { GameChangerMainSection } from './GameChangerMainSection/GameChangerMainSection'
 import { GameChangerAboutSection } from './GameChangerAboutSection/GameChangerAboutSection'
+import { GameChangerShowReelSection } from './GameChangerShowReelSection/GameChangerShowReelSection'
 
 export const AppGameChangerLanding = () => {
     return (
@@ -12,6 +13,7 @@ export const AppGameChangerLanding = () => {
         >
             <GameChangerMainSection />
             <GameChangerAboutSection />
+            <GameChangerShowReelSection />
         </motion.div>
     )
 }
