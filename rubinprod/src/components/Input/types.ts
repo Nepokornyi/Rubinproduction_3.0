@@ -1,5 +1,6 @@
-import { InputHTMLAttributes } from "react"
+import { InputHTMLAttributes } from 'react'
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     error?: string
+    transitionColor?: string
 }

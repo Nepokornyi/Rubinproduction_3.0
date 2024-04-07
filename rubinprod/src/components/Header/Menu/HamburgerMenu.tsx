@@ -12,6 +12,11 @@ import {
     menuVariants,
 } from './config/configDropdown'
 import { Reveal } from '../../animations/reveal/Reveal'
+import { AppLandingVariants } from '../Header'
+
+type HamburgerMenuProps = {
+    variants?: AppLandingVariants
+}
 
 const HamburgerContainer = styled(Box)`
     position: relative;
@@ -43,7 +48,7 @@ const LinkAnimationBox = styled(Box)`
     }
 `
 
-export const HamburgerMenu = () => {
+export const HamburgerMenu = ({ variants }: HamburgerMenuProps) => {
     const { container, lines, animations } = config
     const [open, toggleOpen] = useCycle(false, true)
 
@@ -93,6 +98,17 @@ export const HamburgerMenu = () => {
                                     animate="open"
                                     exit="initial"
                                 >
+                                    {variants === 'case' && (
+                                        <LinkAnimationBox>
+                                            <motion.li variants={linkVariants}>
+                                                <Link to="/" smooth>
+                                                    <Text variant="h3">
+                                                        Home
+                                                    </Text>
+                                                </Link>
+                                            </motion.li>
+                                        </LinkAnimationBox>
+                                    )}
                                     <LinkAnimationBox>
                                         <motion.li variants={linkVariants}>
                                             <Link

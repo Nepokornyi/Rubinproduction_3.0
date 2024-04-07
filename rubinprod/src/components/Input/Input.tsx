@@ -5,7 +5,11 @@ import { InputProps } from './types'
 import { useBreakpointBiggerThan } from '../../helpers/useCurrentBreakpoint'
 import { LayoutFlexContainerProps } from '../layout/types'
 
-const StyledInput = styled.input<LayoutFlexContainerProps>`
+type StyledInputProps = LayoutFlexContainerProps & {
+    $transitionColor?: string
+}
+
+const StyledInput = styled.input<StyledInputProps>`
     background-color: transparent;
     margin: 15px 25px;
     padding-bottom: 10px;
@@ -15,7 +19,8 @@ const StyledInput = styled.input<LayoutFlexContainerProps>`
     &:focus {
         outline: none;
         border-bottom: 2px solid
-            ${(props) => (props.$isDesktopLayout ? '#0C0C0C' : '#d91e37')};
+            ${(props) =>
+                props.$isDesktopLayout ? props.$transitionColor : '#d91e37'};
         transition: border-bottom 0.3s ease;
     }
     &::placeholder {
@@ -37,10 +42,15 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             <>
                 <StyledInput
                     $isDesktopLayout={isDesktopLayout}
+                    $transitionColor={props.transitionColor}
                     ref={ref}
                     {...props}
                 />
-                {error && <StyledError variant="p">{error}</StyledError>}
+                {error && (
+                    <StyledError paddingOverride="0" variant="p">
+                        {error}
+                    </StyledError>
+                )}
             </>
         )
     }
