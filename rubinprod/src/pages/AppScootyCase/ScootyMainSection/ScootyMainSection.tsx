@@ -16,6 +16,7 @@ const StyledFlexContainerBackground = styled(
     align-items: ${(props) => (props.$isDesktopLayout ? 'center' : 'initial')};
     padding: 200px 0 125px 0;
     overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
 `
 
 export const ScootyMainSection = () => {
