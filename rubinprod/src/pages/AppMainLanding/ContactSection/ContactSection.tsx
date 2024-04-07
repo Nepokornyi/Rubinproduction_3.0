@@ -5,11 +5,15 @@ import { ContactTitle } from './components/ContactTitle'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 import { LayoutFlexContainerProps } from '../../../components/layout/types'
 
+type ContactSectionProps = {
+    color?: string
+}
+
 const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
     padding: ${(props) => (props.$isDesktopLayout ? '200px 0' : '100px 0')};
 `
 
-export const ContactSection = () => {
+export const ContactSection = ({ color = '#0C0C0C' }: ContactSectionProps) => {
     const isDesktopLayout = useBreakpointBiggerThan('md')
     const flexDirection = isDesktopLayout ? 'row' : 'column'
     const minHeight = isDesktopLayout ? '60vh' : 'auto'
@@ -23,7 +27,7 @@ export const ContactSection = () => {
             $isDesktopLayout={isDesktopLayout}
         >
             <ContactTitle />
-            <ContactForm />
+            <ContactForm color={color} />
         </StyledFlexContainer>
     )
 }

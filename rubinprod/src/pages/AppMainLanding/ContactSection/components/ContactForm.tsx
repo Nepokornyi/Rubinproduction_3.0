@@ -14,14 +14,22 @@ import {
     RevealProps,
 } from '../../../../components/animations/reveal/Reveal'
 
+type ContactFormProps = {
+    color?: string
+}
+
+type ButtonProps = LayoutFlexContainerProps & {
+    $borderColor: string
+}
+
 const StyledForm = styled.form<LayoutFlexContainerProps>`
     width: ${(props) => (props.$isDesktopLayout ? '40%' : '100%')};
     max-width: ${(props) => props.$isDesktopLayout && '550px'};
 `
 
-const StyledButton = styled(Button)<LayoutFlexContainerProps>`
+const StyledButton = styled(Button)<ButtonProps>`
     background-color: ${(props) => props.$isDesktopLayout && '#0C0C0C'};
-    border: ${(props) => props.$isDesktopLayout && 'none'};
+    border-color: ${(props) => props.$isDesktopLayout && props.$borderColor};
 `
 
 const StyledInput = styled(Input)`
@@ -39,7 +47,7 @@ const StyledReveal = (props: RevealProps) => (
     </Reveal>
 )
 
-export const ContactForm = () => {
+export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
     const { t } = useTranslation()
 
     const isDesktopLayout = useBreakpointBiggerThan('md')
@@ -76,6 +84,7 @@ export const ContactForm = () => {
                         {...register('name')}
                         type={'text'}
                         placeholder="Name"
+                        transitionColor={color}
                         error={errors.name?.message}
                     />
                 </StyledReveal>
@@ -84,6 +93,7 @@ export const ContactForm = () => {
                         {...register('email')}
                         type={'text'}
                         placeholder="Email"
+                        transitionColor={color}
                         error={errors.email?.message}
                     />
                 </StyledReveal>
@@ -99,7 +109,8 @@ export const ContactForm = () => {
                 <Reveal x={-80} removeRepeatedReveal={false}>
                     <StyledButton
                         $isDesktopLayout={isDesktopLayout}
-                        blockColor="#0C0C0C"
+                        $borderColor={color}
+                        blockColor={color}
                         disabled={isSubmitting}
                         type={'submit'}
                     >
