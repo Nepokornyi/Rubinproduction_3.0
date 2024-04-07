@@ -37,7 +37,7 @@ const GridImage = styled.img`
 `
 
 const StyledLink = styled(Link)`
-    width: auto;
+    width: 100%;
     height: 100%;
     position: absolute;
 `
