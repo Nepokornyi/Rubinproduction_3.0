@@ -1,5 +1,6 @@
-import { Text } from '../../components/Text/Text'
 import { motion } from 'framer-motion'
+import { GameChangerMainSection } from './GameChangerMainSection/GameChangerMainSection'
+import { GameChangerAboutSection } from './GameChangerAboutSection/GameChangerAboutSection'
 
 export const AppGameChangerLanding = () => {
     return (
@@ -9,7 +10,8 @@ export const AppGameChangerLanding = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-            <Text>GameChanger</Text>
+            <GameChangerMainSection />
+            <GameChangerAboutSection />
         </motion.div>
     )
 }
