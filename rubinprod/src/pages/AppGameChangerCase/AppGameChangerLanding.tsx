@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { GameChangerMainSection } from './GameChangerMainSection/GameChangerMainSection'
 import { GameChangerAboutSection } from './GameChangerAboutSection/GameChangerAboutSection'
 import { GameChangerShowReelSection } from './GameChangerShowReelSection/GameChangerShowReelSection'
+import { GameChangerServicesSection } from './GameChangerServicesSection/GameChangerServicesSection'
 
 export const AppGameChangerLanding = () => {
     return (
@@ -13,7 +14,10 @@ export const AppGameChangerLanding = () => {
         >
             <GameChangerMainSection />
             <GameChangerAboutSection />
-            <GameChangerShowReelSection />
+            <GameChangerShowReelSection variant="first" />
+            <GameChangerServicesSection />
+            {/* marketing */}
+            <GameChangerShowReelSection variant="second" />
         </motion.div>
     )
 }
