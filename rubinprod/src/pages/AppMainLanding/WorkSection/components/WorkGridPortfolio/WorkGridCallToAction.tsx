@@ -34,7 +34,7 @@ export const WorkGridCallToAction = () => {
 
     return (
         <CallToActionGridItem $isTabletLayout={isTabletLayout}>
-            <Text variant="p" paddingOverride="0">
+            <Text variant="p" $paddingOverride="0">
                 <Reveal removeRepeatedReveal={false} x={-25} delay={0}>
                     Regardless of the projects complexity, we will provide a
                     cost estimate during the first consultation.

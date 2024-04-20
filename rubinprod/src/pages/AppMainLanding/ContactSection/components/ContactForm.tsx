@@ -35,6 +35,11 @@ const StyledButton = styled(Button)<ButtonProps>`
 const StyledInput = styled(Input)`
     width: 100%;
     margin: 0;
+    &:focus {
+        border-bottom: 2px solid
+            ${(props) =>
+                props.$isDesktopLayout ? props.$transitionColor : '#d91e37'};
+    }
 `
 
 const StyledReveal = (props: RevealProps) => (
@@ -84,7 +89,8 @@ export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
                         {...register('name')}
                         type={'text'}
                         placeholder="Name"
-                        transitionColor={color}
+                        $transitionColor={color}
+                        $isDesktopLayout={isDesktopLayout}
                         error={errors.name?.message}
                     />
                 </StyledReveal>
@@ -93,7 +99,8 @@ export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
                         {...register('email')}
                         type={'text'}
                         placeholder="Email"
-                        transitionColor={color}
+                        $transitionColor={color}
+                        $isDesktopLayout={isDesktopLayout}
                         error={errors.email?.message}
                     />
                 </StyledReveal>

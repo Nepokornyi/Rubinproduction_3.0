@@ -43,9 +43,9 @@ export const GameChangerServicesSection = () => {
         >
             <Card>
                 <TitleRelativeText
-                    paddingOverride="0"
+                    $paddingOverride="0"
+                    $textTransform="uppercase"
                     variant="button"
-                    textTransform="uppercase"
                 >
                     social media advertising
                     <AbsoluteX src={icoX} alt="" />
@@ -63,9 +63,9 @@ export const GameChangerServicesSection = () => {
 
             <Card>
                 <TitleRelativeText
-                    paddingOverride="0"
+                    $paddingOverride="0"
+                    $textTransform="uppercase"
                     variant="button"
-                    textTransform="uppercase"
                 >
                     motion design / animations
                     <AbsoluteX src={icoX} alt="" />
@@ -78,9 +78,9 @@ export const GameChangerServicesSection = () => {
 
             <Card>
                 <TitleRelativeText
-                    paddingOverride="0"
+                    $paddingOverride="0"
+                    $textTransform="uppercase"
                     variant="button"
-                    textTransform="uppercase"
                 >
                     product photography
                     <AbsoluteX src={icoX} alt="" />

@@ -24,6 +24,7 @@ const StyledContainer = styled.div<LayoutFlexContainerProps>`
 
 const HeadingText = styled(Text)`
     line-height: 1.1;
+    text-transform: ${(props) => props.$textTransform};
 `
 const RedText = styled.span`
     color: #d91e37;
@@ -67,7 +68,7 @@ export const RubinTitle = forwardRef<HTMLDivElement, RubinTitleProps>(
 
         return (
             <StyledContainer $isDesktopLayout={isDesktopLayout} ref={ref}>
-                <HeadingText variant="h1" textTransform="uppercase">
+                <HeadingText variant="h1" $textTransform={'uppercase'}>
                     <Reveal delay={1.25} x={-25}>
                         <FlexContainer gap="20px" alignItems="center">
                             <RedText>

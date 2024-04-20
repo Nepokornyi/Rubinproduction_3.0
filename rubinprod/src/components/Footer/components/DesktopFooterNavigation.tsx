@@ -49,41 +49,41 @@ export const DesktopFooterNavigation = () => {
     return (
         <GridContainer>
             <StyledLink href="#">
-                <Text textTransform="uppercase" variant="p" color={'#6E6E6E'}>
+                <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     HOME
                 </Text>
             </StyledLink>
             <StyledLink href="#">
-                <Text textTransform="uppercase" variant="p" color={'#6E6E6E'}>
+                <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     PORTFOLIO
                 </Text>
             </StyledLink>
             <StyledLink href="#">
-                <Text textTransform="uppercase" variant="p" color={'#6E6E6E'}>
+                <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     {t('footer.socials.youtube')}
                 </Text>
             </StyledLink>
             <StyledLink href="#">
-                <Text textTransform="uppercase" variant="p" color={'#6E6E6E'}>
+                <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     {t('footer.socials.instagram')}
                 </Text>
             </StyledLink>
             <StyledLink href="#">
-                <Text textTransform="uppercase" variant="p" color={'#6E6E6E'}>
+                <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     WORK TOGETHER
                 </Text>
             </StyledLink>
             <StyledLink href="#">
-                <Text textTransform="uppercase" variant="p" color={'#6E6E6E'}>
+                <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     ABOUT
                 </Text>
             </StyledLink>
             <StyledLink href="#">
                 <Text
-                    textTransform="uppercase"
-                    textAlign="left"
+                    $textTransform="uppercase"
+                    $color={'#6E6E6E'}
+                    $textAlign="left"
                     variant="p"
-                    color={'#6E6E6E'}
                 >
                     {t('footer.socials.behance')}
                 </Text>

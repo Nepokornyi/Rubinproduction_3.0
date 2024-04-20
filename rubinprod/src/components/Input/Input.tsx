@@ -30,10 +30,6 @@ const StyledInput = styled.input<StyledInputProps>`
     }
 `
 
-export const StyledError = styled(Text)`
-    color: #d91e37;
-`
-
 const Input = forwardRef<HTMLInputElement, InputProps>(
     ({ error, ...props }, ref) => {
         const isDesktopLayout = useBreakpointBiggerThan('md')
@@ -42,14 +38,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             <>
                 <StyledInput
                     $isDesktopLayout={isDesktopLayout}
-                    $transitionColor={props.transitionColor}
+                    $transitionColor={props.$transitionColor}
                     ref={ref}
                     {...props}
                 />
                 {error && (
-                    <StyledError paddingOverride="0" variant="p">
+                    <Text $paddingOverride="0" $color="#d91e37" variant="p">
                         {error}
-                    </StyledError>
+                    </Text>
                 )}
             </>
         )

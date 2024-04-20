@@ -8,10 +8,12 @@ import { Reveal } from '../../../../components/animations/reveal/Reveal'
 const StyledRelativeText = styled(Text)<LayoutFlexContainerProps>`
     position: relative;
     padding: ${(props) => props.$isDesktopLayout && 0};
+    text-transform: ${(props) => props.$textTransform};
 `
 
 const StyledAbsoluteText = styled(Text)<LayoutFlexContainerProps>`
     position: ${(props) => props.$isDesktopLayout && 'absolute'};
+    padding: ${(props) => props.$paddingOverride};
     top: 0px;
     left: -100px;
 `
@@ -31,14 +33,14 @@ export const WorkTitle = () => {
             <Reveal removeRepeatedReveal={false} y={-25}>
                 <StyledRelativeText
                     $isDesktopLayout={isDesktopLayout}
+                    $textTransform="uppercase"
                     variant="h2"
-                    textTransform="uppercase"
                 >
                     <StyledAbsoluteText
                         $isDesktopLayout={isDesktopLayout}
+                        $paddingOverride="5px"
                         fontFamily="Grunges"
                         variant="h3"
-                        paddingOverride="5px"
                     >
                         our
                     </StyledAbsoluteText>

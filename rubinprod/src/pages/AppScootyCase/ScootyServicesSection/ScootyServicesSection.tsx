@@ -24,6 +24,8 @@ const Card = styled(Box)`
 
 const TitleRelativeText = styled(Text)`
     position: relative;
+    padding: ${(props) => props.$paddingOverride};
+    text-transform: ${(props) => props.$textTransform};
 `
 
 const AbsoluteX = styled.img`
@@ -42,9 +44,9 @@ export const ScootyServicesSection = () => {
         >
             <Card>
                 <TitleRelativeText
-                    paddingOverride="0"
+                    $paddingOverride="0"
+                    $textTransform="uppercase"
                     variant="button"
-                    textTransform="uppercase"
                 >
                     Strategy
                     <AbsoluteX src={icoX} alt="" />
@@ -58,9 +60,9 @@ export const ScootyServicesSection = () => {
 
             <Card>
                 <TitleRelativeText
-                    paddingOverride="0"
+                    $paddingOverride="0"
+                    $textTransform="uppercase"
                     variant="button"
-                    textTransform="uppercase"
                 >
                     Conception
                     <AbsoluteX src={icoX} alt="" />
@@ -77,9 +79,9 @@ export const ScootyServicesSection = () => {
 
             <Card>
                 <TitleRelativeText
-                    paddingOverride="0"
+                    $paddingOverride="0"
+                    $textTransform="uppercase"
                     variant="button"
-                    textTransform="uppercase"
                 >
                     Production
                     <AbsoluteX src={icoX} alt="" />
@@ -96,9 +98,9 @@ export const ScootyServicesSection = () => {
 
             <Card>
                 <TitleRelativeText
-                    paddingOverride="0"
+                    $paddingOverride="0"
+                    $textTransform="uppercase"
                     variant="button"
-                    textTransform="uppercase"
                 >
                     Post-Production
                     <AbsoluteX src={icoX} alt="" />

@@ -1,9 +1,9 @@
 import { forwardRef } from 'react'
-import { StyledError } from './Input'
 import styled from 'styled-components'
 import { Box } from '../layout/Box'
 import { InputProps } from './types'
 import { useTranslation } from 'react-i18next'
+import { Text } from '../Text/Text'
 
 const StyledCheckbox = styled.input`
     background-color: transparent;
@@ -34,7 +34,11 @@ export const Checkbox = forwardRef<HTMLInputElement, InputProps>(
                         </StyledLabel>
                     )}
                 </Box>
-                {error && <StyledError variant="p">{error}</StyledError>}
+                {error && (
+                    <Text variant="p" $color="#d91e37">
+                        {error}
+                    </Text>
+                )}
             </>
         )
     }

@@ -31,6 +31,7 @@ const ShowReelGrid = styled(Box)`
 
 const RelativeText = styled(Text)`
     position: relative;
+    text-transform: ${(props) => props.$textTransform};
 `
 
 const StyledText = styled(Text)`
@@ -59,7 +60,7 @@ export const ScootySocialsSection = () => {
     return (
         <StyledFlexContainer>
             <FlexContainer direction="column" center gap="50px">
-                <RelativeText textTransform="uppercase" variant={'h2'}>
+                <RelativeText $textTransform="uppercase" variant={'h2'}>
                     Instagram
                     <StyledText fontFamily="Grunges">Grid</StyledText>
                 </RelativeText>

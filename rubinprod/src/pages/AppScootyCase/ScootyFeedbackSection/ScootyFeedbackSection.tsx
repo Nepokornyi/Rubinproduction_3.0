@@ -16,12 +16,14 @@ const ReviewBlock = styled(FlexContainer)`
 
 const TextRelative = styled(Text)`
     position: relative;
+    text-transform: ${(props) => props.$textTransform};
 `
 
 const TextAbsolute = styled(Text)`
     position: absolute;
     bottom: -25px;
     left: 0;
+    text-transform: ${(props) => props.$textTransform};
 `
 
 export const ScootyFeedbackSection = () => {
@@ -41,10 +43,10 @@ export const ScootyFeedbackSection = () => {
                         and highly functional platform, driving conversions and
                         facilitating lead acquisition for Scooty.
                     </Text>
-                    <TextRelative variant="button" textTransform="uppercase">
+                    <TextRelative variant="button" $textTransform="uppercase">
                         Mike Avdeev <BsLinkedin />
                         <TextAbsolute
-                            textTransform="uppercase"
+                            $textTransform="uppercase"
                             variant={'socials'}
                         >
                             Founder of Scooty

@@ -37,11 +37,11 @@ export const DesktopFooter = () => {
                 <StyledLogo src={logo} />
             </StyledBox>
             <Text
-                textAlign="center"
+                $textAlign="center"
                 variant="socials"
-                textTransform="uppercase"
-                color={'#6E6E6E'}
-                paddingOverride="0 0 35px 0"
+                $textTransform="uppercase"
+                $color={'#6E6E6E'}
+                $paddingOverride="0 0 35px 0"
             >
                 {t('footer.copyright')}
             </Text>

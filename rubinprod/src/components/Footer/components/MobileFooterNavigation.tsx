@@ -24,17 +24,17 @@ export const MobileFooterNavigation = () => {
     return (
         <StyledNav>
             <StyledLink href="#">
-                <Text textTransform="uppercase" variant="p" color={'#6E6E6E'}>
+                <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     {t('footer.socials.behance')}
                 </Text>
             </StyledLink>
             <StyledLink href="#">
-                <Text textTransform="uppercase" variant="p" color={'#6E6E6E'}>
+                <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     {t('footer.socials.instagram')}
                 </Text>
             </StyledLink>
             <StyledLink href="#">
-                <Text textTransform="uppercase" variant="p" color={'#6E6E6E'}>
+                <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     {t('footer.socials.youtube')}
                 </Text>
             </StyledLink>
