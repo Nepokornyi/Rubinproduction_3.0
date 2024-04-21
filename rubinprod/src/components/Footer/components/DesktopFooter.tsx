@@ -37,8 +37,8 @@ export const DesktopFooter = () => {
                 <StyledLogo src={logo} />
             </StyledBox>
             <Text
-                $textAlign="center"
                 variant="socials"
+                $textAlign="center"
                 $textTransform="uppercase"
                 $color={'#6E6E6E'}
                 $paddingOverride="0 0 35px 0"

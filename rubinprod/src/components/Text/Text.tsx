@@ -23,7 +23,7 @@ type TextProps = {
 
 const StyledText = styled.span<TextProps>`
     font-family: ${(props) => props.fontFamily || 'Montserrat, sans-serif'};
-    color: ${(props) => props.color || '#fff'};
+    color: ${(props) => props.$color || '#fff'};
     font-weight: ${(props) => props.fontWeight || '400'};
     text-transform: ${(props) => props.$textTransform || 'none'};
     text-align: ${(props) => props.$textAlign || 'inherit'};
@@ -33,6 +33,7 @@ const StyledText = styled.span<TextProps>`
 
 export const Text = ({ children, $paddingOverride, ...props }: TextProps) => {
     const paddingValue = $paddingOverride ?? '0 25px'
+
     return (
         <StyledText $paddingOverride={paddingValue} {...props}>
             {children}
