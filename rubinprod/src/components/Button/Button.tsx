@@ -15,6 +15,7 @@ import {
     revealContainerVariants,
 } from '../animations/reveal/config'
 import { Reveal } from '../animations/reveal/Reveal'
+import { HoverButtonEffect } from './HoverButtonEffect'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     children: ReactNode
@@ -28,6 +29,7 @@ const StyledArrowRight = styled(ArrowRight)`
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    pointer-events: none;
 `
 const StyledButton = styled.button`
     width: 100%;
@@ -38,6 +40,11 @@ const StyledButton = styled.button`
     padding: 15px;
     margin: 15px 75px 0 25px;
     cursor: pointer;
+`
+const StyledText = styled(Text)`
+    position: relative;
+    text-transform: ${(props) => props.$textTransform};
+    pointer-events: none;
 `
 
 export const Button = ({
@@ -68,9 +75,13 @@ export const Button = ({
     const renderContent = isDisabled ? (
         <Spinner />
     ) : (
-        <Text textTransform="uppercase" paddingOverride="0" variant="button">
+        <StyledText
+            $textTransform="uppercase"
+            $paddingOverride="0px"
+            variant="button"
+        >
             {children}
-        </Text>
+        </StyledText>
     )
 
     return (
@@ -84,6 +95,7 @@ export const Button = ({
                 transition={getRevealContainerTransition(transitionDelay)}
             >
                 <StyledButton {...props}>
+                    <HoverButtonEffect color={blockColor} />
                     {renderContent}
                     <Reveal
                         style={{

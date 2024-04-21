@@ -27,11 +27,11 @@ export const MobileFooter = () => {
                 <MobileFooterNavigation />
             </FlexContainer>
             <Text
-                textAlign="center"
+                $textAlign="center"
                 variant="socials"
-                textTransform="uppercase"
-                color={'#6E6E6E'}
-                paddingOverride="0 0 15px 0"
+                $textTransform="uppercase"
+                $color={'#6E6E6E'}
+                $paddingOverride="0 0 15px 0"
             >
                 {t('footer.copyright')}
             </Text>

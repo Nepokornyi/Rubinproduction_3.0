@@ -14,18 +14,18 @@ export const AboutClient = () => {
             justifyContent="space-between"
         >
             <FlexContainer direction="column" gap="20px">
-                <Text textTransform="uppercase" variant={'nav'}>
+                <Text $textTransform="uppercase" variant={'nav'}>
                     Client
                 </Text>
-                <Text textTransform="uppercase" variant={'button'}>
+                <Text $textTransform="uppercase" variant={'button'}>
                     Game Changer
                 </Text>
             </FlexContainer>
             <FlexContainer direction="column">
                 <Text
-                    textTransform="uppercase"
+                    $textTransform="uppercase"
+                    $paddingOverride="20px 25px"
                     variant={'nav'}
-                    paddingOverride="20px 25px"
                 >
                     Client
                 </Text>

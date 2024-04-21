@@ -15,12 +15,15 @@ const StyledText = styled(Text)`
 
 const TextRelative = styled(Text)`
     position: relative;
+    text-transform: ${(props) => props.$textTransform};
 `
 
 const TextAbsolute = styled(Text)`
     position: absolute;
     bottom: 0;
     right: 25px;
+    padding: ${(props) => props.$paddingOverride};
+    text-transform: ${(props) => props.$textTransform};
 `
 
 const StyledArrowDown = styled(ArrowDown)`
@@ -38,12 +41,12 @@ export const ScootySolutionSection = () => {
     return (
         <StyledFlexContainer direction="column" center gap="50px">
             <FlexContainer justifyContent="center" gap="100px">
-                <TextRelative variant="h2" textTransform="uppercase">
+                <TextRelative variant="h2" $textTransform="uppercase">
                     Landing
                     <TextAbsolute
-                        paddingOverride="0"
+                        $paddingOverride="0"
+                        $textTransform="uppercase"
                         variant="p"
-                        textTransform="uppercase"
                     >
                         scooty.cz
                     </TextAbsolute>

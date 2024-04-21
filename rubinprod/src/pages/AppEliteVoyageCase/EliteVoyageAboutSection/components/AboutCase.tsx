@@ -28,25 +28,25 @@ export const AboutCase = () => {
             </Box>
             <FlexContainer direction="column" gap={'10px'}>
                 <Text
-                    textTransform="uppercase"
-                    paddingOverride="20px 25px"
+                    $textTransform="uppercase"
+                    $paddingOverride="20px 25px"
                     variant={'nav'}
                 >
                     Services
                 </Text>
-                <Text textTransform="uppercase" variant={'button'}>
+                <Text $textTransform="uppercase" variant={'button'}>
                     Social media
                 </Text>
-                <Text textTransform="uppercase" variant={'button'}>
+                <Text $textTransform="uppercase" variant={'button'}>
                     Advertising
                 </Text>
-                <Text textTransform="uppercase" variant={'button'}>
+                <Text $textTransform="uppercase" variant={'button'}>
                     Motion Design
                 </Text>
-                <Text textTransform="uppercase" variant={'button'}>
+                <Text $textTransform="uppercase" variant={'button'}>
                     Product
                 </Text>
-                <Text textTransform="uppercase" variant={'button'}>
+                <Text $textTransform="uppercase" variant={'button'}>
                     Photography
                 </Text>
             </FlexContainer>

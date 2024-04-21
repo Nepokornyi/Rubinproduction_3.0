@@ -17,6 +17,8 @@ const StyledText = styled(Text)<LayoutFlexContainerProps>`
     position: relative;
     line-height: 1;
     display: ${(props) => props.$isDesktopLayout && 'block'};
+    padding: ${(props) => props.$paddingOverride};
+    text-transform: ${(props) => props.$textTransform};
 `
 
 const StyledCustomArrowDown = styled(CustomArrowDown)`
@@ -28,7 +30,11 @@ const StyledCustomArrowDown = styled(CustomArrowDown)`
 const StyledCustomArrowRight = styled(ArrowRight)<LayoutFlexContainerProps>`
     position: absolute;
     left: ${(props) => (props.$isDesktopLayout ? '0px' : '20px')};
+    width: ${(props) => (props.$isFullWidth ? '100%' : '75px')};
     bottom: -20px;
+    &::before {
+        width: ${(props) => (props.$isFullWidth ? '100%' : '75px')};
+    }
 `
 
 export const ContactTitle = () => {
@@ -41,7 +47,7 @@ export const ContactTitle = () => {
     const renderArrowLeft = isDesktopLayout && (
         <StyledCustomArrowRight
             $isDesktopLayout={isLargeDesktopLayout}
-            isFullWidth
+            $isFullWidth
         />
     )
 
@@ -56,9 +62,9 @@ export const ContactTitle = () => {
             <Box>
                 <Reveal x={-25} removeRepeatedReveal={false}>
                     <Text
+                        $paddingOverride={applyCustomLayoutPadding}
+                        $textTransform="uppercase"
                         variant="h2"
-                        paddingOverride={applyCustomLayoutPadding}
-                        textTransform="uppercase"
                     >
                         {t('contactPage.title')}
                     </Text>
@@ -67,9 +73,9 @@ export const ContactTitle = () => {
                     <Reveal removeRepeatedReveal={false} x={-30}>
                         <StyledText
                             $isDesktopLayout={isDesktopLayout}
+                            $paddingOverride={applyCustomLayoutPadding}
+                            $textTransform="uppercase"
                             variant="h3"
-                            textTransform="uppercase"
-                            paddingOverride={applyCustomLayoutPadding}
                             fontFamily="Grunges"
                         >
                             {t('contactPage.subtitle')}

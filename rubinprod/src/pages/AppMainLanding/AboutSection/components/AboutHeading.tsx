@@ -10,6 +10,7 @@ const HeadingText = styled(Text)<LayoutFlexContainerProps>`
     margin-bottom: 25px;
     text-wrap: balance;
     text-align: ${(props) => props.$isDesktopLayout && 'center'};
+    text-transform: ${(props) => props.$textTransform};
 `
 const StyledSpan = styled.span`
     background-color: #0c0c0c;
@@ -18,6 +19,8 @@ const StyledSpan = styled.span`
 
 const SpecialText = styled(Text)`
     display: inline-block;
+    padding: ${(props) => props.$paddingOverride};
+    text-transform: ${(props) => props.$textTransform};
 `
 
 export const AboutHeading = () => {
@@ -29,8 +32,8 @@ export const AboutHeading = () => {
         <>
             <HeadingText
                 $isDesktopLayout={isDesktopLayout}
+                $textTransform="uppercase"
                 variant="h2"
-                textTransform="uppercase"
             >
                 <Reveal removeRepeatedReveal={false} y={25}>
                     <StyledSpan>
@@ -39,9 +42,9 @@ export const AboutHeading = () => {
                     </StyledSpan>{' '}
                     {renderCustomTextBreak}
                     <SpecialText
-                        paddingOverride="0 17px 0 0"
+                        $paddingOverride="0 17px 0 0"
+                        $textTransform={'uppercase'}
                         variant="h2"
-                        textTransform={'uppercase'}
                         fontFamily="Grunges"
                     >
                         the best

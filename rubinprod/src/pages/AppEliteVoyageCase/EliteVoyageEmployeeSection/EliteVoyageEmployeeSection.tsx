@@ -36,8 +36,8 @@ export const EliteVoyageEmployeeSection = () => {
             >
                 <Box>
                     <RelativeText
-                        paddingOverride="0"
-                        textTransform="uppercase"
+                        $paddingOverride="0"
+                        $textTransform="uppercase"
                         variant={'h2'}
                     >
                         Employee

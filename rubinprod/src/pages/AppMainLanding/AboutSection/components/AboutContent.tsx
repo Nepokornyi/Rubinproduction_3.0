@@ -20,6 +20,7 @@ const StyledClientsTitle = styled(Text)<LayoutFlexContainerProps>`
     margin: ${(props) =>
         props.$isDesktopLayout ? '0 0 0 75px' : '75px 0 100px 0'};
     word-spacing: ${(props) => !props.$isDesktopLayout && '30px'};
+    text-transform: ${(props) => props.$textTransform};
     letter-spacing: 3px;
     pointer-events: none;
 `
@@ -40,7 +41,7 @@ export const AboutContent = () => {
         <StyledDesktopFlexContainer gap="5px" center>
             <StyledClientsTitle
                 $isDesktopLayout
-                textTransform="uppercase"
+                $textTransform="uppercase"
                 fontWeight="600"
             >
                 <Reveal removeRepeatedReveal={false} x={-25}>
@@ -77,7 +78,7 @@ export const AboutContent = () => {
                 </Reveal>
             </Text>
             <FlexContainer justifyContent="center">
-                <StyledClientsTitle textTransform="uppercase" fontWeight="600">
+                <StyledClientsTitle $textTransform="uppercase" fontWeight="600">
                     <Reveal y={-25} removeRepeatedReveal={false}>
                         {t('aboutPage.clients')}
                     </Reveal>

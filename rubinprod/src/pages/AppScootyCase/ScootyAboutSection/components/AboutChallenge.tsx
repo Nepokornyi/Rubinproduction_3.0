@@ -14,18 +14,18 @@ export const AboutChallenge = () => {
             justifyContent="space-between"
         >
             <FlexContainer direction="column" gap="20px">
-                <Text textTransform="uppercase" variant={'nav'}>
+                <Text $textTransform="uppercase" variant={'nav'}>
                     Industry
                 </Text>
-                <Text textTransform="uppercase" variant={'button'}>
+                <Text $textTransform="uppercase" variant={'button'}>
                     Food Delivery
                 </Text>
             </FlexContainer>
             <FlexContainer direction="column">
                 <Text
-                    textTransform="uppercase"
+                    $textTransform="uppercase"
+                    $paddingOverride="20px 25px"
                     variant={'nav'}
-                    paddingOverride="20px 25px"
                 >
                     Challenge
                 </Text>

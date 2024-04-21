@@ -41,10 +41,10 @@ export const GameChangerFeedbackSection = () => {
                         and highly functional platform, driving conversions and
                         facilitating lead acquisition for Scooty.
                     </Text>
-                    <TextRelative variant="button" textTransform="uppercase">
+                    <TextRelative variant="button" $textTransform="uppercase">
                         Nikita Rubin <BsLinkedin />
                         <TextAbsolute
-                            textTransform="uppercase"
+                            $textTransform="uppercase"
                             variant={'socials'}
                         >
                             Founder of Rubin Production

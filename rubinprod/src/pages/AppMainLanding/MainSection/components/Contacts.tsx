@@ -33,14 +33,14 @@ export const Contacts = () => {
         >
             <StyledLink href="tel:+420111222333">
                 <Reveal delay={1.1} x={25}>
-                    <Text variant="socials" color="#6e6e6e">
+                    <Text variant="socials" $color="#6e6e6e">
                         +420 111 222 333
                     </Text>
                 </Reveal>
             </StyledLink>
             <StyledLink href="mailto: nikita.rubin@rubinproduction.eu">
                 <Reveal delay={1.25} x={30}>
-                    <Text variant="socials" color="#6e6e6e">
+                    <Text variant="socials" $color="#6e6e6e">
                         info@email.eu
                     </Text>
                 </Reveal>

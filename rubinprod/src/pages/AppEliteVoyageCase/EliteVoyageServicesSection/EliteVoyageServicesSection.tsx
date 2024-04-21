@@ -43,9 +43,9 @@ export const EliteVoyageServicesSection = () => {
         >
             <Card>
                 <TitleRelativeText
-                    paddingOverride="0"
+                    $paddingOverride="0"
+                    $textTransform="uppercase"
                     variant="button"
-                    textTransform="uppercase"
                 >
                     full-cycle production
                     <AbsoluteX src={icoX} alt="" />
@@ -60,9 +60,9 @@ export const EliteVoyageServicesSection = () => {
 
             <Card>
                 <TitleRelativeText
-                    paddingOverride="0"
+                    $paddingOverride="0"
                     variant="button"
-                    textTransform="uppercase"
+                    $textTransform="uppercase"
                 >
                     brand identity
                     <AbsoluteX src={icoX} alt="" />
@@ -76,9 +76,9 @@ export const EliteVoyageServicesSection = () => {
 
             <Card>
                 <TitleRelativeText
-                    paddingOverride="0"
+                    $paddingOverride="0"
+                    $textTransform="uppercase"
                     variant="button"
-                    textTransform="uppercase"
                 >
                     social media content
                     <AbsoluteX src={icoX} alt="" />

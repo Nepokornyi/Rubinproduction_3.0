@@ -41,10 +41,10 @@ export const EliteVoyageFeedbackSection = () => {
                         and highly functional platform, driving conversions and
                         facilitating lead acquisition for Scooty.
                     </Text>
-                    <TextRelative variant="button" textTransform="uppercase">
+                    <TextRelative variant="button" $textTransform="uppercase">
                         Name <BsLinkedin />
                         <TextAbsolute
-                            textTransform="uppercase"
+                            $textTransform="uppercase"
                             variant={'socials'}
                         >
                             Founder of Elite Voyage

@@ -80,56 +80,56 @@ export const ScrollParallaxText = ({
             >
                 <Text
                     fontFamily={fontVariant}
-                    textTransform="uppercase"
+                    $textTransform="uppercase"
                     fontWeight="600"
                 >
                     {children}
                 </Text>
                 <Text
                     fontFamily={fontVariant}
-                    textTransform="uppercase"
+                    $textTransform="uppercase"
                     fontWeight="600"
                 >
                     {children}
                 </Text>
                 <Text
                     fontFamily={fontVariant}
-                    textTransform="uppercase"
+                    $textTransform="uppercase"
                     fontWeight="600"
                 >
                     {children}
                 </Text>
                 <Text
                     fontFamily={fontVariant}
-                    textTransform="uppercase"
+                    $textTransform="uppercase"
                     fontWeight="600"
                 >
                     {children}
                 </Text>
                 <Text
                     fontFamily={fontVariant}
-                    textTransform="uppercase"
+                    $textTransform="uppercase"
                     fontWeight="600"
                 >
                     {children}
                 </Text>
                 <Text
                     fontFamily={fontVariant}
-                    textTransform="uppercase"
+                    $textTransform="uppercase"
                     fontWeight="600"
                 >
                     {children}
                 </Text>
                 <Text
                     fontFamily={fontVariant}
-                    textTransform="uppercase"
+                    $textTransform="uppercase"
                     fontWeight="600"
                 >
                     {children}
                 </Text>
                 <Text
                     fontFamily={fontVariant}
-                    textTransform="uppercase"
+                    $textTransform="uppercase"
                     fontWeight="600"
                 >
                     {children}

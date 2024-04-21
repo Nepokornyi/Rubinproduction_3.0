@@ -2,7 +2,7 @@ import { HTMLAttributes, forwardRef } from 'react'
 import styled from 'styled-components'
 
 interface ArrowRefProps extends HTMLAttributes<HTMLElement> {
-    isFullWidth?: boolean
+    $isFullWidth?: boolean
 }
 
 type ArrowProps = {
@@ -81,7 +81,7 @@ const ArrowRight = forwardRef<HTMLElement, ArrowRefProps>((props, ref) => {
                 {...props}
                 ref={ref}
                 icon-role="arrow-right"
-                $isFullWidth={props.isFullWidth}
+                $isFullWidth={props.$isFullWidth}
             />
         </>
     )

@@ -36,8 +36,8 @@ export const EliteVoyageTravelSection = () => {
             >
                 <Box>
                     <RelativeText
-                        paddingOverride="0"
-                        textTransform="uppercase"
+                        $paddingOverride="0"
+                        $textTransform="uppercase"
                         variant={'h2'}
                     >
                         Travel
@@ -48,14 +48,14 @@ export const EliteVoyageTravelSection = () => {
                     <Box>
                         <img src={travelFirst} />
                         <Text
-                            paddingOverride="0"
+                            $paddingOverride="0"
+                            $textTransform="uppercase"
                             variant="button"
-                            textTransform="uppercase"
                         >
                             top funnel
                         </Text>
                         <br />
-                        <Text paddingOverride="0" variant={'p'}>
+                        <Text $paddingOverride="0" variant={'p'}>
                             To attract the audience and pull potential buyers in
                             at the beginning of their journey
                         </Text>
@@ -63,14 +63,14 @@ export const EliteVoyageTravelSection = () => {
                     <Box>
                         <img src={travelSecond} />
                         <Text
-                            paddingOverride="0"
+                            $paddingOverride="0"
+                            $textTransform="uppercase"
                             variant="button"
-                            textTransform="uppercase"
                         >
                             middle funnel
                         </Text>
                         <br />
-                        <Text paddingOverride="0" variant={'p'}>
+                        <Text $paddingOverride="0" variant={'p'}>
                             To show benefits of the product and continue to
                             build trust among your prospects
                         </Text>
@@ -78,14 +78,14 @@ export const EliteVoyageTravelSection = () => {
                     <Box>
                         <img src={travelThird} />
                         <Text
-                            paddingOverride="0"
+                            $paddingOverride="0"
+                            $textTransform="uppercase"
                             variant="button"
-                            textTransform="uppercase"
                         >
                             bottom funnel
                         </Text>
                         <br />
-                        <Text paddingOverride="0" variant={'p'}>
+                        <Text $paddingOverride="0" variant={'p'}>
                             To help buyers do away with any lingering objections
                             they may have towards your solution through the
                             explainer and UGC content
