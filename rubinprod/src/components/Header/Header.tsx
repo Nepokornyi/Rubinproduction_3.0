@@ -34,7 +34,6 @@ const StyledHeader = styled(FlexContainer)<StyledHeaderProps>`
     padding: 25px;
     z-index: 100;
     background-color: ${(props) => props.backgroundColor || 'transparent'};
-    box-shadow: ${(props) => props.boxShadow || 'none'};
     transition: background-color 0.5s, box-shadow 0.5s;
 `
 
@@ -62,7 +61,7 @@ export const Header = ({ targetRef, variants = 'main' }: HeaderProps) => {
             {...style}
         >
             <Reveal style={{ zIndex: 2 }} delay={0.25}>
-                <img src={logoSrc} style={{ zIndex: 2 }} />
+                <img src={logoSrc} style={{ zIndex: 100 }} />
             </Reveal>
             {renderMenu}
         </StyledHeader>

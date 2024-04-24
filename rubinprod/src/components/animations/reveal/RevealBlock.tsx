@@ -34,7 +34,7 @@ export const MotionColorBlock = styled.div<MotionColorBlockProps>`
     right: 0;
     background-color: ${(props) =>
         props.$blockColor ? props.$blockColor : '#d91e37'};
-    z-index: 100;
+    z-index: 2;
 `
 
 export const RevealBlock = ({

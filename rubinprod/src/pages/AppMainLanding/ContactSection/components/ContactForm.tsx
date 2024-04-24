@@ -13,6 +13,8 @@ import {
     Reveal,
     RevealProps,
 } from '../../../../components/animations/reveal/Reveal'
+import { useDialogState } from '../../../../helpers/useDialogState'
+import { OverlayEmail } from '../../../../components/Overlay/OverlayEmail'
 
 type ContactFormProps = {
     color?: string
@@ -58,6 +60,8 @@ export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
     const isDesktopLayout = useBreakpointBiggerThan('md')
     const isLargeDesktopLayout = useBreakpointBiggerThan('lg')
 
+    const { showDialog, handleOpenDialog, handleCloseDialog } = useDialogState()
+
     const {
         register,
         handleSubmit,
@@ -71,6 +75,7 @@ export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
         try {
             await new Promise((resolve) => setTimeout(resolve, 2250))
             console.log(data)
+            handleOpenDialog()
         } catch (error) {
             setError('root', {
                 message: 'Something went wrong',
@@ -79,52 +84,56 @@ export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
     }
 
     return (
-        <StyledForm
-            $isDesktopLayout={isLargeDesktopLayout}
-            onSubmit={handleSubmit(onSubmit)}
-        >
-            <FlexContainer direction="column" gap={'10px'}>
-                <StyledReveal x={-35}>
-                    <StyledInput
-                        {...register('name')}
-                        type={'text'}
-                        placeholder="Name"
-                        $transitionColor={color}
-                        $isDesktopLayout={isDesktopLayout}
-                        error={errors.name?.message}
-                    />
-                </StyledReveal>
-                <StyledReveal x={-50}>
-                    <StyledInput
-                        {...register('email')}
-                        type={'text'}
-                        placeholder="Email"
-                        $transitionColor={color}
-                        $isDesktopLayout={isDesktopLayout}
-                        error={errors.email?.message}
-                    />
-                </StyledReveal>
-                <Reveal x={-65} removeRepeatedReveal={false}>
-                    <Checkbox
-                        {...register('terms')}
-                        id={'termsCheckbox'}
-                        type={'checkbox'}
-                        error={errors.terms?.message}
-                    />
-                </Reveal>
+        <>
+            <OverlayEmail open={showDialog} onClose={handleCloseDialog} />
 
-                <Reveal x={-80} removeRepeatedReveal={false}>
-                    <StyledButton
-                        $isDesktopLayout={isDesktopLayout}
-                        $borderColor={color}
-                        blockColor={color}
-                        disabled={isSubmitting}
-                        type={'submit'}
-                    >
-                        {t('contactPage.submit')}
-                    </StyledButton>
-                </Reveal>
-            </FlexContainer>
-        </StyledForm>
+            <StyledForm
+                $isDesktopLayout={isLargeDesktopLayout}
+                onSubmit={handleSubmit(onSubmit)}
+            >
+                <FlexContainer direction="column" gap={'10px'}>
+                    <StyledReveal x={-35}>
+                        <StyledInput
+                            {...register('name')}
+                            type={'text'}
+                            placeholder="Name"
+                            $transitionColor={color}
+                            $isDesktopLayout={isDesktopLayout}
+                            error={errors.name?.message}
+                        />
+                    </StyledReveal>
+                    <StyledReveal x={-50}>
+                        <StyledInput
+                            {...register('email')}
+                            type={'text'}
+                            placeholder="Email"
+                            $transitionColor={color}
+                            $isDesktopLayout={isDesktopLayout}
+                            error={errors.email?.message}
+                        />
+                    </StyledReveal>
+                    <Reveal x={-65} removeRepeatedReveal={false}>
+                        <Checkbox
+                            {...register('terms')}
+                            id={'termsCheckbox'}
+                            type={'checkbox'}
+                            error={errors.terms?.message}
+                        />
+                    </Reveal>
+
+                    <Reveal x={-80} removeRepeatedReveal={false}>
+                        <StyledButton
+                            $isDesktopLayout={isDesktopLayout}
+                            $borderColor={color}
+                            blockColor={color}
+                            disabled={isSubmitting}
+                            type={'submit'}
+                        >
+                            {t('contactPage.submit')}
+                        </StyledButton>
+                    </Reveal>
+                </FlexContainer>
+            </StyledForm>
+        </>
     )
 }
