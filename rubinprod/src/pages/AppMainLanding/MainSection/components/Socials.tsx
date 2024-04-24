@@ -37,21 +37,33 @@ export const Socials = () => {
         >
             <StyledLink href="http://">
                 <Reveal delay={1.75} y={25}>
-                    <Text variant="socials" $paddingOverride="0px" $color="#6e6e6e">
+                    <Text
+                        variant="socials"
+                        $paddingOverride="0px"
+                        $color="#6e6e6e"
+                    >
                         Instagram
                     </Text>
                 </Reveal>
             </StyledLink>
             <StyledLink href="http://">
                 <Reveal delay={1.9} y={35}>
-                    <Text variant="socials" $paddingOverride="0" $color="#6e6e6e">
+                    <Text
+                        variant="socials"
+                        $paddingOverride="0"
+                        $color="#6e6e6e"
+                    >
                         Behance
                     </Text>
                 </Reveal>
             </StyledLink>
             <StyledLink href="http://">
                 <Reveal delay={2.05} y={45}>
-                    <Text variant="socials" $paddingOverride="0px" $color="#6e6e6e">
+                    <Text
+                        variant="socials"
+                        $paddingOverride="0px"
+                        $color="#6e6e6e"
+                    >
                         Youtube
                     </Text>
                 </Reveal>
