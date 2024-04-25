@@ -1,0 +1,42 @@
+{
+    "header": {
+        "menu": {
+            "home": "Heim",
+            "about": "Über uns",
+            "portfolio": "Portfolio",
+            "contact": "Kontakt",
+            "languageSelection1": "en",
+            "languageSelection2": "cz"
+        }
+    },
+    "mainPage": {
+        "title_name": "Rubin",
+        "subtitle": "Production",
+        "content": "Wir setzen Ihre Vision in die Realität um - vom Konzept bis zum endgültigen Schnitt sorgt unser Engagement für Präzision und Kreativität dafür, dass jedes Projekt die Erwartungen übertrifft.",
+        "button": "Zusammenarbeiten"
+    },
+    "aboutPage": {
+        "description": "Unser Ansatz basiert auf Kreativität und Innovation, was unserer Arbeit einen einzigartigen Charakter verleiht. Wir stecken Leidenschaft und Fachwissen in jedes Bild, um sicherzustellen, dass Ihre Geschichte bei Ihrem Publikum ankommt.",
+        "clients": "Unsere Kunden"
+    },
+    "workPage": {
+        "title": "Portfolio",
+        "description": "Wir erstellen nicht einfach nur Videoinhalte - wir entwickeln für jedes Projekt einen einzigartigen Marketingansatz.",
+        "callToAction": "Unabhängig von der Komplexität des Projekts unterbreiten wir Ihnen schon bei Ihrem ersten Beratungsgespräch einen Kostenvoranschlag. Lassen Sie uns gemeinsam etwas Großartiges schaffen!",
+        "button": "Zusammenarbeiten"
+    },
+    "contactPage": {
+        "title": "Let's talk",
+        "subtitle": "About your project",
+        "agreement": "Ich stimme den Bedingungen zu...",
+        "submit": "Anfrage senden"
+    },
+    "footer": {
+        "socials": {
+            "behance": "Behance",
+            "instagram": "Instagram",
+            "youtube": "Youtube"
+        },
+        "copyright": "© rubin production 2024"
+    }
+}

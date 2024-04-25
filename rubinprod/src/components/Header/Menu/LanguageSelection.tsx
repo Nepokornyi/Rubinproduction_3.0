@@ -12,7 +12,7 @@ const VariantsButtonContainer = styled(motion.div)<{ isActive: boolean }>`
         transition: color 0.3s;
     }
 `
-const languageMap = ['en', 'ger', 'cz']
+const languageMap = ['en', 'de', 'cz']
 
 export const LanguageSelection = () => {
     const { i18n } = useTranslation()

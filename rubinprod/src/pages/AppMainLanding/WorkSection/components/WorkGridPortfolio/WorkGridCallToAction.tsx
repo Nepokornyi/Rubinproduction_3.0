@@ -4,6 +4,7 @@ import { Text } from '../../../../../components/Text/Text'
 import { Button } from '../../../../../components/Button/Button'
 import { useCurrentBreakpoint } from '../../../../../helpers/useCurrentBreakpoint'
 import { Reveal } from '../../../../../components/animations/reveal/Reveal'
+import { useTranslation } from 'react-i18next'
 
 type CallToActionGridItemProps = {
     $isTabletLayout?: boolean
@@ -36,6 +37,8 @@ const StyledButton = styled(Button)<{
 `
 
 export const WorkGridCallToAction = () => {
+    const { t } = useTranslation()
+
     const smallBreakpoint = useCurrentBreakpoint() === 'sm'
     const mediumBreakpoint = useCurrentBreakpoint() === 'md'
     const isTabletLayout = smallBreakpoint || mediumBreakpoint
@@ -46,8 +49,7 @@ export const WorkGridCallToAction = () => {
         <CallToActionGridItem $isTabletLayout={isTabletLayout}>
             <Text variant="p" $paddingOverride="0">
                 <Reveal removeRepeatedReveal={false} x={-25} delay={0}>
-                    Regardless of the projects complexity, we will provide a
-                    cost estimate during the first consultation.
+                    {t('workPage.callToAction')}
                 </Reveal>
             </Text>
             <BoxWrapper>

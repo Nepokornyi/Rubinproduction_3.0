@@ -70,7 +70,7 @@ export const DesktopFooterNavigation = () => {
             </StyledLink>
             <StyledLink href="#">
                 <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
-                    WORK TOGETHER
+                    CONTACT
                 </Text>
             </StyledLink>
             <StyledLink href="#">

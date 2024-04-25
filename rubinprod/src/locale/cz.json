@@ -1,0 +1,42 @@
+{
+    "header": {
+        "menu": {
+            "home": "Domů",
+            "about": "O nás",
+            "portfolio": "Portfolio",
+            "contact": "Kontakt",
+            "languageSelection1": "en",
+            "languageSelection2": "de"
+        }
+    },
+    "mainPage": {
+        "title_name": "Rubin",
+        "subtitle": "Production",
+        "content": "Vaši vizi proměníme ve skutečnost - od konceptu až po finální střih, naše odhodlání k preciznosti a kreativitě zaručuje, že každý projekt předčí očekávání.",
+        "button": "Spolupracovat"
+    },
+    "aboutPage": {
+        "description": "Náš přístup je založen na kreativitě a inovaci, což dává naší práci jedinečný charakter. Do každého snímku vkládáme vášeň a odborné znalosti, abychom zajistili, že váš příběh bude rezonovat s vaším publikem.",
+        "clients": "Naši klienti"
+    },
+    "workPage": {
+        "title": "Portfolio",
+        "description": "Nevytváříme pouze videoobsah - pro každý projekt vyvíjíme jedinečný marketingový přístup.",
+        "callToAction": "Bez ohledu na složitost projektu vám během první konzultace poskytneme odhad ceny. Pojďme společně vytvořit něco skvělého!",
+        "button": "Spolupracovat"
+    },
+    "contactPage": {
+        "title": "Let's talk",
+        "subtitle": "About your project",
+        "agreement": "Souhlasím s podmínkami...",
+        "submit": "Poslat žádost"
+    },
+    "footer": {
+        "socials": {
+            "behance": "Behance",
+            "instagram": "Instagram",
+            "youtube": "Youtube"
+        },
+        "copyright": "© rubin production 2024"
+    }
+}

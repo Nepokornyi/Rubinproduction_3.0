@@ -1,17 +1,29 @@
 {
+    "header": {
+        "menu": {
+            "home": "Home",
+            "about": "About",
+            "portfolio": "Portfolio",
+            "contact": "Contact",
+            "languageSelection1": "cz",
+            "languageSelection2": "de"
+        }
+    },
     "mainPage": {
         "title_name": "Rubin",
         "subtitle": "Production",
-        "content": "We bring ideas to life on the screen - from concept to final edit, our commitment to precision and creativity ensures that every project surpasses expectations.",
+        "content": "We will bring your vision to life - from concept to final edit, our commitment to precision and creativity ensures that every project surpasses expectations.",
         "button": "Work together"
     },
     "aboutPage": {
-        "description": "Our key factors are diversity and a fresh perspective. Our approach is based on diversity and innovation, giving our work a unique character.",
+        "description": "Our approach is based on creativity and innovation, giving our work a unique character. With every frame, we infuse passion and expertise, ensuring that your story resonates with your audience.",
         "clients": "Our clients"
     },
     "workPage": {
         "title": "Portfolio",
-        "description": "We don't just create video content - we develop a customized marketing approach for each project."
+        "description": "We don't just create video content - we develop a customized marketing approach for each project.",
+        "callToAction": "Regardless of the projects complexity, we will provide a cost estimate during the first consultation. Let's create something great together!",
+        "button": "Work together"
     },
     "contactPage": {
         "title": "Let's talk",
