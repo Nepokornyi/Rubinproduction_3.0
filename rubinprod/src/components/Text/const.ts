@@ -4,6 +4,7 @@ export type VariantStyles =
     | 'h1'
     | 'h2'
     | 'h3'
+    | 'h4'
     | 'p'
     | 'nav'
     | 'socials'
@@ -31,6 +32,10 @@ export const variantStyles: Record<VariantStyles, CSSProp> = {
     `,
     h3: css`
         font-size: clamp(40px, 4vw + 1rem, 50px);
+        font-weight: 700;
+    `,
+    h4: css`
+        font-size: clamp(25px, 1.75vw + 1rem, 40px);
         font-weight: 700;
     `,
     p: css`
