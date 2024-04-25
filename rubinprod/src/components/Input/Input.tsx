@@ -16,6 +16,7 @@ const StyledInput = styled.input<StyledInputProps>`
     border: none;
     border-bottom: 2px solid white;
     font-size: clamp(12px, 2.5vw, 18px);
+    transition: border-bottom 0.3s ease;
     &:focus {
         outline: none;
         border-bottom: 2px solid
