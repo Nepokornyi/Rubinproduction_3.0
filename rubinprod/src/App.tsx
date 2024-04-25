@@ -4,12 +4,14 @@ import { AppScootyLanding } from './pages/AppScootyCase/AppScootyLanding'
 import { AnimatePresence } from 'framer-motion'
 import { AppGameChangerLanding } from './pages/AppGameChangerCase/AppGameChangerLanding'
 import { AppEliteVoyageLanding } from './pages/AppEliteVoyageCase/AppEliteVoyageLanding'
+import { ScrollToTop } from './components/ScrollToTop'
 
 export const App = () => {
     const location = useLocation()
 
     return (
         <>
+            <ScrollToTop />
             <AnimatePresence mode="wait">
                 <Routes location={location} key={location.pathname}>
                     <Route index element={<AppMainLanding />} />
