@@ -1,7 +1,7 @@
-import { useRef } from 'react'
 import { Header } from '../../../components/Header/Header'
 
 import { FlexContainer } from '../../../components/layout/FlexContainer'
+import { HashLink as Link } from 'react-router-hash-link'
 
 import { useTranslation } from 'react-i18next'
 import { Button } from '../../../components/Button/Button'
@@ -28,6 +28,11 @@ const StyledFlexContainerBackground = styled(
 
 const StyledDesktopFlexContainer = styled(FlexContainer)`
     width: 85%;
+    a {
+        width: 100%;
+        text-decoration: none;
+        color: white;
+    }
 `
 
 const StyledButton = styled(Button)`
@@ -38,7 +43,6 @@ const StyledButton = styled(Button)`
 
 export const MainSection = () => {
     const { t } = useTranslation()
-    const targetRef = useRef(null)
 
     const isDesktopLayout = useBreakpointBiggerThan('md')
 
@@ -47,9 +51,11 @@ export const MainSection = () => {
             <Socials />
             <RubinTitle
                 button={
-                    <StyledButton transitionDelay={1.5}>
-                        {t('mainPage.button')}
-                    </StyledButton>
+                    <Link to="#contact" smooth>
+                        <StyledButton transitionDelay={1.5}>
+                            {t('mainPage.button')}
+                        </StyledButton>
+                    </Link>
                 }
                 contacts={<Contacts />}
             />
@@ -58,7 +64,7 @@ export const MainSection = () => {
         <>
             <Contacts />
             <Reveal delay={1.25}>
-                <RubinTitle ref={targetRef} />
+                <RubinTitle />
             </Reveal>
             <Button transitionDelay={2.65}>{t('mainPage.button')}</Button>
             <Socials />
@@ -72,7 +78,7 @@ export const MainSection = () => {
             justifyContent="center"
             direction="column"
         >
-            <Header targetRef={targetRef} />
+            <Header />
             {renderLayoutContent}
         </StyledFlexContainerBackground>
     )

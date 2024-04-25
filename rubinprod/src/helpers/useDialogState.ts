@@ -14,9 +14,20 @@ export const useDialogState = () => {
         document.body.style.overflow = 'auto'
     }
 
+    const toggleDialog = () => {
+        if (showDialog) {
+            handleCloseDialog()
+            document.body.style.overflow = 'auto'
+        } else {
+            handleOpenDialog()
+            document.body.style.overflow = 'hidden'
+        }
+    }
+
     return {
         showDialog,
         handleOpenDialog,
         handleCloseDialog,
+        toggleDialog,
     }
 }
