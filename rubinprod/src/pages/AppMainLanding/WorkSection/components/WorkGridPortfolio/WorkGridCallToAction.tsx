@@ -11,26 +11,36 @@ type CallToActionGridItemProps = {
 }
 
 const CallToActionGridItem = styled(Box)<CallToActionGridItemProps>`
-    transform: translateY(calc(-35%));
+    position: relative;
+    transform: ${(props) =>
+        props.$isTabletLayout ? 'none' : 'translateY(calc(-35%))'};
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: start;
     max-width: ${(props) => props.$isTabletLayout && '470px'};
+    z-index: 1;
 `
 const BoxWrapper = styled(Box)`
     width: 100%;
 `
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(Button)<{
+    $mediumBreakpoint: boolean
+    $borderColor?: string
+}>`
     margin-left: 0;
     width: 90%;
+    background-color: ${(props) => props.$mediumBreakpoint && '#0C0C0C'};
+    border-color: ${(props) => props.$mediumBreakpoint && props.$borderColor};
 `
 
 export const WorkGridCallToAction = () => {
     const smallBreakpoint = useCurrentBreakpoint() === 'sm'
     const mediumBreakpoint = useCurrentBreakpoint() === 'md'
     const isTabletLayout = smallBreakpoint || mediumBreakpoint
+
+    const tabletButtonColor = mediumBreakpoint ? '#0C0C0C' : '#d91e37'
 
     return (
         <CallToActionGridItem $isTabletLayout={isTabletLayout}>
@@ -42,7 +52,13 @@ export const WorkGridCallToAction = () => {
             </Text>
             <BoxWrapper>
                 <Reveal removeRepeatedReveal={false} x={-25}>
-                    <StyledButton>Work together</StyledButton>
+                    <StyledButton
+                        $mediumBreakpoint={mediumBreakpoint}
+                        $borderColor={tabletButtonColor}
+                        blockColor={tabletButtonColor}
+                    >
+                        Work together
+                    </StyledButton>
                 </Reveal>
             </BoxWrapper>
         </CallToActionGridItem>

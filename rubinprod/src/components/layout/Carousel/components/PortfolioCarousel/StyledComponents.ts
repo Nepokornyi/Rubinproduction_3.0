@@ -26,8 +26,8 @@ export const StyledLogo = styled.img`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: auto;
-    height: 50px;
+    width: 150px;
+    height: auto;
 `
 export const SwiperSlideBackground = styled.img`
     width: 100%;

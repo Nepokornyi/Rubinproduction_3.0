@@ -10,9 +10,9 @@ import { SwiperCustomNavigation } from '../SwiperCustomNavigation'
 import scooty from '../../../../../assets/img/work/scooty.png'
 import gamechanger from '../../../../../assets/img/work/gamechanger.png'
 import elitvoyage from '../../../../../assets/img/work/elitvoyage.jpg'
-import logoScooty from '../../../../../assets/img/work/workScooty.png'
-import logoGamechanger from '../../../../../assets/img/work/workGamechanger.png'
-import logoEliteVoyage from '../../../../../assets/img/work/workEliteVoyage.png'
+import logoScooty from '../../../../../assets/img/work/icoScooty.png'
+import logoGamechanger from '../../../../../assets/img/work/icoGameChanger.png'
+import logoEliteVoyage from '../../../../../assets/img/work/icoEliteVoyage.png'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -20,6 +20,7 @@ import 'swiper/css/thumbs'
 import { RevealBlock } from '../../../../animations/reveal/RevealBlock'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { Placeholder } from '../../../../../pages/AppMainLanding/WorkSection/components/WorkGridPortfolio/Placeholder'
 
 // type Effect = {
 //     material: ShaderMaterial
@@ -36,42 +37,6 @@ const StyledLink = styled(Link)`
 `
 
 export const PortfolioCarousel = () => {
-    // const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0)
-    // const [effect, setEffect] = useState<Effect>()
-
-    // useEffect(() => {
-    //     const parent = document.querySelector('.swiper-parent') as HTMLElement
-    //     const images = document.querySelectorAll('.test')
-
-    //     const effects = SliderEffect({
-    //         parent: parent,
-    //         images: Array.from(images) as Element[],
-    //     })
-    //     setEffect(effects)
-    // }, [])
-
-    // useEffect(() => {
-    //     if (effect) {
-    //         const nextIndex = (currentSlideIndex + 1) % effect.images.length
-
-    //         effect.material.uniforms.nextImage.value = effect.images[nextIndex]
-    //         gsap.to(effect.material.uniforms.dispFactor, 1, {
-    //             value: 1,
-    //             ease: 'Expo.easeOut',
-    //             onComplete: () => {
-    //                 effect.material.uniforms.currentImage.value =
-    //                     effect.images[currentSlideIndex]
-    //                 effect.material.uniforms.dispFactor.value = 0.0
-    //             },
-    //         })
-    //     }
-    // }, [currentSlideIndex, effect])
-
-    // const handleSlideChangeStart = (swiper: SwiperClass) => {
-    //     const currentIndex = swiper.activeIndex
-    //     setCurrentSlideIndex(currentIndex)
-    // }
-
     return (
         <StyledFlexContainer>
             <StyledSwiper
@@ -119,9 +84,10 @@ export const PortfolioCarousel = () => {
 
                 <StyledSwiperSlide $isOdd={false}>
                     <RevealBlock delay={0.25} blockColor="#0C0C0C">
-                        <SwiperSlideBackground src={scooty} alt="scooty case" />
-                        <StyledLogo src={logoScooty} alt="scooty logo" />
-                        <StyledLink to="/scooty" />
+                        {/* <SwiperSlideBackground src={scooty} alt="scooty case" /> */}
+                        {/* <StyledLogo src={logoScooty} alt="scooty logo" /> */}
+                        <Placeholder />
+                        <StyledLink to="/" />
                     </RevealBlock>
                 </StyledSwiperSlide>
 
