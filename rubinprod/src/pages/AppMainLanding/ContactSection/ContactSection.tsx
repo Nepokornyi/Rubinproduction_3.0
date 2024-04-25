@@ -20,6 +20,7 @@ export const ContactSection = ({ color = '#0C0C0C' }: ContactSectionProps) => {
 
     return (
         <StyledFlexContainer
+            id={'contact'}
             direction={flexDirection}
             justifyContent="center"
             alignItems="start"

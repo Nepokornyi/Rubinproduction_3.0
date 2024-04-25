@@ -61,11 +61,13 @@ export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
     const isLargeDesktopLayout = useBreakpointBiggerThan('lg')
 
     const { showDialog, handleOpenDialog, handleCloseDialog } = useDialogState()
+    const buttonHover = isDesktopLayout ? color : '#d91e37'
 
     const {
         register,
         handleSubmit,
         setError,
+        reset,
         formState: { errors, isSubmitting },
     } = useForm<FormSchema>({
         resolver: zodResolver(formSchema),
@@ -76,6 +78,7 @@ export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
             await new Promise((resolve) => setTimeout(resolve, 2250))
             console.log(data)
             handleOpenDialog()
+            reset()
         } catch (error) {
             setError('root', {
                 message: 'Something went wrong',
@@ -94,22 +97,22 @@ export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
                 <FlexContainer direction="column" gap={'10px'}>
                     <StyledReveal x={-35}>
                         <StyledInput
-                            {...register('name')}
-                            type={'text'}
-                            placeholder="Name"
-                            $transitionColor={color}
-                            $isDesktopLayout={isDesktopLayout}
-                            error={errors.name?.message}
-                        />
-                    </StyledReveal>
-                    <StyledReveal x={-50}>
-                        <StyledInput
                             {...register('email')}
                             type={'text'}
                             placeholder="Email"
                             $transitionColor={color}
                             $isDesktopLayout={isDesktopLayout}
                             error={errors.email?.message}
+                        />
+                    </StyledReveal>
+                    <StyledReveal x={-50}>
+                        <StyledInput
+                            {...register('phone')}
+                            type={'tel'}
+                            placeholder="Phone"
+                            $transitionColor={color}
+                            $isDesktopLayout={isDesktopLayout}
+                            error={errors.phone?.message}
                         />
                     </StyledReveal>
                     <Reveal x={-65} removeRepeatedReveal={false}>
@@ -125,7 +128,7 @@ export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
                         <StyledButton
                             $isDesktopLayout={isDesktopLayout}
                             $borderColor={color}
-                            blockColor={color}
+                            blockColor={buttonHover}
                             disabled={isSubmitting}
                             type={'submit'}
                         >
