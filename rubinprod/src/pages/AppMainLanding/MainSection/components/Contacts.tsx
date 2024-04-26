@@ -31,17 +31,17 @@ export const Contacts = () => {
             alignItems={alignItems}
             justifyContent="center"
         >
-            <StyledLink href="tel:+420111222333">
+            <StyledLink href="tel:+420773042876">
                 <Reveal delay={1.1} x={25}>
                     <Text variant="socials" $color="#6e6e6e">
-                        +420 111 222 333
+                        +420 773 042 876
                     </Text>
                 </Reveal>
             </StyledLink>
-            <StyledLink href="mailto: nikita.rubin@rubinproduction.eu">
+            <StyledLink href="mailto:info@rubinproduction.eu">
                 <Reveal delay={1.25} x={30}>
                     <Text variant="socials" $color="#6e6e6e">
-                        info@email.eu
+                        info@rubinproduction.eu
                     </Text>
                 </Reveal>
             </StyledLink>

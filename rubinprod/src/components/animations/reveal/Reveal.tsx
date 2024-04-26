@@ -13,7 +13,9 @@ export type RevealProps = {
     removeRepeatedReveal?: boolean
 }
 
-const MotionContainer = styled(Box)``
+const MotionContainer = styled(Box)`
+    z-index: 50;
+`
 
 export const Reveal = ({
     children,

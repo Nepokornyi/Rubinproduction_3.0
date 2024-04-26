@@ -27,8 +27,8 @@ const StyledArrowRight = styled.i<ArrowProps>`
     &::after {
         width: 8px;
         height: 8px;
-        border-top: 2px solid;
-        border-right: 2px solid;
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
         transform: rotate(45deg);
         bottom: 7px;
     }
@@ -36,7 +36,7 @@ const StyledArrowRight = styled.i<ArrowProps>`
         width: ${(props) => (props.$isFullWidth ? '100%' : '75px')};
         height: 2px;
         bottom: 10px;
-        background: currentColor;
+        background: #fff;
     }
 `
 
@@ -58,8 +58,8 @@ const StyledCustomArrowDown = styled.i`
     &::after {
         width: 8px;
         height: 8px;
-        border-top: 2px solid;
-        border-right: 2px solid;
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
         transform: rotate(135deg);
         left: 7px;
         bottom: 11px;
@@ -70,7 +70,7 @@ const StyledCustomArrowDown = styled.i`
         height: clamp(80px, 20vw, 100px);
         left: 10px;
         bottom: 13px;
-        background: currentColor;
+        background: #fff;
     }
 `
 
