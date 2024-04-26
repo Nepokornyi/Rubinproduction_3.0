@@ -24,6 +24,10 @@ const StyledFlexContainerBackground = styled(
     align-items: ${(props) => (props.$isDesktopLayout ? 'center' : 'initial')};
     padding: 200px 0 125px 0;
     overflow: hidden;
+    a {
+        text-decoration: none;
+        color: white;
+    }
 `
 
 const StyledDesktopFlexContainer = styled(FlexContainer)`
@@ -66,7 +70,9 @@ export const MainSection = () => {
             <Reveal delay={1.25}>
                 <RubinTitle />
             </Reveal>
-            <Button transitionDelay={2.65}>{t('mainPage.button')}</Button>
+            <Link to="#contact" smooth>
+                <Button transitionDelay={2.65}>{t('mainPage.button')}</Button>
+            </Link>
             <Socials />
         </>
     )

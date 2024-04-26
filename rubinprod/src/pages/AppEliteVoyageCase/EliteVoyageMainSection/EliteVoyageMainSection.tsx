@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import styled from 'styled-components'
 import { FlexContainer } from '../../../components/layout/FlexContainer'
 import { LayoutFlexContainerProps } from '../../../components/layout/types'
@@ -23,16 +22,14 @@ const StyledFlexContainerBackground = styled(
 export const EliteVoyageMainSection = () => {
     const isDesktopLayout = useBreakpointBiggerThan('md')
 
-    const targetRef = useRef(null)
-
     return (
         <StyledFlexContainerBackground
             $isDesktopLayout={isDesktopLayout}
             minHeight="100vh"
             center
         >
-            <Header variants="case" targetRef={targetRef} />
-            <img src={eliteVoyageLogo} ref={targetRef} />
+            <Header variants="case" />
+            <img src={eliteVoyageLogo} />
         </StyledFlexContainerBackground>
     )
 }
