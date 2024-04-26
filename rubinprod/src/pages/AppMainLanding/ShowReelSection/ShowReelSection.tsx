@@ -12,7 +12,7 @@ const StyledFlexContainer = styled(FlexContainer)`
 
 const StyledShowReel = styled.video`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
 `
 
@@ -30,11 +30,11 @@ export const ShowReelSection = () => {
     return (
         <StyledFlexContainer alignItems="center" justifyContent="center">
             <Reveal
-                style={{ width: '100%' }}
+                style={{ height: '100vh' }}
                 delay={0.5}
                 removeRepeatedReveal={false}
             >
-                <StyledShowReel ref={videoRef} autoPlay muted loop>
+                <StyledShowReel ref={videoRef} autoPlay muted loop playsInline>
                     <source src={showReelSource} type="video/mp4" />
                     Your browser does not support the video tag.
                 </StyledShowReel>
