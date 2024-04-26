@@ -35,7 +35,7 @@ export const Socials = () => {
             justifyContent={justifyContent}
             gap="45px"
         >
-            <StyledLink href="http://">
+            <StyledLink href="https://www.instagram.com/who1snick/?hl=en">
                 <Reveal delay={1.75} y={25}>
                     <Text
                         variant="socials"
@@ -46,7 +46,7 @@ export const Socials = () => {
                     </Text>
                 </Reveal>
             </StyledLink>
-            <StyledLink href="http://">
+            <StyledLink href="https://www.behance.net/who1snick?locale=cs_CZ">
                 <Reveal delay={1.9} y={35}>
                     <Text
                         variant="socials"
@@ -57,7 +57,7 @@ export const Socials = () => {
                     </Text>
                 </Reveal>
             </StyledLink>
-            <StyledLink href="http://">
+            <StyledLink href="https://www.youtube.com/@who1snick466/videos">
                 <Reveal delay={2.05} y={45}>
                     <Text
                         variant="socials"

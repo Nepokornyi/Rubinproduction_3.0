@@ -48,37 +48,37 @@ export const DesktopFooterNavigation = () => {
 
     return (
         <GridContainer>
-            <StyledLink href="#">
+            <StyledLink href="/">
                 <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     HOME
                 </Text>
             </StyledLink>
-            <StyledLink href="#">
+            <StyledLink href="#portfolio">
                 <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     PORTFOLIO
                 </Text>
             </StyledLink>
-            <StyledLink href="#">
+            <StyledLink href="https://www.youtube.com/@who1snick466/videos">
                 <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     {t('footer.socials.youtube')}
                 </Text>
             </StyledLink>
-            <StyledLink href="#">
+            <StyledLink href="https://www.instagram.com/who1snick/?hl=en">
                 <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     {t('footer.socials.instagram')}
                 </Text>
             </StyledLink>
-            <StyledLink href="#">
+            <StyledLink href="#contact">
                 <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     CONTACT
                 </Text>
             </StyledLink>
-            <StyledLink href="#">
+            <StyledLink href="#about">
                 <Text $textTransform="uppercase" variant="p" $color={'#6E6E6E'}>
                     ABOUT
                 </Text>
             </StyledLink>
-            <StyledLink href="#">
+            <StyledLink href="https://www.behance.net/who1snick?locale=cs_CZ">
                 <Text
                     $textTransform="uppercase"
                     $color={'#6E6E6E'}

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Box } from '../../../../../components/layout/Box'
 import { Text } from '../../../../../components/Text/Text'
 import { Button } from '../../../../../components/Button/Button'
+import { HashLink as Link } from 'react-router-hash-link'
 import { useCurrentBreakpoint } from '../../../../../helpers/useCurrentBreakpoint'
 import { Reveal } from '../../../../../components/animations/reveal/Reveal'
 import { useTranslation } from 'react-i18next'
@@ -24,6 +25,10 @@ const CallToActionGridItem = styled(Box)<CallToActionGridItemProps>`
 `
 const BoxWrapper = styled(Box)`
     width: 100%;
+    a {
+        text-decoration: none;
+        color: white;
+    }
 `
 
 const StyledButton = styled(Button)<{
@@ -54,13 +59,15 @@ export const WorkGridCallToAction = () => {
             </Text>
             <BoxWrapper>
                 <Reveal removeRepeatedReveal={false} x={-25}>
-                    <StyledButton
-                        $mediumBreakpoint={mediumBreakpoint}
-                        $borderColor={tabletButtonColor}
-                        blockColor={tabletButtonColor}
-                    >
-                        Work together
-                    </StyledButton>
+                    <Link to="#contact" smooth>
+                        <StyledButton
+                            $mediumBreakpoint={mediumBreakpoint}
+                            $borderColor={tabletButtonColor}
+                            blockColor={tabletButtonColor}
+                        >
+                            Work together
+                        </StyledButton>
+                    </Link>
                 </Reveal>
             </BoxWrapper>
         </CallToActionGridItem>

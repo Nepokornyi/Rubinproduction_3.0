@@ -1,4 +1,4 @@
-import { motion, useCycle } from 'framer-motion'
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import { Box } from '../../layout/Box'
 import config from './config/configIcon'
@@ -11,6 +11,8 @@ import { AppLandingVariants } from '../Header'
 import { Overlay } from '../../Overlay/Overlay'
 import { LanguageSelection } from './LanguageSelection'
 import { Socials } from '../../../pages/AppMainLanding/MainSection/components/Socials'
+import { useDialogState } from '../../../helpers/useDialogState'
+import { useTranslation } from 'react-i18next'
 
 type HamburgerIconProps = {
     open: boolean
@@ -84,9 +86,13 @@ export const renderHamburger = ({ open, toggleOpen }: HamburgerIconProps) => {
 }
 
 export const HamburgerMenu = ({ variants = 'case' }: HamburgerMenuProps) => {
-    const [open, toggleOpen] = useCycle(false, true)
+    const { t } = useTranslation()
+    const { showDialog, toggleDialog, handleCloseDialog } = useDialogState()
 
-    const button = renderHamburger({ open, toggleOpen })
+    const button = renderHamburger({
+        open: showDialog,
+        toggleOpen: toggleDialog,
+    })
     const numerationBase = variants === 'main' ? 1 : 2
 
     return (
@@ -94,7 +100,7 @@ export const HamburgerMenu = ({ variants = 'case' }: HamburgerMenuProps) => {
             <Reveal delay={0.5}>
                 {button}
                 {/* Animate Presence continues animation on component unmount */}
-                <Overlay open={open} zIndex={10}>
+                <Overlay open={showDialog} zIndex={10}>
                     <motion.div
                         variants={containerVariants}
                         initial="initial"
@@ -105,12 +111,16 @@ export const HamburgerMenu = ({ variants = 'case' }: HamburgerMenuProps) => {
                             {variants === 'case' && (
                                 <LinkAnimationBox>
                                     <motion.li variants={linkVariants}>
-                                        <Link to="/" smooth>
+                                        <Link
+                                            to="/"
+                                            onClick={handleCloseDialog}
+                                            smooth
+                                        >
                                             <Text
                                                 $textTransform="uppercase"
                                                 variant="h3"
                                             >
-                                                Home
+                                                {t('header.menu.home')}
                                             </Text>
                                             <MenuNumeration $right="-15px">
                                                 {'1'.padStart(2, '0')}
@@ -124,7 +134,7 @@ export const HamburgerMenu = ({ variants = 'case' }: HamburgerMenuProps) => {
                                     <Link
                                         to="#about"
                                         smooth
-                                        onClick={() => toggleOpen()}
+                                        onClick={handleCloseDialog}
                                     >
                                         <MenuNumeration $left="-10px">
                                             {numerationBase
@@ -135,7 +145,7 @@ export const HamburgerMenu = ({ variants = 'case' }: HamburgerMenuProps) => {
                                             $textTransform="uppercase"
                                             variant="h3"
                                         >
-                                            About
+                                            {t('header.menu.about')}
                                         </Text>
                                     </Link>
                                 </motion.li>
@@ -145,13 +155,13 @@ export const HamburgerMenu = ({ variants = 'case' }: HamburgerMenuProps) => {
                                     <Link
                                         to="#portfolio"
                                         smooth
-                                        onClick={() => toggleOpen()}
+                                        onClick={handleCloseDialog}
                                     >
                                         <Text
                                             $textTransform="uppercase"
                                             variant="h3"
                                         >
-                                            Portfolio
+                                            {t('header.menu.portfolio')}
                                         </Text>
                                         <MenuNumeration $right="-15px">
                                             {(numerationBase + 1)
@@ -166,7 +176,7 @@ export const HamburgerMenu = ({ variants = 'case' }: HamburgerMenuProps) => {
                                     <Link
                                         to="#contact"
                                         smooth
-                                        onClick={() => toggleOpen()}
+                                        onClick={handleCloseDialog}
                                     >
                                         <MenuNumeration $left="-15px">
                                             {(numerationBase + 2)
@@ -177,7 +187,7 @@ export const HamburgerMenu = ({ variants = 'case' }: HamburgerMenuProps) => {
                                             $textTransform="uppercase"
                                             variant="h3"
                                         >
-                                            Contact
+                                            {t('header.menu.contact')}
                                         </Text>
                                     </Link>
                                 </motion.li>

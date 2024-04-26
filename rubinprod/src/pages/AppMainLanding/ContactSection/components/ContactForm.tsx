@@ -13,6 +13,7 @@ import {
     Reveal,
     RevealProps,
 } from '../../../../components/animations/reveal/Reveal'
+import emailjs from '@emailjs/browser'
 import { useDialogState } from '../../../../helpers/useDialogState'
 import { OverlayEmail } from '../../../../components/Overlay/OverlayEmail'
 
@@ -75,8 +76,16 @@ export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
 
     const onSubmit: SubmitHandler<FormSchema> = async (data) => {
         try {
-            await new Promise((resolve) => setTimeout(resolve, 2250))
-            console.log(data)
+            const templateParams = {
+                email: data.email,
+                phone: data.phone,
+            }
+            await emailjs.send(
+                'service_8lcm3qw',
+                'template_13uaodo',
+                templateParams,
+                'KJ0DMbdu2V3mz40mc'
+            )
             handleOpenDialog()
             reset()
         } catch (error) {
@@ -91,6 +100,7 @@ export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
             <OverlayEmail open={showDialog} onClose={handleCloseDialog} />
 
             <StyledForm
+                id="contact-form"
                 $isDesktopLayout={isLargeDesktopLayout}
                 onSubmit={handleSubmit(onSubmit)}
             >

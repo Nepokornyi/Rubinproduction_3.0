@@ -29,7 +29,19 @@ const StyledHeaderMenu = styled.nav`
 `
 
 export const HeaderMenu = ({ variants = 'main' }: HeaderMenuProps) => {
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
+    const languages = ['en', 'de', 'cz']
+
+    const getOtherLanguages = () => {
+        return languages.filter((lang) => lang !== i18n.language)
+    }
+
+    const handleLanguageChange = (language: string) => {
+        i18n.changeLanguage(language)
+    }
+
+    const otherLanguages = getOtherLanguages()
+
     return (
         <StyledHeaderMenu>
             <ul>
@@ -56,20 +68,14 @@ export const HeaderMenu = ({ variants = 'main' }: HeaderMenuProps) => {
                         </Reveal>
                     </Link>
                 </li>
-                <li>
-                    <Reveal delay={1} y={-10}>
-                        <AnimatedLink
-                            title={t('header.menu.languageSelection1')}
-                        />
-                    </Reveal>
-                </li>
-                <li>
-                    <Reveal delay={1.25} y={-15}>
-                        <AnimatedLink
-                            title={t('header.menu.languageSelection2')}
-                        />
-                    </Reveal>
-                </li>
+
+                {otherLanguages.map((lang, index) => (
+                    <li key={index} onClick={() => handleLanguageChange(lang)}>
+                        <Reveal delay={1 + index * 0.25} y={-10}>
+                            <AnimatedLink title={lang} />
+                        </Reveal>
+                    </li>
+                ))}
             </ul>
         </StyledHeaderMenu>
     )
