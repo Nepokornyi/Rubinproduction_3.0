@@ -4,8 +4,9 @@ import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 import showReel from '../../../assets/video/showreel.mp4'
 import showReelSmall from '../../../assets/video/showreel_small.mp4'
 import { Reveal } from '../../../components/animations/reveal/Reveal'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { IoIosVolumeHigh } from 'react-icons/io'
+import { IoIosVolumeOff } from 'react-icons/io'
 import { Box } from '../../../components/layout/Box'
 import { Variants, motion } from 'framer-motion'
 
@@ -17,21 +18,7 @@ const StyledShowReel = styled.video`
     width: 100%;
     height: 100%;
     object-fit: cover;
-`
-
-const SoundOverlay = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    opacity: 0;
-    transition: opacity 0.5s;
     cursor: pointer;
-    &:hover {
-        opacity: 0.5;
-    }
 `
 
 const Icon = styled(Box)`
@@ -68,6 +55,8 @@ export const ShowReelSection = () => {
 
     const showReelSource = isDesktopLayout ? showReel : showReelSmall
 
+    const [isMuted, setIsMuted] = useState(true)
+
     // Reload video when source changes
     useEffect(() => {
         videoRef.current?.load()
@@ -103,8 +92,16 @@ export const ShowReelSection = () => {
 
     const handleVideoSound = () => {
         if (!videoRef.current) return
-        videoRef.current.muted = !videoRef.current.muted
+        const currentlyMuted = videoRef.current.muted
+        videoRef.current.muted = !currentlyMuted
+        setIsMuted(!currentlyMuted)
     }
+
+    const renderSoundIcon = isMuted ? (
+        <IoIosVolumeOff onClick={handleVideoSound} />
+    ) : (
+        <IoIosVolumeHigh onClick={handleVideoSound} />
+    )
 
     return (
         <StyledFlexContainer alignItems="center" justifyContent="center">
@@ -119,13 +116,19 @@ export const ShowReelSection = () => {
                     initial="hidden"
                     animate="visible"
                 >
-                    <IoIosVolumeHigh onClick={handleVideoSound} />
+                    {renderSoundIcon}
                 </Icon>
-                <StyledShowReel ref={videoRef} autoPlay muted loop playsInline>
+                <StyledShowReel
+                    ref={videoRef}
+                    onClick={handleVideoSound}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                >
                     <source src={showReelSource} type="video/mp4" />
                     Your browser does not support the video tag.
                 </StyledShowReel>
-                <SoundOverlay onClick={handleVideoSound} />
             </Reveal>
         </StyledFlexContainer>
     )

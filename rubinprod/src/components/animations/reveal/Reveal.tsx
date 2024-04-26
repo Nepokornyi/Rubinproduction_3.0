@@ -14,7 +14,7 @@ export type RevealProps = {
 }
 
 const MotionContainer = styled(Box)`
-    z-index: 50;
+    z-index: 9;
 `
 
 export const Reveal = ({
