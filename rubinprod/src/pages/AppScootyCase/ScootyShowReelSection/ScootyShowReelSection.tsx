@@ -8,40 +8,48 @@ import thirdGridImage from '../../../assets/img/scooty/ShowReelGrid/thirdGridIte
 import fourthGridImage from '../../../assets/img/scooty/ShowReelGrid/fourthGridItem.png'
 import fifthGridImage from '../../../assets/img/scooty/ShowReelGrid/fifthGridItem.png'
 import sixthGridImage from '../../../assets/img/scooty/ShowReelGrid/sixthGridItem.png'
+import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 
 const StyledFlexContainer = styled(FlexContainer)`
     clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
     height: 100vh;
 `
 
-const ShowReelGrid = styled(Box)`
+const ShowReelGrid = styled(Box)<{ $isDesktopLayout: boolean }>`
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: ${(props) =>
+        props.$isDesktopLayout ? 'repeat(5, 1fr)' : 'repeat(4, 1fr)'};
+    grid-template-rows: ${(props) =>
+        props.$isDesktopLayout ? 'repeat(4, 1fr)' : 'repeat(5, 1fr)'};
     gap: 15px;
 `
 
-const FirstGridItem = styled(Box)`
+const FirstGridItem = styled(Box)<{ $isDesktopLayout: boolean }>`
     grid-column: span 2 / auto;
+    grid-row: ${(props) => !props.$isDesktopLayout && 'span 2 / auto'};
 `
-const SecondGridItem = styled(Box)`
+const SecondGridItem = styled(Box)<{ $isDesktopLayout: boolean }>`
+    grid-row: ${(props) =>
+        props.$isDesktopLayout ? 'span 2 / auto' : 'span 1 / auto'};
+    grid-column: ${(props) => !props.$isDesktopLayout && 'span 2 / auto'};
+`
+const ThirdGridItem = styled(Box)<{ $isDesktopLayout: boolean }>`
+    grid-column: span 2 / auto;
     grid-row: span 2 / auto;
 `
-const ThirdGridItem = styled(Box)`
-    grid-column: span 2 / auto;
-    grid-row: span 2 / auto;
-`
-const FourthGridItem = styled(Box)`
-    grid-row: span 3 / auto;
+const FourthGridItem = styled(Box)<{ $isDesktopLayout: boolean }>`
+    grid-row: ${(props) =>
+        props.$isDesktopLayout ? 'span 3 / auto' : 'span 1 / auto'};
     grid-column: span 2 / auto;
 `
-const FifthGridItem = styled(Box)`
+const FifthGridItem = styled(Box)<{ $isDesktopLayout: boolean }>`
     grid-row: span 2 / auto;
     grid-column: span 2 / auto;
 `
-const SixthGridItem = styled(Box)`
+const SixthGridItem = styled(Box)<{ $isDesktopLayout: boolean }>`
     grid-row: span 2 / auto;
+    grid-column: ${(props) => !props.$isDesktopLayout && 'span 2 / auto'};
 `
 
 const StyledImage = styled.img`
@@ -51,25 +59,27 @@ const StyledImage = styled.img`
 `
 
 export const ScootyShowReelSection = () => {
+    const isDesktopLayout = useBreakpointBiggerThan('md')
+
     return (
         <StyledFlexContainer>
-            <ShowReelGrid>
-                <FirstGridItem>
+            <ShowReelGrid $isDesktopLayout={isDesktopLayout}>
+                <FirstGridItem $isDesktopLayout={isDesktopLayout}>
                     <StyledImage src={firstGridImage} />
                 </FirstGridItem>
-                <SecondGridItem>
+                <SecondGridItem $isDesktopLayout={isDesktopLayout}>
                     <StyledImage src={secondGridImage} />
                 </SecondGridItem>
-                <ThirdGridItem>
+                <ThirdGridItem $isDesktopLayout={isDesktopLayout}>
                     <StyledImage src={thirdGridImage} />
                 </ThirdGridItem>
-                <FourthGridItem>
+                <FourthGridItem $isDesktopLayout={isDesktopLayout}>
                     <StyledImage src={fourthGridImage} />
                 </FourthGridItem>
-                <FifthGridItem>
+                <FifthGridItem $isDesktopLayout={isDesktopLayout}>
                     <StyledImage src={fifthGridImage} />
                 </FifthGridItem>
-                <SixthGridItem>
+                <SixthGridItem $isDesktopLayout={isDesktopLayout}>
                     <StyledImage src={sixthGridImage} />
                 </SixthGridItem>
             </ShowReelGrid>
