@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { FlexContainer } from '../../../components/layout/FlexContainer'
 import { LayoutFlexContainerProps } from '../../../components/layout/types'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
-import { Header } from '../../../components/Header/Header'
 import background from '../../../assets/img/scooty/scootyLandingBackground.png'
 import backgroundSmall from '../../../assets/img/scooty/scootyLandingBackgroundSmall.png'
 import scootyLogo from '../../../assets/img/scooty/icoScootyLanding.svg'
@@ -38,7 +37,6 @@ export const ScootyMainSection = () => {
             minHeight="100vh"
             center
         >
-            <Header variants="case" />
             <StyledIcon src={scootyLogo} $isDesktopLayout={isDesktopLayout} />
         </StyledFlexContainerBackground>
     )
