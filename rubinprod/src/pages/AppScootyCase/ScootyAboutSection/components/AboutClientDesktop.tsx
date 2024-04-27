@@ -1,26 +1,28 @@
 import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
+import { Box } from '../../../../components/layout/Box'
 
 const StyledFlexContainer = styled(FlexContainer)`
-    max-width: 400px;
+    max-width: 375px;
+`
+const HeadingContainer = styled(Box)`
+    height: 100px;
 `
 
-export const AboutClient = () => {
+export const AboutClientDesktop = () => {
     return (
-        <StyledFlexContainer
-            gap="20px"
-            direction="column"
-            justifyContent="space-between"
-        >
-            <FlexContainer direction="column" gap="20px">
-                <Text $textTransform="uppercase" variant={'nav'}>
-                    Client
-                </Text>
-                <Text $textTransform="uppercase" variant={'button'}>
-                    Scooty
-                </Text>
-            </FlexContainer>
+        <StyledFlexContainer gap="50px" direction="column">
+            <HeadingContainer>
+                <FlexContainer direction="column" gap="20px">
+                    <Text $textTransform="uppercase" variant={'nav'}>
+                        Client
+                    </Text>
+                    <Text $textTransform="uppercase" variant={'button'}>
+                        Scooty
+                    </Text>
+                </FlexContainer>
+            </HeadingContainer>
             <FlexContainer direction="column">
                 <Text
                     $textTransform="uppercase"

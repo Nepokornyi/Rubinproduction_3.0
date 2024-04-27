@@ -2,12 +2,16 @@ import styled from 'styled-components'
 import { FlexContainer } from '../../../components/layout/FlexContainer'
 import { LayoutFlexContainerProps } from '../../../components/layout/types'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
-import { AboutCase } from './components/AboutCase'
-import { AboutClient } from './components/AboutClient'
-import { AboutChallenge } from './components/AboutChallenge'
+import { AboutCaseDesktop } from './components/AboutCaseDesktop'
+import { AboutClientDesktop } from './components/AboutClientDesktop'
+import { AboutChallengeDesktop } from './components/AboutChallengeDesktop'
+import { AboutCaseMobile } from './components/AboutCaseMobile'
+import { AboutClientMobile } from './components/AboutClientMobile'
+import { AboutChallengeMobile } from './components/AboutChallengeMobile'
 
 const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
-    padding: 150px 0px 100px 0;
+    padding: ${(props) =>
+        props.$isDesktopLayout ? '150px 0px 100px 0' : '50px 0px'};
     flex-direction: ${(props) => (props.$isDesktopLayout ? 'row' : 'column')};
     align-items: ${(props) => !props.$isDesktopLayout && 'center'};
     gap: 20px;
@@ -15,8 +19,19 @@ const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
 
 export const ScootyAboutSection = () => {
     const isDesktopLayout = useBreakpointBiggerThan('md')
-
-    // TODO: positioning and flexbox of elements
+    const renderContent = isDesktopLayout ? (
+        <>
+            <AboutCaseDesktop />
+            <AboutClientDesktop />
+            <AboutChallengeDesktop />
+        </>
+    ) : (
+        <>
+            <AboutCaseMobile />
+            <AboutChallengeMobile />
+            <AboutClientMobile />
+        </>
+    )
 
     return (
         <StyledFlexContainer
@@ -25,9 +40,7 @@ export const ScootyAboutSection = () => {
             justifyContent="center"
             gap="20px"
         >
-            <AboutCase />
-            <AboutClient />
-            <AboutChallenge />
+            {renderContent}
         </StyledFlexContainer>
     )
 }

@@ -5,6 +5,7 @@ import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 import background from '../../../assets/img/scooty/scootyLandingBackground.png'
 import backgroundSmall from '../../../assets/img/scooty/scootyLandingBackgroundSmall.png'
 import scootyLogo from '../../../assets/img/scooty/icoScootyLanding.svg'
+import { Reveal } from '../../../components/animations/reveal/Reveal'
 
 const StyledFlexContainerBackground = styled(FlexContainer)<
     LayoutFlexContainerProps & { $isTabletLayout: boolean }
@@ -16,7 +17,6 @@ const StyledFlexContainerBackground = styled(FlexContainer)<
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    align-items: ${(props) => (props.$isDesktopLayout ? 'center' : 'initial')};
     padding: 200px 0 125px 0;
     overflow: hidden;
     clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
@@ -37,7 +37,12 @@ export const ScootyMainSection = () => {
             minHeight="100vh"
             center
         >
-            <StyledIcon src={scootyLogo} $isDesktopLayout={isDesktopLayout} />
+            <Reveal delay={1.5}>
+                <StyledIcon
+                    src={scootyLogo}
+                    $isDesktopLayout={isDesktopLayout}
+                />
+            </Reveal>
         </StyledFlexContainerBackground>
     )
 }
