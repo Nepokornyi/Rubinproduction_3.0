@@ -44,6 +44,7 @@ const StyledButton = styled.button`
 const StyledText = styled(Text)`
     position: relative;
     text-transform: ${(props) => props.$textTransform};
+    padding: ${(props) => props.$paddingOverride};
     pointer-events: none;
 `
 

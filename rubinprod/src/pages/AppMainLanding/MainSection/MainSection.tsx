@@ -42,7 +42,7 @@ const StyledDesktopFlexContainer = styled(FlexContainer)`
 const StyledButton = styled(Button)`
     width: 100%;
     margin: 0;
-    padding-left: 25px;
+    padding-left: 40px;
 `
 
 export const MainSection = () => {
