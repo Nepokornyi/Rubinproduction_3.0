@@ -10,7 +10,8 @@ const calculateBreakpoint = () => {
     if (width < 768) return 'sm'
     if (width < 992) return 'md'
     if (width < 1200) return 'lg'
-    return 'xl'
+    if (width < 1600) return 'xl'
+    return 'xxl'
 }
 
 export const useCurrentBreakpoint = () => {

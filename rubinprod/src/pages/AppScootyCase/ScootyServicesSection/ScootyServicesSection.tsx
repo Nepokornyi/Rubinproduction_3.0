@@ -6,18 +6,29 @@ import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 import { Text } from '../../../components/Text/Text'
 import icoX from '../../../assets/img/scooty/icoX.svg'
 
-const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
-    padding: 150px 0px 100px 0;
-    flex-direction: ${(props) => (props.$isDesktopLayout ? 'row' : 'column')};
+const StyledFlexContainer = styled(FlexContainer)<
+    LayoutFlexContainerProps & { $isTabletLayout: boolean }
+>`
+    padding: ${(props) =>
+        props.$isDesktopLayout ? '150px 0px 100px 0' : '75px 0px'};
+    flex-direction: ${(props) => (props.$isTabletLayout ? 'row' : 'column')};
+    align-items: ${(props) => !props.$isDesktopLayout && 'center'};
+    gap: ${(props) => !props.$isTabletLayout && '100px'};
 `
 
-const Card = styled(Box)`
-    max-width: 300px;
+const CardContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
+    align-items: ${(props) => !props.$isDesktopLayout && 'center'};
+    flex-direction: ${(props) => !props.$isDesktopLayout && 'column'};
+    gap: ${(props) => !props.$isDesktopLayout && '100px'};
+`
+
+const Card = styled(Box)<LayoutFlexContainerProps>`
+    width: 300px;
 
     ul {
         list-style: none;
         li {
-            margin-top: 10px;
+            margin-top: ${(props) => props.$isDesktopLayout && '10px'};
         }
     }
 `
@@ -30,89 +41,144 @@ const TitleRelativeText = styled(Text)`
 
 const AbsoluteX = styled.img`
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: -35px;
 `
 
 export const ScootyServicesSection = () => {
     const isDesktopLayout = useBreakpointBiggerThan('md')
+    const isTabletLayout = useBreakpointBiggerThan('xxl')
+
+    const upperCardJustifyContent = isTabletLayout ? 'end' : 'space-evenly'
+    const bottomCardJustifyContent = isTabletLayout ? 'start' : 'space-evenly'
 
     return (
         <StyledFlexContainer
+            $isTabletLayout={isTabletLayout}
             $isDesktopLayout={isDesktopLayout}
-            justifyContent="space-evenly"
+            gap="100px"
         >
-            <Card>
-                <TitleRelativeText
-                    $paddingOverride="0"
-                    $textTransform="uppercase"
-                    variant="button"
-                >
-                    Strategy
-                    <AbsoluteX src={icoX} alt="" />
-                </TitleRelativeText>
-                <ul>
-                    <li>- Social media strategy</li>
-                    <li>- Brand social audit</li>
-                    <li>- Branding and design</li>
-                </ul>
-            </Card>
+            <CardContainer
+                $isDesktopLayout={isDesktopLayout}
+                justifyContent={upperCardJustifyContent}
+                gap="50px"
+            >
+                <Card $isDesktopLayout={isDesktopLayout}>
+                    <TitleRelativeText
+                        $paddingOverride="0"
+                        $textTransform="uppercase"
+                        variant="button"
+                    >
+                        Strategy
+                        <AbsoluteX src={icoX} alt="" />
+                    </TitleRelativeText>
+                    <ul>
+                        <li>
+                            <Text variant="p" $paddingOverride="0">
+                                - Social media strategy
+                            </Text>
+                        </li>
+                        <li>
+                            <Text variant="p" $paddingOverride="0">
+                                - Brand social audit
+                            </Text>
+                        </li>
+                        <li>
+                            <Text variant="p" $paddingOverride="0">
+                                - Branding and design
+                            </Text>
+                        </li>
+                    </ul>
+                </Card>
 
-            <Card>
-                <TitleRelativeText
-                    $paddingOverride="0"
-                    $textTransform="uppercase"
-                    variant="button"
-                >
-                    Conception
-                    <AbsoluteX src={icoX} alt="" />
-                </TitleRelativeText>
-                <ul>
-                    <li>- Creative treatment</li>
-                    <li>- Project planning, timelines and managements</li>
-                    <li>
-                        - Insight-inspired creative concept that speak to the
-                        brand
-                    </li>
-                </ul>
-            </Card>
+                <Card $isDesktopLayout={isDesktopLayout}>
+                    <TitleRelativeText
+                        $paddingOverride="0"
+                        $textTransform="uppercase"
+                        variant="button"
+                    >
+                        Conception
+                        <AbsoluteX src={icoX} alt="" />
+                    </TitleRelativeText>
+                    <ul>
+                        <li>
+                            <Text variant="p" $paddingOverride="0">
+                                - Creative treatment
+                            </Text>
+                        </li>
+                        <li>
+                            <Text variant="p" $paddingOverride="0">
+                                - Project planning, timelines and managements
+                            </Text>
+                        </li>
+                        <li>
+                            <Text variant="p" $paddingOverride="0">
+                                - Insight-inspired creative concept that speak
+                                to the brand
+                            </Text>
+                        </li>
+                    </ul>
+                </Card>
+            </CardContainer>
 
-            <Card>
-                <TitleRelativeText
-                    $paddingOverride="0"
-                    $textTransform="uppercase"
-                    variant="button"
-                >
-                    Production
-                    <AbsoluteX src={icoX} alt="" />
-                </TitleRelativeText>
-                <ul>
-                    <li>- One full production day</li>
-                    <li>- Film crew of specialized talent</li>
-                    <li>
-                        - Video / photo content to fulfill all the needs of
-                        startup`s marketing campaign
-                    </li>
-                </ul>
-            </Card>
+            <CardContainer
+                $isDesktopLayout={isDesktopLayout}
+                justifyContent={bottomCardJustifyContent}
+                gap="100px"
+            >
+                <Card $isDesktopLayout={isDesktopLayout}>
+                    <TitleRelativeText
+                        $paddingOverride="0"
+                        $textTransform="uppercase"
+                        variant="button"
+                    >
+                        Production
+                        <AbsoluteX src={icoX} alt="" />
+                    </TitleRelativeText>
+                    <ul>
+                        <li>
+                            <Text variant="p" $paddingOverride="0">
+                                - One full production day
+                            </Text>
+                        </li>
+                        <li>
+                            <Text variant="p" $paddingOverride="0">
+                                - Film crew of specialized talent
+                            </Text>
+                        </li>
+                        <li>
+                            <Text variant="p" $paddingOverride="0">
+                                - Video / photo content to fulfill all the needs
+                                of startup`s marketing campaign
+                            </Text>
+                        </li>
+                    </ul>
+                </Card>
 
-            <Card>
-                <TitleRelativeText
-                    $paddingOverride="0"
-                    $textTransform="uppercase"
-                    variant="button"
-                >
-                    Post-Production
-                    <AbsoluteX src={icoX} alt="" />
-                </TitleRelativeText>
-                <ul>
-                    <li>- Photo / video editing optimized by platforms</li>
-                    <li>
-                        - Assistance with publishing content on social media
-                        platforms
-                    </li>
-                </ul>
-            </Card>
+                <Card $isDesktopLayout={isDesktopLayout}>
+                    <TitleRelativeText
+                        $paddingOverride="0"
+                        $textTransform="uppercase"
+                        variant="button"
+                    >
+                        Post-Production
+                        <AbsoluteX src={icoX} alt="" />
+                    </TitleRelativeText>
+                    <ul>
+                        <li>
+                            <Text variant="p" $paddingOverride="0">
+                                - Photo / video editing optimized by platforms
+                            </Text>
+                        </li>
+                        <li>
+                            <Text variant="p" $paddingOverride="0">
+                                - Assistance with publishing content on social
+                                media platforms
+                            </Text>
+                        </li>
+                    </ul>
+                </Card>
+            </CardContainer>
         </StyledFlexContainer>
     )
 }

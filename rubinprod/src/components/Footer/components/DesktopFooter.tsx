@@ -25,7 +25,7 @@ const StyledLogo = styled.img`
 export const DesktopFooter = () => {
     const { t } = useTranslation()
 
-    const isLargeDesktopLayout = useBreakpointBiggerThan('xl')
+    const isLargeDesktopLayout = useBreakpointBiggerThan('lg')
 
     return (
         <StyledFlexContainer
