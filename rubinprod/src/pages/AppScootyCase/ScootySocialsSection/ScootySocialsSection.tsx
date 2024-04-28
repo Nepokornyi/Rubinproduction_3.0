@@ -14,12 +14,15 @@ import eighthGridImage from '../../../assets/img/scooty/instagramGrid/instaEight
 import ninthGridImage from '../../../assets/img/scooty/instagramGrid/instaNinthGridImage.png'
 
 import instagramPhone from '../../../assets/img/scooty/instagramPhone.png'
+import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
+import { LayoutFlexContainerProps } from '../../../components/layout/types'
 
-const StyledFlexContainer = styled(FlexContainer)`
-    padding: 150px 0px 100px 0;
+const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
+    padding: ${(props) =>
+        props.$isDesktopLayout ? '150px 0px 100px 0' : '50px 0px'};
 `
 
-const ShowReelGrid = styled(Box)`
+const ShowReelGrid = styled(Box)<{ $isTabletLayout: boolean }>`
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -27,6 +30,7 @@ const ShowReelGrid = styled(Box)`
     max-width: 500px;
     max-height: 500px;
     gap: 5px;
+    padding: ${(props) => !props.$isTabletLayout && '25px'};
 `
 
 const RelativeText = styled(Text)`
@@ -34,10 +38,11 @@ const RelativeText = styled(Text)`
     text-transform: ${(props) => props.$textTransform};
 `
 
-const StyledText = styled(Text)`
+const StyledText = styled(Text)<LayoutFlexContainerProps>`
     position: absolute;
-    top: 0;
-    right: -150px;
+    top: ${(props) => (props.$isDesktopLayout ? '0' : 'auto')};
+    right: ${(props) => (props.$isDesktopLayout ? '-150px' : '-50px')};
+    bottom: ${(props) => !props.$isDesktopLayout && '-50px'};
     color: #d7f000;
 `
 
@@ -47,24 +52,42 @@ const StyledImage = styled.img`
     object-fit: cover;
 `
 
-const InstagramImage = styled.img`
+const ImageContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
+    height: ${(props) => !props.$isDesktopLayout && '55vh'};
+    min-height: ${(props) => !props.$isDesktopLayout && '500px'};
+`
+
+const InstagramImage = styled.img<LayoutFlexContainerProps>`
+    position: absolute;
+    bottom: -145px;
+    left: ${(props) => (props.$isDesktopLayout ? '0' : '50%')};
+    transform: ${(props) => !props.$isDesktopLayout && 'translateX(-50%)'};
     width: auto;
     height: calc(100% + 50px);
     object-fit: cover;
-    position: absolute;
-    bottom: -145px;
-    left: 0;
 `
 
 export const ScootySocialsSection = () => {
+    const isDesktopLayout = useBreakpointBiggerThan('xl')
+    const isTabletLayout = useBreakpointBiggerThan('md')
+    const direction = isDesktopLayout ? 'row' : 'column'
+
     return (
-        <StyledFlexContainer>
+        <StyledFlexContainer
+            $isDesktopLayout={isDesktopLayout}
+            direction={direction}
+        >
             <FlexContainer direction="column" center gap="50px">
                 <RelativeText $textTransform="uppercase" variant={'h2'}>
                     Instagram
-                    <StyledText fontFamily="Grunges">Grid</StyledText>
+                    <StyledText
+                        $isDesktopLayout={isDesktopLayout}
+                        fontFamily="Grunges"
+                    >
+                        Grid
+                    </StyledText>
                 </RelativeText>
-                <ShowReelGrid>
+                <ShowReelGrid $isTabletLayout={isTabletLayout}>
                     <Box>
                         <StyledImage src={firstGridImage} />
                     </Box>
@@ -95,9 +118,12 @@ export const ScootySocialsSection = () => {
                 </ShowReelGrid>
             </FlexContainer>
 
-            <FlexContainer>
-                <InstagramImage src={instagramPhone} />
-            </FlexContainer>
+            <ImageContainer $isDesktopLayout={isDesktopLayout}>
+                <InstagramImage
+                    $isDesktopLayout={isDesktopLayout}
+                    src={instagramPhone}
+                />
+            </ImageContainer>
         </StyledFlexContainer>
     )
 }
