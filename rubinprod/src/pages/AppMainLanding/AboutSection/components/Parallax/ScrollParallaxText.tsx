@@ -28,11 +28,16 @@ const StyledParallaxContainer = styled(Box)`
     margin: 0;
 `
 
-const StyledScroller = styled(Box)`
+const StyledScroller = styled(Box)<{ $isCase: boolean }>`
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
     gap: 325px;
+
+    span {
+        font-size: ${(props) => props.$isCase && '40px'};
+        color: ${(props) => props.$isCase && '#6E6E6E'};
+    }
 `
 
 export const ScrollParallaxText = ({
@@ -40,7 +45,8 @@ export const ScrollParallaxText = ({
     baseVelocity = 2.5,
     variant = 'main',
 }: ScrollParallaxTextProps) => {
-    const fontVariant = variant === 'main' ? 'Montserrat' : 'Grunges'
+    const isCase = variant === 'case'
+    const fontVariant = isCase ? 'Grunges' : 'Montserrat'
 
     const baseX = useMotionValue(0)
     const { scrollY } = useScroll()
@@ -53,8 +59,11 @@ export const ScrollParallaxText = ({
         clamp: false,
     })
 
+    const mainTransform = useTransform(baseX, (v) => `${wrap(-10, -50, v)}%`)
+    const caseTransform = useTransform(baseX, (v) => `${wrap(-35, -73.55, v)}%`)
+
     // There's a correlation between wrapping values and amount of text elements rendered
-    const x = useTransform(baseX, (v) => `${wrap(-10, -50, v)}%`)
+    const x = isCase ? caseTransform : mainTransform
 
     const directionFactor = useRef<number>(1)
     useAnimationFrame((_t, delta) => {
@@ -77,6 +86,7 @@ export const ScrollParallaxText = ({
                 as={motion.div}
                 className={'scroller'}
                 style={{ x }}
+                $isCase={isCase}
             >
                 <Text
                     fontFamily={fontVariant}
