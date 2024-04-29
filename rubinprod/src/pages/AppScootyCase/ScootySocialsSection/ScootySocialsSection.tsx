@@ -16,6 +16,8 @@ import ninthGridImage from '../../../assets/img/scooty/instagramGrid/instaNinthG
 import instagramPhone from '../../../assets/img/scooty/instagramPhone.png'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 import { LayoutFlexContainerProps } from '../../../components/layout/types'
+import { Reveal } from '../../../components/animations/reveal/Reveal'
+import { RevealBlock } from '../../../components/animations/reveal/RevealBlock'
 
 const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
     padding: ${(props) =>
@@ -79,50 +81,78 @@ export const ScootySocialsSection = () => {
         >
             <FlexContainer direction="column" center gap="50px">
                 <RelativeText $textTransform="uppercase" variant={'h2'}>
-                    Instagram
+                    <Reveal x={-20} removeRepeatedReveal={false}>
+                        Instagram
+                    </Reveal>
                     <StyledText
                         $isDesktopLayout={isDesktopLayout}
                         fontFamily="Grunges"
                     >
-                        Grid
+                        <Reveal x={20} removeRepeatedReveal={false}>
+                            Grid
+                        </Reveal>
                     </StyledText>
                 </RelativeText>
                 <ShowReelGrid $isTabletLayout={isTabletLayout}>
                     <Box>
-                        <StyledImage src={firstGridImage} />
+                        <RevealBlock blockColor="#D7F000">
+                            <StyledImage src={firstGridImage} />
+                        </RevealBlock>
                     </Box>
                     <Box>
-                        <StyledImage src={secondGridImage} />
+                        <RevealBlock blockColor="#D7F000" delay={0.1}>
+                            <StyledImage src={secondGridImage} />
+                        </RevealBlock>
                     </Box>
                     <Box>
-                        <StyledImage src={thirdGridImage} />
+                        <RevealBlock blockColor="#D7F000" delay={0.15}>
+                            <StyledImage src={thirdGridImage} />
+                        </RevealBlock>
                     </Box>
                     <Box>
-                        <StyledImage src={fourthGridImage} />
+                        <RevealBlock blockColor="#D7F000" delay={0.2}>
+                            <StyledImage src={fourthGridImage} />
+                        </RevealBlock>
                     </Box>
                     <Box>
-                        <StyledImage src={fifthGridImage} />
+                        <RevealBlock blockColor="#D7F000" delay={0.25}>
+                            <StyledImage src={fifthGridImage} />
+                        </RevealBlock>
                     </Box>
                     <Box>
-                        <StyledImage src={sixthGridImage} />
+                        <RevealBlock blockColor="#D7F000" delay={0.3}>
+                            <StyledImage src={sixthGridImage} />
+                        </RevealBlock>
                     </Box>
                     <Box>
-                        <StyledImage src={seventhGridImage} />
+                        <RevealBlock blockColor="#D7F000" delay={0.35}>
+                            <StyledImage src={seventhGridImage} />
+                        </RevealBlock>
                     </Box>
                     <Box>
-                        <StyledImage src={eighthGridImage} />
+                        <RevealBlock blockColor="#D7F000" delay={0.4}>
+                            <StyledImage src={eighthGridImage} />
+                        </RevealBlock>
                     </Box>
                     <Box>
-                        <StyledImage src={ninthGridImage} />
+                        <RevealBlock blockColor="#D7F000" delay={0.4}>
+                            <StyledImage src={ninthGridImage} />
+                        </RevealBlock>
                     </Box>
                 </ShowReelGrid>
             </FlexContainer>
 
             <ImageContainer $isDesktopLayout={isDesktopLayout}>
-                <InstagramImage
-                    $isDesktopLayout={isDesktopLayout}
-                    src={instagramPhone}
-                />
+                <Reveal
+                    style={{ width: '100%' }}
+                    removeRepeatedReveal={false}
+                    y={50}
+                >
+                    <InstagramImage
+                        $isDesktopLayout={isDesktopLayout}
+                        src={instagramPhone}
+                    />
+                </Reveal>
             </ImageContainer>
         </StyledFlexContainer>
     )

@@ -8,6 +8,7 @@ import { BsLinkedin } from 'react-icons/bs'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 import quoteUp from '../../../assets/img/scooty/quoteUp.png'
 import quoteDown from '../../../assets/img/scooty/quoteDown.png'
+import { Reveal } from '../../../components/animations/reveal/Reveal'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 150px 0 100px 0;
@@ -66,28 +67,37 @@ export const ScootyFeedbackSection = () => {
                 text="strategy, schooting, animation, instagram feed, branding and design"
             />
             <ReviewContainer direction={direction} center gap="75px">
-                <img src={author} />
+                <Reveal removeRepeatedReveal={false}>
+                    <img src={author} />
+                </Reveal>
                 <ReviewBlock direction="column" gap="50px">
                     <Quote variant="p">
                         <QuoteUp src={quoteUp} />
-                        One of our biggest advantages is that we not only create
-                        content for businesses of all sizes but also, leveraging
-                        our expertise in marketing and sales, adeptly distribute
-                        it across different platforms. This project was quite
-                        demanding both in terms of time invested and the number
-                        of tasks involved. But the key point is - we've
-                        succeeded and are excited to share the results.
+                        <Reveal x={20} removeRepeatedReveal={false}>
+                            One of our biggest advantages is that we not only
+                            create content for businesses of all sizes but also,
+                            leveraging our expertise in marketing and sales,
+                            adeptly distribute it across different platforms.
+                            This project was quite demanding both in terms of
+                            time invested and the number of tasks involved. But
+                            the key point is - we've succeeded and are excited
+                            to share the results.
+                        </Reveal>
                         <QuoteDown src={quoteDown} />
                     </Quote>
                     <TextRelative variant="button" $textTransform="uppercase">
-                        <StyledLink href="https://www.linkedin.com/in/nikita-rubin-a4a04b190/">
-                            Nikita Rubin <BsLinkedin />
-                        </StyledLink>
+                        <Reveal x={-20} removeRepeatedReveal={false}>
+                            <StyledLink href="https://www.linkedin.com/in/nikita-rubin-a4a04b190/">
+                                Nikita Rubin <BsLinkedin />
+                            </StyledLink>
+                        </Reveal>
                         <TextAbsolute
                             $textTransform="uppercase"
                             variant={'socials'}
                         >
-                            Founder of Rubin Production
+                            <Reveal x={20} removeRepeatedReveal={false}>
+                                Founder of Rubin Production
+                            </Reveal>
                         </TextAbsolute>
                     </TextRelative>
                 </ReviewBlock>

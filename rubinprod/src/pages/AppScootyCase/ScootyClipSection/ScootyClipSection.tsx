@@ -8,7 +8,9 @@ import showReel from '../../../assets/video/scooty/scooty.mp4'
 import showReelSmall from '../../../assets/video/scooty/scooty_small.mp4'
 
 const StyledFlexContainer = styled(FlexContainer)`
+    position: relative;
     clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    z-index: 100;
 `
 
 const StyledShowReel = styled.video`

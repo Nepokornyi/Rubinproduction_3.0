@@ -6,6 +6,7 @@ import { ArrowDown } from '../../../components/Arrow/variants'
 import solution from '../../../assets/img/scooty/solution.png'
 import solutionMobile from '../../../assets/img/scooty/solutionMobile.png'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
+import { Reveal } from '../../../components/animations/reveal/Reveal'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 150px 25px 100px 25px;
@@ -29,11 +30,6 @@ const TextAbsolute = styled(Text)<{ $isDesktopLayout: boolean }>`
     text-transform: ${(props) => props.$textTransform};
 `
 
-const StyledArrowDown = styled(ArrowDown)`
-    right: -100px;
-    bottom: 50px;
-`
-
 const StyledImage = styled.img<{ $isTabletLayout: boolean }>`
     width: 100%;
     max-width: 1100px;
@@ -45,7 +41,21 @@ export const ScootySolutionSection = () => {
     const isDesktopLayout = useBreakpointBiggerThan('xl')
     const isTabletLayout = useBreakpointBiggerThan('md')
 
-    const renderArrow = isDesktopLayout ? <StyledArrowDown /> : null
+    const renderArrow = isDesktopLayout ? (
+        <Reveal
+            style={{
+                width: '80px',
+                height: '22px',
+                position: 'absolute',
+                right: '-100px',
+                bottom: '50px',
+            }}
+            y={-20}
+            removeRepeatedReveal={false}
+        >
+            <ArrowDown />
+        </Reveal>
+    ) : null
     const direction = isDesktopLayout ? 'row' : 'column'
     const gap = isDesktopLayout ? '100px' : '50px'
 
@@ -59,27 +69,39 @@ export const ScootySolutionSection = () => {
                 gap={gap}
             >
                 <TextRelative variant="h2" $textTransform="uppercase">
-                    Landing
+                    <Reveal y={-10} removeRepeatedReveal={false}>
+                        Landing
+                    </Reveal>
                     <TextAbsolute
                         $paddingOverride="0"
                         $textTransform="uppercase"
                         $isDesktopLayout={isDesktopLayout}
                         variant="p"
                     >
-                        scooty.cz
+                        <Reveal y={10} removeRepeatedReveal={false}>
+                            scooty.cz
+                        </Reveal>
                     </TextAbsolute>
+
                     {renderArrow}
                 </TextRelative>
 
                 <StyledText $isDesktopLayout={isDesktopLayout} variant="p">
-                    We crafted a lead generation website, enhancing its
-                    structure and enriching its design for improved UI/UX. Our
-                    strategic approach resulted in a visually appealing and
-                    highly functional platform, driving conversions and
-                    facilitating lead acquisition for Scooty
+                    <Reveal x={20} removeRepeatedReveal={false}>
+                        We crafted a lead generation website, enhancing its
+                        structure and enriching its design for improved UI/UX.
+                        Our strategic approach resulted in a visually appealing
+                        and highly functional platform, driving conversions and
+                        facilitating lead acquisition for Scooty
+                    </Reveal>
                 </StyledText>
             </FlexContainer>
-            <StyledImage $isTabletLayout={isTabletLayout} src={imageSource} />
+            <Reveal y={20} removeRepeatedReveal={false}>
+                <StyledImage
+                    $isTabletLayout={isTabletLayout}
+                    src={imageSource}
+                />
+            </Reveal>
         </StyledFlexContainer>
     )
 }

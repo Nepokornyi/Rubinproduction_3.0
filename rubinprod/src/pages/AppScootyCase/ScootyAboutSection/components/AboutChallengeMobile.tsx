@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { CustomArrowDown } from '../../../../components/Arrow/Arrow'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
 import { Text } from '../../../../components/Text/Text'
+import { Reveal } from '../../../../components/animations/reveal/Reveal'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 0 50px;
@@ -9,8 +10,6 @@ const StyledFlexContainer = styled(FlexContainer)`
 
 const StyledCustomArrowDown = styled(CustomArrowDown)`
     position: absolute;
-    left: 40px;
-    bottom: -15px;
     height: ${(props) =>
         props.$isFullHeight ? '100%' : 'clamp(80px, 20vw, 100px)'};
     &::before {
@@ -24,25 +23,47 @@ export const AboutChallengeMobile = () => {
 
     return (
         <StyledFlexContainer direction="column" gap={'10px'}>
-            {render}
+            <Reveal
+                style={{
+                    position: 'absolute',
+                    height: '100%',
+                    left: '40px',
+                    bottom: '-15px',
+                }}
+                y={-25}
+                delay={1}
+                removeRepeatedReveal={false}
+            >
+                {render}
+            </Reveal>
             <Text
                 $textTransform="uppercase"
                 $paddingOverride="0 0 20px 25px"
                 variant={'nav'}
             >
-                Services
+                <Reveal delay={0.6} removeRepeatedReveal={false}>
+                    Services
+                </Reveal>
             </Text>
             <Text $textTransform="uppercase" variant={'button'}>
-                web development
+                <Reveal delay={0.9} removeRepeatedReveal={false}>
+                    web development
+                </Reveal>
             </Text>
             <Text $textTransform="uppercase" variant={'button'}>
-                schooting
+                <Reveal delay={1.2} removeRepeatedReveal={false}>
+                    schooting
+                </Reveal>
             </Text>
             <Text $textTransform="uppercase" variant={'button'}>
-                animation
+                <Reveal delay={1.5} removeRepeatedReveal={false}>
+                    animation
+                </Reveal>
             </Text>
             <Text $textTransform="uppercase" variant={'button'}>
-                instagram feed
+                <Reveal delay={1.8} removeRepeatedReveal={false}>
+                    instagram feed
+                </Reveal>
             </Text>
         </StyledFlexContainer>
     )

@@ -9,6 +9,7 @@ import fourthGridImage from '../../../assets/img/scooty/ShowReelGrid/fourthGridI
 import fifthGridImage from '../../../assets/img/scooty/ShowReelGrid/fifthGridItem.png'
 import sixthGridImage from '../../../assets/img/scooty/ShowReelGrid/sixthGridItem.png'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
+import { RevealBlock } from '../../../components/animations/reveal/RevealBlock'
 
 const StyledFlexContainer = styled(FlexContainer)`
     clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
@@ -65,22 +66,34 @@ export const ScootyShowReelSection = () => {
         <StyledFlexContainer>
             <ShowReelGrid $isDesktopLayout={isDesktopLayout}>
                 <FirstGridItem $isDesktopLayout={isDesktopLayout}>
-                    <StyledImage src={firstGridImage} />
+                    <RevealBlock blockColor="#D7F000">
+                        <StyledImage src={firstGridImage} />
+                    </RevealBlock>
                 </FirstGridItem>
                 <SecondGridItem $isDesktopLayout={isDesktopLayout}>
-                    <StyledImage src={secondGridImage} />
+                    <RevealBlock blockColor="#D7F000" delay={0.15}>
+                        <StyledImage src={secondGridImage} />
+                    </RevealBlock>
                 </SecondGridItem>
                 <ThirdGridItem $isDesktopLayout={isDesktopLayout}>
-                    <StyledImage src={thirdGridImage} />
+                    <RevealBlock blockColor="#D7F000" delay={0.25}>
+                        <StyledImage src={thirdGridImage} />
+                    </RevealBlock>
                 </ThirdGridItem>
                 <FourthGridItem $isDesktopLayout={isDesktopLayout}>
-                    <StyledImage src={fourthGridImage} />
+                    <RevealBlock blockColor="#D7F000" delay={0.3}>
+                        <StyledImage src={fourthGridImage} />
+                    </RevealBlock>
                 </FourthGridItem>
                 <FifthGridItem $isDesktopLayout={isDesktopLayout}>
-                    <StyledImage src={fifthGridImage} />
+                    <RevealBlock blockColor="#D7F000" delay={0.35}>
+                        <StyledImage src={fifthGridImage} />
+                    </RevealBlock>
                 </FifthGridItem>
                 <SixthGridItem $isDesktopLayout={isDesktopLayout}>
-                    <StyledImage src={sixthGridImage} />
+                    <RevealBlock blockColor="#D7F000" delay={0.4}>
+                        <StyledImage src={sixthGridImage} />
+                    </RevealBlock>
                 </SixthGridItem>
             </ShowReelGrid>
         </StyledFlexContainer>

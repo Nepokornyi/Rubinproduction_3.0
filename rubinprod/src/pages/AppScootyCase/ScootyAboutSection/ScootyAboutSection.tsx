@@ -8,6 +8,7 @@ import { AboutChallengeDesktop } from './components/AboutChallengeDesktop'
 import { AboutCaseMobile } from './components/AboutCaseMobile'
 import { AboutClientMobile } from './components/AboutClientMobile'
 import { AboutChallengeMobile } from './components/AboutChallengeMobile'
+import { Reveal } from '../../../components/animations/reveal/Reveal'
 
 const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
     padding: ${(props) =>
@@ -21,9 +22,15 @@ export const ScootyAboutSection = () => {
     const isDesktopLayout = useBreakpointBiggerThan('md')
     const renderContent = isDesktopLayout ? (
         <>
-            <AboutCaseDesktop />
-            <AboutClientDesktop />
-            <AboutChallengeDesktop />
+            <Reveal removeRepeatedReveal={false} x={20}>
+                <AboutCaseDesktop />
+            </Reveal>
+            <Reveal delay={0.5} removeRepeatedReveal={false} x={30}>
+                <AboutClientDesktop />
+            </Reveal>
+            <Reveal delay={1} removeRepeatedReveal={false} x={40}>
+                <AboutChallengeDesktop />
+            </Reveal>
         </>
     ) : (
         <>
