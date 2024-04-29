@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { FlexContainer } from '../../../components/layout/FlexContainer'
-import { Reveal } from '../../../components/animations/reveal/Reveal'
 
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 import { useEffect, useRef } from 'react'
@@ -60,16 +59,10 @@ export const ScootyClipSection = () => {
 
     return (
         <StyledFlexContainer alignItems="center" justifyContent="center">
-            <Reveal
-                style={{ height: '100vh', width: '100%' }}
-                delay={0.5}
-                removeRepeatedReveal={false}
-            >
-                <StyledShowReel ref={videoRef} autoPlay muted loop playsInline>
-                    <source src={showReelSource} type="video/mp4" />
-                    Your browser does not support the video tag.
-                </StyledShowReel>
-            </Reveal>
+            <StyledShowReel ref={videoRef} autoPlay muted loop playsInline>
+                <source src={showReelSource} type="video/mp4" />
+                Your browser does not support the video tag.
+            </StyledShowReel>
         </StyledFlexContainer>
     )
 }

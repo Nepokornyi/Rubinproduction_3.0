@@ -4,13 +4,15 @@ import { Text } from '../../../components/Text/Text'
 import { ArrowDown } from '../../../components/Arrow/variants'
 
 import solution from '../../../assets/img/scooty/solution.png'
+import solutionMobile from '../../../assets/img/scooty/solutionMobile.png'
+import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 
 const StyledFlexContainer = styled(FlexContainer)`
-    padding: 150px 0px 100px 0;
+    padding: 150px 25px 100px 25px;
 `
 
-const StyledText = styled(Text)`
-    max-width: 700px;
+const StyledText = styled(Text)<{ $isDesktopLayout: boolean }>`
+    max-width: ${(props) => props.$isDesktopLayout && '700px'};
 `
 
 const TextRelative = styled(Text)`
@@ -18,10 +20,11 @@ const TextRelative = styled(Text)`
     text-transform: ${(props) => props.$textTransform};
 `
 
-const TextAbsolute = styled(Text)`
+const TextAbsolute = styled(Text)<{ $isDesktopLayout: boolean }>`
     position: absolute;
-    bottom: 0;
-    right: 25px;
+    bottom: ${(props) => (props.$isDesktopLayout ? '0px' : '-15px')};
+    left: ${(props) => (props.$isDesktopLayout ? 'auto' : '25px')};
+    right: ${(props) => (props.$isDesktopLayout ? '25px' : 'auto')};
     padding: ${(props) => props.$paddingOverride};
     text-transform: ${(props) => props.$textTransform};
 `
@@ -31,29 +34,44 @@ const StyledArrowDown = styled(ArrowDown)`
     bottom: 50px;
 `
 
-const StyledImage = styled.img`
-    height: 100%;
+const StyledImage = styled.img<{ $isTabletLayout: boolean }>`
+    width: 100%;
     max-width: 1100px;
-    object-fit: cover;
+    max-height: ${(props) => !props.$isTabletLayout && '600px'};
+    object-fit: contain;
 `
 
 export const ScootySolutionSection = () => {
+    const isDesktopLayout = useBreakpointBiggerThan('xl')
+    const isTabletLayout = useBreakpointBiggerThan('md')
+
+    const renderArrow = isDesktopLayout ? <StyledArrowDown /> : null
+    const direction = isDesktopLayout ? 'row' : 'column'
+    const gap = isDesktopLayout ? '100px' : '50px'
+
+    const imageSource = isTabletLayout ? solution : solutionMobile
+
     return (
         <StyledFlexContainer direction="column" center gap="50px">
-            <FlexContainer justifyContent="center" gap="100px">
+            <FlexContainer
+                justifyContent="center"
+                direction={direction}
+                gap={gap}
+            >
                 <TextRelative variant="h2" $textTransform="uppercase">
                     Landing
                     <TextAbsolute
                         $paddingOverride="0"
                         $textTransform="uppercase"
+                        $isDesktopLayout={isDesktopLayout}
                         variant="p"
                     >
                         scooty.cz
                     </TextAbsolute>
-                    <StyledArrowDown />
+                    {renderArrow}
                 </TextRelative>
 
-                <StyledText variant="p">
+                <StyledText $isDesktopLayout={isDesktopLayout} variant="p">
                     We crafted a lead generation website, enhancing its
                     structure and enriching its design for improved UI/UX. Our
                     strategic approach resulted in a visually appealing and
@@ -61,7 +79,7 @@ export const ScootySolutionSection = () => {
                     facilitating lead acquisition for Scooty
                 </StyledText>
             </FlexContainer>
-            <StyledImage src={solution} />
+            <StyledImage $isTabletLayout={isTabletLayout} src={imageSource} />
         </StyledFlexContainer>
     )
 }
