@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
 import { Box } from '../../../../components/layout/Box'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
-import gameChangerLogo from '../../../../assets/img/gameChanger/gameChangerLogo.png'
+import gameChangerLogo from '../../../../assets/img/gameChanger/icoGameChanger.svg'
 
 const StyledFlexContainer = styled(FlexContainer)`
     max-width: 400px;
