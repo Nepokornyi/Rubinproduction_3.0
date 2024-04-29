@@ -2,30 +2,28 @@ import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
 import { Box } from '../../../../components/layout/Box'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
-import scootyLogo from '../../../../assets/img/scooty/icoScootyLanding.svg'
+import scootyLogo from '../../../../assets/img/scooty/icoScootyColor.svg'
 
 const StyledFlexContainer = styled(FlexContainer)`
-    max-width: 400px;
+    max-width: 375px;
+`
+
+const HeadingContainer = styled(Box)`
+    height: 100px;
 `
 
 const StyledImage = styled.img`
-    padding: 0 25px;
-    width: 100%;
+    padding: 10px 25px;
+    width: 250px;
     height: auto;
 `
 
-// TODO: add green icon
-
-export const AboutCase = () => {
+export const AboutCaseDesktop = () => {
     return (
-        <StyledFlexContainer
-            gap="20px"
-            direction="column"
-            justifyContent="space-between"
-        >
-            <Box>
+        <StyledFlexContainer gap="50px" direction="column">
+            <HeadingContainer>
                 <StyledImage src={scootyLogo} />
-            </Box>
+            </HeadingContainer>
             <FlexContainer direction="column" gap={'10px'}>
                 <Text
                     $textTransform="uppercase"

@@ -153,7 +153,7 @@ export const HamburgerMenu = ({ variants = 'case' }: HamburgerMenuProps) => {
                             <LinkAnimationBox>
                                 <motion.li variants={linkVariants}>
                                     <Link
-                                        to="#portfolio"
+                                        to="/#portfolio"
                                         smooth
                                         onClick={handleCloseDialog}
                                     >

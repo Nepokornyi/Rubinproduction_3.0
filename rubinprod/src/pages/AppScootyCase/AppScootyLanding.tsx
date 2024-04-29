@@ -9,6 +9,7 @@ import { ScootyClipSection } from './ScootyClipSection/ScootyClipSection'
 import { ScootySolutionSection } from './ScootySolutionSection/ScootySolutionSection'
 import { ScootyFeedbackSection } from './ScootyFeedbackSection/ScootyFeedbackSection'
 import { ContactSection } from '../AppMainLanding/ContactSection/ContactSection'
+import { Header } from '../../components/Header/Header'
 
 export const AppScootyLanding = () => {
     return (
@@ -18,6 +19,9 @@ export const AppScootyLanding = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
+            {/* Moved header from main section clip-path 
+            - it caused change of clipping boundaries */}
+            <Header variants="case" />
             <ScootyMainSection />
             <ScootyAboutSection />
             <ScootyShowReelSection />

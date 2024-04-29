@@ -3,10 +3,12 @@ import styled from 'styled-components'
 
 interface ArrowRefProps extends HTMLAttributes<HTMLElement> {
     $isFullWidth?: boolean
+    $isFullHeight?: boolean
 }
 
 type ArrowProps = {
     $isFullWidth?: boolean
+    $isFullHeight?: boolean
 }
 
 const StyledArrowRight = styled.i<ArrowProps>`
@@ -40,13 +42,14 @@ const StyledArrowRight = styled.i<ArrowProps>`
     }
 `
 
-const StyledCustomArrowDown = styled.i`
+const StyledCustomArrowDown = styled.i<ArrowProps>`
     & {
         box-sizing: border-box;
         position: relative;
         display: block;
         width: 22px;
-        height: clamp(80px, 20vw, 100px);
+        height: ${(props) =>
+            props.$isFullHeight ? '100%' : 'clamp(80px, 20vw, 100px)'};
     }
     &::after,
     &::before {
@@ -67,7 +70,8 @@ const StyledCustomArrowDown = styled.i`
     &::before {
         width: 2px;
         height: 120px; /* Lengthened for vertical orientation */
-        height: clamp(80px, 20vw, 100px);
+        height: ${(props) =>
+            props.$isFullHeight ? '100%' : 'clamp(80px, 20vw, 100px)'};
         left: 10px;
         bottom: 13px;
         background: #fff;
@@ -87,19 +91,18 @@ const ArrowRight = forwardRef<HTMLElement, ArrowRefProps>((props, ref) => {
     )
 })
 
-const CustomArrowDown = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
-    (props, ref) => {
-        return (
-            <>
-                <StyledCustomArrowDown
-                    {...props}
-                    ref={ref}
-                    icon-role="arrow-right"
-                />
-            </>
-        )
-    }
-)
+const CustomArrowDown = forwardRef<HTMLElement, ArrowRefProps>((props, ref) => {
+    return (
+        <>
+            <StyledCustomArrowDown
+                {...props}
+                ref={ref}
+                icon-role="arrow-right"
+                $isFullHeight={props.$isFullHeight}
+            />
+        </>
+    )
+})
 
 // Setting displayName for the component
 ArrowRight.displayName = 'ArrowRight'
