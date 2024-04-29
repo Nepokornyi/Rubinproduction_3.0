@@ -62,7 +62,7 @@ export const HeaderMenu = ({ variants = 'main' }: HeaderMenuProps) => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="#portfolio" smooth>
+                    <Link to="/#portfolio" smooth>
                         <Reveal delay={0.75} y={-15}>
                             <AnimatedLink title={t('header.menu.portfolio')} />
                         </Reveal>

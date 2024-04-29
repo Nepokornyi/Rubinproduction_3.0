@@ -16,6 +16,7 @@ const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
     flex-direction: ${(props) => (props.$isDesktopLayout ? 'row' : 'column')};
     align-items: ${(props) => !props.$isDesktopLayout && 'center'};
     gap: 20px;
+    overflow: hidden;
 `
 
 export const ScootyAboutSection = () => {
