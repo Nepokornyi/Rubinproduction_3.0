@@ -16,9 +16,11 @@ import {
 import emailjs from '@emailjs/browser'
 import { useDialogState } from '../../../../helpers/useDialogState'
 import { OverlayEmail } from '../../../../components/Overlay/OverlayEmail'
+import { AppLandingVariants } from '../../../../components/Header/Header'
 
 type ContactFormProps = {
     color?: string
+    variant?: AppLandingVariants
 }
 
 type ButtonProps = LayoutFlexContainerProps & {
@@ -32,7 +34,7 @@ const StyledForm = styled.form<LayoutFlexContainerProps>`
 
 const StyledButton = styled(Button)<ButtonProps>`
     background-color: ${(props) => props.$isDesktopLayout && '#0C0C0C'};
-    border-color: ${(props) => props.$isDesktopLayout && props.$borderColor};
+    border-color: ${(props) => props.$borderColor && props.$borderColor};
 `
 
 const StyledInput = styled(Input)`
@@ -55,14 +57,23 @@ const StyledReveal = (props: RevealProps) => (
     </Reveal>
 )
 
-export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
+export const ContactForm = ({
+    color = '#0C0C0C',
+    variant,
+}: ContactFormProps) => {
     const { t } = useTranslation()
 
     const isDesktopLayout = useBreakpointBiggerThan('md')
     const isLargeDesktopLayout = useBreakpointBiggerThan('lg')
 
     const { showDialog, handleOpenDialog, handleCloseDialog } = useDialogState()
-    const buttonHover = isDesktopLayout ? color : '#d91e37'
+
+    const isMainVariant = variant === 'main'
+    const buttonHover = isMainVariant
+        ? isDesktopLayout
+            ? color
+            : '#d91e37'
+        : color
 
     const {
         register,
@@ -137,7 +148,7 @@ export const ContactForm = ({ color = '#0C0C0C' }: ContactFormProps) => {
                     <Reveal x={-80} removeRepeatedReveal={false}>
                         <StyledButton
                             $isDesktopLayout={isDesktopLayout}
-                            $borderColor={color}
+                            $borderColor={buttonHover}
                             blockColor={buttonHover}
                             disabled={isSubmitting}
                             type={'submit'}

@@ -20,7 +20,7 @@ export const AppMainLanding = () => {
             <ShowReelSection />
             <Gradient>
                 <WorkSection />
-                <ContactSection />
+                <ContactSection variant="main" />
             </Gradient>
             <Footer />
         </motion.div>
