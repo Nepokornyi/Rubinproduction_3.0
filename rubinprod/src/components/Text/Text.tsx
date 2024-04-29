@@ -10,7 +10,7 @@ import {
 } from './const'
 
 type TextProps = {
-    children: ReactNode
+    children?: ReactNode
     fontFamily?: FontFamily
     variant?: VariantStyles
     fontWeight?: FontWeight
@@ -19,6 +19,7 @@ type TextProps = {
     $paddingOverride?: string
     $textAlign?: TextAlign
     className?: string
+    dangerousText?: string
 }
 
 const StyledText = styled.span<TextProps>`
@@ -31,12 +32,25 @@ const StyledText = styled.span<TextProps>`
     padding: ${(props) => props.$paddingOverride};
 `
 
-export const Text = ({ children, $paddingOverride, ...props }: TextProps) => {
+export const Text = ({
+    children,
+    dangerousText,
+    $paddingOverride,
+    ...props
+}: TextProps) => {
     const paddingValue = $paddingOverride ?? '0 25px'
 
-    return (
+    const content = dangerousText ? (
+        <StyledText
+            $paddingOverride={paddingValue}
+            dangerouslySetInnerHTML={{ __html: dangerousText }}
+            {...props}
+        />
+    ) : (
         <StyledText $paddingOverride={paddingValue} {...props}>
             {children}
         </StyledText>
     )
+
+    return <>{content}</>
 }

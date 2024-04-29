@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
 import { Box } from '../../../../components/layout/Box'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)`
     max-width: 375px;
@@ -12,6 +13,9 @@ const HeadingContainer = styled(Box)`
 `
 
 export const AboutChallengeDesktop = () => {
+    const { t } = useTranslation()
+    const scootyChallenge = t('scootyCase.challenge')
+
     return (
         <StyledFlexContainer gap="50px" direction="column">
             <HeadingContainer>
@@ -33,12 +37,7 @@ export const AboutChallengeDesktop = () => {
                 >
                     Challenge
                 </Text>
-                <Text variant="p">
-                    We fully equipped <strong>Scooty</strong> with digital
-                    production and launched their startup in the media sphere.
-                    Our comprehensive digital strategy enhanced visibility and
-                    engagement, showcasing our commitment to driving success
-                </Text>
+                <Text variant="p" dangerousText={scootyChallenge} />
             </FlexContainer>
         </StyledFlexContainer>
     )

@@ -31,6 +31,25 @@
         "agreement": "Souhlasím s podmínkami...",
         "submit": "Poslat žádost"
     },
+    "scootyCase": {
+        "client": "<strong>Scooty</strong> je startup, který se zabývá rozvozem jídla a poskytuje kurýrům stabilní příjem a flexibilní rozvrh. Pllatforma Scooty podporuje vyváženou dynamiku pracovního a soukromého života kurýrů a přináší revoluční změny v oblasti udržitelnosti a spravedlnosti.",
+        "challenge": "<strong>Scooty</strong> jsme vybavili kompletní digitální produkcí a uvedli startup do mediální sféry. Naše komplexní strategie zvýšila viditelnost a angažovanost a podtvrdila naše odhodlání dosáhnout úspěchu.",
+        "services": {
+            "strategy1": "- Strategie pro sociální sítě",
+            "strategy2": "- Sociální audit značky",
+            "strategy3": "- Branding a design",
+            "conception1": "- Kreativní zpracování",
+            "conception2": "- Plánování, harmonogramy a řízení projektů",
+            "conception3": "- Kreativní koncepce inspirovaná náhledem, který vypovídá o značce",
+            "production1": "- Jeden produkční den",
+            "production2": "- Filmový tým plný nadaných specialistů",
+            "production3": "- Video / foto obsah pro splnění všech potřeb marketingové kampaně startupu",
+            "postProd1": "- Úprava fotografií / videí optimalizovaných podle potřeb platforem",
+            "postProd2": "- Pomoc s publikací materiálu na sociálních sítích"
+        },
+        "solution": "Vytvořili jsme webovou stránku pro získávání potenciálních zákazníků, vylepšili jsme strukturu a obohatili design o kvalitnější uživatelské prostředí (UI/UX). Výsledkem našeho strategického přístupu je vizuálně atraktivní a vysoce funkční platforma, která podporuje a usnadňuje získávání klientů pro společnost Scooty.",
+        "feedback": "Jednou z našich největších výhod je, že nejen vytváříme obsah pro firmy všech velikostí, ale také jej s využitím našich odborných znalostí v oblasti marketingu a prodeje umíme distribuovat na různé platformy. Tento projekt byl poměrně náročný jak z hlediska investovaného času, tak i z hlediska množství úkolů. Klíčové však je - uspěli jsme a těší nás, že se můžeme podělit o výsledky."
+    },
     "footer": {
         "socials": {
             "behance": "Behance",

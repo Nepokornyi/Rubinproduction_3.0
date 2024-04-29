@@ -28,8 +28,27 @@
     "contactPage": {
         "title": "Let's talk",
         "subtitle": "About your project",
-        "agreement": "Ich stimme den Bedingungen zu...",
+        "agreement": "ICH STIMME MIT DEN BEDINGUNGEN ÜBEREIN...",
         "submit": "Anfrage senden"
+    },
+    "scootyCase": {
+        "client": "<strong>Scooty</strong> ist ein Startup in der Sphäre von Lebensmittellieferungen, das den Kurieren ein regelmäßiges Einkommen und flexiblen Zeitplan bietet. Scooty unterstützt die Work-Life-Balance von Kurieren und verbessert die Nachhaltigkeit und Gerechtigkeit.",
+        "challenge": "Wir haben <strong>Scooty</strong> mit einer kompletten digitalen Produktion ausgestattet und das Startup in die Medienwelt eingeführt. Unsere umfassende Strategie hat die Sichtbarkeit und das Engagement erhöht und unser Streben nach Erfolg bestätigt.",
+        "services": {
+            "strategy1": "- Strategie für soziale Medien",
+            "strategy2": "- Social-Media-Audit",
+            "strategy3": "- Branding und Design",
+            "conception1": "- Kreative Bearbeitung",
+            "conception2": "- Planung, Terminierung und Projektleitung",
+            "conception3": "- Kreative Konzepte, inspiriert von Einsichten, die die Marke ansprechen",
+            "production1": "- Ein Produktionstag",
+            "production2": "- Ein Filmteam voller talentierter Spezialisten",
+            "production3": "- Video-/Fotoinhalte, die alle Anforderungen der Marketingkampagne des Start-ups erfüllen",
+            "postProd1": "- Bearbeitung von Fotos/Videos, optimiert für die verschiedenen Plattformen",
+            "postProd2": "- Hilfe bei der Veröffentlichung von Material auf sozialen Medien"
+        },
+        "solution": "Wir haben eine Website erstellt, die potenzielle Kunden anzieht. Ausserdem haben wir die Struktur verbessert und das Design mit einer besseren Benutzeroberfläche (UI/UX) ausgestattet. Das Ergebnis unseres strategischen Ansatzes ist eine visuell ansprechende und hochfunktionale Plattform, die die Kundengewinnung für Scooty unterstützt und erleichtert.",
+        "feedback": "Einer unserer größten Vorteile ist, dass wir nicht nur Inhalte für Unternehmen jeder Größe erstellen, sondern diese auch über mehrere Plattformen verbreiten können, indem wir unser Fachwissen in den Bereichen Marketing und Sales einsetzen. Dieses Projekt war eine ziemliche Herausforderung, sowohl was die investierte Zeit als auch die Anzahl der Aufgaben angeht. Aber das Wichtigste ist, dass es uns gelungen ist, und wir freuen uns, das Ergebnis mit Ihnen zu teilen."
     },
     "footer": {
         "socials": {

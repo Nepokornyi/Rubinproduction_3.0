@@ -7,6 +7,7 @@ import solution from '../../../assets/img/scooty/solution.png'
 import solutionMobile from '../../../assets/img/scooty/solutionMobile.png'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 import { Reveal } from '../../../components/animations/reveal/Reveal'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 150px 25px 100px 25px;
@@ -38,6 +39,8 @@ const StyledImage = styled.img<{ $isTabletLayout: boolean }>`
 `
 
 export const ScootySolutionSection = () => {
+    const { t } = useTranslation()
+
     const isDesktopLayout = useBreakpointBiggerThan('xl')
     const isTabletLayout = useBreakpointBiggerThan('md')
 
@@ -88,11 +91,7 @@ export const ScootySolutionSection = () => {
 
                 <StyledText $isDesktopLayout={isDesktopLayout} variant="p">
                     <Reveal x={20} removeRepeatedReveal={false}>
-                        We crafted a lead generation website, enhancing its
-                        structure and enriching its design for improved UI/UX.
-                        Our strategic approach resulted in a visually appealing
-                        and highly functional platform, driving conversions and
-                        facilitating lead acquisition for Scooty
+                        {t('scootyCase.solution')}
                     </Reveal>
                 </StyledText>
             </FlexContainer>

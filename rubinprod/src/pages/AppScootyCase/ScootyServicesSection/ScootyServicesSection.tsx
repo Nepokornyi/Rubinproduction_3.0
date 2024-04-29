@@ -6,6 +6,7 @@ import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 import { Text } from '../../../components/Text/Text'
 import icoX from '../../../assets/img/scooty/icoX.svg'
 import { Reveal } from '../../../components/animations/reveal/Reveal'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)<
     LayoutFlexContainerProps & { $isTabletLayout: boolean }
@@ -47,6 +48,8 @@ const AbsoluteX = styled.img`
 `
 
 export const ScootyServicesSection = () => {
+    const { t } = useTranslation()
+
     const isDesktopLayout = useBreakpointBiggerThan('md')
     const isTabletLayout = useBreakpointBiggerThan('xxl')
 
@@ -77,17 +80,17 @@ export const ScootyServicesSection = () => {
                         <ul>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Social media strategy
+                                    {t('scootyCase.services.strategy1')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Brand social audit
+                                    {t('scootyCase.services.strategy2')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Branding and design
+                                    {t('scootyCase.services.strategy3')}
                                 </Text>
                             </li>
                         </ul>
@@ -107,19 +110,17 @@ export const ScootyServicesSection = () => {
                         <ul>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Creative treatment
+                                    {t('scootyCase.services.conception1')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Project planning, timelines and
-                                    managements
+                                    {t('scootyCase.services.conception2')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Insight-inspired creative concept that
-                                    speak to the brand
+                                    {t('scootyCase.services.conception3')}
                                 </Text>
                             </li>
                         </ul>
@@ -145,18 +146,17 @@ export const ScootyServicesSection = () => {
                         <ul>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - One full production day
+                                    {t('scootyCase.services.production1')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Film crew of specialized talent
+                                    {t('scootyCase.services.production2')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Video / photo content to fulfill all the
-                                    needs of startup`s marketing campaign
+                                    {t('scootyCase.services.production3')}
                                 </Text>
                             </li>
                         </ul>
@@ -175,14 +175,12 @@ export const ScootyServicesSection = () => {
                         <ul>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Photo / video editing optimized by
-                                    platforms
+                                    {t('scootyCase.services.postProd1')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Assistance with publishing content on
-                                    social media platforms
+                                    {t('scootyCase.services.postProd2')}
                                 </Text>
                             </li>
                         </ul>

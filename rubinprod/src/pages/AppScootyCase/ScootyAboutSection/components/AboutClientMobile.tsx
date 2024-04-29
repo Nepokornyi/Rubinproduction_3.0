@@ -2,12 +2,20 @@ import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
 import { Reveal } from '../../../../components/animations/reveal/Reveal'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 25px 25px;
+    span {
+        display: inline-block;
+    }
 `
 
 export const AboutClientMobile = () => {
+    const { t } = useTranslation()
+    const scootyChallenge = t('scootyCase.challenge')
+    const scootyClient = t('scootyCase.client')
+
     return (
         <StyledFlexContainer direction="column" gap="25px">
             <FlexContainer direction="column">
@@ -21,16 +29,9 @@ export const AboutClientMobile = () => {
                         Client
                     </Reveal>
                 </Text>
-                <Text variant="p">
-                    <Reveal delay={0.5} x={-20} removeRepeatedReveal={false}>
-                        <strong>Scooty</strong>, a food delivery startup,
-                        provides couriers with stable income and flexible
-                        schedules. Their platform connects couriers with
-                        delivery requests, fostering a balanced work-life
-                        dynamic and revolutionizing the industry for
-                        sustainability and equity
-                    </Reveal>
-                </Text>
+                <Reveal delay={0.5} x={-20} removeRepeatedReveal={false}>
+                    <Text variant="p" dangerousText={scootyChallenge} />
+                </Reveal>
             </FlexContainer>
 
             <FlexContainer direction="column">
@@ -44,15 +45,9 @@ export const AboutClientMobile = () => {
                         Challenge
                     </Reveal>
                 </Text>
-                <Text variant="p">
-                    <Reveal delay={0.5} x={-20} removeRepeatedReveal={false}>
-                        We fully equipped <strong>Scooty</strong> with digital
-                        production and launched their startup in the media
-                        sphere. Our comprehensive digital strategy enhanced
-                        visibility and engagement, showcasing our commitment to
-                        driving success
-                    </Reveal>
-                </Text>
+                <Reveal delay={0.5} x={-20} removeRepeatedReveal={false}>
+                    <Text variant="p" dangerousText={scootyClient} />
+                </Reveal>
             </FlexContainer>
         </StyledFlexContainer>
     )

@@ -9,6 +9,7 @@ import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
 import quoteUp from '../../../assets/img/scooty/quoteUp.png'
 import quoteDown from '../../../assets/img/scooty/quoteDown.png'
 import { Reveal } from '../../../components/animations/reveal/Reveal'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 150px 0 100px 0;
@@ -57,6 +58,8 @@ const StyledLink = styled.a`
 `
 
 export const ScootyFeedbackSection = () => {
+    const { t } = useTranslation()
+
     const isDesktopLayout = useBreakpointBiggerThan('xl')
     const direction = isDesktopLayout ? 'row' : 'column'
 
@@ -74,14 +77,7 @@ export const ScootyFeedbackSection = () => {
                     <Quote variant="p">
                         <QuoteUp src={quoteUp} />
                         <Reveal x={20} removeRepeatedReveal={false}>
-                            One of our biggest advantages is that we not only
-                            create content for businesses of all sizes but also,
-                            leveraging our expertise in marketing and sales,
-                            adeptly distribute it across different platforms.
-                            This project was quite demanding both in terms of
-                            time invested and the number of tasks involved. But
-                            the key point is - we've succeeded and are excited
-                            to share the results.
+                            {t('scootyCase.feedback')}
                         </Reveal>
                         <QuoteDown src={quoteDown} />
                     </Quote>

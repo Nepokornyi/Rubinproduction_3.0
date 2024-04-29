@@ -31,6 +31,25 @@
         "agreement": "I agree with terms...",
         "submit": "Send request"
     },
+    "scootyCase": {
+        "client": "<strong>Scooty</strong>, a food delivery startup, provides couriers with stable income and flexible schedules. Their platform connects couriers with delivery requests, fostering a balanced work-life dynamic and revolutionizing the industry for sustainability and equity",
+        "challenge": "We fully equipped <strong>Scooty</strong> with digital production and launched their startup in the media sphere. Our comprehensive digital strategy enhanced visibility and engagement, showcasing our commitment to driving success",
+        "services": {
+            "strategy1": "- Social media strategy",
+            "strategy2": "- Brand social audit",
+            "strategy3": "- Branding and design",
+            "conception1": "- Creative treatment",
+            "conception2": "- Project planning, timelines and managements",
+            "conception3": "- Insight-inspired creative concept that speak to the brand",
+            "production1": "- One full production day",
+            "production2": "- Film crew of specialized talent",
+            "production3": "- Video / photo content to fulfill all the needs of startup`s marketing campaign",
+            "postProd1": "- Photo / video editing optimized by platforms",
+            "postProd2": "- Assistance with publishing content on social media platforms"
+        },
+        "solution": "We crafted a lead generation website, enhancing its structure and enriching its design for improved UI/UX. Our strategic approach resulted in a visually appealing and highly functional platform, driving conversions and facilitating lead acquisition for Scooty",
+        "feedback": "One of our biggest advantages is that we not only create content for businesses of all sizes but also, leveraging our expertise in marketing and sales, adeptly distribute it across different platforms. This project was quite demanding both in terms of time invested and the number of tasks involved. But the key point is - we've succeeded and are excited to share the results."
+    },
     "footer": {
         "socials": {
             "behance": "Behance",

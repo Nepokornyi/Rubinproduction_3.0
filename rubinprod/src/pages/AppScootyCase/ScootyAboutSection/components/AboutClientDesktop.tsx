@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
 import { Box } from '../../../../components/layout/Box'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)`
     max-width: 375px;
@@ -11,6 +12,9 @@ const HeadingContainer = styled(Box)`
 `
 
 export const AboutClientDesktop = () => {
+    const { t } = useTranslation()
+    const scootyClient = t('scootyCase.client')
+
     return (
         <StyledFlexContainer gap="50px" direction="column">
             <HeadingContainer>
@@ -31,13 +35,7 @@ export const AboutClientDesktop = () => {
                 >
                     Client
                 </Text>
-                <Text variant="p">
-                    <strong>Scooty</strong>, a food delivery startup, provides
-                    couriers with stable income and flexible schedules. Their
-                    platform connects couriers with delivery requests, fostering
-                    a balanced work-life dynamic and revolutionizing the
-                    industry for sustainability and equity
-                </Text>
+                <Text variant="p" dangerousText={scootyClient} />
             </FlexContainer>
         </StyledFlexContainer>
     )
