@@ -15,6 +15,8 @@ import alternativeThirdGridImage from '../../../assets/img/gameChanger/ShowReelG
 import alternativeFourthGridImage from '../../../assets/img/gameChanger/ShowReelGrid/alternativeFourthGridItem.png'
 import alternativeFifthGridImage from '../../../assets/img/gameChanger/ShowReelGrid/alternativeFifthGridItem.png'
 import alternativeSixthGridImage from '../../../assets/img/gameChanger/ShowReelGrid/alternativeSixthGridItem.png'
+import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
+import { RevealBlock } from '../../../components/animations/reveal/RevealBlock'
 
 type GameChangerShowReelProps = {
     variant: 'first' | 'second'
@@ -25,34 +27,41 @@ const StyledFlexContainer = styled(FlexContainer)`
     height: 100vh;
 `
 
-const ShowReelGrid = styled(Box)`
+const ShowReelGrid = styled(Box)<{ $isDesktopLayout: boolean }>`
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: ${(props) =>
+        props.$isDesktopLayout ? 'repeat(5, 1fr)' : 'repeat(4, 1fr)'};
+    grid-template-rows: ${(props) =>
+        props.$isDesktopLayout ? 'repeat(4, 1fr)' : 'repeat(5, 1fr)'};
     gap: 15px;
 `
 
-const FirstGridItem = styled(Box)`
+const FirstGridItem = styled(Box)<{ $isDesktopLayout: boolean }>`
     grid-column: span 2 / auto;
+    grid-row: ${(props) => !props.$isDesktopLayout && 'span 2 / auto'};
 `
-const SecondGridItem = styled(Box)`
+const SecondGridItem = styled(Box)<{ $isDesktopLayout: boolean }>`
+    grid-row: ${(props) =>
+        props.$isDesktopLayout ? 'span 2 / auto' : 'span 1 / auto'};
+    grid-column: ${(props) => !props.$isDesktopLayout && 'span 2 / auto'};
+`
+const ThirdGridItem = styled(Box)<{ $isDesktopLayout: boolean }>`
+    grid-column: span 2 / auto;
     grid-row: span 2 / auto;
 `
-const ThirdGridItem = styled(Box)`
-    grid-column: span 2 / auto;
-    grid-row: span 2 / auto;
-`
-const FourthGridItem = styled(Box)`
-    grid-row: span 3 / auto;
+const FourthGridItem = styled(Box)<{ $isDesktopLayout: boolean }>`
+    grid-row: ${(props) =>
+        props.$isDesktopLayout ? 'span 3 / auto' : 'span 1 / auto'};
     grid-column: span 2 / auto;
 `
-const FifthGridItem = styled(Box)`
+const FifthGridItem = styled(Box)<{ $isDesktopLayout: boolean }>`
     grid-row: span 2 / auto;
     grid-column: span 2 / auto;
 `
-const SixthGridItem = styled(Box)`
+const SixthGridItem = styled(Box)<{ $isDesktopLayout: boolean }>`
     grid-row: span 2 / auto;
+    grid-column: ${(props) => !props.$isDesktopLayout && 'span 2 / auto'};
 `
 
 const StyledImage = styled.img`
@@ -64,49 +73,75 @@ const StyledImage = styled.img`
 export const GameChangerShowReelSection = ({
     variant,
 }: GameChangerShowReelProps) => {
+    const isDesktopLayout = useBreakpointBiggerThan('md')
+
     return (
         <StyledFlexContainer>
-            <ShowReelGrid>
+            <ShowReelGrid $isDesktopLayout={isDesktopLayout}>
                 {variant === 'first' ? (
                     <>
-                        <FirstGridItem>
-                            <StyledImage src={firstGridImage} />
+                        <FirstGridItem $isDesktopLayout={isDesktopLayout}>
+                            <RevealBlock blockColor="#7055EC">
+                                <StyledImage src={firstGridImage} />
+                            </RevealBlock>
                         </FirstGridItem>
-                        <SecondGridItem>
-                            <StyledImage src={secondGridImage} />
+                        <SecondGridItem $isDesktopLayout={isDesktopLayout}>
+                            <RevealBlock blockColor="#7055EC" delay={0.15}>
+                                <StyledImage src={secondGridImage} />
+                            </RevealBlock>
                         </SecondGridItem>
-                        <ThirdGridItem>
-                            <StyledImage src={thirdGridImage} />
+                        <ThirdGridItem $isDesktopLayout={isDesktopLayout}>
+                            <RevealBlock blockColor="#7055EC" delay={0.25}>
+                                <StyledImage src={thirdGridImage} />
+                            </RevealBlock>
                         </ThirdGridItem>
-                        <FourthGridItem>
-                            <StyledImage src={fourthGridImage} />
+                        <FourthGridItem $isDesktopLayout={isDesktopLayout}>
+                            <RevealBlock blockColor="#7055EC" delay={0.3}>
+                                <StyledImage src={fourthGridImage} />
+                            </RevealBlock>
                         </FourthGridItem>
-                        <FifthGridItem>
-                            <StyledImage src={fifthGridImage} />
+                        <FifthGridItem $isDesktopLayout={isDesktopLayout}>
+                            <RevealBlock blockColor="#7055EC" delay={0.35}>
+                                <StyledImage src={fifthGridImage} />
+                            </RevealBlock>
                         </FifthGridItem>
-                        <SixthGridItem>
-                            <StyledImage src={sixthGridImage} />
+                        <SixthGridItem $isDesktopLayout={isDesktopLayout}>
+                            <RevealBlock blockColor="#7055EC" delay={0.4}>
+                                <StyledImage src={sixthGridImage} />
+                            </RevealBlock>
                         </SixthGridItem>
                     </>
                 ) : (
                     <>
-                        <FirstGridItem>
-                            <StyledImage src={alternativeFirstGridImage} />
+                        <FirstGridItem $isDesktopLayout={isDesktopLayout}>
+                            <RevealBlock blockColor="#7055EC">
+                                <StyledImage src={alternativeFirstGridImage} />
+                            </RevealBlock>
                         </FirstGridItem>
-                        <SecondGridItem>
-                            <StyledImage src={alternativeSecondGridImage} />
+                        <SecondGridItem $isDesktopLayout={isDesktopLayout}>
+                            <RevealBlock blockColor="#7055EC" delay={0.15}>
+                                <StyledImage src={alternativeSecondGridImage} />
+                            </RevealBlock>
                         </SecondGridItem>
-                        <ThirdGridItem>
-                            <StyledImage src={alternativeThirdGridImage} />
+                        <ThirdGridItem $isDesktopLayout={isDesktopLayout}>
+                            <RevealBlock blockColor="#7055EC" delay={0.25}>
+                                <StyledImage src={alternativeThirdGridImage} />
+                            </RevealBlock>
                         </ThirdGridItem>
-                        <FourthGridItem>
-                            <StyledImage src={alternativeFourthGridImage} />
+                        <FourthGridItem $isDesktopLayout={isDesktopLayout}>
+                            <RevealBlock blockColor="#7055EC" delay={0.3}>
+                                <StyledImage src={alternativeFourthGridImage} />
+                            </RevealBlock>
                         </FourthGridItem>
-                        <FifthGridItem>
-                            <StyledImage src={alternativeFifthGridImage} />
+                        <FifthGridItem $isDesktopLayout={isDesktopLayout}>
+                            <RevealBlock blockColor="#7055EC" delay={0.35}>
+                                <StyledImage src={alternativeFifthGridImage} />
+                            </RevealBlock>
                         </FifthGridItem>
-                        <SixthGridItem>
-                            <StyledImage src={alternativeSixthGridImage} />
+                        <SixthGridItem $isDesktopLayout={isDesktopLayout}>
+                            <RevealBlock blockColor="#7055EC" delay={0.4}>
+                                <StyledImage src={alternativeSixthGridImage} />
+                            </RevealBlock>
                         </SixthGridItem>
                     </>
                 )}
