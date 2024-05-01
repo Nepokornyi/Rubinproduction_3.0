@@ -2,13 +2,14 @@ import styled from 'styled-components'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
 import { Text } from '../../../../components/Text/Text'
 import { Box } from '../../../../components/layout/Box'
-
-import marketingFirst from '../../../../assets/img/gameChanger/marketing/marketingFirst.png'
-import marketingSecond from '../../../../assets/img/gameChanger/marketing/marketingSecond.png'
-import marketingThird from '../../../../assets/img/gameChanger/marketing/marketingThird.png'
 import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
 import { LayoutFlexContainerProps } from '../../../../components/layout/types'
 import { Reveal } from '../../../../components/animations/reveal/Reveal'
+import { MutableRefObject, useEffect, useRef } from 'react'
+
+import marketingFirst from '../../../../assets/video/gameChanger/topMarketing.mp4'
+import marketingSecond from '../../../../assets/video/gameChanger/middleMarketing.mp4'
+import marketingThird from '../../../../assets/video/gameChanger/bottomMarketing.mp4'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 150px 0px 100px 0;
@@ -36,9 +37,68 @@ const ContentContainer = styled(Box)`
     max-width: 345px;
 `
 
+const StyledShowReel = styled.video`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+`
+
 export const DesktopSection = () => {
     const isDesktopLayout = useBreakpointBiggerThan('xl')
     const flexDirection = isDesktopLayout ? 'row' : 'column'
+
+    const videoRef1 = useRef(null)
+    const videoRef2 = useRef(null)
+    const videoRef3 = useRef(null)
+    const observerRef = useRef<IntersectionObserver | null>(null)
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    // Handle each video element individually
+                    if (entry.isIntersecting) {
+                        entry.target.play()
+                    } else {
+                        entry.target.pause()
+                    }
+                })
+            },
+            { threshold: 0.25 }
+        )
+
+        const videos = [videoRef1.current, videoRef2.current, videoRef3.current]
+        videos.forEach((video) => {
+            if (video) observer.observe(video)
+        })
+
+        observerRef.current = observer
+
+        return () => {
+            videos.forEach((video) => {
+                if (video) observer.unobserve(video)
+            })
+            observer.disconnect()
+        }
+    }, [])
+
+    const handleVideoSound = (
+        activeVideoRef: MutableRefObject<null | HTMLVideoElement>
+    ) => {
+        const videos = [videoRef1, videoRef2, videoRef3]
+
+        videos.forEach((ref) => {
+            if (ref.current && ref !== activeVideoRef) {
+                ref.current.muted = true // Mute other videos
+            }
+        })
+
+        // Toggle the sound state for the active video
+        if (activeVideoRef.current) {
+            activeVideoRef.current.muted = !activeVideoRef.current.muted
+        }
+    }
 
     return (
         <StyledFlexContainer center>
@@ -76,7 +136,17 @@ export const DesktopSection = () => {
                             x={15}
                             delay={0.15}
                         >
-                            <img src={marketingFirst} />
+                            <StyledShowReel
+                                ref={videoRef1}
+                                onClick={() => handleVideoSound(videoRef1)}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                            >
+                                <source src={marketingFirst} />
+                                Your browser does not support the video tag.
+                            </StyledShowReel>
                         </Reveal>
                         <Reveal
                             removeRepeatedReveal={false}
@@ -99,7 +169,17 @@ export const DesktopSection = () => {
                     </ContentContainer>
                     <ContentContainer>
                         <Reveal removeRepeatedReveal={false} x={15} delay={0.3}>
-                            <img src={marketingSecond} />
+                            <StyledShowReel
+                                ref={videoRef2}
+                                onClick={() => handleVideoSound(videoRef2)}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                            >
+                                <source src={marketingSecond} />
+                                Your browser does not support the video tag.
+                            </StyledShowReel>
                         </Reveal>
                         <Reveal removeRepeatedReveal={false} y={15} delay={0.3}>
                             <Text
@@ -122,7 +202,17 @@ export const DesktopSection = () => {
                             x={15}
                             delay={0.45}
                         >
-                            <img src={marketingThird} />
+                            <StyledShowReel
+                                ref={videoRef3}
+                                onClick={() => handleVideoSound(videoRef3)}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                            >
+                                <source src={marketingThird} />
+                                Your browser does not support the video tag.
+                            </StyledShowReel>
                         </Reveal>
                         <Reveal
                             removeRepeatedReveal={false}

@@ -5,9 +5,10 @@ import { LayoutFlexContainerProps } from '../../../../components/layout/types'
 import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
 import { Reveal } from '../../../../components/animations/reveal/Reveal'
 
-import marketingFirst from '../../../../assets/img/gameChanger/marketing/marketingFirst.png'
-import marketingSecond from '../../../../assets/img/gameChanger/marketing/marketingSecond.png'
-import marketingThird from '../../../../assets/img/gameChanger/marketing/marketingThird.png'
+import designFirst from '../../../../assets/video/gameChanger/firstDesign.mp4'
+import designSecond from '../../../../assets/video/gameChanger/secondDesign.mp4'
+import designThird from '../../../../assets/video/gameChanger/thirdDesign.mp4'
+import { Box } from '../../../../components/layout/Box'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 150px 0px 100px 0;
@@ -30,6 +31,16 @@ const StyledText = styled(Text)<LayoutFlexContainerProps>`
     right: ${(props) => (props.$isDesktopLayout ? '-475px' : '-80px')};
     bottom: ${(props) => !props.$isDesktopLayout && '-60px'};
     color: #7055ec;
+`
+
+const ContentContainer = styled(Box)`
+    max-width: 345px;
+`
+
+const StyledShowReel = styled.video`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 `
 
 export const DesktopSection = () => {
@@ -66,15 +77,38 @@ export const DesktopSection = () => {
                     direction={flexDirection}
                     center={!isDesktopLayout}
                 >
-                    <Reveal removeRepeatedReveal={false} x={15} delay={0.15}>
-                        <img src={marketingFirst} />
-                    </Reveal>
-                    <Reveal removeRepeatedReveal={false} x={15} delay={0.3}>
-                        <img src={marketingSecond} />
-                    </Reveal>
-                    <Reveal removeRepeatedReveal={false} x={15} delay={0.45}>
-                        <img src={marketingThird} />
-                    </Reveal>
+                    <ContentContainer>
+                        <Reveal
+                            removeRepeatedReveal={false}
+                            x={15}
+                            delay={0.15}
+                        >
+                            <StyledShowReel autoPlay muted loop playsInline>
+                                <source src={designFirst} />
+                                Your browser does not support the video tag.
+                            </StyledShowReel>
+                        </Reveal>
+                    </ContentContainer>
+                    <ContentContainer>
+                        <Reveal removeRepeatedReveal={false} x={15} delay={0.3}>
+                            <StyledShowReel autoPlay muted loop playsInline>
+                                <source src={designSecond} />
+                                Your browser does not support the video tag.
+                            </StyledShowReel>
+                        </Reveal>
+                    </ContentContainer>
+                    <ContentContainer>
+                        <Reveal
+                            removeRepeatedReveal={false}
+                            x={15}
+                            delay={0.45}
+                        >
+                            <StyledShowReel autoPlay muted loop playsInline>
+                                <source src={designThird} />
+                                Your browser does not support the video tag.
+                            </StyledShowReel>
+                        </Reveal>
+                    </ContentContainer>
                 </FlexContainer>
             </MarketingContainer>
         </StyledFlexContainer>

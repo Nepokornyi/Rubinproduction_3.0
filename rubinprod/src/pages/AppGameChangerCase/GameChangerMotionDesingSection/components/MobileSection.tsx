@@ -6,9 +6,9 @@ import { SwiperCustomNavigation } from '../../../../components/layout/Carousel/c
 import { Text } from '../../../../components/Text/Text'
 import { Box } from '../../../../components/layout/Box'
 
-import marketingFirst from '../../../../assets/img/gameChanger/marketing/marketingFirst.png'
-import marketingSecond from '../../../../assets/img/gameChanger/marketing/marketingSecond.png'
-import marketingThird from '../../../../assets/img/gameChanger/marketing/marketingThird.png'
+import designFirst from '../../../../assets/video/gameChanger/firstDesign.mp4'
+import designSecond from '../../../../assets/video/gameChanger/secondDesign.mp4'
+import designThird from '../../../../assets/video/gameChanger/thirdDesign.mp4'
 
 const StyledFlexContainer = styled(FlexContainer)`
     height: 100%;
@@ -35,11 +35,12 @@ const StyledText = styled(Text)`
     color: #7055ec;
 `
 
-const SwiperSlideBackground = styled.img`
+const StyledShowReel = styled.video`
     width: 100%;
     height: 90%;
     object-fit: cover;
     padding: 0 15px;
+    pointer-events: none;
 `
 
 export const MobileSection = () => {
@@ -66,7 +67,10 @@ export const MobileSection = () => {
                     {/* Quick fix to expand carousel */}
                     <FlexContainer direction="column" gap="50px">
                         <RevealBlock delay={0.25} blockColor="#7055ec">
-                            <SwiperSlideBackground src={marketingFirst} />
+                            <StyledShowReel autoPlay muted loop playsInline>
+                                <source src={designFirst} />
+                                Your browser does not support the video tag.
+                            </StyledShowReel>
                         </RevealBlock>
                         <Text />
                     </FlexContainer>
@@ -74,13 +78,19 @@ export const MobileSection = () => {
 
                 <SwiperSlide>
                     <RevealBlock delay={0.25} blockColor="#7055ec">
-                        <SwiperSlideBackground src={marketingSecond} />
+                        <StyledShowReel autoPlay muted loop playsInline>
+                            <source src={designSecond} />
+                            Your browser does not support the video tag.
+                        </StyledShowReel>
                     </RevealBlock>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <RevealBlock delay={0.25} blockColor="#7055ec">
-                        <SwiperSlideBackground src={marketingThird} />
+                        <StyledShowReel autoPlay muted loop playsInline>
+                            <source src={designThird} />
+                            Your browser does not support the video tag.
+                        </StyledShowReel>
                     </RevealBlock>
                 </SwiperSlide>
 
