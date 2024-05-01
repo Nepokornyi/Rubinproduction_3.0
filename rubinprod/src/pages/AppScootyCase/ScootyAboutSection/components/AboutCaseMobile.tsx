@@ -19,7 +19,7 @@ export const AboutCaseMobile = () => {
     return (
         <FlexContainer direction="column" alignItems="center" gap="75px">
             <FlexContainer justifyContent="space-between">
-                <ContentContainer direction="column">
+                <ContentContainer gap="10px" direction="column">
                     <Text $textTransform="uppercase" variant={'nav'}>
                         <Reveal y={-20} removeRepeatedReveal={false}>
                             Client
@@ -36,7 +36,7 @@ export const AboutCaseMobile = () => {
                     </Text>
                 </ContentContainer>
 
-                <ContentContainer direction="column">
+                <ContentContainer gap="10px" direction="column">
                     <Text $textTransform="uppercase" variant={'nav'}>
                         <Reveal
                             delay={0.5}
