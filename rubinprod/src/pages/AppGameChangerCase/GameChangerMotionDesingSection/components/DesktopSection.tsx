@@ -4,11 +4,11 @@ import { Text } from '../../../../components/Text/Text'
 import { LayoutFlexContainerProps } from '../../../../components/layout/types'
 import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
 import { Reveal } from '../../../../components/animations/reveal/Reveal'
+import { Box } from '../../../../components/layout/Box'
 
 import designFirst from '../../../../assets/video/gameChanger/firstDesign.mp4'
 import designSecond from '../../../../assets/video/gameChanger/secondDesign.mp4'
 import designThird from '../../../../assets/video/gameChanger/thirdDesign.mp4'
-import { Box } from '../../../../components/layout/Box'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 150px 0px 100px 0;

@@ -7,6 +7,7 @@ import { Text } from '../../../components/Text/Text'
 
 import icoX from '../../../assets/img/gameChanger/icoX.png'
 import { Reveal } from '../../../components/animations/reveal/Reveal'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)<
     LayoutFlexContainerProps & { $isTabletLayout: boolean }
@@ -51,6 +52,8 @@ const AbsoluteX = styled.img`
 `
 
 export const GameChangerServicesSection = () => {
+    const { t } = useTranslation()
+
     const isDesktopLayout = useBreakpointBiggerThan('md')
     const isTabletLayout = useBreakpointBiggerThan('xxl')
 
@@ -82,23 +85,22 @@ export const GameChangerServicesSection = () => {
                         <ul>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Top funnel brand marketing video
+                                    {t('gameChangerCase.services.social1')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Middle funnel dynamic product videos
+                                    {t('gameChangerCase.services.social2')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Bottom funnel “application”, unboxing,
-                                    “how it works” videos
+                                    {t('gameChangerCase.services.social3')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - UGC - style content
+                                    {t('gameChangerCase.services.social4')}
                                 </Text>
                             </li>
                         </ul>
@@ -116,8 +118,16 @@ export const GameChangerServicesSection = () => {
                             <AbsoluteX src={icoX} alt="" />
                         </TitleRelativeText>
                         <ul>
-                            <li>- Integrated animations</li>
-                            <li>- Separate creative video ads</li>
+                            <li>
+                                <Text variant="p" $paddingOverride="0">
+                                    {t('gameChangerCase.services.motion1')}
+                                </Text>
+                            </li>
+                            <li>
+                                <Text variant="p" $paddingOverride="0">
+                                    {t('gameChangerCase.services.motion2')}
+                                </Text>
+                            </li>
                         </ul>
                     </Card>
                 </Reveal>
@@ -139,8 +149,16 @@ export const GameChangerServicesSection = () => {
                             <AbsoluteX src={icoX} alt="" />
                         </TitleRelativeText>
                         <ul>
-                            <li>- For website, promoting, internal purposes</li>
-                            <li>- As thumbnails</li>
+                            <li>
+                                <Text variant="p" $paddingOverride="0">
+                                    {t('gameChangerCase.services.photography1')}
+                                </Text>
+                            </li>
+                            <li>
+                                <Text variant="p" $paddingOverride="0">
+                                    {t('gameChangerCase.services.photography2')}
+                                </Text>
+                            </li>
                         </ul>
                     </Card>
                 </Reveal>

@@ -50,6 +50,26 @@
         "solution": "We crafted a lead generation website, enhancing its structure and enriching its design for improved UI/UX. Our strategic approach resulted in a visually appealing and highly functional platform, driving conversions and facilitating lead acquisition for Scooty",
         "feedback": "One of our biggest advantages is that we not only create content for businesses of all sizes but also, leveraging our expertise in marketing and sales, adeptly distribute it across different platforms. This project was quite demanding both in terms of time invested and the number of tasks involved. But the key point is - we've succeeded and are excited to share the results."
     },
+    "gameChangerCase": {
+        "client": "<strong>GameChanger</strong> offers Warmup and Overtime Patches, a two-part system designed to prevent hangovers. With essential vitamins and nutrients, it ensures a refreshed start after heavy drinking",
+        "challenge": "We methodically crafted a <strong>full content funnel</strong>, directing potential buyers from initial interest in the product all the way through to purchase, with a focus on dynamic short form videos, integrated motion design parts with patches benefits and product photography",
+        "services": {
+            "social1": "- Top funnel brand marketing video",
+            "social2": "- Middle funnel dynamic product videos",
+            "social3": "- Bottom funnel “application”, unboxing, “how it works” videos",
+            "social4": "- UGC - style content",
+            "motion1": "- Integrated animations",
+            "motion2": "- Separate creative video ads",
+            "photography1": "- For website, promoting, internal purposes",
+            "photography2": "- As thumbnails"
+        },
+        "marketing": {
+            "top": "To attract the audience and pull potential buyers in at the beginning of their journey",
+            "middle": "To show benefits of the product and continue to build trust among your prospects",
+            "bottom": "To help buyers do away with any lingering objections they may have towards your solution through the explainer and UGC content"
+        },
+        "feedback": "We approached this project in an unconventional manner, which enabled us to fulfill all of the client's needs throughout the entirety of the marketing funnel. From a vast amount of captured footage, we were able to create over 20 videos, integrating animations and motion design parts. This, combined with a carefully planned structure beforehand, yielded very good results."
+    },
     "footer": {
         "socials": {
             "behance": "Behance",

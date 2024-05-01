@@ -10,6 +10,7 @@ import { MutableRefObject, useEffect, useRef } from 'react'
 import marketingFirst from '../../../../assets/video/gameChanger/topMarketing.mp4'
 import marketingSecond from '../../../../assets/video/gameChanger/middleMarketing.mp4'
 import marketingThird from '../../../../assets/video/gameChanger/bottomMarketing.mp4'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 150px 0px 100px 0;
@@ -45,6 +46,8 @@ const StyledShowReel = styled.video`
 `
 
 export const DesktopSection = () => {
+    const { t } = useTranslation()
+
     const isDesktopLayout = useBreakpointBiggerThan('xl')
     const flexDirection = isDesktopLayout ? 'row' : 'column'
 
@@ -162,8 +165,7 @@ export const DesktopSection = () => {
                             </Text>
                             <br />
                             <Text $paddingOverride="0" variant={'p'}>
-                                To attract the audience and pull potential
-                                buyers in at the beginning of their journey
+                                {t('gameChangerCase.marketing.top')}
                             </Text>
                         </Reveal>
                     </ContentContainer>
@@ -191,8 +193,7 @@ export const DesktopSection = () => {
                             </Text>
                             <br />
                             <Text $paddingOverride="0" variant={'p'}>
-                                To show benefits of the product and continue to
-                                build trust among your prospects
+                                {t('gameChangerCase.marketing.middle')}
                             </Text>
                         </Reveal>
                     </ContentContainer>
@@ -228,9 +229,7 @@ export const DesktopSection = () => {
                             </Text>
                             <br />
                             <Text $paddingOverride="0" variant={'p'}>
-                                To help buyers do away with any lingering
-                                objections they may have towards your solution
-                                through the explainer and UGC content
+                                {t('gameChangerCase.marketing.bottom')}
                             </Text>
                         </Reveal>
                     </ContentContainer>

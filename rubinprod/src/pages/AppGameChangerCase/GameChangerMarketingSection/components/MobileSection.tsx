@@ -13,6 +13,7 @@ import marketingSecond from '../../../../assets/video/gameChanger/middleMarketin
 import marketingThird from '../../../../assets/video/gameChanger/bottomMarketing.mp4'
 import { IoIosVolumeHigh, IoIosVolumeOff } from 'react-icons/io'
 import { Reveal } from '../../../../components/animations/reveal/Reveal'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)`
     height: 100%;
@@ -75,6 +76,8 @@ const soundVariants: Variants = {
 }
 
 export const MobileSection = () => {
+    const { t } = useTranslation()
+
     const videoRef1 = useRef(null)
     const videoRef2 = useRef(null)
     const videoRef3 = useRef(null)
@@ -184,8 +187,7 @@ export const MobileSection = () => {
                         <br />
                         <Text $paddingOverride="0 15px 50px 15px" variant={'p'}>
                             <Reveal removeRepeatedReveal={false}>
-                                To attract the audience and pull potential
-                                buyers in at the beginning of their journey
+                                {t('gameChangerCase.marketing.top')}
                             </Reveal>
                         </Text>
                         <Reveal removeRepeatedReveal={false}>
@@ -233,8 +235,7 @@ export const MobileSection = () => {
                         <br />
                         <Text $paddingOverride="0 15px 50px 15px" variant={'p'}>
                             <Reveal removeRepeatedReveal={false}>
-                                To show benefits of the product and continue to
-                                build trust among your prospects
+                                {t('gameChangerCase.marketing.middle')}
                             </Reveal>
                         </Text>
                         <Reveal removeRepeatedReveal={false}>
@@ -279,9 +280,7 @@ export const MobileSection = () => {
                         <br />
                         <Text $paddingOverride="0 15px 50px 15px" variant={'p'}>
                             <Reveal removeRepeatedReveal={false}>
-                                To help buyers do away with any lingering
-                                objections they may have towards your solution
-                                through the explainer and UGC content
+                                {t('gameChangerCase.marketing.bottom')}
                             </Reveal>
                         </Text>
                         <Reveal

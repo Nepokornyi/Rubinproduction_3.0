@@ -10,6 +10,7 @@ import { Reveal } from '../../../components/animations/reveal/Reveal'
 
 import quoteUp from '../../../assets/img/scooty/quoteUp.png'
 import quoteDown from '../../../assets/img/scooty/quoteDown.png'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 150px 0 100px 0;
@@ -58,6 +59,8 @@ const StyledLink = styled.a`
 `
 
 export const GameChangerFeedbackSection = () => {
+    const { t } = useTranslation()
+
     const isDesktopLayout = useBreakpointBiggerThan('xl')
     const direction = isDesktopLayout ? 'row' : 'column'
 
@@ -75,19 +78,14 @@ export const GameChangerFeedbackSection = () => {
                     <Quote variant="p">
                         <QuoteUp src={quoteUp} />
                         <Reveal x={20} removeRepeatedReveal={false}>
-                            We crafted a lead generation website, enhancing its
-                            structure and enriching its design for improved
-                            UI/UX. Our strategic approach resulted in a visually
-                            appealing and highly functional platform, driving
-                            conversions and facilitating lead acquisition for
-                            Scooty.
+                            {t('gameChangerCase.feedback')}
                         </Reveal>
                         <QuoteDown src={quoteDown} />
                     </Quote>
                     <TextRelative variant="button" $textTransform="uppercase">
                         <Reveal x={-20} removeRepeatedReveal={false}>
-                            <StyledLink>
-                                Nikita Rubin <BsLinkedin />
+                            <StyledLink href="https://www.linkedin.com/company/rubinproduction">
+                                DAVID MINNIVALIEV <BsLinkedin />
                             </StyledLink>
                         </Reveal>
                         <TextAbsolute
@@ -95,7 +93,7 @@ export const GameChangerFeedbackSection = () => {
                             variant={'socials'}
                         >
                             <Reveal x={20} removeRepeatedReveal={false}>
-                                Founder of Rubin Production
+                                HEAD OF POST-PRODUCTION
                             </Reveal>
                         </TextAbsolute>
                     </TextRelative>

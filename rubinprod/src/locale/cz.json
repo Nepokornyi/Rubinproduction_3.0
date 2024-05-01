@@ -50,6 +50,26 @@
         "solution": "Vytvořili jsme webovou stránku pro získávání potenciálních zákazníků, vylepšili jsme strukturu a obohatili design o kvalitnější uživatelské prostředí (UI/UX). Výsledkem našeho strategického přístupu je vizuálně atraktivní a vysoce funkční platforma, která podporuje a usnadňuje získávání klientů pro společnost Scooty.",
         "feedback": "Jednou z našich největších výhod je, že nejen vytváříme obsah pro firmy všech velikostí, ale také jej s využitím našich odborných znalostí v oblasti marketingu a prodeje umíme distribuovat na různé platformy. Tento projekt byl poměrně náročný jak z hlediska investovaného času, tak i z hlediska množství úkolů. Klíčové však je - uspěli jsme a těší nás, že se můžeme podělit o výsledky."
     },
+    "gameChangerCase": {
+        "client": "<strong>GameChanger</strong> nabízí Warmup a Overtime náplasti, sloužící k prevenci kocoviny. S nezbytnými vitamíny a živinami zajišťují osvěžující start po těžkém pití.",
+        "challenge": "Metodicky jsme vytvořili <strong>kompletní content plán</strong>, který potenciální kupující nasměroval od počátečního zájmu o produkt až po jeho zakoupení, přičemž jsme se zaměřili na dynamická krátká videa s integrovaným motion designem.",
+        "services": {
+            "social1": "- Marketingové video značky",
+            "social2": "- Dynamická produktová videa",
+            "social3": "- Videa 'použití', 'rozbalování', 'jak to funguje'",
+            "social4": "- Obsah ve stylu UGC",
+            "motion1": "- Integrované animace",
+            "motion2": "- Samostatné kreativní videoreklamy",
+            "photography1": "- Pro webové stránky, propagaci, interní účely",
+            "photography2": "- Jako thumbnaily"
+        },
+        "marketing": {
+            "top": "Upoutat publikum a přitáhnout potenciální zákazníky na začátku jejich nákupní cesty.",
+            "middle": "Ukázat výhody produktu a pokračovat v budování důvěry u potenciálních zákazníků.",
+            "bottom": "Pomáhat kupujícím zbavit se jakýchkoli přetrvávajících námitek, které mohou mít vůči vašemu řešení, prostřednictvím vysvětlujícího a UGC obsahu."
+        },
+        "feedback": "K tomuto projektu jsme přistoupili netradičně, což nám umožnilo splnit všechny potřeby klienta v celém marketingovém funnelu. Z obrovského množství pořízeného materiálu jsme dokázali vytvořit více než 20 videí, do kterých jsme začlenili animace a části motion designu. To v kombinaci s předem pečlivě naplánovanou strukturou přineslo velmi dobré výsledky."
+    },
     "footer": {
         "socials": {
             "behance": "Behance",
