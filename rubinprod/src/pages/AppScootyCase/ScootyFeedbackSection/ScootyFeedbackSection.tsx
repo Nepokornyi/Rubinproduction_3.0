@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 import { FlexContainer } from '../../../components/layout/FlexContainer'
 import { ParallaxContainer } from '../../AppMainLanding/AboutSection/components/Parallax/ParallaxContainer'
-
-import author from '../../../assets/img/scooty/scootyAuthor.png'
 import { Text } from '../../../components/Text/Text'
 import { BsLinkedin } from 'react-icons/bs'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
-import quoteUp from '../../../assets/img/scooty/quoteUp.png'
-import quoteDown from '../../../assets/img/scooty/quoteDown.png'
 import { Reveal } from '../../../components/animations/reveal/Reveal'
 import { useTranslation } from 'react-i18next'
+
+import author from '../../../assets/img/scooty/scootyAuthor.png'
+import quoteUp from '../../../assets/img/scooty/quoteUp.png'
+import quoteDown from '../../../assets/img/scooty/quoteDown.png'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 150px 0 100px 0;

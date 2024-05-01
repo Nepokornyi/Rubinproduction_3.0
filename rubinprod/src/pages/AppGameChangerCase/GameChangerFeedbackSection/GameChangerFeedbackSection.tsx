@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { FlexContainer } from '../../../components/layout/FlexContainer'
 import { ParallaxContainer } from '../../AppMainLanding/AboutSection/components/Parallax/ParallaxContainer'
 
-import author from '../../../assets/img/scooty/scootyAuthor.png'
+import author from '../../../assets/img/gameChanger/gameChangerAuthor.png'
 import { Text } from '../../../components/Text/Text'
 import { BsLinkedin } from 'react-icons/bs'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
