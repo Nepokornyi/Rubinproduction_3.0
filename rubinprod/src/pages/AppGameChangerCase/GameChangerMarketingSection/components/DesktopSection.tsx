@@ -60,11 +60,12 @@ export const DesktopSection = () => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    // Handle each video element individually
+                    const videoElement = entry.target as HTMLVideoElement
+
                     if (entry.isIntersecting) {
-                        entry.target.play()
+                        videoElement.play()
                     } else {
-                        entry.target.pause()
+                        videoElement.pause()
                     }
                 })
             },
@@ -89,7 +90,11 @@ export const DesktopSection = () => {
     const handleVideoSound = (
         activeVideoRef: MutableRefObject<null | HTMLVideoElement>
     ) => {
-        const videos = [videoRef1, videoRef2, videoRef3]
+        const videos: Array<MutableRefObject<HTMLVideoElement | null>> = [
+            videoRef1,
+            videoRef2,
+            videoRef3,
+        ]
 
         videos.forEach((ref) => {
             if (ref.current && ref !== activeVideoRef) {

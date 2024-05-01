@@ -91,11 +91,12 @@ export const MobileSection = () => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    // Handle each video element individually
+                    const videoElement = entry.target as HTMLVideoElement
+
                     if (entry.isIntersecting) {
-                        entry.target.play()
+                        videoElement.play()
                     } else {
-                        entry.target.pause()
+                        videoElement.pause()
                     }
                 })
             },
@@ -121,7 +122,11 @@ export const MobileSection = () => {
         videoRef: MutableRefObject<null | HTMLVideoElement>,
         setMuteState: (state: boolean) => void
     ) => {
-        const videos = [videoRef1, videoRef2, videoRef3]
+        const videos: Array<MutableRefObject<HTMLVideoElement | null>> = [
+            videoRef1,
+            videoRef2,
+            videoRef3,
+        ]
         const setters = [setIsMuted1, setIsMuted2, setIsMuted3]
 
         videos.forEach((ref, index) => {
