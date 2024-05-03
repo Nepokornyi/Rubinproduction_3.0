@@ -2,30 +2,29 @@ import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
 import { Box } from '../../../../components/layout/Box'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
-import eliteVoyageLogo from '../../../../assets/img/eliteVoyage/icoEliteVoyageLog.png'
+import eliteVoyageLogo from '../../../../assets/img/eliteVoyage/icoEliteVoyageColor.svg'
 
 const StyledFlexContainer = styled(FlexContainer)`
-    max-width: 400px;
+    width: 30vw;
+    max-width: 375px;
+`
+
+const HeadingContainer = styled(Box)`
+    height: 100px;
 `
 
 const StyledImage = styled.img`
-    padding: 0 25px;
-    width: 100%;
+    padding: 25px;
+    width: 250px;
     height: auto;
 `
 
-// TODO: add green icon
-
-export const AboutCase = () => {
+export const AboutCaseDesktop = () => {
     return (
-        <StyledFlexContainer
-            gap="20px"
-            direction="column"
-            justifyContent="space-between"
-        >
-            <Box>
+        <StyledFlexContainer gap="75px" direction="column">
+            <HeadingContainer>
                 <StyledImage src={eliteVoyageLogo} />
-            </Box>
+            </HeadingContainer>
             <FlexContainer direction="column" gap={'10px'}>
                 <Text
                     $textTransform="uppercase"

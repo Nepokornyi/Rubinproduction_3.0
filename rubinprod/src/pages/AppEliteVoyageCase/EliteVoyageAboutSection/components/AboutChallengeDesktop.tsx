@@ -1,26 +1,33 @@
 import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
+import { useTranslation } from 'react-i18next'
+import { Box } from '../../../../components/layout/Box'
 
 const StyledFlexContainer = styled(FlexContainer)`
-    max-width: 400px;
+    max-width: 375px;
 `
 
-export const AboutChallenge = () => {
+const HeadingContainer = styled(Box)`
+    height: 100px;
+`
+
+export const AboutChallengeDesktop = () => {
+    const { t } = useTranslation()
+    const eliteVoyageChallenge = t('eliteVoyageCase.challenge')
+
     return (
-        <StyledFlexContainer
-            gap="20px"
-            direction="column"
-            justifyContent="space-between"
-        >
-            <FlexContainer direction="column" gap="20px">
-                <Text $textTransform="uppercase" variant={'nav'}>
-                    Industry
-                </Text>
-                <Text $textTransform="uppercase" variant={'button'}>
-                    Travel Agency
-                </Text>
-            </FlexContainer>
+        <StyledFlexContainer gap="75px" direction="column">
+            <HeadingContainer>
+                <FlexContainer direction="column" gap="20px">
+                    <Text $textTransform="uppercase" variant={'nav'}>
+                        Industry
+                    </Text>
+                    <Text $textTransform="uppercase" variant={'button'}>
+                        Travel Agency
+                    </Text>
+                </FlexContainer>
+            </HeadingContainer>
             <FlexContainer direction="column">
                 <Text
                     $textTransform="uppercase"

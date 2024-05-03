@@ -2,9 +2,13 @@ import styled from 'styled-components'
 import { FlexContainer } from '../../../components/layout/FlexContainer'
 import { LayoutFlexContainerProps } from '../../../components/layout/types'
 import { useBreakpointBiggerThan } from '../../../helpers/useCurrentBreakpoint'
-import { AboutCase } from './components/AboutCase'
-import { AboutClient } from './components/AboutClient'
-import { AboutChallenge } from './components/AboutChallenge'
+import { Reveal } from '../../../components/animations/reveal/Reveal'
+import { AboutCaseDesktop } from './components/AboutCaseDesktop'
+import { AboutClientDesktop } from './components/AboutClientDesktop'
+import { AboutChallengeDesktop } from './components/AboutChallengeDesktop'
+import { AboutCaseMobile } from './components/AboutCaseMobile'
+import { AboutChallengeMobile } from './components/AboutChallengeMobile'
+import { AboutClientMobile } from './components/AboutClientMobile'
 
 const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
     padding: 150px 0px 100px 0;
@@ -15,8 +19,25 @@ const StyledFlexContainer = styled(FlexContainer)<LayoutFlexContainerProps>`
 
 export const EliteVoyageAboutSection = () => {
     const isDesktopLayout = useBreakpointBiggerThan('md')
-
-    // TODO: positioning and flexbox of elements
+    const renderContent = isDesktopLayout ? (
+        <>
+            <Reveal removeRepeatedReveal={false} x={20}>
+                <AboutCaseDesktop />
+            </Reveal>
+            <Reveal delay={0.5} removeRepeatedReveal={false} x={30}>
+                <AboutClientDesktop />
+            </Reveal>
+            <Reveal delay={1} removeRepeatedReveal={false} x={40}>
+                <AboutChallengeDesktop />
+            </Reveal>
+        </>
+    ) : (
+        <>
+            <AboutCaseMobile />
+            <AboutChallengeMobile />
+            <AboutClientMobile />
+        </>
+    )
 
     return (
         <StyledFlexContainer
@@ -25,9 +46,7 @@ export const EliteVoyageAboutSection = () => {
             justifyContent="center"
             gap="20px"
         >
-            <AboutCase />
-            <AboutClient />
-            <AboutChallenge />
+            {renderContent}
         </StyledFlexContainer>
     )
 }
