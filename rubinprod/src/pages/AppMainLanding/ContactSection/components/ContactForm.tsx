@@ -41,9 +41,7 @@ const StyledInput = styled(Input)`
     width: 100%;
     margin: 0;
     &:focus {
-        border-bottom: 2px solid
-            ${(props) =>
-                props.$isDesktopLayout ? props.$transitionColor : '#d91e37'};
+        border-bottom: 2px solid ${(props) => props.$transitionColor};
     }
 `
 
@@ -121,7 +119,7 @@ export const ContactForm = ({
                             {...register('email')}
                             type={'text'}
                             placeholder="Email"
-                            $transitionColor={color}
+                            $transitionColor={buttonHover}
                             $isDesktopLayout={isDesktopLayout}
                             error={errors.email?.message}
                         />
@@ -131,7 +129,7 @@ export const ContactForm = ({
                             {...register('phone')}
                             type={'tel'}
                             placeholder="Phone"
-                            $transitionColor={color}
+                            $transitionColor={buttonHover}
                             $isDesktopLayout={isDesktopLayout}
                             error={errors.phone?.message}
                         />
