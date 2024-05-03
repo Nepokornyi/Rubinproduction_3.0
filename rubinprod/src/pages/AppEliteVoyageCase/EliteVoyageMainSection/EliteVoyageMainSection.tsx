@@ -23,7 +23,7 @@ const StyledFlexContainerBackground = styled(FlexContainer)<
 `
 
 const StyledIcon = styled.img<{ $isDesktopLayout: boolean }>`
-    width: ${(props) => (props.$isDesktopLayout ? '300px' : '250px')};
+    width: ${(props) => !props.$isDesktopLayout && '250px'};
 `
 
 export const EliteVoyageMainSection = () => {
