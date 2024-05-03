@@ -22,14 +22,6 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { Placeholder } from '../../../../../pages/AppMainLanding/WorkSection/components/WorkGridPortfolio/Placeholder'
 
-// type Effect = {
-//     material: ShaderMaterial
-//     images: Texture[]
-// }
-
-// TODO: check for optimization in future
-// TODO: big work for effects in progress
-
 const StyledLink = styled(Link)`
     width: 100%;
     height: 100%;
@@ -84,8 +76,6 @@ export const PortfolioCarousel = () => {
 
                 <StyledSwiperSlide $isOdd={false}>
                     <RevealBlock delay={0.25} blockColor="#0C0C0C">
-                        {/* <SwiperSlideBackground src={scooty} alt="scooty case" /> */}
-                        {/* <StyledLogo src={logoScooty} alt="scooty logo" /> */}
                         <Placeholder />
                         <StyledLink to="/" />
                     </RevealBlock>
