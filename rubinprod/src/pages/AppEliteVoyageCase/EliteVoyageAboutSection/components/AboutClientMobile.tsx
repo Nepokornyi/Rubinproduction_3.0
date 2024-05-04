@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
-import { useTranslation } from 'react-i18next'
 import { Text } from '../../../../components/Text/Text'
 import { Reveal } from '../../../../components/animations/reveal/Reveal'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 25px 25px;
@@ -13,8 +13,9 @@ const StyledFlexContainer = styled(FlexContainer)`
 
 export const AboutClientMobile = () => {
     const { t } = useTranslation()
-    const eliteVoyageChallenge = t('gameChangerCase.challenge')
-    const eliteVoyageClient = t('gameChangerCase.client')
+
+    const eliteVoyageClient = t('eliteVoyageCase.client')
+    const eliteVoyageChallenge = t('eliteVoyageCase.challenge')
 
     return (
         <StyledFlexContainer direction="column" gap="25px">
@@ -30,14 +31,7 @@ export const AboutClientMobile = () => {
                     </Reveal>
                 </Text>
                 <Reveal delay={0.5} x={-20} removeRepeatedReveal={false}>
-                    <Text variant="p">
-                        <strong>EliteVoyage</strong> specializes in providing
-                        hassle-free travel experiences, allowing you to discover
-                        new places and create lasting memories without stress.
-                        With a network of over 200 esteemed partners worldwide,
-                        they ensure top-tier service on every journey, promising
-                        comfort and quality every step of the way.
-                    </Text>
+                    <Text variant="p" dangerousText={eliteVoyageClient} />
                 </Reveal>
             </FlexContainer>
 
@@ -53,14 +47,7 @@ export const AboutClientMobile = () => {
                     </Reveal>
                 </Text>
                 <Reveal delay={0.5} x={-20} removeRepeatedReveal={false}>
-                    <Text variant="p">
-                        This project presented a diverse challenge: we not only
-                        produced videos but also developed a unique corporate
-                        identity and tailored content to the company`s
-                        principles. Across different styles, languages, and
-                        platforms, we delivered exceptional content to meet the
-                        client`s evolving needs.
-                    </Text>
+                    <Text variant="p" dangerousText={eliteVoyageChallenge} />
                 </Reveal>
             </FlexContainer>
         </StyledFlexContainer>

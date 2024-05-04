@@ -7,6 +7,7 @@ import { Text } from '../../../components/Text/Text'
 
 import icoX from '../../../assets/img/eliteVoyage/icoX.png'
 import { Reveal } from '../../../components/animations/reveal/Reveal'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)<
     LayoutFlexContainerProps & { $isTabletLayout: boolean }
@@ -51,6 +52,8 @@ const AbsoluteX = styled.img`
 `
 
 export const EliteVoyageServicesSection = () => {
+    const { t } = useTranslation()
+
     const isDesktopLayout = useBreakpointBiggerThan('md')
     const isTabletLayout = useBreakpointBiggerThan('xxl')
 
@@ -83,18 +86,17 @@ export const EliteVoyageServicesSection = () => {
                         <ul>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Concept Development, Planning,
-                                    Storyboarding
+                                    {t('eliteVoyageCase.services.production1')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - 1 production day monthly =
+                                    {t('eliteVoyageCase.services.production2')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    more than 100 videos in different
+                                    {t('eliteVoyageCase.services.production3')}
                                 </Text>
                             </li>
                         </ul>
@@ -114,17 +116,17 @@ export const EliteVoyageServicesSection = () => {
                         <ul>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Brand style guide
+                                    {t('eliteVoyageCase.services.brand1')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Motion design templates
+                                    {t('eliteVoyageCase.services.brand2')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Logo/nametags animations
+                                    {t('eliteVoyageCase.services.brand3')}
                                 </Text>
                             </li>
                         </ul>
@@ -150,22 +152,22 @@ export const EliteVoyageServicesSection = () => {
                         <ul>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Travel videos
+                                    {t('eliteVoyageCase.services.social1')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Expert content
+                                    {t('eliteVoyageCase.services.social2')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - HR recruitment videos
+                                    {t('eliteVoyageCase.services.social3')}
                                 </Text>
                             </li>
                             <li>
                                 <Text variant="p" $paddingOverride="0">
-                                    - Employee Spotlights
+                                    {t('eliteVoyageCase.services.social4')}
                                 </Text>
                             </li>
                         </ul>

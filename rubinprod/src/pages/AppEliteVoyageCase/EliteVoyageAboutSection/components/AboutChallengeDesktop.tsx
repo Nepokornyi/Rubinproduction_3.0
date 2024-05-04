@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
-import { useTranslation } from 'react-i18next'
+
 import { Box } from '../../../../components/layout/Box'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)`
     max-width: 375px;
@@ -36,14 +37,7 @@ export const AboutChallengeDesktop = () => {
                 >
                     Challenge
                 </Text>
-                <Text variant="p">
-                    This project presented a diverse challenge: we not only
-                    produced videos but also developed a unique corporate
-                    identity and tailored content to the company`s principles.
-                    Across different styles, languages, and platforms, we
-                    delivered exceptional content to meet the client`s evolving
-                    needs.
-                </Text>
+                <Text variant="p" dangerousText={eliteVoyageChallenge} />
             </FlexContainer>
         </StyledFlexContainer>
     )

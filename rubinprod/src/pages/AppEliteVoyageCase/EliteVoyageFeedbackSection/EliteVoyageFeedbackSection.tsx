@@ -10,6 +10,7 @@ import { Reveal } from '../../../components/animations/reveal/Reveal'
 
 import quoteUp from '../../../assets/img/scooty/quoteUp.png'
 import quoteDown from '../../../assets/img/scooty/quoteDown.png'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)`
     padding: 150px 0 100px 0;
@@ -58,6 +59,7 @@ const StyledLink = styled.a`
 `
 
 export const EliteVoyageFeedbackSection = () => {
+    const { t } = useTranslation()
     const isDesktopLayout = useBreakpointBiggerThan('xl')
     const direction = isDesktopLayout ? 'row' : 'column'
 
@@ -75,12 +77,7 @@ export const EliteVoyageFeedbackSection = () => {
                     <Quote variant="p">
                         <QuoteUp src={quoteUp} />
                         <Reveal x={20} removeRepeatedReveal={false}>
-                            With EliteVoyage, we have already conducted three
-                            full-fledged shoots. Our initial goal was to create
-                            a unique brand identity, highlight the quality of
-                            the services provided by the travel agency and
-                            establish a comprehensive digital presence across
-                            various platforms.
+                            {t('eliteVoyageCase.feedback')}
                         </Reveal>
                         <QuoteDown src={quoteDown} />
                     </Quote>

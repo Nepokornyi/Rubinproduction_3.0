@@ -70,6 +70,23 @@
         },
         "feedback": "K tomuto projektu jsme přistoupili netradičně, což nám umožnilo splnit všechny potřeby klienta v celém marketingovém funnelu. Z obrovského množství pořízeného materiálu jsme dokázali vytvořit více než 20 videí, do kterých jsme začlenili animace a části motion designu. To v kombinaci s předem pečlivě naplánovanou strukturou přineslo velmi dobré výsledky."
     },
+    "eliteVoyageCase": {
+        "client": "<strong>EliteVoyage</strong> se specializuje na zajišťování bezproblémových cestovních zážitků, které vám umožní objevovat nová místa a vytvářet si nezapomenutelné vzpomínky bez stresu. Se sítí více než 200 vážených partnerů po celém světě zajišťuje špičkové služby na každé cestě a slibuje pohodlí a kvalitu na každém kroku.",
+        "challenge": "Tento projekt představoval rozmanitou výzvu: nejenže jsme vytvořili videa, ale také jedinečnou firemní identitu a obsah přizpůsobili zásadám společnosti. Napříč různými styly, jazyky a platformami jsme dodali výjimečný materiál, který splňoval měnící se potřeby klienta.",
+        "services": {
+            "production1": "- Vývoj konceptů, plánování, storyboarding",
+            "production2": "- 1 produkční den měsíčně = více",
+            "production3": "než 100 videí v různých formátech (horizontální, vertikální, čtvercové)",
+            "brand1": "- Průvodce stylem značky",
+            "brand2": "- Šablony pohyblivého designu",
+            "brand3": "- Animace loga/jmenovek",
+            "social1": "- Cestovní videa",
+            "social2": "- Odborný obsah",
+            "social3": "- Náborová videa v oblasti lidských zdrojů",
+            "social4": "- Zaměstnanecké upoutávky"
+        },
+        "feedback": "Se společností EliteVoyage jsme již uskutečnili tři plnohodnotná natáčení. Naším prvotním cílem bylo vytvořit jedinečnou identitu značky, zdůraznit kvalitu služeb poskytovaných cestovní kanceláří a vytvořit rozsáhlou digitální prezentaci na různých platformách."
+    },
     "footer": {
         "socials": {
             "behance": "Behance",

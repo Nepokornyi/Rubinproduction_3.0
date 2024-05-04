@@ -70,6 +70,23 @@
         },
         "feedback": "Bei diesem Projekt verfolgten wir einen unkonventionellen Ansatz, der es uns ermöglichte, alle Anforderungen des Kunden während des gesamten Marketingtrichters zu erfüllen. Aus dem umfangreichen Filmmaterial, das wir gedreht haben, konnten wir mehr als 20 Videos erstellen, die Animationen und Motion-Design-Elemente enthalten. In Verbindung mit einer im Vorfeld sorgfältig geplanten Struktur führte dies zu sehr guten Ergebnissen."
     },
+    "eliteVoyageCase": {
+        "client": "<strong>EliteVoyage</strong> ist darauf spezialisiert, reibungslose Reiseerlebnisse zu bieten, die es Ihnen ermöglichen, ohne Stress neue Orte zu entdecken und unvergessliche Erinnerungen zu schaffen. Mit einem Netzwerk von mehr als 200 geschätzten Partnern auf der ganzen Welt bietet EliteVoyage einen erstklassigen Service auf jeder Reise und verspricht Komfort und Qualität auf jedem Schritt des Weges.",
+        "challenge": "Dieses Projekt stellte eine vielfältige Herausforderung dar: Wir erstellten nicht nur Videos, sondern gestalteten auch die einzigartige Corporate Identity und den Inhalt entsprechend den Richtlinien des Unternehmens. Über verschiedene Stile, Sprachen und Plattformen hinweg lieferten wir außergewöhnliches Material, das den wechselnden Anforderungen des Kunden entspricht.",
+        "services": {
+            "production1": "- Konzeptentwicklung, Planung, Storyboarding",
+            "production2": "- 1 Produktionstag pro Monat = mehr",
+            "production3": "als 100 Videos in verschiedenen Formaten (horizontal, vertikal, quadratisch)",
+            "brand1": "- Marken-Styleguide",
+            "brand2": "- Vorlagen für Motion Design",
+            "brand3": "- Logo/Namensschild-Animationen",
+            "social1": "- Reise-Videos",
+            "social2": "- Experteninhalte",
+            "social3": "- HR-Einstellungsvideos",
+            "social4": "- Mitarbeiter-Spotlights"
+        },
+        "feedback": "Wir haben bereits drei umfassende Shootings mit EliteVoyage durchgeführt. Unser Hauptziel war es, eine einzigartige Markenidentität zu schaffen, die Servicequalität des Reisebüros hervorzuheben und eine umfassende digitale Präsenz auf mehreren Plattformen zu schaffen."
+    },
     "footer": {
         "socials": {
             "behance": "Behance",

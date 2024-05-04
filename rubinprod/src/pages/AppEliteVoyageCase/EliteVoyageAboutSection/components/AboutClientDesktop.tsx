@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { Text } from '../../../../components/Text/Text'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
-import { useTranslation } from 'react-i18next'
 import { Box } from '../../../../components/layout/Box'
+import { useTranslation } from 'react-i18next'
 
 const StyledFlexContainer = styled(FlexContainer)`
     max-width: 375px;
@@ -35,14 +35,7 @@ export const AboutClientDesktop = () => {
                 >
                     Client
                 </Text>
-                <Text variant="p">
-                    <strong>EliteVoyage</strong> specializes in providing
-                    hassle-free travel experiences, allowing you to discover new
-                    places and create lasting memories without stress. With a
-                    network of over 200 esteemed partners worldwide, they ensure
-                    top-tier service on every journey, promising comfort and
-                    quality every step of the way.
-                </Text>
+                <Text variant="p" dangerousText={eliteVoyageClient} />
             </FlexContainer>
         </StyledFlexContainer>
     )
