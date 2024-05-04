@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Header } from '../../components/Header/Header'
 
 import { ContactSection } from '../AppMainLanding/ContactSection/ContactSection'
 import { EliteVoyageMainSection } from './EliteVoyageMainSection/EliteVoyageMainSection'
@@ -18,6 +19,7 @@ export const AppEliteVoyageLanding = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
+            <Header variants="case" />
             <EliteVoyageMainSection />
             <EliteVoyageAboutSection />
             <EliteVoyageShowReelSection variant="first" />

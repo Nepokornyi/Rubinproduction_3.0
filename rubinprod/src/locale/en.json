@@ -70,6 +70,23 @@
         },
         "feedback": "We approached this project in an unconventional manner, which enabled us to fulfill all of the client's needs throughout the entirety of the marketing funnel. From a vast amount of captured footage, we were able to create over 20 videos, integrating animations and motion design parts. This, combined with a carefully planned structure beforehand, yielded very good results."
     },
+    "eliteVoyageCase": {
+        "client": "<strong>EliteVoyage</strong> specializes in providing hassle-free travel experiences, allowing you to discover new places and create lasting memories without stress. With a network of over 200 esteemed partners worldwide, they ensure top-tier service on every journey, promising comfort and quality every step of the way.",
+        "challenge": "This project presented a diverse challenge: we not only produced videos but also developed a unique corporate identity and tailored content to the company`s principles. Across different styles, languages, and platforms, we delivered exceptional content to meet the client`s evolving needs.",
+        "services": {
+            "production1": "- Concept Development, Planning, Storyboarding",
+            "production2": "- 1 production day monthly = more",
+            "production3": "than 100 videos in different formats (Horizontal, vertical, square)",
+            "brand1": "- Brand style guide",
+            "brand2": "- Motion design templates",
+            "brand3": "- Logo/nametags animations",
+            "social1": "- Travel videos",
+            "social2": "- Expert content",
+            "social3": "- HR recruitment videos",
+            "social4": "- Employee Spotlights"
+        },
+        "feedback": "With EliteVoyage, we have already conducted three full-fledged shoots. Our initial goal was to create a unique brand identity, highlight the quality of the services provided by the travel agency and establish a comprehensive digital presence across various platforms."
+    },
     "footer": {
         "socials": {
             "behance": "Behance",
