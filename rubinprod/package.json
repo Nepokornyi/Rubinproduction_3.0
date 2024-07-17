@@ -23,6 +23,7 @@
         "framer-motion": "^11.0.6",
         "gsap": "^3.12.5",
         "i18next": "^23.10.0",
+        "jsonp": "^0.2.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-hook-form": "^7.51.0",
@@ -36,6 +37,7 @@
         "zod": "^3.22.4"
     },
     "devDependencies": {
+        "@types/jsonp": "^0.2.3",
         "@types/react": "^18.2.56",
         "@types/react-dom": "^18.2.19",
         "@types/react-router-hash-link": "^2.4.9",
