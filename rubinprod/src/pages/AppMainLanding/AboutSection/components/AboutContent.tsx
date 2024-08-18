@@ -26,7 +26,7 @@ const StyledClientsTitle = styled(Text)<LayoutFlexContainerProps>`
 `
 
 const StyledArrowDown = styled(ArrowDown)<LayoutFlexContainerProps>`
-    left: ${(props) => (props.$isDesktopLayout ? 'auto' : '90px')};
+    left: ${(props) => (props.$isDesktopLayout ? 'auto' : '94px')};
     top: ${(props) => (props.$isDesktopLayout ? '-35px' : '-35px')};
     right: ${(props) => (props.$isDesktopLayout ? '-80px' : 'auto')};
     transform-origin: left;
