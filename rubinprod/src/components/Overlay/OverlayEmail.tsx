@@ -11,6 +11,7 @@ import { renderHamburger } from '../Header/Menu/HamburgerMenu'
 
 type OverlayEmailProps = Omit<OverlayProps, 'children'> & {
     onClose: () => void
+    isError: boolean
 }
 
 const AnimationBox = styled(motion.div)`
@@ -26,7 +27,11 @@ const StyledText = styled(Text)`
     text-transform: ${(props) => props.$textTransform};
 `
 
-export const OverlayEmail = ({ open, onClose }: OverlayEmailProps) => {
+export const OverlayEmail = ({
+    open,
+    onClose,
+    isError = false,
+}: OverlayEmailProps) => {
     const button = renderHamburger({ open: open, toggleOpen: onClose })
 
     return (
@@ -49,15 +54,17 @@ export const OverlayEmail = ({ open, onClose }: OverlayEmailProps) => {
                             $textTransform="uppercase"
                             $textAlign="center"
                         >
-                            Thanks you for your inquiry!
+                            {isError
+                                ? 'Mailchimp request failed'
+                                : 'Thanks you for your inquiry!'}
                         </StyledText>
                     </motion.div>
                 </AnimationBox>
                 <AnimationBox>
                     <motion.div variants={linkVariants}>
                         <StyledText variant={'nav'} $textAlign="center">
-                            We have received your message. Our team will get
-                            back to you shortly.
+                            {!isError &&
+                                'We have received your message. Our team will get back to you shortly.'}
                         </StyledText>
                     </motion.div>
                 </AnimationBox>

@@ -40,6 +40,7 @@ const StyledButton = styled(Button)<ButtonProps>`
 const StyledInput = styled(Input)`
     width: 100%;
     margin: 0;
+    color: white !important;
     &:focus {
         border-bottom: 2px solid ${(props) => props.$transitionColor};
     }
@@ -65,6 +66,7 @@ export const ContactForm = ({
     const isLargeDesktopLayout = useBreakpointBiggerThan('lg')
 
     const { showDialog, handleOpenDialog, handleCloseDialog } = useDialogState()
+    const [isError, setIsError] = useState(false)
     const [isSubmitting, setIsSubmitting] = useState(false)
 
     const isMainVariant = variant === 'main'
@@ -86,6 +88,7 @@ export const ContactForm = ({
 
     const onSubmit: SubmitHandler<FormSchema> = (data) => {
         setIsSubmitting(true)
+        setIsError(false)
         const url =
             'https://rubinproduction.us22.list-manage.com/subscribe/post?u=9b8f316816399a95e33302c49&amp;id=9fd54cbf57&amp;f_id=00afd1e1f0'
 
@@ -98,12 +101,13 @@ export const ContactForm = ({
                     setError('root', {
                         message: 'Something went wrong',
                     })
+                    setIsError(true)
+                    handleOpenDialog()
                 } else {
                     const { msg, result } = data
                     if (result === 'success') {
                         handleOpenDialog()
                         reset()
-                        console.log('data sent', data)
                     } else {
                         setError('root', {
                             message: msg,
@@ -116,7 +120,11 @@ export const ContactForm = ({
 
     return (
         <>
-            <OverlayEmail open={showDialog} onClose={handleCloseDialog} />
+            <OverlayEmail
+                open={showDialog}
+                onClose={handleCloseDialog}
+                isError={isError}
+            />
 
             <StyledForm
                 onSubmit={handleSubmit(onSubmit)}
