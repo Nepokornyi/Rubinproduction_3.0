@@ -9,7 +9,7 @@ import { SwiperCustomNavigation } from '../SwiperCustomNavigation'
 
 import scooty from '../../../../../assets/img/work/scooty.png'
 import gamechanger from '../../../../../assets/img/work/gamechanger.png'
-import elitvoyage from '../../../../../assets/img/work/elitvoyage.jpg'
+import elitvoyage from '../../../../../assets/img/work/elitevoyage.png'
 import logoScooty from '../../../../../assets/img/work/icoScooty.png'
 import logoGamechanger from '../../../../../assets/img/work/icoGameChanger.png'
 import logoEliteVoyage from '../../../../../assets/img/work/icoEliteVoyage.png'
