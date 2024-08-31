@@ -1,0 +1,38 @@
+{
+  "name": "rubinprod",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "check:circular-dependencies": "madge --circular --no-spinner --exclude 'pages/.*(?=route.ts)' src/main.tsx",
+    "check:code": "yarn check:type && yarn lint && yarn check:circular-dependencies && yarn check:dead-code",
+    "check:dead-code": "knip",
+    "check:type": "tsc --noEmit",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "framer-motion": "^11.3.28",
+    "gsap": "^3.12.5",
+    "i18next": "^23.13.0",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "swiper": "^11.1.9",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "knip": "^5.27.2",
+    "madge": "^8.0.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
