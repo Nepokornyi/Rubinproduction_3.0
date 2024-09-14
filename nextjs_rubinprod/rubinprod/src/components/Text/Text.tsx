@@ -16,7 +16,7 @@ type TextProps = {
     fontWeight?: FontWeight
     textTransform?: TextTransform
     textAlign?: TextAlign
-    paddingOverride?: string
+    padding?: string
     className?: string
 }
 
@@ -28,7 +28,7 @@ export const Text = ({
     fontWeight = 'font-normal',
     textTransform = 'none',
     textAlign = 'inherit',
-    paddingOverride = 'p-0',
+    padding = 'p-0',
     className = '',
 }: TextProps) => {
     const variantClass = variant ? variantStyles[variant] : ''
@@ -38,7 +38,7 @@ export const Text = ({
         textAlign !== 'inherit' ? textAlign : '',
         fontWeight,
         fontFamily,
-        paddingOverride,
+        padding,
         className,
     ].join(' ')
 
