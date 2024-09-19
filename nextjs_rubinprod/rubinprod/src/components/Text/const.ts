@@ -25,7 +25,7 @@ export type TextTransform = 'capitalize' | 'lowercase' | 'uppercase' | 'none'
 export type TextAlign = 'text-center' | 'text-left' | 'text-right' | 'inherit'
 
 export const variantStyles: Record<VariantStyles, string> = {
-    h1: 'text-4xl md:text-6xl font-bold',
+    h1: 'text-4xl md:text-8xl font-bold',
     h2: 'text-3xl md:text-5xl font-bold',
     h3: 'text-2xl md:text-4xl font-bold',
     h4: 'text-xl md:text-2xl font-bold',

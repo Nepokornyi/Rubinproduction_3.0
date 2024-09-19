@@ -42,8 +42,6 @@ export const Text = ({
         className,
     ].join(' ')
 
-    console.log(combinedClasses)
-
     const content = dangerousText ? (
         <span
             className={combinedClasses}
