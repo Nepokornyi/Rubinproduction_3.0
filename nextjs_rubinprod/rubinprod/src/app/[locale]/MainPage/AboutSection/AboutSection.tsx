@@ -7,7 +7,7 @@ import { AboutSectionDescription } from './components/AboutSectionDescription'
 export const AboutSection = () => {
     return (
         <FlexContainer
-            className="border border-red-700 pt-36 pb-24"
+            className="pt-36 pb-24"
             direction="flex-col"
             justifyContent="justify-center"
         >

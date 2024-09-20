@@ -1,7 +1,5 @@
-'use client'
 import { Button } from '@/components/Button/Button'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
-import { useBreakpointBiggerThan } from '@/helpers/useCurrentBreakpoint'
 import { useTranslations } from 'next-intl'
 import React from 'react'
 import { RubinTitle } from './components/RubinTitle'
