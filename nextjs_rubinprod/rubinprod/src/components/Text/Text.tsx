@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react'
+import { ReactNode } from 'react'
 import {
     FontFamily,
     FontWeight,
@@ -24,7 +24,7 @@ export const Text = ({
     children,
     dangerousText,
     fontFamily = 'font-montserrat',
-    variant,
+    variant = 'p',
     fontWeight = 'font-normal',
     textTransform = 'none',
     textAlign = 'inherit',
