@@ -20,9 +20,6 @@ const config: Config = {
                 sans: ['sans-serif'],
             },
             colors: {},
-            clipPath: {
-                'custom-path': 'polygon(0 0, 100% 0, 100% 97%, 0% 100%)',
-            },
             animation: {
                 spin: 'spin 0.85s cubic-bezier(0.5, 0, 0.5, 1) infinite',
             },
