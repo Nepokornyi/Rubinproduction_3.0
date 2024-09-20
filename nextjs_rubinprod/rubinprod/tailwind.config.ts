@@ -13,6 +13,12 @@ const config: Config = {
                 '50vh': '50vh',
                 screen: '100vh',
             },
+            fontFamily: {
+                montserrat: ['Montserrat', 'sans-serif'],
+                'open-sans': ['Open Sans', 'sans-serif'],
+                grunges: ['Grunges', 'sans-serif'],
+                sans: ['sans-serif'],
+            },
             colors: {},
             clipPath: {
                 'custom-path': 'polygon(0 0, 100% 0, 100% 97%, 0% 100%)',
