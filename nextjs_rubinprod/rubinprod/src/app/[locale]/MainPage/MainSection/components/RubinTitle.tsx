@@ -9,14 +9,22 @@ type RubinTitleProps = {
     button?: React.ReactNode
 }
 
+const logoLetterStyles =
+    'md:-left-6 lg:-left-8 2xl:-left-8 md:-top-5 lg:-top-3 2xl:-top-5 md:w-26 lg:w-40 2xl:w-44'
+
+const firstLetterStyles =
+    'first-letter:opacity-0 md:first-letter:text-8lx lg:first-letter:text-9xl 2xl:first-letter:text-[148px]'
+
 export const RubinTitle = ({ button }: RubinTitleProps) => {
     return (
         <Text textTransform="uppercase" fontWeight="font-bold" variant="h1">
             <FlexContainer gap="gap-4" alignItems="items-center">
-                <span className="relative first-letter:opacity-0 first-letter:text-[148px] text-[#d91e37]">
+                <span
+                    className={`relative ${firstLetterStyles} text-[#d91e37]`}
+                >
                     Rubin
                     <Image
-                        className="absolute -left-8 -top-5 select-none w-44"
+                        className={`absolute ${logoLetterStyles} select-none`}
                         src={logo}
                         alt="Rubin logo header placeholder"
                     />

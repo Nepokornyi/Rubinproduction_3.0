@@ -15,9 +15,8 @@ export type Gap =
     | 'gap-2'
     | 'gap-4'
     | 'gap-6'
-    | 'gap-8'
-    | 'gap-9'
     | 'gap-10'
+    | 'gap-16'
 
 export type MinHeight =
     | 'min-h-100vh'
