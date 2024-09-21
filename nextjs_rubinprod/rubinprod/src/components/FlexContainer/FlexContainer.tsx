@@ -36,7 +36,6 @@ export const FlexContainer = ({
 
     const combinedClasses = [
         'flex',
-        'relative',
         'w-full',
         direction,
         horizontalAlignClass,
