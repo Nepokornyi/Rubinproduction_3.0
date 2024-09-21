@@ -7,7 +7,12 @@ import { MainSectionSocials } from './components/MainSectionSocials'
 import { Header } from '@/components/Header/Header'
 
 export const MainSection = () => {
-    const RenderCTAButton = <Button>spolupracovat</Button>
+    const RenderCTAButton = (
+        <Button className="hidden md:block mt-4 pl-10">spolupracovat</Button>
+    )
+    const RenderCTAButtonMobile = (
+        <Button className="block md:hidden">spolupracovat</Button>
+    )
 
     return (
         <FlexContainer
@@ -21,7 +26,7 @@ export const MainSection = () => {
             <div className="flex flex-col relative">
                 <RubinTitle button={RenderCTAButton} />
                 <MainSectionDescription />
-                {/* {RenderCTAButton} on small screens */}
+                {RenderCTAButtonMobile}
                 <MainSectionSocials />
             </div>
         </FlexContainer>

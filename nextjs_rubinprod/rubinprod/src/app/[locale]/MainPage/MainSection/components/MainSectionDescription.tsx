@@ -9,9 +9,10 @@ export const MainSectionDescription = () => {
             gap="gap-1"
             justifyContent="justify-between"
             alignItems="items-center"
+            className="mt-3 mb-5"
         >
             <MainSectionContacts />
-            <Box className="max-w-96">
+            <Box className="max-w-[27rem]">
                 Vaši vizi proměníme ve skutečnost - od konceptu až po finální
                 střih, naše odhodlání k preciznosti a kreativitě zaručuje, že
                 každý projekt předčí očekávání.
