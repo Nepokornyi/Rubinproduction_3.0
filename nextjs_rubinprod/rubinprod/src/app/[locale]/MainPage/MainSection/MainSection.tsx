@@ -8,7 +8,7 @@ import { Header } from '@/components/Header/Header'
 
 export const MainSection = () => {
     const RenderCTAButton = (
-        <Button className="hidden md:block lg:mt-6 2xl:mt-4 lg:pl-10">
+        <Button className="hidden md:block lg:mt-1 2xl:mt-4 lg:pl-10">
             spolupracovat
         </Button>
     )
