@@ -1,5 +1,4 @@
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
-import { Text } from '@/components/Text/Text'
 import React from 'react'
 import { AboutSectionHeading } from './components/AboutSectionHeading'
 import { AboutSectionDescription } from './components/AboutSectionDescription'

@@ -2,6 +2,7 @@ import { Box } from '@/components/Box/Box'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import React from 'react'
 import { MainSectionContacts } from './MainSectionContacts'
+import { Text } from '@/components/Text/Text'
 
 export const MainSectionDescription = () => {
     return (
@@ -13,9 +14,11 @@ export const MainSectionDescription = () => {
         >
             <MainSectionContacts />
             <Box className="max-w-[27rem]">
-                Vaši vizi proměníme ve skutečnost - od konceptu až po finální
-                střih, naše odhodlání k preciznosti a kreativitě zaručuje, že
-                každý projekt předčí očekávání.
+                <Text>
+                    Vaši vizi proměníme ve skutečnost - od konceptu až po
+                    finální střih, naše odhodlání k preciznosti a kreativitě
+                    zaručuje, že každý projekt předčí očekávání.
+                </Text>
             </Box>
         </FlexContainer>
     )
