@@ -12,7 +12,8 @@ export const Header = () => {
         <FlexContainer
             justifyContent="justify-between"
             alignItems="items-center"
-            className="fixed md:absolute top-0 left-0 px-2 py-4 z-10 md:bg-transparent transition-colors"
+            className="fixed md:absolute top-0 left-1/2 transform -translate-x-1/2 px-2 py-4 z-10 md:bg-transparent transition-colors"
+            width="w-full md:w-3/4"
         >
             <Image src={logo} alt="Rubinproduction Logo" />
             <nav>

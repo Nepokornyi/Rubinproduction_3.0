@@ -7,7 +7,7 @@ export const MainSectionSocials = () => {
         <FlexContainer
             gap="gap-10"
             alignItems="items-center"
-            className="absolute bottom-0 md:bottom-auto md:[writing-mode:vertical-lr] md:rotate-180 md:w-auto"
+            className="absolute bottom-0 md:-left-4 md:bottom-1/2 md:translate-y-1/2 md:[writing-mode:vertical-lr] md:rotate-180 md:w-auto"
         >
             <a href="https://www.instagram.com/who1snick">
                 <Text
