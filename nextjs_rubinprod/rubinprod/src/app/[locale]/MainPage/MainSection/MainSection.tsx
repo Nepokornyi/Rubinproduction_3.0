@@ -8,7 +8,9 @@ import { Header } from '@/components/Header/Header'
 
 export const MainSection = () => {
     const RenderCTAButton = (
-        <Button className="hidden md:block mt-4 pl-10">spolupracovat</Button>
+        <Button className="hidden md:block lg:mt-6 2xl:mt-4 lg:pl-10">
+            spolupracovat
+        </Button>
     )
     const RenderCTAButtonMobile = (
         <Button className="block md:hidden">spolupracovat</Button>
@@ -25,8 +27,8 @@ export const MainSection = () => {
 
             <FlexContainer
                 direction="flex-col"
-                width="w-auto"
-                className="md:ml-[15%] md:pl-14 relative"
+                width="w-max"
+                className="md:ml-[15%] md:pl-20 relative"
             >
                 <RubinTitle button={RenderCTAButton} />
                 <MainSectionDescription />

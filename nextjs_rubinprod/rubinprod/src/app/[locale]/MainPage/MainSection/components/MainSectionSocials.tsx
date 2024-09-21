@@ -5,7 +5,7 @@ import React from 'react'
 export const MainSectionSocials = () => {
     return (
         <FlexContainer
-            gap="gap-10"
+            gap="gap-16"
             alignItems="items-center"
             className="absolute bottom-0 md:-left-4 md:bottom-1/2 md:translate-y-1/2 md:[writing-mode:vertical-lr] md:rotate-180 md:w-auto"
         >
