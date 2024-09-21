@@ -10,7 +10,6 @@ export const ContactSectionForm = () => {
                 <Input placeholder="email" />
                 <Input placeholder="phone" />
                 <Button className="md:border-none md:bg-black">
-                    {' '}
                     Poslat Zadost
                 </Button>
             </FlexContainer>

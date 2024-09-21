@@ -18,7 +18,7 @@ export const Header = () => {
         >
             <Image src={logo} alt="Rubinproduction Logo" />
             <nav className="hidden md:block">
-                <ul className="list-none flex gap-4 mr-3 overflow-hidden">
+                <ul className="list-none flex gap-4 overflow-hidden">
                     <li className="cursor-pointer relative">
                         <Text variant="nav">O nas</Text>
                     </li>

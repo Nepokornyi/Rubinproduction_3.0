@@ -7,7 +7,7 @@ export const MainSectionContacts = () => {
         <FlexContainer
             direction="flex-col"
             gap="gap-1"
-            className="items-end md:items-start absolute md:static top-0 right-0"
+            className="items-end md:items-start absolute md:static -top-12 right-0"
         >
             <a href="tel:+420773042876">
                 <Text

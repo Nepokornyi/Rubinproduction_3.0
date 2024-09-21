@@ -5,9 +5,9 @@ import React from 'react'
 export const MainSectionSocials = () => {
     return (
         <FlexContainer
-            gap="gap-16"
             alignItems="items-center"
-            className="absolute bottom-0 md:-left-4 md:bottom-1/2 md:translate-y-1/2 md:[writing-mode:vertical-lr] md:rotate-180 md:w-auto"
+            justifyContent="justify-evenly"
+            className="md:gap-16 absolute -bottom-8 md:-left-4 md:bottom-1/2 md:translate-y-1/2 md:[writing-mode:vertical-lr] md:rotate-180 md:w-auto"
         >
             <a href="https://www.instagram.com/who1snick">
                 <Text

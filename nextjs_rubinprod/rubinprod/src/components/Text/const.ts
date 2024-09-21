@@ -27,12 +27,12 @@ export type TextTransform = 'capitalize' | 'lowercase' | 'uppercase' | 'none'
 export type TextAlign = 'text-center' | 'text-left' | 'text-right' | 'inherit'
 
 export const variantStyles: Record<VariantStyles, string> = {
-    h1: 'text-4xl md:text-9xl font-bold',
-    h2: 'text-3xl md:text-5xl font-bold',
-    h3: 'text-2xl md:text-4xl font-bold',
-    h4: 'text-xl md:text-2xl font-bold',
-    p: 'text-base font-medium',
-    nav: 'text-lg uppercase font-normal',
-    socials: 'text-base uppercase font-normal',
+    h1: 'px-6 md:px-0 text-4xl md:text-7xl lg:text-8xl 2xl:text-9xl font-bold',
+    h2: 'px-6 md:px-0 ext-3xl md:text-5xl font-bold',
+    h3: 'px-6 md:px-0 text-2xl md:text-4xl font-bold',
+    h4: 'px-6 md:px-0 text-xl md:text-2xl font-bold',
+    p: 'px-6 md:px-0 text-sm md:text-base font-medium',
+    nav: 'px-6 md:px-0 text-lg uppercase font-normal',
+    socials: 'px-6 md:px-0 text-sm lg:text-base uppercase font-normal',
     button: 'text-lg md:text-xl font-semibold',
 }
