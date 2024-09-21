@@ -13,6 +13,7 @@ type FlexContainerProps = {
     minHeight?: MinHeight
     justifyContent?: HorizontalAlign
     alignItems?: VerticalAlign
+    width?: string
     center?: boolean
     gap?: Gap
     className?: string
@@ -25,6 +26,7 @@ export const FlexContainer = ({
     minHeight = 'min-h-auto',
     justifyContent,
     alignItems,
+    width = 'w-full',
     center = false,
     gap = 'gap-0',
     className = '',
@@ -36,7 +38,7 @@ export const FlexContainer = ({
 
     const combinedClasses = [
         'flex',
-        'w-full',
+        width,
         direction,
         horizontalAlignClass,
         verticalAlignClass,

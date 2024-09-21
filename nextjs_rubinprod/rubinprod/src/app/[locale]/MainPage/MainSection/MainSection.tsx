@@ -18,17 +18,21 @@ export const MainSection = () => {
         <FlexContainer
             minHeight="min-h-screen"
             direction="flex-row"
-            justifyContent="justify-center"
+            justifyContent="justify-start"
             className="relative bg-no-repeat bg-[url('/img/showreel.jpg')] bg-top lg:bg-top bg-cover pt-48 pb-32 overflow-hidden md:items-center items-start"
         >
             <Header />
 
-            <div className="flex flex-col relative">
+            <FlexContainer
+                direction="flex-col"
+                width="w-auto"
+                className="md:ml-[15%] md:pl-14 relative"
+            >
                 <RubinTitle button={RenderCTAButton} />
                 <MainSectionDescription />
                 {RenderCTAButtonMobile}
                 <MainSectionSocials />
-            </div>
+            </FlexContainer>
         </FlexContainer>
     )
 }
