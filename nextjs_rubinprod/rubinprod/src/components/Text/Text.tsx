@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import {
     FontFamily,
+    FontHeight,
     FontWeight,
     TextAlign,
     TextTransform,
@@ -14,6 +15,7 @@ type TextProps = {
     fontFamily?: FontFamily
     variant?: VariantStyles
     fontWeight?: FontWeight
+    fontHeight?: FontHeight
     textTransform?: TextTransform
     textAlign?: TextAlign
     padding?: string
@@ -23,7 +25,7 @@ type TextProps = {
 export const Text = ({
     children,
     dangerousText,
-    fontFamily = 'font-montserrat',
+    fontFamily = '',
     variant = 'p',
     fontWeight = 'font-normal',
     textTransform = 'none',

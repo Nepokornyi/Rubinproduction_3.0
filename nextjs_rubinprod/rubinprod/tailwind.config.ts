@@ -7,6 +7,21 @@ const config: Config = {
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
+        fontSize: {
+            xs: ['0.75rem', '1'],
+            sm: ['0.875rem', '1'],
+            base: ['1rem', '1'],
+            lg: ['1.125rem', '1'],
+            xl: ['1.25rem', '1'],
+            '2xl': ['1.5rem', '1'],
+            '3xl': ['1.875rem', '1'],
+            '4xl': ['2.25rem', '1'],
+            '5xl': ['3rem', '1'],
+            '6xl': ['3.75rem', '1'],
+            '7xl': ['4.5rem', '1'],
+            '8xl': ['6rem', '1'],
+            '9xl': ['8rem', '1'],
+        },
         extend: {
             minHeight: {
                 '100vh': '100vh',
@@ -14,9 +29,8 @@ const config: Config = {
                 screen: '100vh',
             },
             fontFamily: {
-                montserrat: ['Montserrat', 'sans-serif'],
-                'open-sans': ['Open Sans', 'sans-serif'],
                 grunges: ['Grunges', 'sans-serif'],
+                'open-sans': ['Open Sans', 'sans-serif'],
                 sans: ['sans-serif'],
             },
             colors: {},
