@@ -1,39 +1,31 @@
-// import { useTranslations } from 'next-intl'
+'use client'
 import React from 'react'
 import { FlexContainer } from '../FlexContainer/FlexContainer'
 import Image from 'next/image'
 
 import logo from '@/assets/img/RubinLetter.svg'
-import { Text } from '../Text/Text'
+import { DesktopMenu } from './components/DesktopMenu'
+import { MobileMenu } from './components/MobileMenu/MobileMenu'
+import { useScrollHeader } from '@/hooks/useScrollHeader'
 
 export const Header = () => {
-    // const t = useTranslations('Component')
+    const headerStyle = useScrollHeader()
 
     return (
+        // or add bg-[#0c0c0c] if don't use client
         <FlexContainer
             justifyContent="justify-between"
             alignItems="items-center"
-            className="fixed md:absolute top-0 left-1/2 transform -translate-x-1/2 px-2 py-4 z-10 md:bg-transparent transition-colors"
             width="w-full md:w-3/4"
+            className={`fixed md:absolute top-0 left-1/2 transform -translate-x-1/2 p-4 z-10   ${headerStyle} transition-colors`}
         >
-            <Image src={logo} alt="Rubinproduction Logo" />
-            <nav className="hidden md:block">
-                <ul className="list-none flex gap-4 overflow-hidden">
-                    <li className="cursor-pointer relative">
-                        <Text variant="nav">O nas</Text>
-                    </li>
-                    <li className="cursor-pointer relative">
-                        <Text variant="nav">Portfolio</Text>
-                    </li>
-                    <li className="cursor-pointer relative">
-                        <Text variant="nav">DE</Text>
-                    </li>
-                    <li className="cursor-pointer relative">
-                        <Text variant="nav">CZ</Text>
-                    </li>
-                </ul>
-            </nav>
-            <div className="md:hidden">Hamburger</div>
+            <Image
+                src={logo}
+                alt="Rubinproduction Logo"
+                className="w-12 md:w-24"
+            />
+            <DesktopMenu />
+            <MobileMenu />
         </FlexContainer>
     )
 }
