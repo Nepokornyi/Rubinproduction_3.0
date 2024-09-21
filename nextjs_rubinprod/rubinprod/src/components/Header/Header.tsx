@@ -4,6 +4,7 @@ import { FlexContainer } from '../FlexContainer/FlexContainer'
 import Image from 'next/image'
 
 import logo from '@/assets/img/RubinLetter.svg'
+import { Text } from '../Text/Text'
 
 export const Header = () => {
     // const t = useTranslations('Component')
@@ -18,10 +19,18 @@ export const Header = () => {
             <Image src={logo} alt="Rubinproduction Logo" />
             <nav>
                 <ul className="list-none flex gap-4 mr-3 overflow-hidden">
-                    <li className="cursor-pointer relative">O nas</li>
-                    <li className="cursor-pointer relative">Portfolio</li>
-                    <li className="cursor-pointer relative">DE</li>
-                    <li className="cursor-pointer relative">CZ</li>
+                    <li className="cursor-pointer relative">
+                        <Text variant="nav">O nas</Text>
+                    </li>
+                    <li className="cursor-pointer relative">
+                        <Text variant="nav">Portfolio</Text>
+                    </li>
+                    <li className="cursor-pointer relative">
+                        <Text variant="nav">DE</Text>
+                    </li>
+                    <li className="cursor-pointer relative">
+                        <Text variant="nav">CZ</Text>
+                    </li>
                 </ul>
             </nav>
         </FlexContainer>
