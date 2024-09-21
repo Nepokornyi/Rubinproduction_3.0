@@ -14,7 +14,7 @@ export const MainSectionDescription = () => {
         >
             <MainSectionContacts />
             <Box className="md:max-w-[15rem] lg:max-w-[27rem]">
-                <Text className="md:text-sm lg:ml-8 2xl:ml-0 inline-block">
+                <Text className="lg:ml-8 2xl:ml-0">
                     Vaši vizi proměníme ve skutečnost - od konceptu až po
                     finální střih, naše odhodlání k preciznosti a kreativitě
                     zaručuje, že každý projekt předčí očekávání.

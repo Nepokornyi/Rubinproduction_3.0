@@ -8,27 +8,29 @@ import { Header } from '@/components/Header/Header'
 
 export const MainSection = () => {
     const RenderCTAButton = (
-        <Button className="hidden md:block lg:mt-1 2xl:mt-4 lg:pl-10">
+        <Button className="hidden md:block 2xl:mt-4 lg:pl-10">
             spolupracovat
         </Button>
     )
     const RenderCTAButtonMobile = (
-        <Button className="block md:hidden">spolupracovat</Button>
+        <FlexContainer>
+            <Button className="md:hidden mx-6">spolupracovat</Button>
+        </FlexContainer>
     )
 
     return (
         <FlexContainer
-            minHeight="min-h-screen"
             direction="flex-row"
             justifyContent="justify-start"
-            className="relative bg-no-repeat bg-[url('/img/showreel.jpg')] bg-top lg:bg-top bg-cover pt-48 pb-32 overflow-hidden md:items-center items-start"
+            className="relative h-screen bg-no-repeat bg-[url('/img/showreel.jpg')] bg-top lg:bg-top bg-cover pt-52 pb-32 overflow-hidden md:items-center items-start"
         >
             <Header />
 
             <FlexContainer
                 direction="flex-col"
-                width="w-max"
-                className="md:ml-[15%] md:pl-20 relative"
+                justifyContent="justify-center"
+                width="w-auto"
+                className="md:ml-[15%] md:pl-20 relative h-full md:h-auto"
             >
                 <RubinTitle button={RenderCTAButton} />
                 <MainSectionDescription />

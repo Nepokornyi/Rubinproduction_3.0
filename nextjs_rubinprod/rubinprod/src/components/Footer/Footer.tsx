@@ -16,7 +16,7 @@ export const Footer = () => {
                     Copyright
                 </Text>
 
-                <Box className="grid grid-cols-3 grid-rows-3 pb-6 gap-x-4 text-right">
+                <Box className="hidden md:grid grid-cols-3 grid-rows-3 pb-6 gap-x-4 text-right">
                     <a href="" className="col-start-3 row-start-1">
                         Home
                     </a>
