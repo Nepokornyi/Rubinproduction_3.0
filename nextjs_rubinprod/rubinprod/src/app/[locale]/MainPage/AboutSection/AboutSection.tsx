@@ -7,9 +7,9 @@ import { ParallaxContainer } from '@/components/Parallax/ParallaxContainer'
 export const AboutSection = () => {
     return (
         <FlexContainer
-            className="pt-36 pb-24 relative"
             direction="flex-col"
             justifyContent="justify-center"
+            className="pt-36 pb-24 relative md:items-center"
         >
             <ParallaxContainer text={'Full cycle video production'} />
             <AboutSectionHeading />

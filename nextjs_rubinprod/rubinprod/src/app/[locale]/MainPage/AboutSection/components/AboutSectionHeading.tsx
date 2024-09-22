@@ -1,5 +1,6 @@
 import { Text } from '@/components/Text/Text'
 import React from 'react'
+import { AboutCircleText } from './AboutCircleText'
 
 export const AboutSectionHeading = () => {
     return (
@@ -7,15 +8,16 @@ export const AboutSectionHeading = () => {
             variant="h2"
             textTransform="uppercase"
             padding="pb-6"
-            className="text-balance md:text-center"
+            className="text-balance "
             fontWeight="font-bold"
         >
-            Creating{' '}
-            <Text variant="h2" fontFamily="font-grunges">
+            <span className="relative bg-[#0c0c0c]">Creating</span>{' '}
+            <Text variant="h2" fontFamily="font-grunges" className="mr-6">
                 The Best
             </Text>
             <br />
-            Videos For You
+            <span className="relative bg-[#0c0c0c]">Videos For You</span>
+            <AboutCircleText />
         </Text>
     )
 }
