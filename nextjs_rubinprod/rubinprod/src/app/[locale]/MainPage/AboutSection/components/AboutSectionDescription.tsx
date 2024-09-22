@@ -5,7 +5,10 @@ import React from 'react'
 
 export const AboutSectionDescription = () => {
     return (
-        <FlexContainer width="w-auto" className="flex-col-reverse md:flex-row">
+        <FlexContainer
+            width="w-auto"
+            className="mb-16 flex-col-reverse md:flex-row"
+        >
             <FlexContainer
                 alignItems="items-center"
                 width="w-auto"
