@@ -17,7 +17,7 @@ export const Header = () => {
             justifyContent="justify-between"
             alignItems="items-center"
             width="w-full md:w-3/4"
-            className={`fixed md:absolute top-0 left-1/2 transform -translate-x-1/2 p-4 z-10   ${headerStyle} transition-colors`}
+            className={`fixed md:absolute top-0 left-1/2 transform -translate-x-1/2 p-4 z-10   ${headerStyle} bg-[#0c0c0c] md:bg-transparent transition-colors`}
         >
             <Image
                 src={logo}
