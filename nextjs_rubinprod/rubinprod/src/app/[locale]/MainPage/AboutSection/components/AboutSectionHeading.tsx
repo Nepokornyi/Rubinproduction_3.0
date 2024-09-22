@@ -8,15 +8,19 @@ export const AboutSectionHeading = () => {
             variant="h2"
             textTransform="uppercase"
             padding="pb-6"
-            className="text-balance "
+            className="text-balance relative w-72 md:w-auto"
             fontWeight="font-bold"
         >
-            <span className="relative bg-[#0c0c0c]">Creating</span>{' '}
-            <Text variant="h2" fontFamily="font-grunges" className="mr-6">
+            <span className="bg-[#0c0c0c]">Creating</span>{' '}
+            <Text
+                variant="h2"
+                fontFamily="font-grunges"
+                className="px-0 md:mr-6"
+            >
                 The Best
             </Text>
             <br />
-            <span className="relative bg-[#0c0c0c]">Videos For You</span>
+            <span className="bg-[#0c0c0c]">Videos For You</span>
             <AboutCircleText />
         </Text>
     )

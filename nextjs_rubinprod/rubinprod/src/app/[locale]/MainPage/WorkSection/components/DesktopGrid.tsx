@@ -13,13 +13,13 @@ export const DesktopGrid = () => {
                 <FlexContainer direction="flex-col" className="col-start-2">
                     <Text
                         fontWeight="font-bold"
-                        variant="h2"
+                        variant="h4"
                         textTransform="uppercase"
                         className="relative"
                     >
                         Portfolio
                         <Text
-                            variant="h2"
+                            variant="h4"
                             textTransform="uppercase"
                             fontFamily="font-grunges"
                             className="absolute top-0 -left-20"
