@@ -3,6 +3,7 @@ import React from 'react'
 import { AboutSectionHeading } from './components/AboutSectionHeading'
 import { AboutSectionDescription } from './components/AboutSectionDescription'
 import { ParallaxContainer } from '@/components/Parallax/ParallaxContainer'
+import { LogoCarousel } from '@/components/Carousel/LogoCarousel'
 
 export const AboutSection = () => {
     return (
@@ -14,7 +15,7 @@ export const AboutSection = () => {
             <ParallaxContainer text={'Full cycle video production'} />
             <AboutSectionHeading />
             <AboutSectionDescription />
-            {/* <div>Logo Carousel</div> */}
+            <LogoCarousel />
         </FlexContainer>
     )
 }
