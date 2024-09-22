@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import { Text } from '../Text/Text'
 import { buttonVariants, ButtonVariantsList } from './types'
+import { HoverButtonEffect } from './components/HoverButtonEffect'
 
 type ButtonProps = {
     children: ReactNode
@@ -19,9 +20,10 @@ export const Button = ({
         <button
             className={`w-full text-lg bg-transparent relative text-left border-2 p-4 ${buttonVariants[blockColor]} ${className}`}
         >
+            <HoverButtonEffect />
             <Text
                 textTransform="uppercase"
-                className="pointer-events-none"
+                className="relative pointer-events-none"
                 variant="button"
             >
                 {children}
