@@ -8,7 +8,7 @@ export const useScrollHeader = () => {
     useEffect(() => {
         const handleScroll = () => {
             const newStyle =
-                window.scrollY > 100 ? 'bg-[#0C0C0C]' : 'bg-transparent'
+                window.scrollY > 100 ? 'bg-[#0c0c0c]' : 'bg-transparent'
             setHeaderStyle(newStyle)
         }
 
