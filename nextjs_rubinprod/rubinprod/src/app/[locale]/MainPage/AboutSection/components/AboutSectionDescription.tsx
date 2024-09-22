@@ -1,24 +1,34 @@
+import { Arrow } from '@/components/Arrow/Arrow'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Text } from '@/components/Text/Text'
 import React from 'react'
 
 export const AboutSectionDescription = () => {
     return (
-        <FlexContainer
-            gap="gap-6"
-            center
-            className="flex-col-reverse md:flex-row"
-        >
+        <FlexContainer width="w-auto" className="flex-col-reverse md:flex-row">
             <FlexContainer
-                gap="gap-1"
-                className="justify-center md:justify-end"
+                alignItems="items-center"
+                width="w-auto"
+                className="justify-center md:justify-end gap-3 my-16 md:my-0 md:ml-24"
             >
-                <Text textTransform="uppercase">Nasi</Text>
-                <div className="w-0.5 h-6 border-l md:order-last" />
-                <Text textTransform="uppercase">Klienti</Text>
+                <Text
+                    textTransform="uppercase"
+                    className="px-1 tracking-widest"
+                >
+                    Nasi
+                </Text>
+                <div className="md:order-last">
+                    <Arrow direction="down" />
+                </div>
+                <Text
+                    textTransform="uppercase"
+                    className="px-1 md:mr-2 tracking-widest"
+                >
+                    Klienti
+                </Text>
             </FlexContainer>
-            <FlexContainer>
-                <Text className="md:max-w-96" variant="p">
+            <FlexContainer width="w-auto">
+                <Text className="md:max-w-96 md:mx-6" variant="p">
                     Náš přístup je založen na kreativitě a inovaci, což dává
                     naší práci jedinečný charakter. Do každého snímku vkládáme
                     vášeň a odborné znalosti, abychom zajistili, že váš příběh

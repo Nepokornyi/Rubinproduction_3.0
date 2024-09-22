@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import { Text } from '../Text/Text'
 import { buttonVariants, ButtonVariantsList } from './types'
 import { HoverButtonEffect } from './components/HoverButtonEffect'
+import { Arrow } from '../Arrow/Arrow'
 
 type ButtonProps = {
     children: ReactNode
@@ -28,6 +29,9 @@ export const Button = ({
             >
                 {children}
             </Text>
+            <div className="absolute -right-6 top-1/2 -translate-y-1/2 pointer-events-none">
+                <Arrow />
+            </div>
         </button>
     )
 }

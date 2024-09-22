@@ -14,7 +14,7 @@ export const MainSection = () => {
     )
     const RenderCTAButtonMobile = (
         <FlexContainer>
-            <Button className="md:hidden mx-6">spolupracovat</Button>
+            <Button className="md:hidden mx-6 mr-12">spolupracovat</Button>
         </FlexContainer>
     )
 
