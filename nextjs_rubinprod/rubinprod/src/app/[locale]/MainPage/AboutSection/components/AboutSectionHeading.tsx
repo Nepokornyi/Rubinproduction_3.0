@@ -7,7 +7,7 @@ export const AboutSectionHeading = () => {
         <Text
             variant="h2"
             textTransform="uppercase"
-            padding="pb-6"
+            padding="pb-8"
             className="text-balance relative w-72 md:w-auto"
             fontWeight="font-bold"
         >
@@ -15,7 +15,7 @@ export const AboutSectionHeading = () => {
             <Text
                 variant="h2"
                 fontFamily="font-grunges"
-                className="px-0 md:mr-6"
+                className="px-1 md:mr-6"
             >
                 The Best
             </Text>
