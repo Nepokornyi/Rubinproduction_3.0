@@ -12,12 +12,9 @@ const animationProps = {
     },
 }
 
-const test =
-    'top-4 md:top-auto -right-16 md:right-auto bottom-auto md:-bottom-40 left-auto md:-left-16'
-
 export const AboutCircleText = () => {
     return (
-        <Box className="absolute md:-top-14 lg:-top-16 md:-left-12 z-[-1]">
+        <div className="absolute top-3 -right-8 md:top-auto bottom-auto md:-bottom-8 lg:-bottom-6 left-auto md:-left-12 z-[-1]">
             <motion.svg
                 animate={animationProps}
                 viewBox="0 0 200 200"
@@ -42,6 +39,6 @@ export const AboutCircleText = () => {
                     </textPath>
                 </text>
             </motion.svg>
-        </Box>
+        </div>
     )
 }

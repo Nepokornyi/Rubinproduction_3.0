@@ -28,7 +28,7 @@ export type TextAlign = 'text-center' | 'text-left' | 'text-right' | 'inherit'
 
 export const variantStyles: Record<VariantStyles, string> = {
     h1: 'px-6 md:px-0 text-4xl md:text-7xl lg:text-8xl 2xl:text-9xl font-bold',
-    h2: 'px-6 md:px-0 text-3xl md:text-6xl lg:text-7xl font-bold',
+    h2: 'px-6 md:px-0 text-4xl md:text-6xl lg:text-7xl font-bold',
     h3: 'px-6 md:px-0 text-2xl md:text-4xl font-bold',
     h4: 'px-6 md:px-0 text-xl md:text-2xl font-bold',
     p: 'px-6 md:px-0 text-sm md:text-base font-medium',
