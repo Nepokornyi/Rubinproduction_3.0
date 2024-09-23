@@ -5,11 +5,11 @@ import React from 'react'
 
 export const ContactSectionForm = () => {
     return (
-        <form>
+        <form className="md:max-w-[550px] w-full">
             <FlexContainer direction="flex-col">
                 <Input placeholder="email" />
                 <Input placeholder="phone" />
-                <Button className="md:border-none md:bg-black">
+                <Button className="md:border-none mx-6 md:bg-black">
                     Poslat Zadost
                 </Button>
             </FlexContainer>
