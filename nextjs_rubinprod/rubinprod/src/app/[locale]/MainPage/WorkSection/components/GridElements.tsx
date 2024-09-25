@@ -8,6 +8,10 @@ export const DesktopGridLayout = ({ children }: { children: ReactNode }) => (
     </Box>
 )
 
+export const MobileGridLayout = ({ children }: { children: ReactNode }) => (
+    <Box className="md:hidden w-full h-full">{children}</Box>
+)
+
 export const ExpandedLeftGridItem = ({
     link,
     alt,
