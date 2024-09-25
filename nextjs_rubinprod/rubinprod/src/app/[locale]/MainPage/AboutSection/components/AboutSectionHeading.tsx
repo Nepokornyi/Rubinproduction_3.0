@@ -15,7 +15,7 @@ export const AboutSectionHeading = () => {
             <Text
                 variant="h2"
                 fontFamily="font-grunges"
-                className="px-1 md:mr-6"
+                className="px-0 md:mr-6"
             >
                 The Best
             </Text>
