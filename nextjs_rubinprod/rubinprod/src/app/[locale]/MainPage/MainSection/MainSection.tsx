@@ -5,16 +5,19 @@ import { RubinTitle } from './components/RubinTitle'
 import { MainSectionDescription } from './components/MainSectionDescription'
 import { MainSectionSocials } from './components/MainSectionSocials'
 import { Header } from '@/components/Header/Header'
+import { useTranslations } from 'next-intl'
 
 export const MainSection = () => {
+    const t = useTranslations('MainPage')
+
     const RenderCTAButton = (
         <Button className="hidden md:block 2xl:mt-4 lg:pl-10">
-            spolupracovat
+            {t('button')}
         </Button>
     )
     const RenderCTAButtonMobile = (
         <FlexContainer>
-            <Button className="md:hidden mx-6 mr-12">spolupracovat</Button>
+            <Button className="md:hidden mx-6 mr-12">{t('button')}</Button>
         </FlexContainer>
     )
 

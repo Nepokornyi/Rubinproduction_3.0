@@ -1,9 +1,12 @@
 import { Arrow } from '@/components/Arrow/Arrow'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Text } from '@/components/Text/Text'
+import { useTranslations } from 'next-intl'
 import React from 'react'
 
 export const AboutSectionDescription = () => {
+    const t = useTranslations('AboutPage')
+
     return (
         <FlexContainer
             width="w-auto"
@@ -18,7 +21,7 @@ export const AboutSectionDescription = () => {
                     textTransform="uppercase"
                     className="px-1 tracking-widest"
                 >
-                    Nasi
+                    {t('clients_left')}
                 </Text>
                 <div className="md:order-last">
                     <Arrow direction="down" />
@@ -27,15 +30,12 @@ export const AboutSectionDescription = () => {
                     textTransform="uppercase"
                     className="px-1 md:mr-2 tracking-widest"
                 >
-                    Klienti
+                    {t('clients_right')}
                 </Text>
             </FlexContainer>
             <FlexContainer width="w-auto">
                 <Text className="md:max-w-96 md:mx-6" variant="p">
-                    Náš přístup je založen na kreativitě a inovaci, což dává
-                    naší práci jedinečný charakter. Do každého snímku vkládáme
-                    vášeň a odborné znalosti, abychom zajistili, že váš příběh
-                    bude rezonovat s vaším publikem.
+                    {t('description')}
                 </Text>
             </FlexContainer>
         </FlexContainer>
