@@ -25,27 +25,31 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
 import { SwiperCustomNavigation } from './SwiperCustomNavigation'
+import { useTranslations } from 'next-intl'
+import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 
-const DesktopPortfolio = () => (
-    <DesktopGridLayout>
-        <ExpandedLeftGridItem link={scootyCase} alt="scooty case" />
-        <RightGridItem link={gameChangerCase} alt="game changer case" />
-        <RightGridItem link={eliteVoyageCase} alt="elite voyage case" />
-        <BottomGridItem>
-            <YourProjectPlaceholder />
-        </BottomGridItem>
-        <BottomGridItem>
-            <Box className="flex h-full flex-col justify-end items-start z-10">
-                <Text>
-                    Bez ohledu na složitost projektu vám během první konzultace
-                    poskytneme odhad ceny. Pojďme společně vytvořit něco
-                    skvělého!
-                </Text>
-                <Button>Work together</Button>
-            </Box>
-        </BottomGridItem>
-    </DesktopGridLayout>
-)
+const DesktopPortfolio = () => {
+    const t = useTranslations('WorkPage')
+
+    return (
+        <DesktopGridLayout>
+            <ExpandedLeftGridItem link={scootyCase} alt="scooty case" />
+            <RightGridItem link={gameChangerCase} alt="game changer case" />
+            <RightGridItem link={eliteVoyageCase} alt="elite voyage case" />
+            <BottomGridItem>
+                <YourProjectPlaceholder />
+            </BottomGridItem>
+            <BottomGridItem>
+                <Box className="flex h-full flex-col justify-end items-start z-10">
+                    <Text className="mb-4">{t('callToAction')}</Text>
+                    <FlexContainer>
+                        <Button className="mr-6">{t('button')}</Button>
+                    </FlexContainer>
+                </Box>
+            </BottomGridItem>
+        </DesktopGridLayout>
+    )
+}
 
 const MobilePortfolio = () => (
     <MobileGridLayout>

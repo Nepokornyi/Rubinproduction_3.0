@@ -1,0 +1,102 @@
+{
+    "Header": {
+        "menu": {
+            "home": "Domů",
+            "about": "O nás",
+            "portfolio": "Portfolio",
+            "contact": "Kontakt",
+            "languageSelection1": "en",
+            "languageSelection2": "de"
+        }
+    },
+    "MainPage": {
+        "title_name": "Rubin",
+        "subtitle": "Production",
+        "content": "Vaši vizi proměníme ve skutečnost - od konceptu až po finální střih, naše odhodlání k preciznosti a kreativitě zaručuje, že každý projekt předčí očekávání.",
+        "button": "Spolupracovat"
+    },
+    "AboutPage": {
+        "title": "Creating",
+        "accent": "The Best",
+        "subtitle": "Videos For You",
+        "description": "Náš přístup je založen na kreativitě a inovaci, což dává naší práci jedinečný charakter. Do každého snímku vkládáme vášeň a odborné znalosti, abychom zajistili, že váš příběh bude rezonovat s vaším publikem.",
+        "clients_left": "Naši",
+        "clients_right": "klienti"
+    },
+    "WorkPage": {
+        "title": "Portfolio",
+        "description": "Nevytváříme pouze videoobsah - pro každý projekt vyvíjíme jedinečný marketingový přístup.",
+        "callToAction": "Bez ohledu na složitost projektu vám během první konzultace poskytneme odhad ceny. Pojďme společně vytvořit něco skvělého!",
+        "button": "Spolupracovat"
+    },
+    "ContactPage": {
+        "title": "Let's talk",
+        "subtitle": "About your project",
+        "agreement": "Souhlasím s podmínkami...",
+        "submit": "Poslat žádost"
+    },
+    "ScootyCase": {
+        "client": "<strong>Scooty</strong> je startup, který se zabývá rozvozem jídla a poskytuje kurýrům stabilní příjem a flexibilní rozvrh. Pllatforma Scooty podporuje vyváženou dynamiku pracovního a soukromého života kurýrů a přináší revoluční změny v oblasti udržitelnosti a spravedlnosti.",
+        "challenge": "<strong>Scooty</strong> jsme vybavili kompletní digitální produkcí a uvedli startup do mediální sféry. Naše komplexní strategie zvýšila viditelnost a angažovanost a podtvrdila naše odhodlání dosáhnout úspěchu.",
+        "services": {
+            "strategy1": "- Strategie pro sociální sítě",
+            "strategy2": "- Sociální audit značky",
+            "strategy3": "- Branding a design",
+            "conception1": "- Kreativní zpracování",
+            "conception2": "- Plánování, harmonogramy a řízení projektů",
+            "conception3": "- Kreativní koncepce inspirovaná náhledem, který vypovídá o značce",
+            "production1": "- Jeden produkční den",
+            "production2": "- Filmový tým plný nadaných specialistů",
+            "production3": "- Video / foto obsah pro splnění všech potřeb marketingové kampaně startupu",
+            "postProd1": "- Úprava fotografií / videí optimalizovaných podle potřeb platforem",
+            "postProd2": "- Pomoc s publikací materiálu na sociálních sítích"
+        },
+        "solution": "Vytvořili jsme webovou stránku pro získávání potenciálních zákazníků, vylepšili jsme strukturu a obohatili design o kvalitnější uživatelské prostředí (UI/UX). Výsledkem našeho strategického přístupu je vizuálně atraktivní a vysoce funkční platforma, která podporuje a usnadňuje získávání klientů pro společnost Scooty.",
+        "feedback": "Jednou z našich největších výhod je, že nejen vytváříme obsah pro firmy všech velikostí, ale také jej s využitím našich odborných znalostí v oblasti marketingu a prodeje umíme distribuovat na různé platformy. Tento projekt byl poměrně náročný jak z hlediska investovaného času, tak i z hlediska množství úkolů. Klíčové však je - uspěli jsme a těší nás, že se můžeme podělit o výsledky."
+    },
+    "GameChangerCase": {
+        "client": "<strong>GameChanger</strong> nabízí Warmup a Overtime náplasti, sloužící k prevenci kocoviny. S nezbytnými vitamíny a živinami zajišťují osvěžující start po těžkém pití.",
+        "challenge": "Metodicky jsme vytvořili <strong>kompletní content plán</strong>, který potenciální kupující nasměroval od počátečního zájmu o produkt až po jeho zakoupení, přičemž jsme se zaměřili na dynamická krátká videa s integrovaným motion designem.",
+        "services": {
+            "social1": "- Marketingové video značky",
+            "social2": "- Dynamická produktová videa",
+            "social3": "- Videa 'použití', 'rozbalování', 'jak to funguje'",
+            "social4": "- Obsah ve stylu UGC",
+            "motion1": "- Integrované animace",
+            "motion2": "- Samostatné kreativní videoreklamy",
+            "photography1": "- Pro webové stránky, propagaci, interní účely",
+            "photography2": "- Jako thumbnaily"
+        },
+        "marketing": {
+            "top": "Upoutat publikum a přitáhnout potenciální zákazníky na začátku jejich nákupní cesty.",
+            "middle": "Ukázat výhody produktu a pokračovat v budování důvěry u potenciálních zákazníků.",
+            "bottom": "Pomáhat kupujícím zbavit se jakýchkoli přetrvávajících námitek, které mohou mít vůči vašemu řešení, prostřednictvím vysvětlujícího a UGC obsahu."
+        },
+        "feedback": "K tomuto projektu jsme přistoupili netradičně, což nám umožnilo splnit všechny potřeby klienta v celém marketingovém funnelu. Z obrovského množství pořízeného materiálu jsme dokázali vytvořit více než 20 videí, do kterých jsme začlenili animace a části motion designu. To v kombinaci s předem pečlivě naplánovanou strukturou přineslo velmi dobré výsledky."
+    },
+    "EliteVoyageCase": {
+        "client": "<strong>EliteVoyage</strong> se specializuje na zajišťování bezproblémových cestovních zážitků, které vám umožní objevovat nová místa a vytvářet si nezapomenutelné vzpomínky bez stresu. Se sítí více než 200 vážených partnerů po celém světě zajišťuje špičkové služby na každé cestě a slibuje pohodlí a kvalitu na každém kroku.",
+        "challenge": "Tento projekt představoval rozmanitou výzvu: nejenže jsme vytvořili videa, ale také jedinečnou firemní identitu a obsah přizpůsobili zásadám společnosti. Napříč různými styly, jazyky a platformami jsme dodali výjimečný materiál, který splňoval měnící se potřeby klienta.",
+        "services": {
+            "production1": "- Vývoj konceptů, plánování, storyboarding",
+            "production2": "- 1 produkční den měsíčně = více",
+            "production3": "než 100 videí v různých formátech (horizontální, vertikální, čtvercové)",
+            "brand1": "- Průvodce stylem značky",
+            "brand2": "- Šablony pohyblivého designu",
+            "brand3": "- Animace loga/jmenovek",
+            "social1": "- Cestovní videa",
+            "social2": "- Odborný obsah",
+            "social3": "- Náborová videa v oblasti lidských zdrojů",
+            "social4": "- Zaměstnanecké upoutávky"
+        },
+        "feedback": "Se společností EliteVoyage jsme již uskutečnili tři plnohodnotná natáčení. Naším prvotním cílem bylo vytvořit jedinečnou identitu značky, zdůraznit kvalitu služeb poskytovaných cestovní kanceláří a vytvořit rozsáhlou digitální prezentaci na různých platformách."
+    },
+    "Footer": {
+        "socials": {
+            "behance": "Behance",
+            "instagram": "Instagram",
+            "youtube": "Youtube"
+        },
+        "copyright": "© rubin production 2024"
+    }
+}

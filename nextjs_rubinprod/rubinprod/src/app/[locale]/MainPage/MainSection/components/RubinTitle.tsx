@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 
 import logo from '@/assets/img/RubinLetter.svg'
+import { useTranslations } from 'next-intl'
 
 type RubinTitleProps = {
     button?: React.ReactNode
@@ -16,13 +17,15 @@ const firstLetterStyles =
     'first-letter:opacity-0 first-letter:text-6xl md:first-letter:text-7xl lg:first-letter:text-8xl 2xl:first-letter:text-[148px]'
 
 export const RubinTitle = ({ button }: RubinTitleProps) => {
+    const t = useTranslations('MainPage')
+
     return (
         <Text textTransform="uppercase" fontWeight="font-bold" variant="h1">
             <FlexContainer gap="gap-4" alignItems="items-center">
                 <span
                     className={`relative ${firstLetterStyles} text-[#d91e37]`}
                 >
-                    Rubin
+                    {t('title_name')}
                     <Image
                         className={`absolute ${logoLetterStyles} select-none`}
                         src={logo}
@@ -31,7 +34,7 @@ export const RubinTitle = ({ button }: RubinTitleProps) => {
                 </span>
                 {button}
             </FlexContainer>
-            Production
+            {t('subtitle')}
         </Text>
     )
 }
