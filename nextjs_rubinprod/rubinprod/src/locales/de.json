@@ -25,6 +25,7 @@
     },
     "WorkPage": {
         "title": "Portfolio",
+        "accent": "Our",
         "description": "Wir erstellen nicht einfach nur Videoinhalte - wir entwickeln für jedes Projekt einen einzigartigen Marketingansatz.",
         "callToAction": "Unabhängig von der Komplexität des Projekts unterbreiten wir Ihnen schon bei Ihrem ersten Beratungsgespräch einen Kostenvoranschlag. Lassen Sie uns gemeinsam etwas Großartiges schaffen!",
         "button": "Zusammenarbeiten"

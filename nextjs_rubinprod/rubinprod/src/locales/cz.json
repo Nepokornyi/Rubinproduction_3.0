@@ -25,6 +25,7 @@
     },
     "WorkPage": {
         "title": "Portfolio",
+        "accent": "Our",
         "description": "Nevytváříme pouze videoobsah - pro každý projekt vyvíjíme jedinečný marketingový přístup.",
         "callToAction": "Bez ohledu na složitost projektu vám během první konzultace poskytneme odhad ceny. Pojďme společně vytvořit něco skvělého!",
         "button": "Spolupracovat"
