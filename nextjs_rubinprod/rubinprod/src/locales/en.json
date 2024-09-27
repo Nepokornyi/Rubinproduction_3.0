@@ -25,6 +25,7 @@
     },
     "WorkPage": {
         "title": "Portfolio",
+        "accent": "Our",
         "description": "We don't just create video content - we develop a customized marketing approach for each project.",
         "callToAction": "Regardless of the projects complexity, we will provide a cost estimate during the first consultation. Let's create something great together!",
         "button": "Work together"

@@ -43,6 +43,7 @@ export const Text = ({
         padding,
         className,
         'inline-block',
+        'px-6 md:px-0',
     ].join(' ')
 
     const content = dangerousText ? (

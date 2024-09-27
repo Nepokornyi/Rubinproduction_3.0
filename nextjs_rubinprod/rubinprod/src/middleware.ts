@@ -3,7 +3,7 @@ import { locales } from './intl.config'
 
 export default createMiddleware({
     locales,
-    defaultLocale: 'en',
+    defaultLocale: 'cz',
 })
 
 export const config = {

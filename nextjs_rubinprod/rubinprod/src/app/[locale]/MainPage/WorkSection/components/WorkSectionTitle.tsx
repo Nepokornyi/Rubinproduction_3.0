@@ -22,10 +22,10 @@ const DesktopTitle = () => {
                         fontFamily="font-grunges"
                         className="absolute md:top-4 lg:top-2 md:-left-20"
                     >
-                        Our
+                        {t('accent')}
                     </Text>
                 </Text>
-                <Text>{t('description')}</Text>
+                <Text className="my-4">{t('description')}</Text>
             </FlexContainer>
         </DesktopGridLayout>
     )
@@ -47,12 +47,14 @@ const MobileTitle = () => {
                         variant="h4"
                         textTransform="uppercase"
                         fontFamily="font-grunges"
+                        padding="px-0"
+                        className="mr-1 !text-[34px]"
                     >
-                        Our
+                        {t('accent')}
                     </Text>
                     {t('title')}
                 </Text>
-                <Text>{t('description')}</Text>
+                <Text className="my-2">{t('description')}</Text>
             </FlexContainer>
         </MobileGridLayout>
     )
