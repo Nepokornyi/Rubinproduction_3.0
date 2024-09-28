@@ -2,44 +2,48 @@ import React from 'react'
 import { FlexContainer } from '../FlexContainer/FlexContainer'
 import { Text } from '../Text/Text'
 import { Box } from '../Box/Box'
+import Image from 'next/image'
+import logo from '@/assets/img/RubinLetterGray.svg'
+import { useTranslations } from 'next-intl'
+import { RightPanelDesktop } from './components/RightPanelDesktop'
+import { RightPanelMobile } from './components/RightPanelMobile'
 
 export const Footer = () => {
+    const t = useTranslations('Footer')
+
     return (
         <FlexContainer direction="flex-col" center>
             <FlexContainer
                 justifyContent="justify-between"
                 alignItems="items-end"
+                className="md:w-[80%] pb-6 relative flex-1"
             >
-                <div className="pb-6">Logo</div>
+                <Box className="h-32 p-6 md:px-0">
+                    <Image
+                        src={logo}
+                        alt="Rubin Logo Gray"
+                        className="w-12 md:w-16"
+                    />
+                </Box>
 
-                <Text variant="socials" padding="pb-6">
-                    Copyright
+                <Text
+                    variant="socials"
+                    className="hidden md:block text-[#6e6e6e]"
+                >
+                    {t('copyright')}
                 </Text>
 
-                <Box className="hidden md:grid grid-cols-3 grid-rows-3 pb-6 gap-x-4 text-right">
-                    <a href="" className="col-start-3 row-start-1">
-                        Home
-                    </a>
-                    <a href="" className="col-start-1 row-start-2">
-                        About
-                    </a>
-                    <a href="" className="col-start-2 row-start-2">
-                        Contact
-                    </a>
-                    <a href="" className="col-start-3 row-start-2">
-                        Portfolio
-                    </a>
-                    <a href="" className="col-start-1 row-start-3">
-                        Behance
-                    </a>
-                    <a href="" className="col-start-2 row-start-3">
-                        Instagram
-                    </a>
-                    <a href="" className="col-start-3 row-start-3">
-                        Youtube
-                    </a>
+                <Box className="hidden lg:grid grid-cols-3 grid-rows-3 gap-y-4 gap-x-3 text-right">
+                    <RightPanelDesktop />
+                </Box>
+
+                <Box className="lg:hidden flex flex-col">
+                    <RightPanelMobile />
                 </Box>
             </FlexContainer>
+            <Text variant="socials" className="mb-6 md:hidden text-[#6e6e6e]">
+                {t('copyright')}
+            </Text>
         </FlexContainer>
     )
 }
