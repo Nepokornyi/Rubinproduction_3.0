@@ -1,4 +1,3 @@
-'use client'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import React from 'react'
 import { useSwiper } from 'swiper/react'
