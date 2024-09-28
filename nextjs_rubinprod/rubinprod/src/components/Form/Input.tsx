@@ -8,11 +8,11 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-    ({ error, color = 'default', ...props }, ref) => {
+    ({ error, color = 'default', className, ...props }, ref) => {
         return (
             <>
                 <input
-                    className={`bg-transparent mx-6 pb-2.5 my-4 border-b-2 border-white text-lg focus:outline-none focus:border-b-2 focus:ring-0 placeholder:uppercase placeholder-opacity-30 placeholder:font-semibold ${InputVariants[color]} transition-colors`}
+                    className={`bg-transparent pb-2.5 my-4 border-b-2 border-white text-lg focus:outline-none focus:border-b-2 focus:ring-0 placeholder:uppercase placeholder-opacity-30 placeholder:font-semibold ${InputVariants[color]} ${className} transition-colors`}
                     ref={ref}
                     {...props}
                 />

@@ -25,6 +25,7 @@ export const Button = ({
             <Text
                 textTransform="uppercase"
                 className="relative pointer-events-none"
+                padding="px-0"
                 variant="button"
             >
                 {children}

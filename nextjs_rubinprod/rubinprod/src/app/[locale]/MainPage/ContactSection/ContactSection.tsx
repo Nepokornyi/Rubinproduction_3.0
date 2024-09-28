@@ -10,7 +10,10 @@ type ContactSectionProps = {
 
 export const ContactSection = ({ color }: ContactSectionProps) => {
     return (
-        <FlexContainer center className="py-28 md:py-36 flex-col md:flex-row">
+        <FlexContainer
+            justifyContent="justify-center"
+            className="py-28 md:py-36 flex-col md:flex-row"
+        >
             <ContactSectionTitle />
             <ContactSectionForm />
         </FlexContainer>

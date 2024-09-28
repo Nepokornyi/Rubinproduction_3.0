@@ -7,6 +7,8 @@ export type VariantStyles =
     | 'nav'
     | 'socials'
     | 'button'
+    | 'contact'
+    | 'contact-accent'
 
 export type FontWeight =
     | 'font-light'
@@ -35,4 +37,7 @@ export const variantStyles: Record<VariantStyles, string> = {
     nav: 'text-lg uppercase font-normal',
     socials: 'text-sm lg:text-base uppercase font-normal',
     button: 'text-lg md:text-xl font-semibold',
+    contact: 'text-4xl md:text-[56px] lg:text-6xl xl:text-7xl font-bold',
+    'contact-accent':
+        'text-[38px] md:text-4xl lg:text-4xl xl:text-5xl font-bold',
 }

@@ -12,6 +12,7 @@ const Arrow = forwardRef<HTMLDivElement, ArrowProps>(
             direction = 'right',
             isFullWidth = false,
             isFullHeight = false,
+            className = '',
             ...props
         },
         ref
@@ -43,7 +44,7 @@ const Arrow = forwardRef<HTMLDivElement, ArrowProps>(
 
         return (
             <div
-                className={`${baseClasses} ${arrowStyles}`}
+                className={`${baseClasses} ${arrowStyles} ${className}`}
                 ref={ref}
                 {...props}
             >
