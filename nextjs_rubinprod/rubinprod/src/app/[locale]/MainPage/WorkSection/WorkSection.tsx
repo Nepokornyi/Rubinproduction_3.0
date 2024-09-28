@@ -5,7 +5,12 @@ import { WorkSectionGrid } from './components/WorkSectionGrid'
 
 export const WorkSection = () => {
     return (
-        <FlexContainer center direction="flex-col" className="pt-12">
+        <FlexContainer
+            id="portfolio"
+            center
+            direction="flex-col"
+            className="pt-12"
+        >
             <WorkSectionTitle />
             <WorkSectionGrid />
         </FlexContainer>

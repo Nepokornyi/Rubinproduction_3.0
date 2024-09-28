@@ -8,6 +8,7 @@ import { LogoCarousel } from '@/components/Carousel/LogoCarousel'
 export const AboutSection = () => {
     return (
         <FlexContainer
+            id="about"
             direction="flex-col"
             justifyContent="justify-center"
             className="pt-36 pb-24 relative md:items-center"
