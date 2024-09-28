@@ -1,4 +1,3 @@
-'use client'
 import { Text } from '@/components/Text/Text'
 import { usePathname, useRouter } from '@/navigation'
 import { useParams } from 'next/navigation'
