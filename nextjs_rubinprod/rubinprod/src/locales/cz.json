@@ -98,6 +98,12 @@
             "instagram": "Instagram",
             "youtube": "Youtube"
         },
+        "navigation": {
+            "home": "Domů",
+            "about": "O nás",
+            "portfolio": "Portfolio",
+            "contact": "Kontakt"
+        },
         "copyright": "© rubin production 2024"
     }
 }
