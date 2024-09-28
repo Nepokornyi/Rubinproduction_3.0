@@ -3,7 +3,7 @@ import Image, { StaticImageData } from 'next/image'
 import { ReactNode } from 'react'
 
 export const DesktopGridLayout = ({ children }: { children: ReactNode }) => (
-    <Box className="hidden md:grid w-3/4 md:max-w-[470px] lg:max-w-[1100px] md:grid-cols-1 lg:grid-cols-2 lg:gap-x-12 grid-flow-dense auto-rows-auto">
+    <Box className="hidden md:grid w-[80%] md:max-w-[470px] lg:max-w-[1100px] md:grid-cols-1 lg:grid-cols-2 lg:gap-x-12 grid-flow-dense auto-rows-auto">
         {children}
     </Box>
 )

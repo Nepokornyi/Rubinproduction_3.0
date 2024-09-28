@@ -8,12 +8,16 @@ export const ContactSectionForm = () => {
     const t = useTranslations('ContactPage')
 
     return (
-        <form className="md:max-w-[550px] w-full">
-            <FlexContainer direction="flex-col">
+        <form className="md:max-w-[550px] w-full lg:w-[40%]">
+            <FlexContainer
+                direction="flex-col"
+                gap="gap-2"
+                className="px-6 lg:px-0"
+            >
                 <Input placeholder="email" />
                 <Input placeholder="phone" />
-                <FlexContainer>
-                    <Button className="md:border-none mx-6 mr-12 md:bg-black">
+                <FlexContainer className="my-4">
+                    <Button className="md:border-none mr-6 md:bg-black">
                         {t('submit')}
                     </Button>
                 </FlexContainer>

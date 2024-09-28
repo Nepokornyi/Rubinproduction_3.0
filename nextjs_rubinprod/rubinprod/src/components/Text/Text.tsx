@@ -30,7 +30,7 @@ export const Text = ({
     fontWeight = 'font-normal',
     textTransform = 'none',
     textAlign = 'inherit',
-    padding = 'p-0',
+    padding = 'px-6 md:px-0',
     className = '',
 }: TextProps) => {
     const variantClass = variant ? variantStyles[variant] : ''
@@ -43,7 +43,6 @@ export const Text = ({
         padding,
         className,
         'inline-block',
-        'px-6 md:px-0',
     ].join(' ')
 
     const content = dangerousText ? (

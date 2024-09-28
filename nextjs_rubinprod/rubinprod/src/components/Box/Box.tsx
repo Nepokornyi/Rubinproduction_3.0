@@ -5,6 +5,6 @@ type BoxProps = {
     className?: string
 }
 
-export const Box = ({ children, className }: BoxProps) => {
+export const Box = ({ children, className = '' }: BoxProps) => {
     return <div className={`relative ${className}`}>{children}</div>
 }
