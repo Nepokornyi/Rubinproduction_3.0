@@ -27,6 +27,7 @@ export default async function LocaleLayout({
                 <NextIntlClientProvider messages={messages}>
                     {children}
                 </NextIntlClientProvider>
+                <div id="overlay-root" />
             </body>
         </html>
     )

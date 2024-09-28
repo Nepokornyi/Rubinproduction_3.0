@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import { FlexContainer } from '../FlexContainer/FlexContainer'
 import Image from 'next/image'
 
 import logo from '@/assets/img/RubinLetter.svg'
@@ -13,11 +12,8 @@ export const Header = () => {
 
     return (
         // or add bg-[#0c0c0c] if don't use client
-        <FlexContainer
-            justifyContent="justify-between"
-            alignItems="items-center"
-            width="w-full md:w-3/4"
-            className={`fixed md:absolute top-0 left-1/2 transform -translate-x-1/2 p-4 z-10   ${headerStyle} bg-[#0c0c0c] md:bg-transparent transition-colors`}
+        <header
+            className={`flex justify-between items-center w-full md:w-3/4 fixed md:absolute top-0 left-1/2 transform -translate-x-1/2 p-4 z-50   ${headerStyle} bg-[#0c0c0c] md:bg-transparent transition-colors`}
         >
             <Image
                 src={logo}
@@ -26,6 +22,6 @@ export const Header = () => {
             />
             <DesktopMenu />
             <MobileMenu />
-        </FlexContainer>
+        </header>
     )
 }
