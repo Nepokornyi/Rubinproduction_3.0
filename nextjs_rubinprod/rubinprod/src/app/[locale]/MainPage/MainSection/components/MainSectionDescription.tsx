@@ -13,10 +13,10 @@ export const MainSectionDescription = () => {
             gap="gap-1"
             justifyContent="justify-between"
             alignItems="items-center"
-            className="mt-3 mb-5"
+            className="mt-10 mb-10"
         >
             <MainSectionContacts />
-            <Box className="md:max-w-[15rem] lg:max-w-[27rem]">
+            <Box className="md:max-w-[18rem] lg:max-w-[27rem]">
                 <Text className="lg:ml-8 2xl:ml-0">{t('content')}</Text>
             </Box>
         </FlexContainer>

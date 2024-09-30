@@ -11,7 +11,7 @@ export const MainSection = () => {
     const t = useTranslations('MainPage')
 
     const RenderCTAButton = (
-        <Button className="hidden md:block 2xl:mt-4 lg:pl-10">
+        <Button className="hidden md:block 2xl:mt-4 2xl:ml-6 lg:pl-10 2xl:">
             {t('button')}
         </Button>
     )
@@ -33,7 +33,7 @@ export const MainSection = () => {
                 direction="flex-col"
                 justifyContent="justify-center"
                 width="w-auto"
-                className="md:ml-[15%] md:pl-20 relative h-full md:h-auto"
+                className="md:ml-[15%] md:pl-10 lg:pl-20 relative h-full md:h-auto"
             >
                 <RubinTitle button={RenderCTAButton} />
                 <MainSectionDescription />

@@ -14,7 +14,7 @@ const animationProps = {
 
 export const AboutCircleText = () => {
     return (
-        <div className="absolute top-3 -right-8 md:top-auto bottom-auto md:-bottom-8 lg:-bottom-6 left-auto md:-left-12 z-[-1]">
+        <div className="absolute top-3 -right-8 md:top-auto bottom-auto md:-bottom-14 lg:-bottom-12 left-auto md:-left-10 lg:-left-12 z-[-1]">
             <motion.svg
                 animate={animationProps}
                 viewBox="0 0 200 200"

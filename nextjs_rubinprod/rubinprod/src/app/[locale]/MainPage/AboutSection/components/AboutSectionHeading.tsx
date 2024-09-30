@@ -10,7 +10,7 @@ export const AboutSectionHeading = () => {
         <Text
             variant="h2"
             textTransform="uppercase"
-            padding="px-6 md:px-0 pb-8"
+            padding="px-6 md:px-0 "
             className="text-balance relative w-72 md:w-auto"
             fontWeight="font-bold"
         >

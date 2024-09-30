@@ -7,7 +7,7 @@ type GradientProps = {
 
 export const Gradient = ({ children }: GradientProps) => {
     return (
-        <Box className="bg-gradient-to-b from-[#0C0C0C] to-transparent md:bg-gradient-to-b md:from-[#0C0C0C] md:to-[#BF1B32] clip-path-gradient">
+        <Box className="bg-gradient-to-b to-transparent bottom-gradient clip-path-gradient">
             {children}
         </Box>
     )

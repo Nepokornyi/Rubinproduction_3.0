@@ -54,7 +54,7 @@ const MobileTitle = () => {
                     </Text>
                     {t('title')}
                 </Text>
-                <Text className="my-2">{t('description')}</Text>
+                <Text className="mt-2 mb-8">{t('description')}</Text>
             </FlexContainer>
         </MobileGridLayout>
     )
