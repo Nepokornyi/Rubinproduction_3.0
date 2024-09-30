@@ -18,7 +18,7 @@ export const Footer = () => {
                 alignItems="items-end"
                 className="md:w-[80%] pb-6 relative flex-1"
             >
-                <Box className="h-32 p-6 md:px-0">
+                <Box className="h-32 md:h-auto p-6 md:p-0">
                     <Image
                         src={logo}
                         alt="Rubin Logo Gray"

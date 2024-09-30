@@ -8,14 +8,15 @@ export const YourProjectPlaceholder = () => {
     return (
         <FlexContainer
             direction="flex-col"
-            className="h-full border border-[#6e6e6e] bg-[#0d0d0d] p-12"
+            className="h-full md:border md:border-[#6e6e6e] bg-[#0d0d0d] py-12 md:p-12"
+            gap="gap-2"
         >
-            <div className="absolute top-6 right-6 h-6 w-6 bg-[#d91e37] rounded-full" />
+            <div className="absolute top-6 right-0 md:right-6 h-6 w-6 bg-[#d91e37] rounded-full" />
             <Text
                 variant="h3"
                 textTransform="uppercase"
                 fontWeight="font-bold"
-                className="mb-2"
+                padding="px-0"
             >
                 Your
             </Text>
@@ -23,7 +24,7 @@ export const YourProjectPlaceholder = () => {
                 variant="h3"
                 textTransform="uppercase"
                 fontWeight="font-bold"
-                className="mb-2"
+                padding="px-0"
             >
                 Project
             </Text>
@@ -31,7 +32,7 @@ export const YourProjectPlaceholder = () => {
                 variant="h3"
                 textTransform="uppercase"
                 fontWeight="font-bold"
-                className="mb-2"
+                padding="px-0"
             >
                 Is Rendering
             </Text>

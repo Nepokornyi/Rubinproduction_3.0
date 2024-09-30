@@ -10,7 +10,7 @@ export const AboutSectionDescription = () => {
     return (
         <FlexContainer
             width="w-auto"
-            className="mb-16 flex-col-reverse md:flex-row"
+            className="md:mb-24 mt-8 md:mt-12 flex-col-reverse md:flex-row"
         >
             <FlexContainer
                 alignItems="items-center"
@@ -19,7 +19,9 @@ export const AboutSectionDescription = () => {
             >
                 <Text
                     textTransform="uppercase"
-                    className="px-1 tracking-widest"
+                    padding="px-0"
+                    fontWeight="font-semibold"
+                    className="tracking-[3px]"
                 >
                     {t('clients_left')}
                 </Text>
@@ -28,7 +30,9 @@ export const AboutSectionDescription = () => {
                 </div>
                 <Text
                     textTransform="uppercase"
-                    className="px-1 md:mr-2 tracking-widest"
+                    padding="px-0"
+                    fontWeight="font-semibold"
+                    className="md:mr-2 tracking-[3px]"
                 >
                     {t('clients_right')}
                 </Text>

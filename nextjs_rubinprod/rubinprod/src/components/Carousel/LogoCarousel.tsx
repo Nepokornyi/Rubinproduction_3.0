@@ -33,7 +33,7 @@ export const LogoCarousel = () => {
                 autoplay={{ delay: 2500 }}
                 observer
                 observeParents
-                className="max-w-[650px]"
+                className="max-w-[800px]"
             >
                 <SwiperSlide
                     style={{ display: 'flex' }}
