@@ -3,6 +3,7 @@ import React from 'react'
 
 import { motion } from 'framer-motion'
 import { Text } from '@/components/Text/Text'
+import { dotVariants, loadingVariants } from './config/placeholderConfig'
 
 export const YourProjectPlaceholder = () => {
     return (
@@ -11,7 +12,12 @@ export const YourProjectPlaceholder = () => {
             className="h-full md:border md:border-[#6e6e6e] bg-[#0d0d0d] py-12 md:p-12"
             gap="gap-2"
         >
-            <div className="absolute top-6 right-0 md:right-6 h-6 w-6 bg-[#d91e37] rounded-full" />
+            <motion.div
+                variants={dotVariants}
+                initial="hidden"
+                animate="visible"
+                className="absolute top-6 right-0 md:right-6 h-6 w-6 bg-[#d91e37] rounded-full"
+            />
             <Text
                 variant="h3"
                 textTransform="uppercase"
@@ -38,7 +44,11 @@ export const YourProjectPlaceholder = () => {
             </Text>
 
             <div className="relative h-8 w-full bg-black border border-[#6e6e6e] overflow-hidden mt-16">
-                <div />
+                <motion.div
+                    variants={loadingVariants}
+                    animate="animate"
+                    className="absolute h-full w-full bg-[#6e6e6e]"
+                />
             </div>
         </FlexContainer>
     )
