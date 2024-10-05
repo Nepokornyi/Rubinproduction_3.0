@@ -32,6 +32,7 @@ import eliteVoyageLogo from '@/assets/img/portfolio/icoEliteVoyage.png'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
+import { RevealBlock } from '@/components/Reveal/RevealBlock'
 
 const logoStyles =
     'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32'
@@ -50,20 +51,26 @@ const DesktopPortfolio = () => {
                 link={gameChangerCase}
                 logo={gameChangerLogo}
                 alt="game changer case"
+                delay={0.65}
             />
             <RightGridItem
                 link={eliteVoyageCase}
                 logo={eliteVoyageLogo}
                 alt="elite voyage case"
+                delay={0.25}
             />
             <BottomGridItem>
-                <YourProjectPlaceholder />
+                <RevealBlock delay={0.45}>
+                    <YourProjectPlaceholder />
+                </RevealBlock>
             </BottomGridItem>
             <BottomGridItem>
                 <Box className="flex h-full flex-col justify-end items-start z-10">
                     <Text className="mb-4">{t('callToAction')}</Text>
                     <FlexContainer>
-                        <Button className="mr-6">{t('button')}</Button>
+                        <RevealBlock className="mr-6">
+                            <Button>{t('button')}</Button>
+                        </RevealBlock>
                     </FlexContainer>
                 </Box>
             </BottomGridItem>
@@ -82,31 +89,39 @@ const MobilePortfolio = () => (
             className="w-4/5"
         >
             <SwiperSlide className="h-full clip-path-swiper-left">
-                <Image src={mobileScootyCase} alt="scooty case" />
-                <Image
-                    src={scootyLogo}
-                    alt="scooty logo"
-                    className={logoStyles}
-                />
+                <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">
+                    <Image src={mobileScootyCase} alt="scooty case" />
+                    <Image
+                        src={scootyLogo}
+                        alt="scooty logo"
+                        className={logoStyles}
+                    />
+                </RevealBlock>
             </SwiperSlide>
             <SwiperSlide className="h-full clip-path-swiper-right">
-                <Image src={mobileGameChangerCase} alt="scooty case" />
-                <Image
-                    src={gameChangerLogo}
-                    alt="game changer logo"
-                    className={logoStyles}
-                />
+                <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">
+                    <Image src={mobileGameChangerCase} alt="scooty case" />
+                    <Image
+                        src={gameChangerLogo}
+                        alt="game changer logo"
+                        className={logoStyles}
+                    />
+                </RevealBlock>
             </SwiperSlide>
             <SwiperSlide className="h-full clip-path-swiper-left">
-                <Image src={mobileEliteVoyageCase} alt="scooty case" />
-                <Image
-                    src={eliteVoyageLogo}
-                    alt="elite voyage logo"
-                    className={logoStyles}
-                />
+                <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">
+                    <Image src={mobileEliteVoyageCase} alt="scooty case" />
+                    <Image
+                        src={eliteVoyageLogo}
+                        alt="elite voyage logo"
+                        className={logoStyles}
+                    />
+                </RevealBlock>
             </SwiperSlide>
             <SwiperSlide className="h-full my-auto md:my-0 clip-path-swiper-right">
-                <YourProjectPlaceholder />
+                <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">
+                    <YourProjectPlaceholder />
+                </RevealBlock>
             </SwiperSlide>
 
             <SwiperCustomNavigation />

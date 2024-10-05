@@ -1,5 +1,6 @@
 import { Arrow } from '@/components/Arrow/Arrow'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
+import { Reveal } from '@/components/Reveal/Reveal'
 import { Text } from '@/components/Text/Text'
 import { useTranslations } from 'next-intl'
 import React from 'react'
@@ -26,7 +27,9 @@ export const AboutSectionDescription = () => {
                     {t('clients_left')}
                 </Text>
                 <div className="md:order-last">
-                    <Arrow direction="down" />
+                    <Reveal y={-35} removeRepeatedReveal={false}>
+                        <Arrow direction="down" />
+                    </Reveal>
                 </div>
                 <Text
                     textTransform="uppercase"
