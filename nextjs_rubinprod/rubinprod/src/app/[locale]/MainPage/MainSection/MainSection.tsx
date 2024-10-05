@@ -6,14 +6,17 @@ import { MainSectionDescription } from './components/MainSectionDescription'
 import { MainSectionSocials } from './components/MainSectionSocials'
 import { Header } from '@/components/Header/Header'
 import { useTranslations } from 'next-intl'
+import { RevealBlock } from '@/components/Reveal/RevealBlock'
 
 export const MainSection = () => {
     const t = useTranslations('MainPage')
 
     const RenderCTAButton = (
-        <Button className="hidden md:block 2xl:mt-4 2xl:ml-6 lg:pl-10 2xl:">
-            {t('button')}
-        </Button>
+        <RevealBlock className="2xl:mt-4 2xl:ml-6">
+            <Button className="hidden md:block lg:pl-10 2xl:">
+                {t('button')}
+            </Button>
+        </RevealBlock>
     )
     const RenderCTAButtonMobile = (
         <FlexContainer>
