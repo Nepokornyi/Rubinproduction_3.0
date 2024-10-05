@@ -1,10 +1,17 @@
 import { Button } from '@/components/Button/Button'
+import { ButtonVariantsList } from '@/components/Button/types'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import Input from '@/components/Form/Input'
 import { useTranslations } from 'next-intl'
 import React from 'react'
 
-export const ContactSectionForm = () => {
+type ContactSectionFormProps = {
+    theme?: ButtonVariantsList
+}
+
+export const ContactSectionForm = ({
+    theme = 'form',
+}: ContactSectionFormProps) => {
     const t = useTranslations('ContactPage')
 
     return (
@@ -17,7 +24,7 @@ export const ContactSectionForm = () => {
                 <Input placeholder="email" />
                 <Input placeholder="phone" />
                 <FlexContainer className="my-4">
-                    <Button className="md:border-none mr-6 md:bg-black">
+                    <Button blockColor={theme} className="mr-6">
                         {t('submit')}
                     </Button>
                 </FlexContainer>

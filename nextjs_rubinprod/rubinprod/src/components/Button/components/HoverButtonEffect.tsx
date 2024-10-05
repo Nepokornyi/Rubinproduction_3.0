@@ -1,13 +1,22 @@
 'use client'
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import { ButtonVariantsList } from '../types'
+
+export const buttonVariants = {
+    default: '#d91e37',
+    form: '#d91e37',
+    scooty: '#D7F000',
+    gameChanger: '#7055EC',
+    eliteVoyage: '#B9965A',
+}
 
 type HoverButtonEffectProps = {
-    color?: string
+    color?: ButtonVariantsList
 }
 
 export const HoverButtonEffect = ({
-    color = '#d91e37',
+    color = 'default',
 }: HoverButtonEffectProps) => {
     const ref = useRef<HTMLDivElement>(null)
 
@@ -22,14 +31,14 @@ export const HoverButtonEffect = ({
             const startY = gradientPos.y
             const isCloserToLeft = startX <= 50
             const sequence = [
-                `radial-gradient(175px circle at ${startX}% ${startY}px, ${color}, transparent 60%)`, // Start at last known position
+                `radial-gradient(175px circle at ${startX}% ${startY}px, ${buttonVariants[color]}, transparent 60%)`, // Start at last known position
                 `radial-gradient(175px circle at ${
                     isCloserToLeft ? 0 : 100
-                }% ${startY}px, ${color}, transparent 60%)`, // Move to the nearest edge
+                }% ${startY}px, ${buttonVariants[color]}, transparent 60%)`, // Move to the nearest edge
                 `radial-gradient(175px circle at ${
                     isCloserToLeft ? 100 : 0
-                }% ${startY}px, ${color}, transparent 60%)`, // Move to the far edge
-                `radial-gradient(175px circle at ${startX}% ${startY}px, ${color}, transparent 60%)`, // Return to start
+                }% ${startY}px, ${buttonVariants[color]}, transparent 60%)`, // Move to the far edge
+                `radial-gradient(175px circle at ${startX}% ${startY}px, ${buttonVariants[color]}, transparent 60%)`, // Return to start
             ]
 
             hoverBackgroundControls.start({
@@ -83,12 +92,12 @@ export const HoverButtonEffect = ({
     const handleClickAnimation = () => {
         hoverBackgroundControls
             .start({
-                background: `radial-gradient(675px circle at ${lastGradientPos}% ${gradientPos.y}px, ${color}, transparent 60%)`,
+                background: `radial-gradient(675px circle at ${lastGradientPos}% ${gradientPos.y}px, ${buttonVariants[color]}, transparent 60%)`,
                 transition: { duration: 0.5 },
             })
             .then(() => {
                 hoverBackgroundControls.start({
-                    background: `radial-gradient(175px circle at ${lastGradientPos}% ${gradientPos.y}px, ${color}, transparent 60%)`,
+                    background: `radial-gradient(175px circle at ${lastGradientPos}% ${gradientPos.y}px, ${buttonVariants[color]}, transparent 60%)`,
                     transition: { duration: 0.25 },
                 })
             })
@@ -102,7 +111,9 @@ export const HoverButtonEffect = ({
             onMouseLeave={handleMouseLeave}
             onClick={handleClickAnimation}
             animate={hoverBackgroundControls}
-            className="w-full h-full absolute top-0 left-0"
+            className={`w-full h-full absolute top-0 left-0 ${
+                color === 'form' && 'md:hidden'
+            }`}
         />
     )
 }
