@@ -33,6 +33,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
 import { RevealBlock } from '@/components/Reveal/RevealBlock'
+import { Link } from '@/navigation'
 
 const logoStyles =
     'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32'
@@ -69,7 +70,9 @@ const DesktopPortfolio = () => {
                     <Text className="mb-4">{t('callToAction')}</Text>
                     <FlexContainer>
                         <RevealBlock className="mr-6">
-                            <Button>{t('button')}</Button>
+                            <Link href="#contact" className="w-full">
+                                <Button>{t('button')}</Button>
+                            </Link>
                         </RevealBlock>
                     </FlexContainer>
                 </Box>
