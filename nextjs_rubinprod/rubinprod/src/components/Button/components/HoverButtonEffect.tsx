@@ -73,7 +73,7 @@ export const HoverButtonEffect = ({
             if (hovered) {
                 setLastGradientPos(newX)
                 hoverBackgroundControls.start({
-                    background: `radial-gradient(175px circle at ${newX}% ${gradientPos.y}px, ${color}, transparent 60%)`,
+                    background: `radial-gradient(175px circle at ${newX}% ${gradientPos.y}px, ${buttonVariants[color]}, transparent 60%)`,
                     transition: { duration: 0.35 },
                 })
             }
