@@ -4,22 +4,30 @@ import { buttonVariants, ButtonVariantsList } from './types'
 import { HoverButtonEffect } from './components/HoverButtonEffect'
 import { Arrow } from '../Arrow/Arrow'
 import { Reveal } from '../Reveal/Reveal'
+import { Spinner } from '../Spinner/Spinner'
 
 type ButtonProps = {
     children: ReactNode
     blockColor?: ButtonVariantsList
     className?: string
+    type?: 'button' | 'submit'
+    isDisabled?: boolean
 }
 
 export const Button = ({
     children,
     blockColor = 'default',
     className = '',
+    type = 'button',
+    isDisabled = false,
 }: ButtonProps) => {
+    const renderContent = isDisabled ? <Spinner></Spinner> : children
+
     // TODO: resolve padding override
     return (
         // added text-lg because it wouldn't propagate from Text component (fallback to font-size: 100%)
         <button
+            type={type}
             className={`w-full text-lg bg-transparent relative text-left border-2 p-4 ${buttonVariants[blockColor]} ${className}`}
         >
             <HoverButtonEffect color={blockColor} />
@@ -29,7 +37,7 @@ export const Button = ({
                 padding="px-0"
                 variant="button"
             >
-                {children}
+                {renderContent}
             </Text>
             <Reveal
                 delay={0.65}
