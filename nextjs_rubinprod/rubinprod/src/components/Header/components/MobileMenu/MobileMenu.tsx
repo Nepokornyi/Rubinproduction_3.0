@@ -45,6 +45,7 @@ export const MobileMenu = ({ variant = 'main' }: MobileMenuProps) => {
     const router = useRouter()
     const pathname = usePathname()
 
+    // Remove hash and scroll to top on page load/refresh
     useEffect(() => {
         if (window.location.hash) {
             // @ts-ignore
@@ -55,6 +56,23 @@ export const MobileMenu = ({ variant = 'main' }: MobileMenuProps) => {
             window.scrollTo(0, 0)
         }, 0)
     }, [router])
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.matchMedia('(min-width: 768px)').matches) {
+                handleCloseDialog()
+            }
+        }
+
+        window.addEventListener('resize', handleResize)
+
+        // Call the function on mount if already on `md` or larger
+        handleResize()
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [handleCloseDialog])
 
     const renderButton = (
         <Hamburger open={showDialog} toggleOpen={toggleDialog} />
