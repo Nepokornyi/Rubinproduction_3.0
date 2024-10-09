@@ -36,18 +36,12 @@ export const Overlay = ({
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    className={`fixed bg-[#0c0c0c] opacity-100 w-full h-full top-0 left-0 origin-top border-none ${zIndex}`}
+                    className={`fixed bg-[#0c0c0c] flex opacity-100 w-full h-full top-0 left-0 origin-top border-none ${zIndex}`}
                 >
-                    <FlexContainer
-                        direction="flex-col"
-                        center
-                        minHeight="min-h-100vh"
-                    >
+                    <FlexContainer direction="flex-col" center>
                         {children}
                     </FlexContainer>
-                    <Box className="absolute top-0 right-0 p-6 z-10">
-                        {button}
-                    </Box>
+                    <div className="absolute top-0 right-0 p-6">{button}</div>
                 </motion.div>
             )}
         </AnimatePresence>
