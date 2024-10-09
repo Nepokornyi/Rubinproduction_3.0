@@ -42,10 +42,33 @@ export async function POST(request: NextRequest) {
         })
 
         if (response.status === 200 || response.status === 201) {
-            return NextResponse.json(
-                { message: 'Subscription successful!' },
-                { status: 200 }
-            )
+            const journeyUrl =
+                'https://us22.api.mailchimp.com/3.0/customer-journeys/journeys/1620/steps/5821/actions/trigger'
+
+            const journeyData = {
+                email_address: email,
+            }
+
+            const journeyResponse = await axios.post(journeyUrl, journeyData, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `apikey ${apiKey}`,
+                },
+            })
+
+            if (journeyResponse.status === 204) {
+                return NextResponse.json(
+                    { message: 'Subscription successful!' },
+                    { status: 200 }
+                )
+            } else {
+                return NextResponse.json(
+                    {
+                        error: 'There was an issue with your journey automation',
+                    },
+                    { status: journeyResponse.status }
+                )
+            }
         } else {
             return NextResponse.json(
                 { error: 'There was an issue with your subscription' },
