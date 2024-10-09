@@ -8,37 +8,29 @@ import {
     containerVariants,
     linkVariants,
 } from '../Header/components/MobileMenu/config/configDropdown'
+import {
+    ResponseStatus,
+    TitleVariants,
+} from '@/app/[locale]/MainPage/ContactSection/components/const'
 
 type OverlayEmailProps = {
     open: boolean
     onClose: () => void
+    responseStatus: ResponseStatus
+    message: string
 }
-
-const lines = [0, 1, 2]
-
-const AnimationBox = ({ children }: { children: ReactNode }) => (
-    <motion.div className="overflow-hidden flex justify-center items-center">
-        {children}
-    </motion.div>
-)
-
-export const OverlayEmail = ({ open, onClose }: OverlayEmailProps) => {
+export const OverlayEmail = ({
+    open,
+    onClose,
+    message,
+    responseStatus,
+}: OverlayEmailProps) => {
     const renderButton = (
         <div
             className="cursor-pointer h-2 flex justify-center flex-col"
             onClick={() => onClose()}
         >
-            {lines.map((_, index) => {
-                return (
-                    <motion.div
-                        key={index}
-                        className="w-8 h-1 bg-white"
-                        style={{
-                            height: 1,
-                        }}
-                    />
-                )
-            })}
+            <div className="w-8 h-1 bg-white" />
         </div>
     )
 
@@ -50,12 +42,12 @@ export const OverlayEmail = ({ open, onClose }: OverlayEmailProps) => {
                 animate="open"
                 exit="initial"
             >
-                <AnimationBox>
+                <motion.div className="overflow-hidden flex justify-center items-center">
                     <motion.div variants={linkVariants}>
                         <Image src={icoMail} alt="email icon" />
                     </motion.div>
-                </AnimationBox>
-                <AnimationBox>
+                </motion.div>
+                <motion.div className="overflow-hidden flex justify-center items-center">
                     <motion.div variants={linkVariants}>
                         <Text
                             variant="h3"
@@ -63,22 +55,21 @@ export const OverlayEmail = ({ open, onClose }: OverlayEmailProps) => {
                             textAlign="text-center"
                             fontWeight="font-semibold"
                         >
-                            Thanks you for your inquiry!
+                            {TitleVariants[responseStatus]}
                         </Text>
                     </motion.div>
-                </AnimationBox>
-                <AnimationBox>
+                </motion.div>
+                <motion.div className="overflow-hidden flex justify-center items-center">
                     <motion.div variants={linkVariants}>
                         <Text
                             variant="p"
                             textAlign="text-center"
                             padding="px-6 py-2"
                         >
-                            We have received your message. Our team will get
-                            back to you shortly.
+                            {message}
                         </Text>
                     </motion.div>
-                </AnimationBox>
+                </motion.div>
             </motion.div>
         </Overlay>
     )
