@@ -92,7 +92,7 @@ export const MobileMenu = ({ variant = 'main' }: MobileMenuProps) => {
                 >
                     <motion.ul>
                         {variant === 'case' && (
-                            <Box className="overflow-hidden text-center my-4">
+                            <Box className="overflow-hidden text-center my-4 z-20">
                                 <motion.li variants={linkVariants}>
                                     <Link
                                         href="/"
@@ -111,7 +111,7 @@ export const MobileMenu = ({ variant = 'main' }: MobileMenuProps) => {
                         {menuItems(numerationBase).map((item) => (
                             <Box
                                 key={item.label}
-                                className="overflow-hidden text-center my-4"
+                                className="overflow-hidden text-center my-4 z-20"
                             >
                                 <motion.li variants={linkVariants}>
                                     <Link
