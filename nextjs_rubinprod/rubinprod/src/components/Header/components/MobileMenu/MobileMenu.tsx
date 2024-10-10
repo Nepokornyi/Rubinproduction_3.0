@@ -7,16 +7,12 @@ import { containerVariants, linkVariants } from './config/configDropdown'
 import { Box } from '@/components/Box/Box'
 import { Hamburger } from './Hamburger'
 import { Text } from '@/components/Text/Text'
-import { Link, usePathname, useRouter } from '@/navigation'
+import { Link } from '@/navigation'
 import { LanguageSelection } from './LanguageSelection'
 import { useTranslations } from 'next-intl'
 import { OverlaySocials } from './Socials'
 
-type MobileMenuProps = {
-    variant?: 'main' | 'case'
-}
-
-export const MobileMenu = ({ variant = 'main' }: MobileMenuProps) => {
+export const MobileMenu = ({ isCase = false }: { isCase?: boolean }) => {
     const t = useTranslations('Header.menu')
 
     const menuItems = (numerationBase: number) => [
@@ -42,21 +38,6 @@ export const MobileMenu = ({ variant = 'main' }: MobileMenuProps) => {
 
     const { showDialog, toggleDialog, handleCloseDialog } = useDialogState()
 
-    const router = useRouter()
-    const pathname = usePathname()
-
-    // Remove hash and scroll to top on page load/refresh
-    useEffect(() => {
-        if (window.location.hash) {
-            // @ts-ignore
-            router.replace(pathname, undefined, { shallow: false })
-        }
-
-        setTimeout(() => {
-            window.scrollTo(0, 0)
-        }, 0)
-    }, [router])
-
     useEffect(() => {
         const handleResize = () => {
             if (window.matchMedia('(min-width: 768px)').matches) {
@@ -78,7 +59,7 @@ export const MobileMenu = ({ variant = 'main' }: MobileMenuProps) => {
         <Hamburger open={showDialog} toggleOpen={toggleDialog} />
     )
 
-    const numerationBase = variant === 'main' ? 1 : 2
+    const numerationBase = isCase ? 2 : 1
 
     return (
         <>
@@ -91,16 +72,22 @@ export const MobileMenu = ({ variant = 'main' }: MobileMenuProps) => {
                     exit="initial"
                 >
                     <motion.ul>
-                        {variant === 'case' && (
-                            <Box className="overflow-hidden text-center my-4 z-20">
+                        {isCase && (
+                            <Box className="overflow-hidden text-center py-2 z-20">
                                 <motion.li variants={linkVariants}>
                                     <Link
                                         href="/"
                                         className="no-underline relative"
                                         onClick={handleCloseDialog}
                                     >
-                                        <Text>{t('home')}</Text>
-                                        <Text className="absolute bottom-0 -right-5">
+                                        <Text
+                                            variant="h2"
+                                            textTransform="uppercase"
+                                            fontWeight="font-bold"
+                                        >
+                                            {t('home')}
+                                        </Text>
+                                        <Text className="absolute bottom-0 -right-6">
                                             {'1'.padStart(2, '0')}
                                         </Text>
                                     </Link>
@@ -111,7 +98,7 @@ export const MobileMenu = ({ variant = 'main' }: MobileMenuProps) => {
                         {menuItems(numerationBase).map((item) => (
                             <Box
                                 key={item.label}
-                                className="overflow-hidden text-center my-4 z-20"
+                                className="overflow-hidden text-center py-2 z-20"
                             >
                                 <motion.li variants={linkVariants}>
                                     <Link
@@ -138,8 +125,8 @@ export const MobileMenu = ({ variant = 'main' }: MobileMenuProps) => {
                             </Box>
                         ))}
                     </motion.ul>
-                    <Box className="overflow-hidden text-center my-4">
-                        <LanguageSelection />
+                    <Box className="overflow-hidden text-center py-2">
+                        <LanguageSelection handleClick={handleCloseDialog} />
                     </Box>
                     <div className="absolute bottom-12 left-0 w-full overflow-hidden text-center">
                         <OverlaySocials variants={linkVariants} />
