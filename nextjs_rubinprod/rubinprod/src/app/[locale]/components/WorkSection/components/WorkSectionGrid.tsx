@@ -33,7 +33,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
 import { RevealBlock } from '@/components/Reveal/RevealBlock'
-import { Link } from '@/navigation'
+import { LinkTransition } from '@/components/LinkTransition/LinkTransition'
 
 const logoStyles =
     'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32'
@@ -70,9 +70,9 @@ const DesktopPortfolio = () => {
                     <Text className="mb-4">{t('callToAction')}</Text>
                     <FlexContainer>
                         <RevealBlock className="mr-6">
-                            <Link href="#contact" className="w-full">
+                            <LinkTransition href="#contact" className="w-full">
                                 <Button>{t('button')}</Button>
-                            </Link>
+                            </LinkTransition>
                         </RevealBlock>
                     </FlexContainer>
                 </Box>
@@ -92,14 +92,16 @@ const MobilePortfolio = () => (
             className="w-4/5"
         >
             <SwiperSlide className="h-full clip-path-swiper-left">
-                <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">
-                    <Image src={mobileScootyCase} alt="scooty case" />
-                    <Image
-                        src={scootyLogo}
-                        alt="scooty logo"
-                        className={logoStyles}
-                    />
-                </RevealBlock>
+                <LinkTransition href="/scooty">
+                    <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">
+                        <Image src={mobileScootyCase} alt="scooty case" />
+                        <Image
+                            src={scootyLogo}
+                            alt="scooty logo"
+                            className={logoStyles}
+                        />
+                    </RevealBlock>
+                </LinkTransition>
             </SwiperSlide>
             <SwiperSlide className="h-full clip-path-swiper-right">
                 <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">

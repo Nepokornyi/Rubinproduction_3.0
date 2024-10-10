@@ -1,5 +1,5 @@
+import { LinkTransition } from '@/components/LinkTransition/LinkTransition'
 import { Text } from '@/components/Text/Text'
-import { Link } from '@/navigation'
 import { useTranslations } from 'next-intl'
 import React from 'react'
 
@@ -24,7 +24,7 @@ export const RightPanelMobile = () => {
     return (
         <>
             {LinkList.map((link, index) => (
-                <Link key={index} href={link.href}>
+                <LinkTransition key={index} href={link.href}>
                     <Text
                         textTransform="uppercase"
                         className="text-[#6e6e6e] hover:text-white transition-colors"
@@ -32,7 +32,7 @@ export const RightPanelMobile = () => {
                     >
                         {link.text}
                     </Text>
-                </Link>
+                </LinkTransition>
             ))}
         </>
     )

@@ -7,26 +7,26 @@ import { MainSectionSocials } from './components/MainSectionSocials'
 import { Header } from '@/components/Header/Header'
 import { useTranslations } from 'next-intl'
 import { RevealBlock } from '@/components/Reveal/RevealBlock'
-import { Link } from '@/navigation'
+import { LinkTransition } from '@/components/LinkTransition/LinkTransition'
 
 export const MainSection = () => {
     const t = useTranslations('MainPage')
 
     const RenderCTAButton = (
         <RevealBlock className="2xl:mt-4 2xl:ml-6">
-            <Link href="#contact" className="w-full">
+            <LinkTransition href="#contact" className="w-full">
                 <Button className="hidden md:block lg:pl-10">
                     {t('button')}
                 </Button>
-            </Link>
+            </LinkTransition>
         </RevealBlock>
     )
     const RenderCTAButtonMobile = (
         <FlexContainer>
             <RevealBlock className="md:hidden mx-6 mr-12">
-                <Link href="#contact" className="w-full">
+                <LinkTransition href="#contact" className="w-full">
                     <Button>{t('button')}</Button>
-                </Link>
+                </LinkTransition>
             </RevealBlock>
         </FlexContainer>
     )
