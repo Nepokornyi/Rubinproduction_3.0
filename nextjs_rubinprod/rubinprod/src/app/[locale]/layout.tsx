@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { getMessages } from 'next-intl/server'
 import '../globals.css'
-import { env } from 'process'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
