@@ -1,10 +1,11 @@
+import { LinkTransition } from '@/components/LinkTransition/LinkTransition'
 import { Text } from '@/components/Text/Text'
-import { Link, usePathname, useRouter } from '@/navigation'
+import { usePathname, useRouter } from '@/navigation'
 import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
 import React from 'react'
 
-export const DesktopMenu = () => {
+export const DesktopMenu = ({ isCase = false }: { isCase?: boolean }) => {
     const t = useTranslations('Header.menu')
     const router = useRouter()
     const pathname = usePathname()
@@ -22,12 +23,26 @@ export const DesktopMenu = () => {
     return (
         <nav className="hidden md:block">
             <ul className="list-none flex gap-4 overflow-hidden">
-                <Link href="#about" className="cursor-pointer relative">
+                {isCase && (
+                    <LinkTransition
+                        href="/"
+                        className="cursor-pointer relative"
+                    >
+                        <Text variant="nav">{t('home')}</Text>
+                    </LinkTransition>
+                )}
+                <LinkTransition
+                    href="#about"
+                    className="cursor-pointer relative"
+                >
                     <Text variant="nav">{t('about')}</Text>
-                </Link>
-                <Link href="#portfolio" className="cursor-pointer relative">
+                </LinkTransition>
+                <LinkTransition
+                    href="#portfolio"
+                    className="cursor-pointer relative"
+                >
                     <Text variant="nav">{t('portfolio')}</Text>
-                </Link>
+                </LinkTransition>
                 {otherLanguages.map((lang) => (
                     <li
                         key={lang}

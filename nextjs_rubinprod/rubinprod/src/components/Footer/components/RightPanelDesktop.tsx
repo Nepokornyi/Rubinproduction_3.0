@@ -1,5 +1,5 @@
+import { LinkTransition } from '@/components/LinkTransition/LinkTransition'
 import { Text } from '@/components/Text/Text'
-import { Link } from '@/navigation'
 import { useTranslations } from 'next-intl'
 import React from 'react'
 
@@ -47,7 +47,11 @@ export const RightPanelDesktop = () => {
     return (
         <>
             {LinkList.map((link, index) => (
-                <Link key={index} href={link.href} className={link.className}>
+                <LinkTransition
+                    key={index}
+                    href={link.href}
+                    className={link.className}
+                >
                     <Text
                         textTransform="uppercase"
                         className="text-[#6e6e6e] hover:text-white transition-colors"
@@ -55,7 +59,7 @@ export const RightPanelDesktop = () => {
                     >
                         {link.text}
                     </Text>
-                </Link>
+                </LinkTransition>
             ))}
         </>
     )

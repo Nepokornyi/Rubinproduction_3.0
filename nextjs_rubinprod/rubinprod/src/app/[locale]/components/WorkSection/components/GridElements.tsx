@@ -1,4 +1,5 @@
 import { Box } from '@/components/Box/Box'
+import { LinkTransition } from '@/components/LinkTransition/LinkTransition'
 import { RevealBlock } from '@/components/Reveal/RevealBlock'
 import Image, { StaticImageData } from 'next/image'
 import { ReactNode } from 'react'
@@ -31,19 +32,21 @@ export const ExpandedLeftGridItem = ({
     <Box
         className={`group row-span-2 h-auto lg:h-[65%] xl:h-[75%] ${hoverShadowBoxEffect}`}
     >
-        <RevealBlock delay={0.2}>
-            <Image
-                src={link}
-                alt={alt}
-                className="lg:absolute top-0 left-0 w-full h-full"
-                style={{ objectFit: 'cover' }}
-            />
-            <Image
-                src={logo}
-                alt={alt}
-                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${hoverLogoEffect}`}
-            />
-        </RevealBlock>
+        <LinkTransition href="/scooty">
+            <RevealBlock delay={0.2}>
+                <Image
+                    src={link}
+                    alt={alt}
+                    className="lg:absolute top-0 left-0 w-full h-full"
+                    style={{ objectFit: 'cover' }}
+                />
+                <Image
+                    src={logo}
+                    alt={alt}
+                    className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${hoverLogoEffect}`}
+                />
+            </RevealBlock>
+        </LinkTransition>
     </Box>
 )
 
