@@ -36,6 +36,19 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    transition-property: opacity, transform, filter, background;
+    transition-timing-function: ease-in-out;
+    transition-duration: 500ms;
+}
+
+.page-transition {
+    opacity: 0;
+    background: black;
+    transform: translateY(40px);
+    filter: blur(12px);
+}
+
 .clip-path-container {
     clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
 }
@@ -50,6 +63,10 @@ html {
 
 .clip-path-swiper-right {
     clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+}
+
+.clip-path-case {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
 }
 
 .bottom-gradient {
