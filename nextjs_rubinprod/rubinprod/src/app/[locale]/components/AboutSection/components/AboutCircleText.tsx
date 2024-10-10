@@ -1,5 +1,5 @@
 'use client'
-import { Box } from '@/components/Box/Box'
+
 import React from 'react'
 import { motion } from 'framer-motion'
 
