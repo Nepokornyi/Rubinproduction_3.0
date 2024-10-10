@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { Overlay } from './Overlay'
 import { motion } from 'framer-motion'
 import { Text } from '../Text/Text'
@@ -11,7 +11,7 @@ import {
 import {
     ResponseStatus,
     TitleVariants,
-} from '@/app/[locale]/MainPage/ContactSection/components/const'
+} from '@/app/[locale]/components/ContactSection/components/const'
 
 type OverlayEmailProps = {
     open: boolean
