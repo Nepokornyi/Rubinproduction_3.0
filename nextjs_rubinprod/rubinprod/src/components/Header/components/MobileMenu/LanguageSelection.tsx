@@ -5,16 +5,23 @@ import { motion } from 'framer-motion'
 import { useParams } from 'next/navigation'
 import React from 'react'
 import { linkVariants } from './config/configDropdown'
+import { getSleep } from '@/helpers/getSleep'
 
-export const LanguageSelection = () => {
+type LanguageSelectionProps = {
+    handleClick: () => void
+}
+
+export const LanguageSelection = ({ handleClick }: LanguageSelectionProps) => {
     const router = useRouter()
     const pathname = usePathname()
     const params = useParams()
     const languages = ['en', 'de', 'cz']
     const currentLocale = params?.locale || 'cz'
 
-    const handleLanguageChange = (lang: string) => {
+    const handleLanguageChange = async (lang: string) => {
+        handleClick()
         const nextLocale = lang
+        await getSleep(1000)
         //@ts-ignore
         router.replace({ pathname, params }, { locale: nextLocale })
     }
