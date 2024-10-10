@@ -7,6 +7,7 @@ import logo from '@/assets/img/RubinLetterGray.svg'
 import { useTranslations } from 'next-intl'
 import { RightPanelDesktop } from './components/RightPanelDesktop'
 import { RightPanelMobile } from './components/RightPanelMobile'
+import { Link } from '@/navigation'
 
 export const Footer = () => {
     const t = useTranslations('Footer')
@@ -19,11 +20,13 @@ export const Footer = () => {
                 className="md:w-[80%] pb-6 relative flex-1"
             >
                 <Box className="h-32 md:h-auto p-6 md:p-0">
-                    <Image
-                        src={logo}
-                        alt="Rubin Logo Gray"
-                        className="w-12 md:w-16"
-                    />
+                    <Link href="/">
+                        <Image
+                            src={logo}
+                            alt="Rubin Logo Gray"
+                            className="w-12 md:w-16"
+                        />
+                    </Link>
                 </Box>
 
                 <Text

@@ -1,9 +1,11 @@
 import { Text } from '@/components/Text/Text'
 import { Link, usePathname, useRouter } from '@/navigation'
+import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
 import React from 'react'
 
 export const DesktopMenu = () => {
+    const t = useTranslations('Header.menu')
     const router = useRouter()
     const pathname = usePathname()
     const params = useParams()
@@ -21,10 +23,10 @@ export const DesktopMenu = () => {
         <nav className="hidden md:block">
             <ul className="list-none flex gap-4 overflow-hidden">
                 <Link href="#about" className="cursor-pointer relative">
-                    <Text variant="nav">O nas</Text>
+                    <Text variant="nav">{t('about')}</Text>
                 </Link>
                 <Link href="#portfolio" className="cursor-pointer relative">
-                    <Text variant="nav">Portfolio</Text>
+                    <Text variant="nav">{t('portfolio')}</Text>
                 </Link>
                 {otherLanguages.map((lang) => (
                     <li
