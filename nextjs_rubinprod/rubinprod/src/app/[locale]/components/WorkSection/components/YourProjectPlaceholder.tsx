@@ -18,28 +18,13 @@ export const YourProjectPlaceholder = () => {
                 animate="visible"
                 className="absolute top-6 right-0 md:right-6 h-6 w-6 bg-[#d91e37] rounded-full"
             />
-            <Text
-                variant="h3"
-                textTransform="uppercase"
-                fontWeight="font-bold"
-                padding="px-0"
-            >
+            <Text variant="h3" textTransform="uppercase" padding="px-0">
                 Your
             </Text>
-            <Text
-                variant="h3"
-                textTransform="uppercase"
-                fontWeight="font-bold"
-                padding="px-0"
-            >
+            <Text variant="h3" textTransform="uppercase" padding="px-0">
                 Project
             </Text>
-            <Text
-                variant="h3"
-                textTransform="uppercase"
-                fontWeight="font-bold"
-                padding="px-0"
-            >
+            <Text variant="h3" textTransform="uppercase" padding="px-0">
                 Is Rendering
             </Text>
 

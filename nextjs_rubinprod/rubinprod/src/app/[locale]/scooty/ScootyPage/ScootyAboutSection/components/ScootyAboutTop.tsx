@@ -19,12 +19,7 @@ export const ScootyAboutTop = () => {
                 <Text variant="nav" className="mb-4 md:mb-8">
                     Client
                 </Text>
-                <Text
-                    variant="h5"
-                    textTransform="uppercase"
-                    fontWeight="font-semibold"
-                    className="mb-20"
-                >
+                <Text variant="h5" textTransform="uppercase" className="mb-20">
                     Scooty
                 </Text>
             </FlexContainer>
@@ -38,7 +33,6 @@ export const ScootyAboutTop = () => {
                 <Text
                     variant="h5"
                     textTransform="uppercase"
-                    fontWeight="font-semibold"
                     className="mb-20 text-right md:text-left"
                 >
                     Food Delivery

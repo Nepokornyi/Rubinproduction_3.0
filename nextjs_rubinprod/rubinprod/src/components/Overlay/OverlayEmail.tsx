@@ -53,7 +53,6 @@ export const OverlayEmail = ({
                             variant="h3"
                             textTransform="uppercase"
                             textAlign="text-center"
-                            fontWeight="font-semibold"
                         >
                             {TitleVariants[responseStatus]}
                         </Text>

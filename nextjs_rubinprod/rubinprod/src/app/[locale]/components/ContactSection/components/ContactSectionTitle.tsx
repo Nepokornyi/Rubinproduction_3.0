@@ -16,11 +16,7 @@ export const ContactSectionTitle = () => {
             justifyContent="justify-start"
         >
             <Box className="self-start md:px-6 lg:px-0">
-                <Text
-                    variant="contact"
-                    textTransform="uppercase"
-                    fontWeight="font-bold"
-                >
+                <Text variant="contact" textTransform="uppercase">
                     {t('title')}
                 </Text>
                 <br />

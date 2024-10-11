@@ -83,7 +83,6 @@ export const MobileMenu = ({ isCase = false }: { isCase?: boolean }) => {
                                         <Text
                                             variant="h2"
                                             textTransform="uppercase"
-                                            fontWeight="font-bold"
                                         >
                                             {t('home')}
                                         </Text>
@@ -109,7 +108,6 @@ export const MobileMenu = ({ isCase = false }: { isCase?: boolean }) => {
                                         <Text
                                             variant="h2"
                                             textTransform="uppercase"
-                                            fontWeight="font-bold"
                                         >
                                             {item.label}
                                         </Text>

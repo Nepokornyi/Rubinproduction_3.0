@@ -12,7 +12,6 @@ export const AboutSectionHeading = () => {
             textTransform="uppercase"
             padding="px-6 md:px-0 "
             className="text-balance relative w-72 md:w-auto"
-            fontWeight="font-bold"
         >
             <span className="bg-[#0c0c0c]">{t('title')}</span>
             <Text

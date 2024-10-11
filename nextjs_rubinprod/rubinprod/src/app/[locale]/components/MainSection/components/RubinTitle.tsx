@@ -20,7 +20,7 @@ export const RubinTitle = ({ button }: RubinTitleProps) => {
     const t = useTranslations('MainPage')
 
     return (
-        <Text textTransform="uppercase" fontWeight="font-bold" variant="h1">
+        <Text textTransform="uppercase" variant="h1">
             <FlexContainer gap="gap-4" alignItems="items-center">
                 <span
                     className={`relative ${firstLetterStyles} text-[#d91e37]`}
