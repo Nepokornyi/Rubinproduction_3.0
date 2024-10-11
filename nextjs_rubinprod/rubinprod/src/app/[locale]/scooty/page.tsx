@@ -3,6 +3,7 @@ import { Header } from '@/components/Header/Header'
 import React from 'react'
 import { ScootyMainSection } from './ScootyPage/ScootyMainSection/ScootyMainSection'
 import { ScootyAboutSection } from './ScootyPage/ScootyAboutSection/ScootyAboutSection'
+import { ScootyShowReelSection } from './ScootyPage/ScootyShowReelSection/ScootyShowReelSection'
 
 export default function Scooty() {
     return (
@@ -10,7 +11,7 @@ export default function Scooty() {
             <Header isCase />
             <ScootyMainSection />
             <ScootyAboutSection />
-            <div>ScootyShowReelSection</div>
+            <ScootyShowReelSection />
             <div>ScootyServicesSection</div>
             <div>ScootySocialsSection</div>
             <div>ScootyClipSection</div>
