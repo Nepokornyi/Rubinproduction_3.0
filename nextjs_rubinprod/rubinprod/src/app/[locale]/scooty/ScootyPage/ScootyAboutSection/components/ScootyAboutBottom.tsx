@@ -33,9 +33,10 @@ export const ScootyAboutBottom = () => {
     const renderServices = services.map((service, index) => (
         <Text
             key={index}
-            variant="button"
+            variant="h5"
             textTransform="uppercase"
-            className="py-2.5"
+            fontWeight="font-semibold"
+            className="py-2"
         >
             {service.text}
         </Text>
@@ -57,9 +58,9 @@ export const ScootyAboutBottom = () => {
         <>
             <FlexContainer
                 direction="flex-col"
-                className="relative col-span-2 md:col-span-1 mx-6 md:mx-0 mb-20"
+                className="relative col-span-2 md:col-span-1 px-6 md:px-0 mb-20"
             >
-                <div className="absolute md:hidden h-full bottom-0 -left-0 md:py-2.5">
+                <div className="absolute md:hidden h-full bottom-0 -left-0 px-6 md:py-2.5">
                     <Arrow direction="down" isFullHeight />
                 </div>
 

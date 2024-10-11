@@ -3,6 +3,7 @@ export type VariantStyles =
     | 'h2'
     | 'h3'
     | 'h4'
+    | 'h5'
     | 'p'
     | 'nav'
     | 'socials'
@@ -16,6 +17,7 @@ export type FontWeight =
     | 'font-medium'
     | 'font-semibold'
     | 'font-bold'
+    | ''
 
 export type FontHeight =
     | 'leading-none'
@@ -33,6 +35,7 @@ export const variantStyles: Record<VariantStyles, string> = {
     h2: 'text-4xl md:text-6xl lg:text-7xl font-bold',
     h3: 'text-2xl md:text-4xl font-bold',
     h4: 'text-[40px] md:text-7xl font-bold',
+    h5: 'text-[18px] md:text-[28px] font-bold',
     p: 'text-sm md:text-base font-medium',
     nav: 'text-lg uppercase font-normal',
     socials: 'text-sm lg:text-base uppercase font-normal',

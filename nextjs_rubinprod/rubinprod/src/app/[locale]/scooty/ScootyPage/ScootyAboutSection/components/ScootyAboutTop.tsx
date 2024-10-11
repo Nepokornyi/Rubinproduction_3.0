@@ -20,21 +20,26 @@ export const ScootyAboutTop = () => {
                     Client
                 </Text>
                 <Text
-                    variant="button"
+                    variant="h5"
                     textTransform="uppercase"
+                    fontWeight="font-semibold"
                     className="mb-20"
                 >
                     Scooty
                 </Text>
             </FlexContainer>
             <FlexContainer direction="flex-col">
-                <Text variant="nav" className="mb-4 md:mb-8">
+                <Text
+                    variant="nav"
+                    className="mb-4 md:mb-8 text-right md:text-left"
+                >
                     Industry
                 </Text>
                 <Text
-                    variant="button"
+                    variant="h5"
                     textTransform="uppercase"
-                    className="mb-20"
+                    fontWeight="font-semibold"
+                    className="mb-20 text-right md:text-left"
                 >
                     Food Delivery
                 </Text>
