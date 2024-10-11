@@ -4,6 +4,7 @@ import React from 'react'
 import { ScootyMainSection } from './ScootyPage/ScootyMainSection/ScootyMainSection'
 import { ScootyAboutSection } from './ScootyPage/ScootyAboutSection/ScootyAboutSection'
 import { ScootyShowReelSection } from './ScootyPage/ScootyShowReelSection/ScootyShowReelSection'
+import { ScootyServicesSection } from './ScootyPage/ScootyServicesSection/ScootyServicesSection'
 
 export default function Scooty() {
     return (
@@ -12,7 +13,7 @@ export default function Scooty() {
             <ScootyMainSection />
             <ScootyAboutSection />
             <ScootyShowReelSection />
-            <div>ScootyServicesSection</div>
+            <ScootyServicesSection />
             <div>ScootySocialsSection</div>
             <div>ScootyClipSection</div>
             <div>ScootySolutionSection</div>
