@@ -11,7 +11,6 @@ const DesktopTitle = () => {
         <DesktopGridLayout>
             <FlexContainer direction="flex-col" className="col-start-2">
                 <Text
-                    fontWeight="font-bold"
                     variant="h4"
                     textTransform="uppercase"
                     className="relative"
@@ -38,7 +37,6 @@ const MobileTitle = () => {
         <MobileGridLayout>
             <FlexContainer direction="flex-col" className="col-start-2">
                 <Text
-                    fontWeight="font-bold"
                     variant="h4"
                     textTransform="uppercase"
                     className="relative"

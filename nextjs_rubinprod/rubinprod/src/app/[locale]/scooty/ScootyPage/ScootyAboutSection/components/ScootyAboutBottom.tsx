@@ -35,7 +35,6 @@ export const ScootyAboutBottom = () => {
             key={index}
             variant="h5"
             textTransform="uppercase"
-            fontWeight="font-semibold"
             className="py-2"
         >
             {service.text}
@@ -46,7 +45,7 @@ export const ScootyAboutBottom = () => {
         <Box key={index} className="col-span-2 md:col-span-1">
             <Text
                 variant="nav"
-                className="mb-4 md:mb-6 text-[#D7F000] md:text-white"
+                className="mb-4 md:mb-6 text-[#D7F000] md:text-white font-semibold md:font-normal"
             >
                 {item.title}
             </Text>

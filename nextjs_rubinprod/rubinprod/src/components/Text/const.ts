@@ -35,7 +35,7 @@ export const variantStyles: Record<VariantStyles, string> = {
     h2: 'text-4xl md:text-6xl lg:text-7xl font-bold',
     h3: 'text-2xl md:text-4xl font-bold',
     h4: 'text-[40px] md:text-7xl font-bold',
-    h5: 'text-[18px] md:text-[28px] font-bold',
+    h5: 'text-[18px] md:text-[28px] font-semibold',
     p: 'text-sm md:text-base font-medium',
     nav: 'text-lg uppercase font-normal',
     socials: 'text-sm lg:text-base uppercase font-normal',

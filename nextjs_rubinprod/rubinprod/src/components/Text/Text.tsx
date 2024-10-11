@@ -27,7 +27,7 @@ export const Text = ({
     dangerousText,
     fontFamily = '',
     variant = 'p',
-    fontWeight = 'font-normal',
+    fontWeight = '',
     textTransform = 'none',
     textAlign = 'inherit',
     padding = 'px-6 md:px-0',
