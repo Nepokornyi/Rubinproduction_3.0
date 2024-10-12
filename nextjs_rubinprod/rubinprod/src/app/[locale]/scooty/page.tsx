@@ -8,6 +8,7 @@ import { ScootyServicesSection } from './ScootyPage/ScootyServicesSection/Scooty
 import { ScootySocialsSection } from './ScootyPage/ScootySocialsSection/ScootySocialsSection'
 import { ScootyClipSection } from './ScootyPage/ScootyClipSection/ScootyClipSection'
 import { ScootySolutionSection } from './ScootyPage/ScootySolutionSection/ScootySolutionSection'
+import { ScootyFeedbackSection } from './ScootyPage/ScootyFeedbackSection/ScootyFeedbackSection'
 
 export default function Scooty() {
     return (
@@ -20,7 +21,7 @@ export default function Scooty() {
             <ScootySocialsSection />
             <ScootyClipSection />
             <ScootySolutionSection />
-            <div>ScootyFeedbackSection</div>
+            <ScootyFeedbackSection />
             <div>ScootyContactSection</div>
             <Footer />
         </>
