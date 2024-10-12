@@ -16,13 +16,11 @@ import instagram7 from '@/assets/img/scooty/instagramGrid/instagram7.png'
 import instagram8 from '@/assets/img/scooty/instagramGrid/instagram8.png'
 import instagram9 from '@/assets/img/scooty/instagramGrid/instagram9.png'
 import { RevealBlock } from '@/components/Reveal/RevealBlock'
+import { Reveal } from '@/components/Reveal/Reveal'
 
 export const ScootySocialsSection = () => {
     return (
-        <FlexContainer
-            className="pt-36 pb-24 flex-col xl:flex-row gap-y-36"
-            center
-        >
+        <FlexContainer className="pt-36 pb-24 flex-col xl:flex-row" center>
             <FlexContainer center direction="flex-col">
                 <Text
                     variant="instagram"
@@ -33,7 +31,7 @@ export const ScootySocialsSection = () => {
                     <Text
                         variant="h2"
                         fontFamily="font-grunges"
-                        className="text-[#d7f000] absolute top-12 md:top-0 -right-12 md:-right-32"
+                        className="text-[#d7f000] absolute top-12 md:top-0 -right-4 md:-right-32"
                     >
                         Grid
                     </Text>
@@ -69,8 +67,19 @@ export const ScootySocialsSection = () => {
                     </RevealBlock>
                 </Box>
             </FlexContainer>
-            <FlexContainer className="justify-center 2xl:justify-start">
-                <Image src={socialMobile} alt="scooty social media" />
+            <FlexContainer className="relative">
+                <Reveal className="w-full" removeRepeatedReveal={false} y={50}>
+                    <Image
+                        src={socialMobile}
+                        alt="scooty social media"
+                        className="opacity-0"
+                    />
+                    <Image
+                        src={socialMobile}
+                        alt="scooty social media"
+                        className="absolute -bottom-36 left-1/2 -translate-x-1/2 object-contain"
+                    />
+                </Reveal>
             </FlexContainer>
         </FlexContainer>
     )
