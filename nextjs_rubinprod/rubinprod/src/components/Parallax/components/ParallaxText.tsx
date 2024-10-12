@@ -14,9 +14,15 @@ import {
 import { ReactNode, useRef } from 'react'
 type ParallaxTextProps = {
     children: ReactNode
+    isCase?: boolean
 }
 
-export const ParallaxText = ({ children }: ParallaxTextProps) => {
+export const ParallaxText = ({ children, isCase }: ParallaxTextProps) => {
+    // case styling
+    const textVariant = isCase ? 'h5' : 'p'
+    const textFont = isCase ? 'font-grunges' : ''
+    const textStyles = isCase ? 'text-[#6E6E6E]' : ''
+
     const baseVelocity = 2.5
     const baseX = useMotionValue(0)
     const { scrollY } = useScroll()
@@ -33,6 +39,7 @@ export const ParallaxText = ({ children }: ParallaxTextProps) => {
     const caseTransform = useTransform(baseX, (v) => `${wrap(-35, -73.55, v)}%`)
 
     // There's a correlation between wrapping values and amount of text elements rendered
+    const transformFactor = isCase ? caseTransform : mainTransform
 
     const directionFactor = useRef<number>(1)
     useAnimationFrame((_t, delta) => {
@@ -49,36 +56,26 @@ export const ParallaxText = ({ children }: ParallaxTextProps) => {
         baseX.set(baseX.get() + moveBy)
     })
 
+    const numberOfElements = 8
+
     return (
         <FlexContainer className="whitespace-nowrap flex-nowrap overflow-hidden">
             <motion.div
-                style={{ x: mainTransform }}
+                style={{ x: transformFactor }}
                 className="flex whitespace-nowrap flex-nowrap gap-[325px]"
             >
-                <Text textTransform="uppercase" fontWeight="font-semibold">
-                    {children}
-                </Text>
-                <Text textTransform="uppercase" fontWeight="font-semibold">
-                    {children}
-                </Text>
-                <Text textTransform="uppercase" fontWeight="font-semibold">
-                    {children}
-                </Text>
-                <Text textTransform="uppercase" fontWeight="font-semibold">
-                    {children}
-                </Text>
-                <Text textTransform="uppercase" fontWeight="font-semibold">
-                    {children}
-                </Text>
-                <Text textTransform="uppercase" fontWeight="font-semibold">
-                    {children}
-                </Text>
-                <Text textTransform="uppercase" fontWeight="font-semibold">
-                    {children}
-                </Text>
-                <Text textTransform="uppercase" fontWeight="font-semibold">
-                    {children}
-                </Text>
+                {[...Array(numberOfElements)].map((_, index) => (
+                    <Text
+                        key={index}
+                        variant={textVariant}
+                        textTransform="uppercase"
+                        fontWeight="font-semibold"
+                        fontFamily={textFont}
+                        className={textStyles}
+                    >
+                        {children}
+                    </Text>
+                ))}
             </motion.div>
         </FlexContainer>
     )
