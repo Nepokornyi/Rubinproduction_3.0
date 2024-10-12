@@ -27,14 +27,14 @@ export const ScootyServicesSection = () => {
     ]
 
     return (
-        <FlexContainer className="pt-36 pb-24" justifyContent="justify-center">
-            <Box className="grid grid-rows-4 lg:grid-rows-2 xl:grid-rows-1 lg:grid-cols-2 xl:grid-cols-4 gap-20 xl:justify-items-center">
+        <FlexContainer className="pt-36" justifyContent="justify-center">
+            <Box className="grid grid-rows-[auto,1fr] lg:grid-rows-2 xl:grid-rows-1 lg:grid-cols-2 xl:grid-cols-4 gap-20 xl:justify-items-center">
                 {list.map((item, index) => (
-                    <Box key={index} className="max-w-[300px]">
+                    <Box key={index} className="px-6 md:px-0 max-w-[300px]">
                         <Image
                             src={icoX}
                             alt="X letter icon"
-                            className="absolute -left-10 -top-5 w-10 md:w-auto"
+                            className="absolute -left-2.5 md:-left-10 -top-5 w-10 md:w-auto"
                         />
                         <Text
                             variant="h5"
