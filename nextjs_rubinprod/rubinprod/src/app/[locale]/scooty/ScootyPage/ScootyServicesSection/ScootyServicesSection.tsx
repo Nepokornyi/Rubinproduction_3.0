@@ -28,7 +28,7 @@ export const ScootyServicesSection = () => {
 
     return (
         <FlexContainer className="pt-36 pb-24" justifyContent="justify-center">
-            <Box className="grid grid-rows-4 lg:grid-rows-2 xl:grid-rows-1 lg:grid-cols-2 xl:grid-cols-4 gap-20 md:justify-items-center">
+            <Box className="grid grid-rows-4 lg:grid-rows-2 xl:grid-rows-1 lg:grid-cols-2 xl:grid-cols-4 gap-20 xl:justify-items-center">
                 {list.map((item, index) => (
                     <Box key={index} className="max-w-[300px]">
                         <Image
