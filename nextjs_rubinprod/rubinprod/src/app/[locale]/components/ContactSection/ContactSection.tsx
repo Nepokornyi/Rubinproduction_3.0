@@ -16,7 +16,7 @@ export const ContactSection = ({ color }: ContactSectionProps) => {
             className="py-28 md:py-36 flex-col md:flex-row"
         >
             <ContactSectionTitle />
-            <ContactSectionForm />
+            <ContactSectionForm theme={color} />
         </FlexContainer>
     )
 }

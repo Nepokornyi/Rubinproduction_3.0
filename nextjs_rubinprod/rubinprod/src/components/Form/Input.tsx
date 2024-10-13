@@ -36,7 +36,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     <Text
                         fontWeight="font-semibold"
                         padding="px-0"
-                        className={ErrorVariants[errorColor]}
+                        className={ErrorVariants[color]}
                     >
                         {error}
                     </Text>
