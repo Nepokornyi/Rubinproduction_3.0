@@ -9,8 +9,8 @@ export const GameChangerMainSection = () => {
         <CaseMainSection
             background={background}
             logo={logo}
-            altLogo=""
-            altBackground=""
+            altBackground="gamechanger background image"
+            altLogo="gamechanger logo"
         />
     )
 }
