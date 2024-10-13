@@ -2,10 +2,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import animation from '@/components/Header/components/config/configLogo'
-import Image from 'next/image'
-import logo from '@/assets/img/scooty/ScootyLogo.svg'
+import Image, { StaticImageData } from 'next/image'
 
-export const ScootyLogo = () => {
+type CaseLogoProps = {
+    logo: StaticImageData
+    alt: string
+}
+
+export const CaseLogo = ({ logo, alt }: CaseLogoProps) => {
     return (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <motion.div
@@ -15,7 +19,7 @@ export const ScootyLogo = () => {
             >
                 <Image
                     src={logo}
-                    alt="scooty logo"
+                    alt={alt}
                     className="w-56 md:w-64 lg:w-auto"
                 />
             </motion.div>
