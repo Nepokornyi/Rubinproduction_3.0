@@ -1,6 +1,7 @@
 import { Arrow } from '@/components/Arrow/Arrow'
 import { Box } from '@/components/Box/Box'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
+import { Reveal } from '@/components/Reveal/Reveal'
 import { Text } from '@/components/Text/Text'
 import { useTranslations } from 'next-intl'
 import React from 'react'
@@ -59,8 +60,14 @@ export const ScootyAboutBottom = () => {
                 direction="flex-col"
                 className="relative col-span-2 md:col-span-1 px-6 md:px-0 mb-20"
             >
-                <div className="absolute md:hidden h-full bottom-0 -left-0 px-6 md:py-2.5">
-                    <Arrow direction="down" isFullHeight />
+                <div className="absolute md:hidden h-full bottom-0 -left-0 px-6">
+                    <Reveal
+                        y={-35}
+                        removeRepeatedReveal={false}
+                        className="h-full"
+                    >
+                        <Arrow direction="down" isFullHeight />
+                    </Reveal>
                 </div>
 
                 <Text variant="nav" className="mb-4 md:mb-6">
