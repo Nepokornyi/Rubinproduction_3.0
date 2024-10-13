@@ -86,12 +86,14 @@ export const ContactSectionForm = ({
                         type="email"
                         placeholder="email"
                         error={errors.email?.message}
+                        color={theme}
                     />
                     <Input
                         {...register('phone')}
                         type="tel"
                         placeholder="phone"
                         error={errors.phone?.message}
+                        color={theme}
                     />
                     <FlexContainer className="my-4">
                         <Button
