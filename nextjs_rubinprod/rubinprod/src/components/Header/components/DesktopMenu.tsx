@@ -38,7 +38,7 @@ export const DesktopMenu = ({ isCase = false }: { isCase?: boolean }) => {
                     <Text variant="nav">{t('about')}</Text>
                 </LinkTransition>
                 <LinkTransition
-                    href="#portfolio"
+                    href="/#portfolio"
                     className="cursor-pointer relative"
                 >
                     <Text variant="nav">{t('portfolio')}</Text>
