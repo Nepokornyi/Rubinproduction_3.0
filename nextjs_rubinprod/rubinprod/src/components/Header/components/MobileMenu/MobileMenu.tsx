@@ -24,7 +24,7 @@ export const MobileMenu = ({ isCase = false }: { isCase?: boolean }) => {
         },
         {
             label: t('portfolio'),
-            href: '#portfolio',
+            href: '/#portfolio',
             position: '-right-6',
             numeration: numerationBase + 1,
         },
