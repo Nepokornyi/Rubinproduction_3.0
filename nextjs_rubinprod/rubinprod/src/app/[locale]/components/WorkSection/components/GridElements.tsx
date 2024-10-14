@@ -21,11 +21,11 @@ export const MobileGridLayout = ({ children }: { children: ReactNode }) => (
 )
 
 export const ExpandedLeftGridItem = ({
-    link,
+    background,
     logo,
     alt,
 }: {
-    link: StaticImageData
+    background: StaticImageData
     logo: StaticImageData
     alt: string
 }) => (
@@ -35,7 +35,7 @@ export const ExpandedLeftGridItem = ({
         <LinkTransition href="/scooty">
             <RevealBlock delay={0.2}>
                 <Image
-                    src={link}
+                    src={background}
                     alt={alt}
                     className="lg:absolute top-0 left-0 w-full h-full"
                     style={{ objectFit: 'cover' }}
@@ -52,24 +52,28 @@ export const ExpandedLeftGridItem = ({
 
 export const RightGridItem = ({
     link,
+    background,
     logo,
     alt,
     delay,
 }: {
-    link: StaticImageData
+    link: string
+    background: StaticImageData
     logo: StaticImageData
     alt: string
     delay?: number
 }) => (
     <Box className={`z-20 group mt-10 ${hoverShadowBoxEffect}`}>
-        <RevealBlock delay={delay}>
-            <Image src={link} alt={alt} />
-            <Image
-                src={logo}
-                alt={alt}
-                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${hoverLogoEffect}`}
-            />
-        </RevealBlock>
+        <LinkTransition href={link}>
+            <RevealBlock delay={delay}>
+                <Image src={background} alt={alt} />
+                <Image
+                    src={logo}
+                    alt={alt}
+                    className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${hoverLogoEffect}`}
+                />
+            </RevealBlock>
+        </LinkTransition>
     </Box>
 )
 
