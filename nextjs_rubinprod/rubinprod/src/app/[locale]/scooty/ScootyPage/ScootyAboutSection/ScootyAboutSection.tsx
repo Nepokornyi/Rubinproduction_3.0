@@ -1,17 +1,54 @@
-import { Box } from '@/components/Box/Box'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import React from 'react'
 
-import { ScootyAboutTop } from './components/ScootyAboutTop'
-import { ScootyAboutBottom } from './components/ScootyAboutBottom'
+import { CaseAboutSection } from '@/app/[locale]/components/CaseAboutSection/CaseAboutSection'
+import { useTranslations } from 'next-intl'
+import {
+    CaseAboutBottomProps,
+    CaseAboutTopProps,
+} from '@/app/[locale]/components/CaseAboutSection/types'
+
+import logo from '@/assets/img/scooty/ScootyLogoGreen.svg'
+
+const topConfig: CaseAboutTopProps = {
+    logo: logo,
+    leftContent: 'Client',
+    leftTitle: 'Scooty',
+    rightContent: 'Industry',
+    rightTitle: 'Food Delivery',
+}
 
 export const ScootyAboutSection = () => {
+    const t = useTranslations('ScootyCase')
+
+    const bottomConfig: CaseAboutBottomProps = {
+        services: [
+            { text: 'Web Development' },
+            { text: 'Schooting' },
+            { text: 'Animation' },
+            { text: 'Instagram Feed' },
+        ],
+        clientChallenge: [
+            {
+                title: 'Client',
+                text: t.rich('client', {
+                    strong: (children) => <strong>{children}</strong>,
+                }),
+            },
+            {
+                title: 'Challenge',
+                text: t.rich('challenge', {
+                    strong: (children) => <strong>{children}</strong>,
+                }),
+            },
+        ],
+    }
     return (
         <FlexContainer id="about" center>
-            <Box className="grid md:w-11/12 xl:w-3/4 2xl:w-3/5 grid-rows-[auto,1fr]  grid-cols-2 md:grid-cols-3 gap-x-14 pt-36 pb-24 px-6">
-                <ScootyAboutTop />
-                <ScootyAboutBottom />
-            </Box>
+            <CaseAboutSection
+                topConfig={topConfig}
+                bottomConfig={bottomConfig}
+            />
         </FlexContainer>
     )
 }
