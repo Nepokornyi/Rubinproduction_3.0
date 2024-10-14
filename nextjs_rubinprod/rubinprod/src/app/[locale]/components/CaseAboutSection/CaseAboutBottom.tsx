@@ -3,35 +3,11 @@ import { Box } from '@/components/Box/Box'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Reveal } from '@/components/Reveal/Reveal'
 import { Text } from '@/components/Text/Text'
-import { useTranslations } from 'next-intl'
 import React from 'react'
+import { CaseAboutBottomProps } from './types'
 
-const services = [
-    { text: 'Web Development' },
-    { text: 'Schooting' },
-    { text: 'Animation' },
-    { text: 'Instagram Feed' },
-]
-
-export const ScootyAboutBottom = () => {
-    const t = useTranslations('ScootyCase')
-
-    const clientChallenge = [
-        {
-            title: 'Client',
-            text: t.rich('client', {
-                strong: (children) => <strong>{children}</strong>,
-            }),
-        },
-        {
-            title: 'Challenge',
-            text: t.rich('challenge', {
-                strong: (children) => <strong>{children}</strong>,
-            }),
-        },
-    ]
-
-    const renderServices = services.map((service, index) => (
+export const CaseAboutBottom = (config: CaseAboutBottomProps) => {
+    const renderServices = config.services.map((service, index) => (
         <Text
             key={index}
             variant="h5"
@@ -42,7 +18,7 @@ export const ScootyAboutBottom = () => {
         </Text>
     ))
 
-    const renderClientChallenge = clientChallenge.map((item, index) => (
+    const renderClientChallenge = config.clientChallenge.map((item, index) => (
         <Box key={index} className="col-span-2 md:col-span-1">
             <Text
                 variant="nav"
