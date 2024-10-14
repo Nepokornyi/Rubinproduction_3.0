@@ -42,6 +42,7 @@ export const ScootyAboutSection = () => {
                 }),
             },
         ],
+        color: 'text-[#d7f000]',
     }
     return (
         <FlexContainer id="about" center>

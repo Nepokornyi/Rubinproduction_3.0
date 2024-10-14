@@ -22,7 +22,7 @@ export const CaseAboutBottom = (config: CaseAboutBottomProps) => {
         <Box key={index} className="col-span-2 md:col-span-1">
             <Text
                 variant="nav"
-                className="mb-4 md:mb-6 text-[#D7F000] md:text-white font-semibold md:font-normal"
+                className={`mb-4 md:mb-6 ${config.color} md:text-white font-semibold md:font-normal`}
             >
                 {item.title}
             </Text>
