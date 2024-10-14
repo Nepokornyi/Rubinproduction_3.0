@@ -12,4 +12,5 @@ export type CaseAboutTopProps = {
 export type CaseAboutBottomProps = {
     services: { text: string | ReactNode }[]
     clientChallenge: { title: string | ReactNode; text: string | ReactNode }[]
+    color: string
 }
