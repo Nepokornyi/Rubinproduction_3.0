@@ -44,18 +44,20 @@ const DesktopPortfolio = () => {
     return (
         <DesktopGridLayout>
             <ExpandedLeftGridItem
-                link={scootyCase}
+                background={scootyCase}
                 logo={scootyLogo}
                 alt="scooty case"
             />
             <RightGridItem
-                link={gameChangerCase}
+                link={'/gamechanger'}
+                background={gameChangerCase}
                 logo={gameChangerLogo}
                 alt="game changer case"
                 delay={0.65}
             />
             <RightGridItem
-                link={eliteVoyageCase}
+                link={'/elite-voyage'}
+                background={eliteVoyageCase}
                 logo={eliteVoyageLogo}
                 alt="elite voyage case"
                 delay={0.25}
@@ -104,14 +106,16 @@ const MobilePortfolio = () => (
                 </LinkTransition>
             </SwiperSlide>
             <SwiperSlide className="h-full clip-path-swiper-right">
-                <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">
-                    <Image src={mobileGameChangerCase} alt="scooty case" />
-                    <Image
-                        src={gameChangerLogo}
-                        alt="game changer logo"
-                        className={logoStyles}
-                    />
-                </RevealBlock>
+                <LinkTransition href="/gamechanger">
+                    <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">
+                        <Image src={mobileGameChangerCase} alt="scooty case" />
+                        <Image
+                            src={gameChangerLogo}
+                            alt="game changer logo"
+                            className={logoStyles}
+                        />
+                    </RevealBlock>
+                </LinkTransition>
             </SwiperSlide>
             <SwiperSlide className="h-full clip-path-swiper-left">
                 <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">
