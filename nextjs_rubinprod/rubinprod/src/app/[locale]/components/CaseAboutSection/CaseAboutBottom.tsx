@@ -19,7 +19,7 @@ export const CaseAboutBottom = (config: CaseAboutBottomProps) => {
     ))
 
     const renderClientChallenge = config.clientChallenge.map((item, index) => (
-        <Box key={index} className="col-span-2 md:col-span-1">
+        <Box key={index} className="col-span-2 md:col-span-1 md:max-w-[370px]">
             <Text
                 variant="nav"
                 className={`mb-4 md:mb-6 ${config.color} md:text-white font-semibold md:font-normal`}
