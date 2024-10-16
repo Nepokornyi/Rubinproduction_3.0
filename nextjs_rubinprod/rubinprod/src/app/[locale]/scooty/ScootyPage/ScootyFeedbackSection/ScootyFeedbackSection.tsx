@@ -5,11 +5,13 @@ import {
     CaseFeedback,
     CaseFeedbackProps,
 } from '@/app/[locale]/components/CaseFeedback/CaseFeedback'
+import author from '@/assets/img/scooty/author.png'
 
 export const ScootyFeedbackSection = () => {
     const t = useTranslations('ScootyCase')
 
     const config: CaseFeedbackProps = {
+        img: author,
         alt: 'Nikita portrait',
         feedback: t('feedback'),
         link: 'https://www.linkedin.com/in/nikita-rubin-a4a04b190/',
