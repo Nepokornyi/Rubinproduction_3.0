@@ -1,9 +1,7 @@
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Text } from '@/components/Text/Text'
-import { useTranslations } from 'next-intl'
 import { Reveal } from '@/components/Reveal/Reveal'
-import Image from 'next/image'
-import author from '@/assets/img/scooty/author.png'
+import Image, { StaticImageData } from 'next/image'
 import quoteUp from '@/assets/img/quoteUp.png'
 import quoteDown from '@/assets/img/quoteDown.png'
 import { BsLinkedin } from 'react-icons/bs'
@@ -12,6 +10,7 @@ import { LinkTransition } from '@/components/LinkTransition/LinkTransition'
 import { ParallaxContainer } from '@/components/Parallax/ParallaxContainer'
 
 export type CaseFeedbackProps = {
+    img: StaticImageData
     alt: string
     feedback: string | React.ReactNode
     link: string
@@ -33,7 +32,7 @@ export const CaseFeedback = ({ config }: { config: CaseFeedbackProps }) => {
                 center
             >
                 <Reveal removeRepeatedReveal={false}>
-                    <Image src={author} alt={config.alt} />
+                    <Image src={config.img} alt={config.alt} />
                 </Reveal>
                 <FlexContainer direction="flex-col" className="max-w-[725px]">
                     <Box className="mb-16">
