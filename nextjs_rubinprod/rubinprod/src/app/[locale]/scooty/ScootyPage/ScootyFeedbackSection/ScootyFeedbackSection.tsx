@@ -1,23 +1,25 @@
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
-import { ParallaxContainer } from '@/components/Parallax/ParallaxContainer'
 import React from 'react'
-import { Feedback } from './components/Feedback'
+import { useTranslations } from 'next-intl'
+import {
+    CaseFeedback,
+    CaseFeedbackProps,
+} from '@/app/[locale]/components/CaseFeedback/CaseFeedback'
 
 export const ScootyFeedbackSection = () => {
+    const t = useTranslations('ScootyCase')
+
+    const config: CaseFeedbackProps = {
+        alt: 'Nikita portrait',
+        feedback: t('feedback'),
+        link: 'https://www.linkedin.com/in/nikita-rubin-a4a04b190/',
+        name: 'Nikita Rubin',
+        position: 'Founder of Rubin Production',
+    }
+
     return (
         <FlexContainer className="relative pt-36 pb-24">
-            <ParallaxContainer
-                isTransparent
-                text="strategy, schooting, animation, instagram feed, branding and design"
-                isCase
-            />
-            <Feedback />
-            <ParallaxContainer
-                isTransparent
-                text="photo/video editing, creative treatment, project planning, assistance"
-                placeBottom
-                isCase
-            />
+            <CaseFeedback config={config} />
         </FlexContainer>
     )
 }
