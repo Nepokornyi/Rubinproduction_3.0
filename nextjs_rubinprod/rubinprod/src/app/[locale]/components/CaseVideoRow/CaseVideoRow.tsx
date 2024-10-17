@@ -75,7 +75,11 @@ export const CaseVideoRow = ({
                     </FlexContainer>
                 </FlexContainer>
 
-                <FlexContainer direction="flex-col" center>
+                <FlexContainer
+                    direction="flex-col"
+                    center
+                    className="md:hidden "
+                >
                     <FlexContainer width="w-4/5" className="relative">
                         <Text
                             variant="h4"
