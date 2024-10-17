@@ -57,7 +57,7 @@ const config: CaseShowReelProps[] = [
     },
 ]
 
-export const GameChangerShowReelSection = () => {
+export const GameChangerShowReelSectionTop = () => {
     return (
         <FlexContainer className="h-screen clip-path-container">
             <CaseShowReel config={config} />
