@@ -1,6 +1,6 @@
 import { CaseServicesSection } from '@/app/[locale]/components/CaseServicesSection/CaseServicesSection'
 import { useTranslations } from 'next-intl'
-import icoX from '@/assets/img/gamechanger/icoX.png'
+import icoX from '@/assets/img/gamechanger/icoX.svg'
 import React from 'react'
 
 export const GameChangerServicesSection = () => {
