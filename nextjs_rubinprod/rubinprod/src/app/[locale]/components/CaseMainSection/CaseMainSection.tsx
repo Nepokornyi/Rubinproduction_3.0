@@ -22,8 +22,7 @@ export const CaseMainSection = ({
                 src={background}
                 alt={altBackground}
                 fill
-                objectFit="cover"
-                className="blur-sm md:blur-none"
+                className="blur-sm md:blur-none object-cover"
             />
             <CaseLogo logo={logo} alt={altLogo} />
         </Box>
