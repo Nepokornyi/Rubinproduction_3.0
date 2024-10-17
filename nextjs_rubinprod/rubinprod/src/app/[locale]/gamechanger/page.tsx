@@ -8,6 +8,7 @@ import { GameChangerServicesSection } from './GameChangerPage/GameChangerService
 import { GameChangerFeedbackSection } from './GameChangerPage/GameChangerFeedbackSection/GameChangerFeedbackSection'
 import { GameChangerShowReelSectionBottom } from './GameChangerPage/GameChangerShowReelSection/GameChangerShowReelSectionBottom'
 import { GameChangerMarketingSection } from './GameChangerPage/GameChangerMarketingSection/GameChangerMarketingSection'
+import { GameChangerMotionDesignSection } from './GameChangerPage/GameChangerMotionDesignSection/GameChangerMotionDesignSection'
 
 export default function GameChanger() {
     return (
@@ -19,7 +20,7 @@ export default function GameChanger() {
             <GameChangerServicesSection />
             <GameChangerMarketingSection />
             <GameChangerShowReelSectionBottom />
-            <div>MotionDesign</div>
+            <GameChangerMotionDesignSection />
             <GameChangerFeedbackSection />
             <ContactSection color="gameChanger" />
             <Footer />

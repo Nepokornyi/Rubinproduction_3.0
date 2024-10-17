@@ -18,12 +18,10 @@ export const CaseVideoRow = ({
     config,
     title,
     accent,
-    className,
 }: {
     config: CaseVideoRowProps[]
     title: string
     accent: string
-    className?: string
 }) => {
     return (
         <>
@@ -104,7 +102,7 @@ export const CaseVideoRow = ({
                         className="w-4/5"
                     >
                         {config.map((item, index) => (
-                            <SwiperSlide key={index} className="h-full">
+                            <SwiperSlide key={index} className="h-full mb-2">
                                 <video autoPlay muted loop playsInline>
                                     <source src={item.src} />
                                 </video>
