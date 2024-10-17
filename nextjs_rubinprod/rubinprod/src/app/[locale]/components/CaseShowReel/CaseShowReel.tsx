@@ -14,8 +14,8 @@ export type CaseShowReelProps = {
 export const CaseShowReel = ({ config }: { config: CaseShowReelProps[] }) => {
     return (
         <Box className="grid gap-4 grid-cols-4 md:grid-cols-5 grid-rows-5 md:grid-rows-4 w-full">
-            {config.map((item) => (
-                <div className={item.className} key={item.alt}>
+            {config.map((item, index) => (
+                <div className={item.className} key={index}>
                     <RevealBlock blockColor={item.color} delay={item.delay}>
                         <Image
                             src={item.image}
