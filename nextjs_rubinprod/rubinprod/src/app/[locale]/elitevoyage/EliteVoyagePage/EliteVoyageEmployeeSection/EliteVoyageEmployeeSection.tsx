@@ -17,5 +17,12 @@ export const EliteVoyageEmployeeSection = () => {
         },
     ]
 
-    return <CaseVideoRow title="Travel" accent="Videos" config={config} />
+    return (
+        <CaseVideoRow
+            title="Employee"
+            accent="Spotlight Videos"
+            color="text-[#B9965A]"
+            config={config}
+        />
+    )
 }

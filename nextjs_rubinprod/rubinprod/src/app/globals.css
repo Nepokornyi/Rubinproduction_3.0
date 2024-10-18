@@ -74,3 +74,17 @@ body {
         background-image: linear-gradient(#0c0c0c 50%, #bf1b32);
     }
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animation-container {
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1.5s ease-in-out forwards; /* Animating fade-in effect */
+}

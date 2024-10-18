@@ -18,10 +18,12 @@ export const CaseVideoRow = ({
     config,
     title,
     accent,
+    color,
 }: {
     config: CaseVideoRowProps[]
     title: string
     accent: string
+    color: string
 }) => {
     return (
         <>
@@ -36,7 +38,7 @@ export const CaseVideoRow = ({
                         <Text
                             variant="h2"
                             fontFamily="font-grunges"
-                            className="text-[#7055EC]"
+                            className={color}
                             padding="px-0 md:px-6"
                         >
                             {accent}
@@ -91,7 +93,7 @@ export const CaseVideoRow = ({
                                 variant="h2"
                                 fontFamily="font-grunges"
                                 textAlign="text-right"
-                                className="text-[#7055EC] absolute top-14 -right-8"
+                                className={`${color} absolute top-14 -right-8`}
                             >
                                 {accent}
                             </Text>

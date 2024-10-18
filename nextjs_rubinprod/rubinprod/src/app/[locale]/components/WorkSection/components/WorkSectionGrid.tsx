@@ -56,7 +56,7 @@ const DesktopPortfolio = () => {
                 delay={0.65}
             />
             <RightGridItem
-                link={'/elite-voyage'}
+                link={'/elitevoyage'}
                 background={eliteVoyageCase}
                 logo={eliteVoyageLogo}
                 alt="elite voyage case"
@@ -118,14 +118,16 @@ const MobilePortfolio = () => (
                 </LinkTransition>
             </SwiperSlide>
             <SwiperSlide className="h-full clip-path-swiper-left">
-                <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">
-                    <Image src={mobileEliteVoyageCase} alt="scooty case" />
-                    <Image
-                        src={eliteVoyageLogo}
-                        alt="elite voyage logo"
-                        className={logoStyles}
-                    />
-                </RevealBlock>
+                <LinkTransition href="/elitevoyage">
+                    <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">
+                        <Image src={mobileEliteVoyageCase} alt="scooty case" />
+                        <Image
+                            src={eliteVoyageLogo}
+                            alt="elite voyage logo"
+                            className={logoStyles}
+                        />
+                    </RevealBlock>
+                </LinkTransition>
             </SwiperSlide>
             <SwiperSlide className="h-full my-auto md:my-0 clip-path-swiper-right">
                 <RevealBlock delay={0.25} blockColor="bg-[#0c0c0c]">

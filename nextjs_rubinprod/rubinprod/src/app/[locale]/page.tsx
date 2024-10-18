@@ -11,7 +11,6 @@ import { PageTransition } from '@/components/PageTransition/PageTransition'
 export default function MainLanding() {
     return (
         <div className="animation-container">
-            <PageTransition />
             <MainSection />
             <AboutSection />
             <ShowReelSection />
