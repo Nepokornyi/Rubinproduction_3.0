@@ -6,7 +6,6 @@ import { ShowReelSection } from './components/ShowReelSection/ShowReelSection'
 import { WorkSection } from './components/WorkSection/WorkSection'
 import { ContactSection } from './components/ContactSection/ContactSection'
 import { Footer } from '@/components/Footer/Footer'
-import { PageTransition } from '@/components/PageTransition/PageTransition'
 
 export default function MainLanding() {
     return (
