@@ -19,7 +19,7 @@ type ParallaxTextProps = {
 
 export const ParallaxText = ({ children, isCase }: ParallaxTextProps) => {
     // case styling
-    const textVariant = isCase ? 'h5' : 'p'
+    const textVariant = isCase ? 'h3' : 'p'
     const textFont = isCase ? 'font-grunges' : ''
     const textStyles = isCase ? 'text-[#6E6E6E]' : ''
 

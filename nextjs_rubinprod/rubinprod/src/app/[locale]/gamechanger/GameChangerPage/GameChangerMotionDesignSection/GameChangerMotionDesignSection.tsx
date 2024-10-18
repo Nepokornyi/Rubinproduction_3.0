@@ -20,6 +20,7 @@ export const GameChangerMotionDesignSection = () => {
         <CaseVideoRow
             title="Integrated"
             accent="Motion Design"
+            color="text-[#7055EC]"
             config={config}
         />
     )

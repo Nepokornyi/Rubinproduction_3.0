@@ -26,5 +26,12 @@ export const GameChangerMarketingSection = () => {
         },
     ]
 
-    return <CaseVideoRow title="Marketing" accent="Videos" config={config} />
+    return (
+        <CaseVideoRow
+            title="Marketing"
+            accent="Videos"
+            color="text-[#7055EC]"
+            config={config}
+        />
+    )
 }

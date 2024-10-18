@@ -12,7 +12,7 @@ import { GameChangerMotionDesignSection } from './GameChangerPage/GameChangerMot
 
 export default function GameChanger() {
     return (
-        <>
+        <div className="animation-container">
             <Header isCase />
             <GameChangerMainSection />
             <GameChangerAboutSection />
@@ -24,6 +24,6 @@ export default function GameChanger() {
             <GameChangerFeedbackSection />
             <ContactSection color="gameChanger" />
             <Footer />
-        </>
+        </div>
     )
 }

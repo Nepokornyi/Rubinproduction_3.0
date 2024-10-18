@@ -13,7 +13,7 @@ import { ContactSection } from '../components/ContactSection/ContactSection'
 
 export default function Scooty() {
     return (
-        <>
+        <div className="animation-container">
             <Header isCase />
             <ScootyMainSection />
             <ScootyAboutSection />
@@ -25,6 +25,6 @@ export default function Scooty() {
             <ScootyFeedbackSection />
             <ContactSection color="scooty" />
             <Footer />
-        </>
+        </div>
     )
 }

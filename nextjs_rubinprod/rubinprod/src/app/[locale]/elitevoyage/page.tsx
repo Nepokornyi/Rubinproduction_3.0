@@ -14,7 +14,7 @@ import { EliteVoyageFeedbackSection } from './EliteVoyagePage/EliteVoyageFeedbac
 
 export default function EliteVoyage() {
     return (
-        <>
+        <div className="animation-container">
             <Header isCase />
             <EliteVoyageMainSection />
             <EliteVoyageAboutSection />
@@ -27,6 +27,6 @@ export default function EliteVoyage() {
             <EliteVoyageFeedbackSection />
             <ContactSection color="eliteVoyage" />
             <Footer />
-        </>
+        </div>
     )
 }
