@@ -4,6 +4,7 @@ export const InputVariants = {
     scooty: 'focus:border-[#D7F000]',
     gameChanger: 'focus:border-[#7055EC]',
     eliteVoyage: 'focus:border-[#B9965A]',
+    login: 'focus:border-[#d91e37]',
 }
 
 export const ErrorVariants = {
@@ -12,6 +13,7 @@ export const ErrorVariants = {
     scooty: 'text-[#D7F000]',
     gameChanger: 'text-[#7055EC]',
     eliteVoyage: 'text-[#B9965A]',
+    login: 'text-[#d91e37]',
 }
 
 export type InputVariantsList = keyof typeof InputVariants
