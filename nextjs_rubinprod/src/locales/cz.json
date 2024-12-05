@@ -13,23 +13,23 @@
     "MainPage": {
         "title_name": "Rubin",
         "subtitle": "Production",
-        "content": "Vaši vizi proměníme ve skutečnost - od konceptu až po finální střih, naše odhodlání k preciznosti a kreativitě zaručuje, že každý projekt předčí očekávání.",
-        "button": "Spolupracovat"
+        "content": "Vaši vizi proměníme ve skutečnost - od konceptu až po finální střih. Naše profesionální videoprodukce je zaměřena na preciznost a kreativitu, zaručující, že každý projekt předčí očekávání",
+        "button": "Konzultace"
     },
     "AboutPage": {
         "title": "Creating",
         "accent": "The Best",
         "subtitle": "Videos For You",
-        "description": "Náš přístup je založen na kreativitě a inovaci, což dává naší práci jedinečný charakter. Do každého snímku vkládáme vášeň a odborné znalosti, abychom zajistili, že váš příběh bude rezonovat s vaším publikem.",
+        "description": "Náš přístup k produkci kontentu je založen na kreativitě a inovaci, což dává naší práci jedinečný charakter. Každý snímek zpracováváme s vášní a odborností, aby váš příběh rezonoval s publikem.",
         "clients_left": "Naši",
         "clients_right": "klienti"
     },
     "WorkPage": {
         "title": "Portfolio",
         "accent": "Our",
-        "description": "Nevytváříme pouze videoobsah - pro každý projekt vyvíjíme jedinečný marketingový přístup.",
+        "description": "Nevytváříme pouze videoobsah, ale také originální marketingový přístup pro každý projekt, ať už se jedná o reklamní, firemní či produktové video.",
         "callToAction": "Bez ohledu na složitost projektu vám během první konzultace poskytneme odhad ceny. Pojďme společně vytvořit něco skvělého!",
-        "button": "Spolupracovat"
+        "button": "Konzultace"
     },
     "ContactPage": {
         "title": "Let's talk",

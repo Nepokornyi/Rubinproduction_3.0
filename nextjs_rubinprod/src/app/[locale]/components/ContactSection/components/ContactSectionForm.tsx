@@ -11,6 +11,7 @@ import { FormSchema, formSchema } from './schema'
 import { OverlayEmail } from '@/components/Overlay/OverlayEmail'
 import { useState } from 'react'
 import { ResponseStatus } from './const'
+import { trackEvent } from '@/helpers/facebookPixel'
 
 type ContactSectionFormProps = {
     theme?: ButtonVariantsList
@@ -48,6 +49,11 @@ export const ContactSectionForm = ({
             const result = await response.json()
 
             if (response.ok) {
+                trackEvent('SubmitApplication', {
+                    email: data.email,
+                    phone: data.phone,
+                })
+
                 setSubmissionStatus('success')
                 setSubmissionMessage('Thank you for your submission')
                 reset()

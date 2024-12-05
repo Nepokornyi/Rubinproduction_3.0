@@ -14,7 +14,7 @@
         "title_name": "Rubin",
         "subtitle": "Production",
         "content": "We will bring your vision to life - from concept to final edit, our commitment to precision and creativity ensures that every project surpasses expectations.",
-        "button": "Work together"
+        "button": "Consultation"
     },
     "AboutPage": {
         "title": "Creating",
@@ -29,7 +29,7 @@
         "accent": "Our",
         "description": "We don't just create video content - we develop a customized marketing approach for each project.",
         "callToAction": "Regardless of the projects complexity, we will provide a cost estimate during the first consultation. Let's create something great together!",
-        "button": "Work together"
+        "button": "Consultation"
     },
     "ContactPage": {
         "title": "Let's talk",

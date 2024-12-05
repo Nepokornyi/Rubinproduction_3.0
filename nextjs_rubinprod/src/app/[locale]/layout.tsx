@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { getMessages } from 'next-intl/server'
 import '../globals.css'
+import GoogleAnalytics from './integrations/GoogleAnalytics'
+import { FacebookPixel } from './integrations/FacebookPixel'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -22,31 +24,15 @@ export default async function LocaleLayout({
     const messages = await getMessages()
 
     const GTM_ID = process.env.GTM_ID
+    const FB_PIXEL_ID = process.env.FB_PIXEL_ID
 
     return (
         <html lang={params.locale}>
             <head>
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                            })(window,document,'script','dataLayer','${GTM_ID}');
-                        `,
-                    }}
-                />
+                <GoogleAnalytics gtmId={GTM_ID} />
+                <FacebookPixel pixelId={FB_PIXEL_ID} />
             </head>
             <body className={montserrat.className}>
-                <noscript>
-                    <iframe
-                        src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-                        height="0"
-                        width="0"
-                        style={{ display: 'none', visibility: 'hidden' }}
-                    />
-                </noscript>
                 <NextIntlClientProvider messages={messages}>
                     {children}
                 </NextIntlClientProvider>
