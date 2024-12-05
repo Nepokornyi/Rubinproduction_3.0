@@ -1,8 +1,8 @@
 import React from 'react'
-
-import background from '@/assets/img/scooty/scootyBackground.png'
-import logo from '@/assets/img/scooty/ScootyLogo.svg'
 import { CaseMainSection } from '@/app/[locale]/components/CaseMainSection/CaseMainSection'
+
+import background from '@/assets/img/scooty/ScootyBackground.png'
+import logo from '@/assets/img/scooty/ScootyLogo.svg'
 
 export const ScootyMainSection = () => {
     return (

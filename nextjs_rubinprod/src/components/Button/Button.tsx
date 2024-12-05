@@ -12,6 +12,7 @@ type ButtonProps = {
     className?: string
     type?: 'button' | 'submit'
     isDisabled?: boolean
+    onClick?: () => void
 }
 
 export const Button = ({
@@ -20,8 +21,9 @@ export const Button = ({
     className = '',
     type = 'button',
     isDisabled = false,
+    onClick,
 }: ButtonProps) => {
-    const renderContent = isDisabled ? <Spinner></Spinner> : children
+    const renderContent = isDisabled ? <Spinner /> : children
 
     // TODO: resolve padding override
     return (
@@ -29,6 +31,7 @@ export const Button = ({
         <button
             type={type}
             className={`w-full text-lg bg-transparent relative text-left border-2 p-4 ${buttonVariants[blockColor]} ${className}`}
+            onClick={onClick}
         >
             <HoverButtonEffect color={blockColor} />
             <Text

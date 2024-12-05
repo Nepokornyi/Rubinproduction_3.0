@@ -24,8 +24,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+-   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### Login Setup
+
+Google OAuth Credentials:
+
+1. Go to the Google Cloud Console
+2. Create a new project or select an existing one
+3. Go to the APIs & Services > Credentials section
+4. Create Credentials > OAuth 2.0 Client IDs
+
+-   Application Type: Web application
+-   Authorized redirect URIs: Add http://localhost:3000/api/auth/callback/google (replace with your production domain later)
+
+5. Copy the Client ID and Client Secret into your .env file

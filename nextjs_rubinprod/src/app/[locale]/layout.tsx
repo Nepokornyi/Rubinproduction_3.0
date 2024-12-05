@@ -45,7 +45,7 @@ export default async function LocaleLayout({
                         height="0"
                         width="0"
                         style={{ display: 'none', visibility: 'hidden' }}
-                    ></iframe>
+                    />
                 </noscript>
                 <NextIntlClientProvider messages={messages}>
                     {children}
