@@ -1,0 +1,110 @@
+{
+    "Header": {
+        "menu": {
+            "home": "Home",
+            "about": "About",
+            "portfolio": "Portfolio",
+            "contact": "Contact",
+            "login": "Login",
+            "languageSelection1": "cz",
+            "languageSelection2": "de"
+        }
+    },
+    "MainPage": {
+        "title_name": "Rubin",
+        "subtitle": "Production",
+        "content": "We will bring your vision to life - from concept to final edit, our commitment to precision and creativity ensures that every project surpasses expectations.",
+        "button": "Consultation"
+    },
+    "AboutPage": {
+        "title": "Creating",
+        "accent": "The Best",
+        "subtitle": "Videos For You",
+        "description": "Our approach is based on creativity and innovation, giving our work a unique character. With every frame, we infuse passion and expertise, ensuring that your story resonates with your audience.",
+        "clients_left": "Our",
+        "clients_right": "clients"
+    },
+    "WorkPage": {
+        "title": "Portfolio",
+        "accent": "Our",
+        "description": "We don't just create video content - we develop a customized marketing approach for each project.",
+        "callToAction": "Regardless of the projects complexity, we will provide a cost estimate during the first consultation. Let's create something great together!",
+        "button": "Consultation"
+    },
+    "ContactPage": {
+        "title": "Let's talk",
+        "subtitle": "About your project",
+        "agreement": "I agree with terms...",
+        "submit": "Send request"
+    },
+    "ScootyCase": {
+        "client": "<strong>Scooty</strong>, a food delivery startup, provides couriers with stable income and flexible schedules. Their platform connects couriers with delivery requests, fostering a balanced work-life dynamic and revolutionizing the industry for sustainability and equity",
+        "challenge": "We fully equipped <strong>Scooty</strong> with digital production and launched their startup in the media sphere. Our comprehensive digital strategy enhanced visibility and engagement, showcasing our commitment to driving success",
+        "services": {
+            "strategy1": "- Social media strategy",
+            "strategy2": "- Brand social audit",
+            "strategy3": "- Branding and design",
+            "conception1": "- Creative treatment",
+            "conception2": "- Project planning, timelines and managements",
+            "conception3": "- Insight-inspired creative concept that speak to the brand",
+            "production1": "- One full production day",
+            "production2": "- Film crew of specialized talent",
+            "production3": "- Video / photo content to fulfill all the needs of startup`s marketing campaign",
+            "postProd1": "- Photo / video editing optimized by platforms",
+            "postProd2": "- Assistance with publishing content on social media platforms"
+        },
+        "solution": "We crafted a lead generation website, enhancing its structure and enriching its design for improved UI/UX. Our strategic approach resulted in a visually appealing and highly functional platform, driving conversions and facilitating lead acquisition for Scooty",
+        "feedback": "One of our biggest advantages is that we not only create content for businesses of all sizes but also, leveraging our expertise in marketing and sales, adeptly distribute it across different platforms. This project was quite demanding both in terms of time invested and the number of tasks involved. But the key point is - we've succeeded and are excited to share the results."
+    },
+    "GameChangerCase": {
+        "client": "<strong>GameChanger</strong> offers Warmup and Overtime Patches, a two-part system designed to prevent hangovers. With essential vitamins and nutrients, it ensures a refreshed start after heavy drinking",
+        "challenge": "We methodically crafted a <strong>full content funnel</strong>, directing potential buyers from initial interest in the product all the way through to purchase, with a focus on dynamic short form videos, integrated motion design parts with patches benefits and product photography",
+        "services": {
+            "social1": "- Top funnel brand marketing video",
+            "social2": "- Middle funnel dynamic product videos",
+            "social3": "- Bottom funnel “application”, unboxing, “how it works” videos",
+            "social4": "- UGC - style content",
+            "motion1": "- Integrated animations",
+            "motion2": "- Separate creative video ads",
+            "photography1": "- For website, promoting, internal purposes",
+            "photography2": "- As thumbnails"
+        },
+        "marketing": {
+            "top": "To attract the audience and pull potential buyers in at the beginning of their journey",
+            "middle": "To show benefits of the product and continue to build trust among your prospects",
+            "bottom": "To help buyers do away with any lingering objections they may have towards your solution through the explainer and UGC content"
+        },
+        "feedback": "We approached this project in an unconventional manner, which enabled us to fulfill all of the client's needs throughout the entirety of the marketing funnel. From a vast amount of captured footage, we were able to create over 20 videos, integrating animations and motion design parts. This, combined with a carefully planned structure beforehand, yielded very good results."
+    },
+    "EliteVoyageCase": {
+        "client": "<strong>EliteVoyage</strong> specializes in providing hassle-free travel experiences, allowing you to discover new places and create lasting memories without stress. With a network of over 200 esteemed partners worldwide, they ensure top-tier service on every journey, promising comfort and quality every step of the way.",
+        "challenge": "This project presented a diverse challenge: we not only produced videos but also developed a unique corporate identity and tailored content to the company`s principles. Across different styles, languages, and platforms, we delivered exceptional content to meet the client`s evolving needs.",
+        "services": {
+            "production1": "- Concept Development, Planning, Storyboarding",
+            "production2": "- 1 production day monthly = more",
+            "production3": "than 100 videos in different formats (Horizontal, vertical, square)",
+            "brand1": "- Brand style guide",
+            "brand2": "- Motion design templates",
+            "brand3": "- Logo/nametags animations",
+            "social1": "- Travel videos",
+            "social2": "- Expert content",
+            "social3": "- HR recruitment videos",
+            "social4": "- Employee Spotlights"
+        },
+        "feedback": "With EliteVoyage, we have already conducted three full-fledged shoots. Our initial goal was to create a unique brand identity, highlight the quality of the services provided by the travel agency and establish a comprehensive digital presence across various platforms."
+    },
+    "Footer": {
+        "socials": {
+            "behance": "Behance",
+            "instagram": "Instagram",
+            "youtube": "Youtube"
+        },
+        "navigation": {
+            "home": "Home",
+            "about": "About",
+            "portfolio": "Portfolio",
+            "contact": "Contact"
+        },
+        "copyright": "© rubin production 2024"
+    }
+}

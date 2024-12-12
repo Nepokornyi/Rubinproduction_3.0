@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Grunges';
+    src: url('../assets//fonts/Grunges_Free.ttf');
+}
+
+:root {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 1);
+    background-color: var(--color-primary-background);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --color-primary-background: #0c0c0c;
+    /* --color-primary-highlight: #;
+    --color-primary-highlight: #;  */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    transition-property: opacity, transform, filter, background;
+    transition-timing-function: ease-in-out;
+    transition-duration: 500ms;
+}
+
+.page-transition {
+    opacity: 0;
+    background: black;
+    transform: translateY(40px);
+    filter: blur(12px);
+}
+
+.clip-path-container {
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+}
+
+.clip-path-gradient {
+    clip-path: polygon(0 0, 100% 0, 100% 97%, 0% 100%);
+}
+
+.clip-path-swiper-left {
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+}
+
+.clip-path-swiper-right {
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+}
+
+.clip-path-case {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+
+.bottom-gradient {
+    @media (min-width: 768px) {
+        background-image: linear-gradient(#0c0c0c 50%, #bf1b32);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animation-container {
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1.5s ease-in-out forwards; /* Animating fade-in effect */
+}

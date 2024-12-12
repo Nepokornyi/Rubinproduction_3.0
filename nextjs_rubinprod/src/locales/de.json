@@ -1,0 +1,110 @@
+{
+    "Header": {
+        "menu": {
+            "home": "Heim",
+            "about": "Über uns",
+            "portfolio": "Portfolio",
+            "contact": "Kontakt",
+            "login": "Einloggen",
+            "languageSelection1": "en",
+            "languageSelection2": "cz"
+        }
+    },
+    "MainPage": {
+        "title_name": "Rubin",
+        "subtitle": "Production",
+        "content": "Wir setzen Ihre Vision in die Realität um - vom Konzept bis zum endgültigen Schnitt sorgt unser Engagement für Präzision und Kreativität dafür, dass jedes Projekt die Erwartungen übertrifft.",
+        "button": "Zusammenarbeiten"
+    },
+    "AboutPage": {
+        "title": "Creating",
+        "accent": "The Best",
+        "subtitle": "Videos For You",
+        "description": "Unser Ansatz basiert auf Kreativität und Innovation, was unserer Arbeit einen einzigartigen Charakter verleiht. Wir stecken Leidenschaft und Fachwissen in jedes Bild, um sicherzustellen, dass Ihre Geschichte bei Ihrem Publikum ankommt.",
+        "clients_left": "Unsere",
+        "clients_right": "Kunden"
+    },
+    "WorkPage": {
+        "title": "Portfolio",
+        "accent": "Our",
+        "description": "Wir erstellen nicht einfach nur Videoinhalte - wir entwickeln für jedes Projekt einen einzigartigen Marketingansatz.",
+        "callToAction": "Unabhängig von der Komplexität des Projekts unterbreiten wir Ihnen schon bei Ihrem ersten Beratungsgespräch einen Kostenvoranschlag. Lassen Sie uns gemeinsam etwas Großartiges schaffen!",
+        "button": "Zusammenarbeiten"
+    },
+    "ContactPage": {
+        "title": "Let's talk",
+        "subtitle": "About your project",
+        "agreement": "ICH STIMME MIT DEN BEDINGUNGEN ÜBEREIN...",
+        "submit": "Anfrage senden"
+    },
+    "ScootyCase": {
+        "client": "<strong>Scooty</strong> ist ein Startup in der Sphäre von Lebensmittellieferungen, das den Kurieren ein regelmäßiges Einkommen und flexiblen Zeitplan bietet. Scooty unterstützt die Work-Life-Balance von Kurieren und verbessert die Nachhaltigkeit und Gerechtigkeit.",
+        "challenge": "Wir haben <strong>Scooty</strong> mit einer kompletten digitalen Produktion ausgestattet und das Startup in die Medienwelt eingeführt. Unsere umfassende Strategie hat die Sichtbarkeit und das Engagement erhöht und unser Streben nach Erfolg bestätigt.",
+        "services": {
+            "strategy1": "- Strategie für soziale Medien",
+            "strategy2": "- Social-Media-Audit",
+            "strategy3": "- Branding und Design",
+            "conception1": "- Kreative Bearbeitung",
+            "conception2": "- Planung, Terminierung und Projektleitung",
+            "conception3": "- Kreative Konzepte, inspiriert von Einsichten, die die Marke ansprechen",
+            "production1": "- Ein Produktionstag",
+            "production2": "- Ein Filmteam voller talentierter Spezialisten",
+            "production3": "- Video-/Fotoinhalte, die alle Anforderungen der Marketingkampagne des Start-ups erfüllen",
+            "postProd1": "- Bearbeitung von Fotos/Videos, optimiert für die verschiedenen Plattformen",
+            "postProd2": "- Hilfe bei der Veröffentlichung von Material auf sozialen Medien"
+        },
+        "solution": "Wir haben eine Website erstellt, die potenzielle Kunden anzieht. Ausserdem haben wir die Struktur verbessert und das Design mit einer besseren Benutzeroberfläche (UI/UX) ausgestattet. Das Ergebnis unseres strategischen Ansatzes ist eine visuell ansprechende und hochfunktionale Plattform, die die Kundengewinnung für Scooty unterstützt und erleichtert.",
+        "feedback": "Einer unserer größten Vorteile ist, dass wir nicht nur Inhalte für Unternehmen jeder Größe erstellen, sondern diese auch über mehrere Plattformen verbreiten können, indem wir unser Fachwissen in den Bereichen Marketing und Sales einsetzen. Dieses Projekt war eine ziemliche Herausforderung, sowohl was die investierte Zeit als auch die Anzahl der Aufgaben angeht. Aber das Wichtigste ist, dass es uns gelungen ist, und wir freuen uns, das Ergebnis mit Ihnen zu teilen."
+    },
+    "GameChangerCase": {
+        "client": "<strong>GameChanger</strong> bietet Warmup und Overtime Patches an, ein zweiteiliges System zur Vorbeugung gegen Kater. Mit essentiellen Vitaminen und Nährstoffen sorgt es für einen erfrischten Start nach starkem Alkoholkonsum",
+        "challenge": "Wir erstellten methodisch einen kompletten Inhaltsplan, der potenzielle Käufer vom ersten Interesse bis zum Kauf führte, wobei wir uns auf dynamische Kurzvideos mit integriertem Motion Design konzentrierten.",
+        "services": {
+            "social1": "- Markenmarketing-Video",
+            "social2": "- Dynamische Produktvideos",
+            "social3": "- Videos zum 'Benutzen', 'Unboxing', 'Wie es funktioniert'",
+            "social4": "- Inhalte im UGC-Stil",
+            "motion1": "- Integrierte Animationen",
+            "motion2": "- Separate kreative Videoanzeigen",
+            "photography1": "- Für Website, Werbung, interne Zwecke",
+            "photography2": "- Als Vorschaubilder"
+        },
+        "marketing": {
+            "top": "Das Publikum fesseln und potenzielle Kunden am Anfang ihrer gewinnen.",
+            "middle": "Die Vorteile des Produkts zeigen und weiterhin Vertrauen potenziellen Kunden aufbauen.",
+            "bottom": "Den Käufern zu helfen, alle verbleibenden Einwände, die sie gegenüber Ihrer Lösung haben könnten, durch den Erklärer und UGC-Inhalt zu beseitigen."
+        },
+        "feedback": "Bei diesem Projekt verfolgten wir einen unkonventionellen Ansatz, der es uns ermöglichte, alle Anforderungen des Kunden während des gesamten Marketingtrichters zu erfüllen. Aus dem umfangreichen Filmmaterial, das wir gedreht haben, konnten wir mehr als 20 Videos erstellen, die Animationen und Motion-Design-Elemente enthalten. In Verbindung mit einer im Vorfeld sorgfältig geplanten Struktur führte dies zu sehr guten Ergebnissen."
+    },
+    "EliteVoyageCase": {
+        "client": "<strong>EliteVoyage</strong> ist darauf spezialisiert, reibungslose Reiseerlebnisse zu bieten, die es Ihnen ermöglichen, ohne Stress neue Orte zu entdecken und unvergessliche Erinnerungen zu schaffen. Mit einem Netzwerk von mehr als 200 geschätzten Partnern auf der ganzen Welt bietet EliteVoyage einen erstklassigen Service auf jeder Reise und verspricht Komfort und Qualität auf jedem Schritt des Weges.",
+        "challenge": "Dieses Projekt stellte eine vielfältige Herausforderung dar: Wir erstellten nicht nur Videos, sondern gestalteten auch die einzigartige Corporate Identity und den Inhalt entsprechend den Richtlinien des Unternehmens. Über verschiedene Stile, Sprachen und Plattformen hinweg lieferten wir außergewöhnliches Material, das den wechselnden Anforderungen des Kunden entspricht.",
+        "services": {
+            "production1": "- Konzeptentwicklung, Planung, Storyboarding",
+            "production2": "- 1 Produktionstag pro Monat = mehr",
+            "production3": "als 100 Videos in verschiedenen Formaten (horizontal, vertikal, quadratisch)",
+            "brand1": "- Marken-Styleguide",
+            "brand2": "- Vorlagen für Motion Design",
+            "brand3": "- Logo/Namensschild-Animationen",
+            "social1": "- Reise-Videos",
+            "social2": "- Experteninhalte",
+            "social3": "- HR-Einstellungsvideos",
+            "social4": "- Mitarbeiter-Spotlights"
+        },
+        "feedback": "Wir haben bereits drei umfassende Shootings mit EliteVoyage durchgeführt. Unser Hauptziel war es, eine einzigartige Markenidentität zu schaffen, die Servicequalität des Reisebüros hervorzuheben und eine umfassende digitale Präsenz auf mehreren Plattformen zu schaffen."
+    },
+    "Footer": {
+        "socials": {
+            "behance": "Behance",
+            "instagram": "Instagram",
+            "youtube": "Youtube"
+        },
+        "navigation": {
+            "home": "Heim",
+            "about": "Über uns",
+            "portfolio": "Portfolio",
+            "contact": "Kontakt"
+        },
+        "copyright": "© rubin production 2024"
+    }
+}
