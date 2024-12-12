@@ -1,19 +1,19 @@
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { useState } from 'react'
+import { useForm, SubmitHandler } from 'react-hook-form'
+import styled from 'styled-components'
+import jsonp from 'jsonp'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { FormSchema, formSchema } from '../const'
 import { Button } from '../../../../components/Button/Button'
 import { FlexContainer } from '../../../../components/layout/FlexContainer'
 import Input from '../../../../components/Input/Input'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { FormSchema, formSchema } from '../const'
-import { Checkbox } from '../../../../components/Input/Checkbox'
 import { useTranslation } from 'react-i18next'
-import styled from 'styled-components'
 import { useBreakpointBiggerThan } from '../../../../helpers/useCurrentBreakpoint'
 import { LayoutFlexContainerProps } from '../../../../components/layout/types'
 import {
     Reveal,
     RevealProps,
 } from '../../../../components/animations/reveal/Reveal'
-import emailjs from '@emailjs/browser'
 import { useDialogState } from '../../../../helpers/useDialogState'
 import { OverlayEmail } from '../../../../components/Overlay/OverlayEmail'
 import { AppLandingVariants } from '../../../../components/Header/Header'
@@ -40,6 +40,7 @@ const StyledButton = styled(Button)<ButtonProps>`
 const StyledInput = styled(Input)`
     width: 100%;
     margin: 0;
+    color: white !important;
     &:focus {
         border-bottom: 2px solid ${(props) => props.$transitionColor};
     }
@@ -65,6 +66,8 @@ export const ContactForm = ({
     const isLargeDesktopLayout = useBreakpointBiggerThan('lg')
 
     const { showDialog, handleOpenDialog, handleCloseDialog } = useDialogState()
+    const [isError, setIsError] = useState(false)
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     const isMainVariant = variant === 'main'
     const buttonHover = isMainVariant
@@ -78,46 +81,60 @@ export const ContactForm = ({
         handleSubmit,
         setError,
         reset,
-        formState: { errors, isSubmitting },
+        formState: { errors },
     } = useForm<FormSchema>({
         resolver: zodResolver(formSchema),
     })
 
-    const onSubmit: SubmitHandler<FormSchema> = async (data) => {
-        try {
-            const templateParams = {
-                email: data.email,
-                phone: data.phone,
+    const onSubmit: SubmitHandler<FormSchema> = (data) => {
+        setIsSubmitting(true)
+        setIsError(false)
+        const url =
+            'https://rubinproduction.us22.list-manage.com/subscribe/post?u=9b8f316816399a95e33302c49&amp;id=9fd54cbf57&amp;f_id=00afd1e1f0'
+
+        jsonp(
+            `${url}&EMAIL=${data.email}&PHONE=${data.phone}`,
+            { param: 'c' },
+            (err, data) => {
+                setIsSubmitting(false)
+                if (err) {
+                    setError('root', {
+                        message: 'Something went wrong',
+                    })
+                    setIsError(true)
+                    handleOpenDialog()
+                } else {
+                    const { msg, result } = data
+                    if (result === 'success') {
+                        handleOpenDialog()
+                        reset()
+                    } else {
+                        setError('root', {
+                            message: msg,
+                        })
+                    }
+                }
             }
-            await emailjs.send(
-                'service_8lcm3qw',
-                'template_13uaodo',
-                templateParams,
-                'KJ0DMbdu2V3mz40mc'
-            )
-            handleOpenDialog()
-            reset()
-        } catch (error) {
-            setError('root', {
-                message: 'Something went wrong',
-            })
-        }
+        )
     }
 
     return (
         <>
-            <OverlayEmail open={showDialog} onClose={handleCloseDialog} />
+            <OverlayEmail
+                open={showDialog}
+                onClose={handleCloseDialog}
+                isError={isError}
+            />
 
             <StyledForm
-                id="contact-form"
-                $isDesktopLayout={isLargeDesktopLayout}
                 onSubmit={handleSubmit(onSubmit)}
+                $isDesktopLayout={isLargeDesktopLayout}
             >
                 <FlexContainer direction="column" gap={'10px'}>
                     <StyledReveal x={-35}>
                         <StyledInput
                             {...register('email')}
-                            type={'text'}
+                            type={'email'}
                             placeholder="Email"
                             $transitionColor={buttonHover}
                             $isDesktopLayout={isDesktopLayout}
@@ -134,15 +151,6 @@ export const ContactForm = ({
                             error={errors.phone?.message}
                         />
                     </StyledReveal>
-                    <Reveal x={-65} removeRepeatedReveal={false}>
-                        <Checkbox
-                            {...register('terms')}
-                            id={'termsCheckbox'}
-                            type={'checkbox'}
-                            error={errors.terms?.message}
-                        />
-                    </Reveal>
-
                     <Reveal x={-80} removeRepeatedReveal={false}>
                         <StyledButton
                             $isDesktopLayout={isDesktopLayout}
