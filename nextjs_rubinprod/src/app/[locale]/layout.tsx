@@ -3,8 +3,15 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { getMessages } from 'next-intl/server'
 import '../globals.css'
-import GoogleAnalytics from './integrations/GoogleAnalytics'
-import { FacebookPixel } from './integrations/FacebookPixel'
+
+import {
+    FacebookPixelBody,
+    FacebookPixelHead,
+} from './integrations/FacebookPixel'
+import {
+    GoogleAnalyticsBody,
+    GoogleAnalyticsHead,
+} from './integrations/GoogleAnalytics'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -29,10 +36,12 @@ export default async function LocaleLayout({
     return (
         <html lang={params.locale}>
             <head>
-                <GoogleAnalytics gtmId={GTM_ID} />
-                <FacebookPixel pixelId={FB_PIXEL_ID} />
+                <GoogleAnalyticsHead gtmId={GTM_ID} />
+                <FacebookPixelHead pixelId={FB_PIXEL_ID} />
             </head>
             <body className={montserrat.className}>
+                <GoogleAnalyticsBody gtmId={GTM_ID} />
+                <FacebookPixelBody pixelId={FB_PIXEL_ID} />
                 <NextIntlClientProvider messages={messages}>
                     {children}
                 </NextIntlClientProvider>
