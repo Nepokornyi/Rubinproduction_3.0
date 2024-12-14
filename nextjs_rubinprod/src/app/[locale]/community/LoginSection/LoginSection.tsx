@@ -2,11 +2,12 @@
 import React from 'react'
 import Input from '@/components/Form/Input'
 import { LoginSchema, LoginValueSchema } from './schema'
-import { signIn } from 'next-auth/react'
 import { Button } from '@/components/Button/Button'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { Text } from '@/components/Text/Text'
+import { supabase } from '@/lib/supabaseClient'
 
 export const LoginSection = () => {
     const {
@@ -17,17 +18,28 @@ export const LoginSection = () => {
         resolver: zodResolver(LoginSchema),
     })
 
+    const handleGoogleSignIn = async () => {
+        const { error } = await supabase.auth.signInWithOAuth({
+            provider: 'google',
+        })
+
+        if (error) {
+            alert('Failed to sign in with Google. Please try again.')
+        }
+    }
+
     const onSubmit = async (data: LoginValueSchema) => {
         const { login } = data
 
-        const result = await signIn('email', { login, redirect: false })
+        const { error } = await supabase.auth.signInWithOtp({ email: login })
 
-        if (result?.error) {
+        if (error) {
             alert('Failed to send magic link. Please try again.')
         } else {
             alert('Magic link sent! Check your email.')
         }
     }
+
     return (
         <FlexContainer minHeight="min-h-100vh" center>
             <FlexContainer
@@ -47,7 +59,12 @@ export const LoginSection = () => {
                         <Button className="mr-6" type="submit">
                             Log in
                         </Button>
-                        <Button onClick={() => signIn('google')}>Google</Button>
+                        <div
+                            onClick={() => handleGoogleSignIn()}
+                            className="text-center cursor-pointer"
+                        >
+                            <Text variant="h5">Sign in using Google</Text>
+                        </div>
                     </FlexContainer>
                 </form>
             </FlexContainer>
