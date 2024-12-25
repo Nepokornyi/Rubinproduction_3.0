@@ -47,7 +47,7 @@ export const DesktopMenu = ({ isCase = false }: { isCase?: boolean }) => {
                     href="/community"
                     className="cursor-pointer relative"
                 >
-                    <Text variant="nav">{t('login')}</Text>
+                    <Text variant="nav">{t('community')}</Text>
                 </LinkTransition>
                 {otherLanguages.map((lang) => (
                     <li
