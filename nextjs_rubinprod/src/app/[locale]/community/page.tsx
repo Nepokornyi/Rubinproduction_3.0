@@ -1,7 +1,7 @@
-import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
-import { Text } from '@/components/Text/Text'
 import { createClient } from '@/utils/server'
 import React from 'react'
+import { CommunityMainSection } from './CommunityPage/CommunityMainSection/CommunityMainSection'
+import { CommunityVideosSection } from './CommunityPage/CommunityVideos/CommunityVideosSection'
 
 export default async function Community() {
     const supabase = await createClient()
@@ -17,12 +17,8 @@ function CommunityContent({ error, user }: { error: any; user?: any }) {
 
     return (
         <div className="animation-container">
-            <FlexContainer className="relative h-screen bg-no-repeat bg-[url('/img/showreel.jpg')] bg-top bg-cover pt-52 pb-32 overflow-hidden md:items-center items-start">
-                <Text variant="h2" textTransform="uppercase">
-                    Community
-                </Text>
-                {user.email}
-            </FlexContainer>
+            <CommunityMainSection />
+            <CommunityVideosSection />
         </div>
     )
 }
