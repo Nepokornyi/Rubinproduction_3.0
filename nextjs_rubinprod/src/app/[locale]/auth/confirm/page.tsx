@@ -13,13 +13,12 @@ export default function ConfirmPage() {
     useEffect(() => {
         if (hasFetched.current) return
 
-        const token_hash = searchParams.get('token_hash')
-        const type = searchParams.get('type')
-        const next = searchParams.get('next') ?? '/'
+        const token = searchParams.get('token')
+        const redirectTo = searchParams.get('redirect_to') || '/'
 
         const currentLocale = getCurrentLocale(pathname, 1)
 
-        if (!token_hash || !type) {
+        if (!token) {
             router.push(`/${currentLocale}/error`)
             return
         }
@@ -27,22 +26,18 @@ export default function ConfirmPage() {
         hasFetched.current = true
 
         fetch(
-            `/api/auth/confirm?token_hash=${encodeURIComponent(
-                token_hash
-            )}&type=${encodeURIComponent(type)}&next=${encodeURIComponent(
-                next
-            )}`
+            `/api/auth/confirm?token=${encodeURIComponent(
+                token
+            )}&redirect_to=${encodeURIComponent(redirectTo)}`
         )
             .then(async (response) => {
                 if (response.redirected) {
                     router.replace(response.url)
                 } else {
-                    console.error('Was error in Page component?', response)
                     router.push(`/${currentLocale}/error`)
                 }
             })
             .catch((err) => {
-                console.error('Error confirming OTP:', err)
                 router.push(`/${currentLocale}/error`)
             })
     }, [searchParams, pathname, router])

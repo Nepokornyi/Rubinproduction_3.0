@@ -34,28 +34,37 @@ export async function middleware(request: NextRequest) {
     )
 
     const {
-        data: { user },
-        error,
-    } = await supabase.auth.getUser()
+        data: { session },
+    } = await supabase.auth.getSession()
 
-    // console.log('Middleware: User data', user, error)
-
-    const pathname = request.nextUrl.pathname
-    const currentLocale = getCurrentLocale(pathname, 1)
-
-    const protectedRoutes = [`/${currentLocale}/community`]
-    const publicRoutes = [`/${currentLocale}/login`]
-
-    if (publicRoutes.some((route) => pathname.startsWith(route)) && user) {
-        const url = request.nextUrl.clone()
-        url.pathname = `/${currentLocale}/community`
-        return NextResponse.redirect(url)
+    let userExists = false
+    if (session) {
+        const { data: user, error: userError } = await supabase.auth.getUser()
+        userExists = !userError && !!user
     }
 
-    if (protectedRoutes.some((route) => pathname.startsWith(route)) && !user) {
-        const url = request.nextUrl.clone()
-        url.pathname = `/${currentLocale}/login`
-        return NextResponse.redirect(url)
+    const pathname = request.nextUrl.pathname
+    const currentLocale = getCurrentLocale(pathname, 0)
+
+    const isLoginRoute = locales.some((locale) =>
+        pathname.startsWith(`/${locale}/login`)
+    )
+    const isCommunityRoute = locales.some((locale) =>
+        pathname.startsWith(`/${locale}/community`)
+    )
+
+    if (session && userExists) {
+        if (isLoginRoute) {
+            const url = request.nextUrl.clone()
+            url.pathname = `/${currentLocale}/community`
+            return NextResponse.redirect(url)
+        }
+    } else {
+        if (isCommunityRoute) {
+            const url = request.nextUrl.clone()
+            url.pathname = `/${currentLocale}/login`
+            return NextResponse.redirect(url)
+        }
     }
 
     return response
