@@ -14,7 +14,6 @@ export default function ConfirmPage() {
         if (hasFetched.current) return
 
         const token = searchParams.get('token')
-        const redirectTo = searchParams.get('redirect_to') || '/'
 
         const currentLocale = getCurrentLocale(pathname, 1)
 
@@ -25,11 +24,7 @@ export default function ConfirmPage() {
 
         hasFetched.current = true
 
-        fetch(
-            `/api/auth/confirm?token=${encodeURIComponent(
-                token
-            )}&redirect_to=${encodeURIComponent(redirectTo)}`
-        )
+        fetch(`/api/auth/confirm?token=${encodeURIComponent(token)}`)
             .then(async (response) => {
                 if (response.redirected) {
                     router.replace(response.url)

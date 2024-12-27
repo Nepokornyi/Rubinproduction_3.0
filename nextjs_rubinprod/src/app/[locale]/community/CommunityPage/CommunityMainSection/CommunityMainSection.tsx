@@ -1,13 +1,13 @@
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
-import { Header } from '@/components/Header/Header'
 import { Text } from '@/components/Text/Text'
 import React from 'react'
 import { CommunityMainVideo } from './CommunityMainVideo'
+import { CommunityHeader } from '@/components/Header/CommunityHeader'
 
 export const CommunityMainSection = () => {
     return (
         <>
-            <Header />
+            <CommunityHeader />
             <FlexContainer
                 direction="flex-col"
                 alignItems="items-center"

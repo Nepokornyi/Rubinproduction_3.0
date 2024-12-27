@@ -5,7 +5,6 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
     const token = searchParams.get('token')
-    const redirectTo = searchParams.get('redirect_to') ?? '/'
 
     const currentLocale = getCurrentLocale(request.nextUrl.pathname, 1)
     const url = request.nextUrl.origin
@@ -30,5 +29,16 @@ export async function GET(request: NextRequest) {
     if (error) {
         return NextResponse.redirect(`${url}/${currentLocale}/error`)
     }
-    return NextResponse.redirect(`${url}/${currentLocale}/${redirectTo}`)
+
+    const { data: profile } = await supabase
+        .from('profiles')
+        .select('is_subscribed')
+        .eq('email', email)
+        .single()
+
+    const targetRoute = profile?.is_subscribed
+        ? `${url}/${currentLocale}/community`
+        : `${url}/${currentLocale}/pricing`
+
+    return NextResponse.redirect(targetRoute)
 }

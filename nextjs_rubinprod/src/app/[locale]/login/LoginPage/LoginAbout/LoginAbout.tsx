@@ -29,9 +29,6 @@ export const LoginAbout = () => {
                     Become a Part Of Our Group
                 </Text>
                 <LoginAboutDescription />
-                <FlexContainer width="w-full md:w-4/6" className="px-6 lg:px-0">
-                    <Button className="mr-6">Subscribe</Button>
-                </FlexContainer>
             </FlexContainer>
         </FlexContainer>
     )

@@ -31,8 +31,8 @@ export const LoginAboutDescription = () => {
                     Only for
                 </Text>
                 <div className="md:order-first">
-                    <Reveal y={-35} removeRepeatedReveal={false}>
-                        <Arrow direction="down" />
+                    <Reveal y={35} removeRepeatedReveal={false}>
+                        <Arrow direction="down" className="rotate-180" />
                     </Reveal>
                 </div>
                 <Text

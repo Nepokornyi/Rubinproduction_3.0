@@ -11,7 +11,6 @@ const handleI18nRouting = createIntlMiddleware({
 })
 
 export async function middleware(request: NextRequest) {
-    // console.log('Request Cookies:', request.cookies.getAll())
     let response = handleI18nRouting(request)
 
     const supabase = createServerClient(
@@ -22,9 +21,6 @@ export async function middleware(request: NextRequest) {
                 getAll: () => request.cookies.getAll(),
                 setAll: (cookiesToSet) => {
                     cookiesToSet.forEach(({ name, value, options }) => {
-                        // console.log(
-                        //     `Middleware: Setting cookie ${name}=${value}`
-                        // )
                         request.cookies.set(name, value)
                         response.cookies.set(name, value, options)
                     })
@@ -34,13 +30,24 @@ export async function middleware(request: NextRequest) {
     )
 
     const {
-        data: { session },
-    } = await supabase.auth.getSession()
+        data: { user },
+        error: userError,
+    } = await supabase.auth.getUser()
 
-    let userExists = false
-    if (session) {
-        const { data: user, error: userError } = await supabase.auth.getUser()
-        userExists = !userError && !!user
+    let userSubscribed = false
+
+    if (!userError && user) {
+        const { data: profile } = await supabase
+            .from('profiles')
+            .select('is_subscribed, subscription_revocation_date')
+            .eq('id', user.id)
+            .single()
+
+        const isRevoked =
+            profile?.subscription_revocation_date &&
+            new Date(profile.subscription_revocation_date) <= new Date()
+
+        userSubscribed = profile?.is_subscribed || false
     }
 
     const pathname = request.nextUrl.pathname
@@ -49,18 +56,29 @@ export async function middleware(request: NextRequest) {
     const isLoginRoute = locales.some((locale) =>
         pathname.startsWith(`/${locale}/login`)
     )
+    const isPricingRoute = locales.some((locale) =>
+        pathname.startsWith(`/${locale}/pricing`)
+    )
     const isCommunityRoute = locales.some((locale) =>
         pathname.startsWith(`/${locale}/community`)
     )
 
-    if (session && userExists) {
-        if (isLoginRoute) {
-            const url = request.nextUrl.clone()
-            url.pathname = `/${currentLocale}/community`
-            return NextResponse.redirect(url)
+    if (user) {
+        if (userSubscribed) {
+            if (isLoginRoute || isPricingRoute) {
+                const url = request.nextUrl.clone()
+                url.pathname = `/${currentLocale}/community`
+                return NextResponse.redirect(url)
+            }
+        } else {
+            if (isLoginRoute || isCommunityRoute) {
+                const url = request.nextUrl.clone()
+                url.pathname = `/${currentLocale}/pricing`
+                return NextResponse.redirect(url)
+            }
         }
     } else {
-        if (isCommunityRoute) {
+        if (isCommunityRoute || isPricingRoute) {
             const url = request.nextUrl.clone()
             url.pathname = `/${currentLocale}/login`
             return NextResponse.redirect(url)

@@ -1,29 +1,37 @@
 import { Button } from '@/components/Button/Button'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import Input from '@/components/Form/Input'
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { LoginSchema, LoginValueSchema } from './schema'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { sendMagicLink } from './actions'
 import { usePathname } from 'next/navigation'
 import { UnionLocales } from '@/intl.config'
+import { OverlayLogin } from '@/components/Overlay/OverlayLogin'
+import { useDialogState } from '@/hooks/useDialogState'
+import { LoginStatus } from './const'
 
 export const LoginForm = () => {
-    const currentLocale = usePathname()
-        .split('/')
-        .filter(Boolean)[0] as UnionLocales
+    const [submissionStatus, setSubmissionStatus] =
+        useState<LoginStatus>('idle')
+    const [submissionMessage, setSubmissionMessage] = useState('')
+    const { showDialog, handleOpenDialog, handleCloseDialog } = useDialogState()
 
     const {
         register,
         handleSubmit,
-        formState: { errors },
         reset,
+        formState: { errors },
     } = useForm<LoginValueSchema>({
         resolver: zodResolver(LoginSchema),
     })
 
+    const currentLocale = usePathname()
+        .split('/')
+        .filter(Boolean)[0] as UnionLocales
+
     const onSubmit = async (data: LoginValueSchema) => {
+        setSubmissionStatus('loading')
         try {
             const payload = {
                 locale: currentLocale,
@@ -40,36 +48,56 @@ export const LoginForm = () => {
 
             if (!response.ok) {
                 const errorData = await response.json()
-                throw new Error(errorData.message)
+                setSubmissionStatus('error')
+                setSubmissionMessage(errorData.message)
+                reset()
+                handleOpenDialog()
             }
 
+            setSubmissionStatus('success')
+            setSubmissionMessage('Check your email for the magic link')
+            handleOpenDialog()
             reset()
         } catch (error: any) {
-            alert(error.message || 'An error occurred.')
+            setSubmissionStatus('error')
+            setSubmissionMessage(error.message)
+            handleOpenDialog()
         }
     }
 
     return (
-        <FlexContainer
-            width="w-full md:w-1/2"
-            direction="flex-col"
-            gap="gap-2"
-            className="px-6 lg:px-0"
-            justifyContent="justify-center"
-        >
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <Input
-                    placeholder="login"
-                    color="login"
-                    {...register('login')}
-                    error={errors.login?.message}
-                />
-                <FlexContainer direction="flex-col" gap="gap-4">
-                    <Button type="submit" className="mr-6">
-                        Log in
-                    </Button>
-                </FlexContainer>
-            </form>
-        </FlexContainer>
+        <>
+            <OverlayLogin
+                open={showDialog}
+                onClose={handleCloseDialog}
+                responseStatus={submissionStatus}
+                message={submissionMessage}
+            />
+            <FlexContainer
+                width="w-full md:w-1/2"
+                direction="flex-col"
+                gap="gap-2"
+                className="px-6 lg:px-0"
+                justifyContent="justify-center"
+            >
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <Input
+                        placeholder="login"
+                        color="login"
+                        {...register('login')}
+                        error={errors.login?.message}
+                    />
+                    <FlexContainer direction="flex-col" gap="gap-4">
+                        <Button
+                            type="submit"
+                            className="mr-6"
+                            isDisabled={submissionStatus === 'loading'}
+                        >
+                            Log in
+                        </Button>
+                    </FlexContainer>
+                </form>
+            </FlexContainer>
+        </>
     )
 }
