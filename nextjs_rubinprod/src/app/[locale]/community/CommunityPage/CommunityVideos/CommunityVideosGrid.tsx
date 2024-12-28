@@ -31,12 +31,12 @@ export const CommunityVideosGrid = () => {
     }, [])
 
     return (
-        <Box className="grid grid-cols-1 px-5 gap-5 lg:grid-cols-2 auto-rows-auto place-items-center">
+        <Box className="w-full grid grid-cols-1 px-5 gap-5 lg:grid-cols-2 auto-rows-auto place-items-center">
             {videos.map(({ title, description, videoUrl }) => (
                 <FlexContainer
                     key={title}
                     direction="flex-col"
-                    className="bg-[#191919] rounded-2xl w-fit"
+                    className="bg-[#191919] rounded-2xl"
                 >
                     <Box className="w-full">
                         <VimeoVideo id={videoUrl} className="rounded-t-2xl" />
