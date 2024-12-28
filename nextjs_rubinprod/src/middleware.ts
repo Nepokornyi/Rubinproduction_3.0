@@ -43,10 +43,6 @@ export async function middleware(request: NextRequest) {
             .eq('id', user.id)
             .single()
 
-        const isRevoked =
-            profile?.subscription_revocation_date &&
-            new Date(profile.subscription_revocation_date) <= new Date()
-
         userSubscribed = profile?.is_subscribed || false
     }
 
@@ -56,29 +52,18 @@ export async function middleware(request: NextRequest) {
     const isLoginRoute = locales.some((locale) =>
         pathname.startsWith(`/${locale}/login`)
     )
-    const isPricingRoute = locales.some((locale) =>
-        pathname.startsWith(`/${locale}/pricing`)
-    )
     const isCommunityRoute = locales.some((locale) =>
         pathname.startsWith(`/${locale}/community`)
     )
 
     if (user) {
-        if (userSubscribed) {
-            if (isLoginRoute || isPricingRoute) {
-                const url = request.nextUrl.clone()
-                url.pathname = `/${currentLocale}/community`
-                return NextResponse.redirect(url)
-            }
-        } else {
-            if (isLoginRoute || isCommunityRoute) {
-                const url = request.nextUrl.clone()
-                url.pathname = `/${currentLocale}/pricing`
-                return NextResponse.redirect(url)
-            }
+        if (isLoginRoute) {
+            const url = request.nextUrl.clone()
+            url.pathname = `/${currentLocale}/community`
+            return NextResponse.redirect(url)
         }
     } else {
-        if (isCommunityRoute || isPricingRoute) {
+        if (isCommunityRoute) {
             const url = request.nextUrl.clone()
             url.pathname = `/${currentLocale}/login`
             return NextResponse.redirect(url)
