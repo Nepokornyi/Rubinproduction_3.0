@@ -76,7 +76,7 @@ export const LoginForm = () => {
                 message={submissionMessage}
             />
             <FlexContainer
-                width="w-full md:w-1/2"
+                width="w-full md:w-1/2 max-w-[600px]"
                 direction="flex-col"
                 gap="gap-2"
                 className="px-6 lg:px-0"
