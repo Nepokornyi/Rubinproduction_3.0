@@ -69,34 +69,26 @@ export const CommunityDesktopMenu = ({
         } catch (error) {}
     }
 
-    const renderSubscriptionButton = isSubscribed ? (
-        <Text
-            className="cursor-pointer"
-            variant="nav"
-            onClick={handleManageSubscription}
-        >
-            subscription
-        </Text>
-    ) : (
-        <Text
-            className="cursor-pointer"
-            variant="nav"
-            onClick={handleSubscribe}
-        >
-            subscribe
-        </Text>
-    )
-
     return (
         <nav className="hidden md:block">
             <ul className="list-none flex gap-4 overflow-hidden">
-                {renderSubscriptionButton}
+                <Text
+                    className="cursor-pointer"
+                    variant="nav"
+                    onClick={
+                        isSubscribed
+                            ? handleManageSubscription
+                            : handleSubscribe
+                    }
+                >
+                    Členství
+                </Text>
                 <Text
                     className="cursor-pointer"
                     variant="nav"
                     onClick={handleLogout}
                 >
-                    log out
+                    Odhlásit se
                 </Text>
             </ul>
         </nav>

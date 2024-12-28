@@ -2,8 +2,11 @@ import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Text } from '@/components/Text/Text'
 import React from 'react'
 import { CommunityVideosGrid } from './CommunityVideosGrid'
+import { useTranslations } from 'next-intl'
 
 export const CommunityVideosSection = () => {
+    const t = useTranslations('CommunityPage.other')
+
     return (
         <FlexContainer
             minHeight="min-h-screen"
@@ -17,7 +20,7 @@ export const CommunityVideosSection = () => {
                 fontFamily="font-grunges"
                 className="pt-20 pb-20"
             >
-                Other Videos
+                {t('title')}
             </Text>
             <CommunityVideosGrid />
         </FlexContainer>

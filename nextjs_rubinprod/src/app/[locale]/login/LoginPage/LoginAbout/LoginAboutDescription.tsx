@@ -2,9 +2,12 @@ import { Arrow } from '@/components/Arrow/Arrow'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Reveal } from '@/components/Reveal/Reveal'
 import { Text } from '@/components/Text/Text'
+import { useTranslations } from 'next-intl'
 import React from 'react'
 
 export const LoginAboutDescription = () => {
+    const t = useTranslations('LoginPage')
+
     return (
         <FlexContainer
             width="w-auto"
@@ -12,9 +15,7 @@ export const LoginAboutDescription = () => {
         >
             <FlexContainer width="w-auto">
                 <Text className="sm:text-center md:text-left md:max-w-[330px] md:mx-6">
-                    Our key factors are diversity and a fresh perspective. Our
-                    approach is based on diversity and innovation, giving our
-                    work a unique character.
+                    {t('description')}
                 </Text>
             </FlexContainer>
             <FlexContainer
@@ -28,7 +29,7 @@ export const LoginAboutDescription = () => {
                     fontWeight="font-semibold"
                     className="tracking-[3px]"
                 >
-                    Only for
+                    {t('pricing_1')}
                 </Text>
                 <div className="md:order-first">
                     <Reveal y={35} removeRepeatedReveal={false}>
@@ -41,7 +42,7 @@ export const LoginAboutDescription = () => {
                     fontWeight="font-semibold"
                     className="md:mr-2 tracking-[3px]"
                 >
-                    29 Kč per month
+                    {t('pricing_2')}
                 </Text>
             </FlexContainer>
         </FlexContainer>

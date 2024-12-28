@@ -3,12 +3,15 @@ import { Text } from '@/components/Text/Text'
 import React from 'react'
 import { VimeoVideo } from '../../../components/VimeoVideo/VimeoVideo'
 import { CommunityHeader } from '@/components/Header/CommunityHeader'
+import { useTranslations } from 'next-intl'
 
 export const CommunityMainSection = ({
     isSubscribed,
 }: {
     isSubscribed: boolean
 }) => {
+    const t = useTranslations('CommunityPage.main')
+
     return (
         <>
             <CommunityHeader isSubscribed={isSubscribed} />
@@ -23,7 +26,7 @@ export const CommunityMainSection = ({
                     textTransform="uppercase"
                     fontFamily="font-grunges"
                 >
-                    New Video
+                    {t('title')}
                 </Text>
                 <FlexContainer
                     direction="flex-col"
@@ -32,14 +35,14 @@ export const CommunityMainSection = ({
                     center
                 >
                     <Text variant="nav" className="text-black">
-                        Topic
+                        {t('topic')}
                     </Text>
                     <Text
                         variant="h5"
                         className="text-black mb-5"
                         textTransform="uppercase"
                     >
-                        Video name
+                        {t('name')}
                     </Text>
                     <VimeoVideo id={1042303511} />
                 </FlexContainer>

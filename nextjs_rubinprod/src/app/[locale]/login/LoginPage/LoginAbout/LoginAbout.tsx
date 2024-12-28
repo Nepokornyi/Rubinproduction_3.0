@@ -6,8 +6,10 @@ import { Reveal } from '@/components/Reveal/Reveal'
 import { Text } from '@/components/Text/Text'
 import React from 'react'
 import { LoginAboutDescription } from './LoginAboutDescription'
+import { useTranslations } from 'next-intl'
 
 export const LoginAbout = () => {
+    const t = useTranslations('LoginPage')
     return (
         <FlexContainer
             id="about"
@@ -16,7 +18,7 @@ export const LoginAbout = () => {
         >
             <ParallaxContainer text={'Rubin Community'} />
             <FlexContainer
-                className="md:w-[750px]"
+                className="md:w-[900px]"
                 direction="flex-col"
                 alignItems="items-center"
             >
@@ -26,7 +28,7 @@ export const LoginAbout = () => {
                     padding="px-6 md:px-0"
                     className="relative sm:text-center"
                 >
-                    Become a Part Of Our Group
+                    {t('subtitle')}
                 </Text>
                 <LoginAboutDescription />
             </FlexContainer>

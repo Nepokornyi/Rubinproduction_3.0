@@ -37,6 +37,24 @@
         "agreement": "Souhlasím s podmínkami...",
         "submit": "Poslat žádost"
     },
+    "LoginPage": {
+        "title": "Komunita",
+        "subtitle": "Staňte se součástí naší skupiny",
+        "login": "Přihlásit se",
+        "description": "Našimi klíčovými faktory je rozmanitost a nový pohled na věci. Náš přístup je založen na rozmanitosti a inovaci, což dává naší práci jedinečný charakter.",
+        "pricing_1": "Pouze za",
+        "pricing_2": "29 kč měsíčně"
+    },
+    "CommunityPage": {
+        "main": {
+            "title": "Nove Video",
+            "topic": "Téma",
+            "name": "Název"
+        },
+        "other": {
+            "title": "Ostatni videa"
+        }
+    },
     "ScootyCase": {
         "client": "<strong>Scooty</strong> je startup, který se zabývá rozvozem jídla a poskytuje kurýrům stabilní příjem a flexibilní rozvrh. Pllatforma Scooty podporuje vyváženou dynamiku pracovního a soukromého života kurýrů a přináší revoluční změny v oblasti udržitelnosti a spravedlnosti.",
         "challenge": "<strong>Scooty</strong> jsme vybavili kompletní digitální produkcí a uvedli startup do mediální sféry. Naše komplexní strategie zvýšila viditelnost a angažovanost a podtvrdila naše odhodlání dosáhnout úspěchu.",

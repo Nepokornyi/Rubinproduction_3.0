@@ -4,8 +4,10 @@ import { LoginForm } from '../LoginForm/LoginForm'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Header } from '@/components/Header/Header'
 import { Text } from '@/components/Text/Text'
+import { useTranslations } from 'next-intl'
 
 export const LoginSection = () => {
+    const t = useTranslations('LoginPage')
     return (
         <FlexContainer
             center
@@ -14,7 +16,7 @@ export const LoginSection = () => {
         >
             <Header />
             <Text variant="h2" textTransform="uppercase">
-                Community
+                {t('title')}
             </Text>
             <LoginForm />
         </FlexContainer>

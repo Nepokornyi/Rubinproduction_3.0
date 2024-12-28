@@ -10,8 +10,10 @@ import { UnionLocales } from '@/intl.config'
 import { OverlayLogin } from '@/components/Overlay/OverlayLogin'
 import { useDialogState } from '@/hooks/useDialogState'
 import { LoginStatus } from './const'
+import { useTranslations } from 'next-intl'
 
 export const LoginForm = () => {
+    const t = useTranslations('LoginPage')
     const [submissionStatus, setSubmissionStatus] =
         useState<LoginStatus>('idle')
     const [submissionMessage, setSubmissionMessage] = useState('')
@@ -93,7 +95,7 @@ export const LoginForm = () => {
                             className="mr-6"
                             isDisabled={submissionStatus === 'loading'}
                         >
-                            Log in
+                            {t('login')}
                         </Button>
                     </FlexContainer>
                 </form>

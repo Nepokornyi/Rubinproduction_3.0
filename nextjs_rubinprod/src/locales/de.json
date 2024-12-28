@@ -37,6 +37,24 @@
         "agreement": "ICH STIMME MIT DEN BEDINGUNGEN ÜBEREIN...",
         "submit": "Anfrage senden"
     },
+    "LoginPage": {
+        "title": "Gemeinschaft",
+        "login": "Einloggen",
+        "subtitle": "Werden Sie ein Teil unserer Gruppe",
+        "description": "Unsere Schlüsselfaktoren sind Vielfalt und eine neue Perspektive. Unser Ansatz basiert auf Vielfalt und Innovation und verleiht unserer Arbeit einen einzigartigen Charakter.",
+        "pricing_1": "Nur für",
+        "pricing_2": "29 kč pro Monat"
+    },
+    "CommunityPage": {
+        "main": {
+            "title": "Nove Video",
+            "topic": "Téma",
+            "name": "Název"
+        },
+        "other": {
+            "title": "Ostatni videa"
+        }
+    },
     "ScootyCase": {
         "client": "<strong>Scooty</strong> ist ein Startup in der Sphäre von Lebensmittellieferungen, das den Kurieren ein regelmäßiges Einkommen und flexiblen Zeitplan bietet. Scooty unterstützt die Work-Life-Balance von Kurieren und verbessert die Nachhaltigkeit und Gerechtigkeit.",
         "challenge": "Wir haben <strong>Scooty</strong> mit einer kompletten digitalen Produktion ausgestattet und das Startup in die Medienwelt eingeführt. Unsere umfassende Strategie hat die Sichtbarkeit und das Engagement erhöht und unser Streben nach Erfolg bestätigt.",

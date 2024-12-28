@@ -37,6 +37,24 @@
         "agreement": "I agree with terms...",
         "submit": "Send request"
     },
+    "LoginPage": {
+        "title": "Community",
+        "login": "Log in",
+        "subtitle": "Become a Part Of Our Group",
+        "description": "Our key factors are diversity and a fresh perspective. Our approach is based on diversity and innovation, giving our work a unique character.",
+        "pricing_1": "Only for",
+        "pricing_2": "29 kč per month"
+    },
+    "CommunityPage": {
+        "main": {
+            "title": "Nove Video",
+            "topic": "Téma",
+            "name": "Název"
+        },
+        "other": {
+            "title": "Ostatni videa"
+        }
+    },
     "ScootyCase": {
         "client": "<strong>Scooty</strong>, a food delivery startup, provides couriers with stable income and flexible schedules. Their platform connects couriers with delivery requests, fostering a balanced work-life dynamic and revolutionizing the industry for sustainability and equity",
         "challenge": "We fully equipped <strong>Scooty</strong> with digital production and launched their startup in the media sphere. Our comprehensive digital strategy enhanced visibility and engagement, showcasing our commitment to driving success",

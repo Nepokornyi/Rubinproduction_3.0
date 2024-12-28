@@ -126,7 +126,7 @@ export const CommunityMobileMenu = ({
                                         variant="h2"
                                         textTransform="uppercase"
                                     >
-                                        {isSubscribed ? 'předplatné' : 'portál'}
+                                        Členství
                                     </Text>
                                     <Text className="absolute bottom-0 -right-6">
                                         01
@@ -144,7 +144,7 @@ export const CommunityMobileMenu = ({
                                         variant="h2"
                                         textTransform="uppercase"
                                     >
-                                        odhlásit se
+                                        Odhlásit
                                     </Text>
                                     <Text className="absolute bottom-0 -left-6">
                                         02
