@@ -7,8 +7,13 @@ import animation from './components/config/configLogo'
 import logoRed from '@/assets/img/RubinLetter.svg'
 import { useScrollHeader } from '@/hooks/useScrollHeader'
 import { CommunityDesktopMenu } from './components/CommunityDesktopMenu'
+import { CommunityMobileMenu } from './components/MobileMenu/CommunityMobileMenu'
 
-export const CommunityHeader = () => {
+export const CommunityHeader = ({
+    isSubscribed,
+}: {
+    isSubscribed: boolean
+}) => {
     const headerStyle = useScrollHeader()
 
     return (
@@ -28,8 +33,8 @@ export const CommunityHeader = () => {
                     />
                 </LinkTransition>
             </motion.div>
-            <CommunityDesktopMenu />
-            <MobileMenu />
+            <CommunityDesktopMenu isSubscribed={isSubscribed} />
+            <CommunityMobileMenu isSubscribed={isSubscribed} />
         </header>
     )
 }

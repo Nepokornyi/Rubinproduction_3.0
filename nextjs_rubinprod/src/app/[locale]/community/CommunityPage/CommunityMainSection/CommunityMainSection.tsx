@@ -1,13 +1,17 @@
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Text } from '@/components/Text/Text'
 import React from 'react'
-import { CommunityMainVideo } from './CommunityMainVideo'
+import { VimeoVideo } from '../../../components/VimeoVideo/VimeoVideo'
 import { CommunityHeader } from '@/components/Header/CommunityHeader'
 
-export const CommunityMainSection = () => {
+export const CommunityMainSection = ({
+    isSubscribed,
+}: {
+    isSubscribed: boolean
+}) => {
     return (
         <>
-            <CommunityHeader />
+            <CommunityHeader isSubscribed={isSubscribed} />
             <FlexContainer
                 direction="flex-col"
                 alignItems="items-center"
@@ -32,12 +36,12 @@ export const CommunityMainSection = () => {
                     </Text>
                     <Text
                         variant="h5"
-                        className="text-black"
+                        className="text-black mb-5"
                         textTransform="uppercase"
                     >
                         Video name
                     </Text>
-                    <CommunityMainVideo />
+                    <VimeoVideo id={1042303511} />
                 </FlexContainer>
             </FlexContainer>
         </>

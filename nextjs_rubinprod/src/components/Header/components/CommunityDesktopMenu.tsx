@@ -2,9 +2,12 @@ import { Text } from '@/components/Text/Text'
 import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import React from 'react'
-import { CommunityChangeLanguage } from './CommunityChangeLanguage'
 
-export const CommunityDesktopMenu = () => {
+export const CommunityDesktopMenu = ({
+    isSubscribed,
+}: {
+    isSubscribed: boolean
+}) => {
     const t = useTranslations('Header.menu')
     const router = useRouter()
 
@@ -13,6 +16,29 @@ export const CommunityDesktopMenu = () => {
 
         try {
             const response = await fetch('/api/stripe/subscription', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ locale }),
+            })
+
+            if (!response.ok) {
+                const errorData = await response.json()
+                throw new Error(
+                    errorData.error || 'Failed to initiate subscription'
+                )
+            }
+            const { url } = await response.json()
+            router.push(url)
+        } catch (error) {}
+    }
+
+    const handleSubscribe = async () => {
+        const locale = window.location.pathname.split('/')[1]
+
+        try {
+            const response = await fetch('/api/stripe/checkout', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,16 +69,28 @@ export const CommunityDesktopMenu = () => {
         } catch (error) {}
     }
 
+    const renderSubscriptionButton = isSubscribed ? (
+        <Text
+            className="cursor-pointer"
+            variant="nav"
+            onClick={handleManageSubscription}
+        >
+            subscription
+        </Text>
+    ) : (
+        <Text
+            className="cursor-pointer"
+            variant="nav"
+            onClick={handleSubscribe}
+        >
+            subscribe
+        </Text>
+    )
+
     return (
         <nav className="hidden md:block">
             <ul className="list-none flex gap-4 overflow-hidden">
-                <Text
-                    className="cursor-pointer"
-                    variant="nav"
-                    onClick={handleManageSubscription}
-                >
-                    subscription
-                </Text>
+                {renderSubscriptionButton}
                 <Text
                     className="cursor-pointer"
                     variant="nav"
@@ -60,7 +98,6 @@ export const CommunityDesktopMenu = () => {
                 >
                     log out
                 </Text>
-                <CommunityChangeLanguage />
             </ul>
         </nav>
     )
