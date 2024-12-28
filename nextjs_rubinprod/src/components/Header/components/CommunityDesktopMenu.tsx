@@ -3,6 +3,9 @@ import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
+const linkStyling =
+    'cursor-pointer duration-300 hover:text-[#d91e37] hover:scale-105'
+
 export const CommunityDesktopMenu = ({
     isSubscribed,
 }: {
@@ -71,9 +74,9 @@ export const CommunityDesktopMenu = ({
 
     return (
         <nav className="hidden md:block">
-            <ul className="list-none flex gap-4 overflow-hidden">
+            <ul className="list-none flex gap-4">
                 <Text
-                    className="cursor-pointer"
+                    className={linkStyling}
                     variant="nav"
                     onClick={
                         isSubscribed
@@ -84,7 +87,7 @@ export const CommunityDesktopMenu = ({
                     Členství
                 </Text>
                 <Text
-                    className="cursor-pointer"
+                    className={linkStyling}
                     variant="nav"
                     onClick={handleLogout}
                 >
