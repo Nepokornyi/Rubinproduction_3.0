@@ -49,7 +49,7 @@ export async function POST(request: Request) {
                 user_id: id,
             },
             success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/community`,
-            cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/pricing`,
+            cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/community`,
         })
 
         return NextResponse.json({ url: checkoutSession.url })

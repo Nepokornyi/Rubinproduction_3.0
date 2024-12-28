@@ -30,15 +30,5 @@ export async function GET(request: NextRequest) {
         return NextResponse.redirect(`${url}/${currentLocale}/error`)
     }
 
-    const { data: profile } = await supabase
-        .from('profiles')
-        .select('is_subscribed')
-        .eq('email', email)
-        .single()
-
-    const targetRoute = profile?.is_subscribed
-        ? `${url}/${currentLocale}/community`
-        : `${url}/${currentLocale}/pricing`
-
-    return NextResponse.redirect(targetRoute)
+    return NextResponse.redirect(`${url}/${currentLocale}/community`)
 }
