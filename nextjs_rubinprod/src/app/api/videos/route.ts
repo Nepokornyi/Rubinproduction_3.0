@@ -35,10 +35,7 @@ export async function GET(request: NextRequest) {
 
     const videos = videoConfig.map((video) => ({
         ...video,
-        videoUrl: isSubscribed ? video.videoUrl : null,
-        description: isSubscribed
-            ? video.description
-            : 'Pro zobrazení obsahu staňte se členem naší komunity',
+        videoUrl: isSubscribed ? video.videoUrl : video.preview,
     }))
 
     return NextResponse.json({ videos })

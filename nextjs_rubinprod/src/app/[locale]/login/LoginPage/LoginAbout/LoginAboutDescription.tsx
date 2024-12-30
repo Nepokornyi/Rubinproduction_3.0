@@ -25,7 +25,7 @@ export const LoginAboutDescription = () => {
             >
                 <Text
                     textTransform="uppercase"
-                    padding="px-0"
+                    padding="pl-6"
                     fontWeight="font-semibold"
                     className="tracking-[3px]"
                 >
