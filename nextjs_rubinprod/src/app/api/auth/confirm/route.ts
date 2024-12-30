@@ -5,16 +5,12 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
     const token = searchParams.get('token')
+    const email = searchParams.get('email')
 
     const currentLocale = getCurrentLocale(request.nextUrl.pathname, 1)
     const url = request.nextUrl.origin
 
-    if (!token) {
-        return NextResponse.redirect(`${url}/${currentLocale}/error`)
-    }
-
-    const email = request.cookies.get('temp_email')?.value
-    if (!email) {
+    if (!token || !email) {
         return NextResponse.redirect(`${url}/${currentLocale}/error`)
     }
 

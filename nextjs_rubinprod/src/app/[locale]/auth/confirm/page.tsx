@@ -14,17 +14,22 @@ export default function ConfirmPage() {
         if (hasFetched.current) return
 
         const token = searchParams.get('token')
+        const email = searchParams.get('email')
 
         const currentLocale = getCurrentLocale(pathname, 1)
 
-        if (!token) {
+        if (!token || !email) {
             router.push(`/${currentLocale}/error`)
             return
         }
 
         hasFetched.current = true
 
-        fetch(`/api/auth/confirm?token=${encodeURIComponent(token)}`)
+        fetch(
+            `/api/auth/confirm?token=${encodeURIComponent(
+                token
+            )}&email=${encodeURIComponent(email)}`
+        )
             .then(async (response) => {
                 if (response.redirected) {
                     router.replace(response.url)

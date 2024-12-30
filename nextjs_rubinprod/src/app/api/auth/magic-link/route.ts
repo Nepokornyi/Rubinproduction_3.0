@@ -15,16 +15,14 @@ export async function POST(request: NextRequest) {
             return NextResponse.redirect(`${baseUrl}/${locale}/error`)
         }
 
-        const response = new NextResponse('Magic link sent', { status: 200 })
-        response.cookies.set('temp_email', email, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            maxAge: 600,
-            sameSite: 'lax',
-        })
-        response.headers.set('Location', `${baseUrl}/${locale}/confirm`)
-
-        return response
+        return new NextResponse(
+            JSON.stringify({
+                success: true,
+                message:
+                    'Magic link sent successfully. Please check your email.',
+            }),
+            { status: 200, headers: { 'Content-Type': 'application/json' } }
+        )
     } catch (error) {
         const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
         return NextResponse.redirect(`${baseUrl}/error`)
