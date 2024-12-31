@@ -1,7 +1,5 @@
 import { Box } from '@/components/Box/Box'
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import preview from '@/assets/img/community/preview.png'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Text } from '@/components/Text/Text'
 import { VimeoVideo } from '../../../components/VimeoVideo/VimeoVideo'
@@ -31,7 +29,7 @@ export const CommunityVideosGrid = () => {
     }, [])
 
     return (
-        <Box className="w-full grid grid-cols-1 px-5 gap-5 lg:grid-cols-2 auto-rows-auto place-items-center">
+        <Box className="w-full grid grid-cols-1 px-5 gap-5 lg:grid-cols-2 auto-rows-auto">
             {videos.map(({ title, description, videoUrl }) => (
                 <FlexContainer
                     key={title}

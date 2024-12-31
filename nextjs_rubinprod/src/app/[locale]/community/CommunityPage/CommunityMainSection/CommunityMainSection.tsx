@@ -44,7 +44,7 @@ export const CommunityMainSection = ({
                     >
                         {t('name')}
                     </Text>
-                    <VimeoVideo id={1042303511} />
+                    <VimeoVideo id={1042286031} />
                 </FlexContainer>
             </FlexContainer>
         </>
