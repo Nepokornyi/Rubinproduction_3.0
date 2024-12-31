@@ -17,13 +17,13 @@ export default function ConfirmPage() {
 
         const token = searchParams.get('token')
         const email = searchParams.get('email')
-        const provider = searchParams.get('provider')
+        const code = searchParams.get('code')
 
         const currentLocale = getCurrentLocale(pathname, 1)
 
-        if (provider === 'google') {
+        if (code) {
             hasFetched.current = true
-            fetch(`/api/auth/confirm?provider=google`)
+            fetch(`/api/auth/confirm?code=${encodeURIComponent(code)}`)
                 .then(async (response) => {
                     if (response.redirected) {
                         router.replace(response.url)

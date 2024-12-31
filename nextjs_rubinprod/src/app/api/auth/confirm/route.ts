@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
+    const code = searchParams.get('code')
     const token = searchParams.get('token')
     const email = searchParams.get('email')
 
@@ -11,6 +12,16 @@ export async function GET(request: NextRequest) {
     const url = request.nextUrl.origin
 
     const supabase = await createClient()
+
+    if (code) {
+        const { error } = await supabase.auth.exchangeCodeForSession(code)
+
+        if (error) {
+            return NextResponse.redirect(`${url}/${currentLocale}/error`)
+        }
+
+        return NextResponse.redirect(`${url}/${currentLocale}/community`)
+    }
 
     if (token && email) {
         const { error } = await supabase.auth.verifyOtp({
@@ -26,11 +37,5 @@ export async function GET(request: NextRequest) {
         return NextResponse.redirect(`${url}/${currentLocale}/community`)
     }
 
-    const { data: user, error: userError } = await supabase.auth.getUser()
-
-    if (userError || !user) {
-        return NextResponse.redirect(`${url}/${currentLocale}/error`)
-    }
-
-    return NextResponse.redirect(`${url}/${currentLocale}/community`)
+    return NextResponse.redirect(`${url}/${currentLocale}/error`)
 }

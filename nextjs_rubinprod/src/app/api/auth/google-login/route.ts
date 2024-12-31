@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
         const { locale } = await request.json()
 
         const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
-        const redirectUrl = `${baseUrl}/${locale}/auth/callback`
+        const redirectUrl = `${baseUrl}/auth/confirm`
 
         const { data, error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
