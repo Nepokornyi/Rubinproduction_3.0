@@ -18,10 +18,8 @@ export default function Community() {
                 }
 
                 const data = await response.json()
-                console.log(data)
                 setIsSubscribed(data.isSubscribed || false)
             } catch (error) {
-                console.error(error)
                 setIsSubscribed(false)
             }
         }

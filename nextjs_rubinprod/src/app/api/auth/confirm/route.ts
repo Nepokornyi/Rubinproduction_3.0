@@ -10,19 +10,25 @@ export async function GET(request: NextRequest) {
     const currentLocale = getCurrentLocale(request.nextUrl.pathname, 1)
     const url = request.nextUrl.origin
 
-    if (!token || !email) {
-        return NextResponse.redirect(`${url}/${currentLocale}/error`)
-    }
-
     const supabase = await createClient()
 
-    const { error } = await supabase.auth.verifyOtp({
-        token,
-        type: 'magiclink',
-        email,
-    })
+    if (token && email) {
+        const { error } = await supabase.auth.verifyOtp({
+            token,
+            type: 'magiclink',
+            email,
+        })
 
-    if (error) {
+        if (error) {
+            return NextResponse.redirect(`${url}/${currentLocale}/error`)
+        }
+
+        return NextResponse.redirect(`${url}/${currentLocale}/community`)
+    }
+
+    const { data: user, error: userError } = await supabase.auth.getUser()
+
+    if (userError || !user) {
         return NextResponse.redirect(`${url}/${currentLocale}/error`)
     }
 

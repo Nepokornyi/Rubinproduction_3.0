@@ -11,6 +11,8 @@ import { OverlayLogin } from '@/components/Overlay/OverlayLogin'
 import { useDialogState } from '@/hooks/useDialogState'
 import { LoginStatus } from './const'
 import { useTranslations } from 'next-intl'
+import { Text } from '@/components/Text/Text'
+import { FcGoogle } from 'react-icons/fc'
 
 export const LoginForm = () => {
     const t = useTranslations('LoginPage')
@@ -69,6 +71,35 @@ export const LoginForm = () => {
         }
     }
 
+    const handleGoogleAuth = async () => {
+        try {
+            setSubmissionStatus('loading')
+            const response = await fetch(`/api/auth/google-login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ locale: currentLocale }),
+            })
+
+            const result = await response.json()
+
+            if (response.ok && result.redirectUrl) {
+                window.location.href = result.redirectUrl
+            } else {
+                setSubmissionStatus('error')
+                setSubmissionMessage(
+                    result.message || 'Something went wrong. Please try again.'
+                )
+                handleOpenDialog()
+            }
+        } catch (err: any) {
+            setSubmissionStatus('error')
+            setSubmissionMessage(err.message || 'Unexpected error occurred.')
+            handleOpenDialog()
+        }
+    }
+
     return (
         <>
             <OverlayLogin
@@ -101,6 +132,17 @@ export const LoginForm = () => {
                         </Button>
                     </FlexContainer>
                 </form>
+                <FlexContainer
+                    gap="gap-2"
+                    center
+                    className="mt-5"
+                    onClick={handleGoogleAuth}
+                >
+                    <FcGoogle fontSize={36} className="cursor-pointer" />
+                    <Text variant="button" className="p-5 cursor-pointer">
+                        Vstoupit pomoci Google
+                    </Text>
+                </FlexContainer>
             </FlexContainer>
         </>
     )

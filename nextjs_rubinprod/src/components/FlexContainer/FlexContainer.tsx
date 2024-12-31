@@ -18,6 +18,7 @@ type FlexContainerProps = {
     gap?: Gap
     className?: string
     id?: string
+    onClick?: () => void
 }
 
 export const FlexContainer = ({
@@ -31,6 +32,7 @@ export const FlexContainer = ({
     gap = 'gap-0',
     className = '',
     id,
+    onClick,
 }: FlexContainerProps) => {
     const horizontalAlignClass =
         justifyContent || (center ? 'justify-center' : '')
@@ -50,7 +52,7 @@ export const FlexContainer = ({
         .join(' ')
 
     return (
-        <div className={combinedClasses} id={id}>
+        <div className={combinedClasses} id={id} onClick={onClick}>
             {children}
         </div>
     )
