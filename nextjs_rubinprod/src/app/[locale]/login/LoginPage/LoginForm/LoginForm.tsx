@@ -57,7 +57,9 @@ export const LoginForm = () => {
             }
 
             setSubmissionStatus('success')
-            setSubmissionMessage('Check your email for the magic link')
+            setSubmissionMessage(
+                'Zkontroluj si prosím svüj mail. Poslali jsme ti odkaz.'
+            )
             handleOpenDialog()
             reset()
         } catch (error: any) {
@@ -84,7 +86,7 @@ export const LoginForm = () => {
             >
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Input
-                        placeholder="login"
+                        placeholder="tvůj e-mail"
                         color="login"
                         {...register('login')}
                         error={errors.login?.message}

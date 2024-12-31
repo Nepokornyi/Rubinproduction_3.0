@@ -39,17 +39,17 @@
     },
     "LoginPage": {
         "title": "Komunita",
-        "subtitle": "Staňte se součástí naší skupiny",
-        "login": "Přihlásit se",
-        "description": "Našimi klíčovými faktory je rozmanitost a nový pohled na věci. Náš přístup je založen na rozmanitosti a inovaci, což dává naší práci jedinečný charakter.",
+        "subtitle": "Staňte se součástí naší komunity",
+        "login": "Vstoupit do komunity",
+        "description": "Naše platforma spojuje tvůrce všech úrovní – od začátečníků po profesionály. S námi získáte exkluzivní přístup k vzdělávacím materiálům, workshopům a projektům, které vás posunou dál v kariéře Content Creatora.",
         "pricing_1": "Pouze za",
         "pricing_2": "29 kč měsíčně"
     },
     "CommunityPage": {
         "main": {
             "title": "Nove Video",
-            "topic": "Téma",
-            "name": "Název"
+            "topic": "Adobe",
+            "name": "Profese Video Editora za 2 hodiny"
         },
         "other": {
             "title": "Ostatni videa"
