@@ -20,6 +20,7 @@ type TextProps = {
     textAlign?: TextAlign
     padding?: string
     className?: string
+    onClick?: () => void
 }
 
 export const Text = ({
@@ -32,6 +33,7 @@ export const Text = ({
     textAlign = 'inherit',
     padding = 'px-6 md:px-0',
     className = '',
+    onClick,
 }: TextProps) => {
     const variantClass = variant ? variantStyles[variant] : ''
     const combinedClasses = [
@@ -49,9 +51,12 @@ export const Text = ({
         <span
             className={combinedClasses}
             dangerouslySetInnerHTML={{ __html: dangerousText }}
+            onClick={onClick}
         />
     ) : (
-        <span className={combinedClasses}>{children}</span>
+        <span className={combinedClasses} onClick={onClick}>
+            {children}
+        </span>
     )
 
     return <>{content}</>

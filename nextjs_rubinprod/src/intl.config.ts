@@ -11,3 +11,4 @@ export const pathnames: Pathnames<ReadOnlyLocales> = {
 }
 
 export const localePrefix: LocalePrefix<ReadOnlyLocales> = 'always'
+export const defaultLocale: UnionLocales = 'cz'

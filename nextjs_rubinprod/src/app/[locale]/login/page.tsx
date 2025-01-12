@@ -1,10 +1,15 @@
-import React from 'react'
-import { LoginSection } from './LoginSection/LoginSection'
+'use client'
 
-export default function Login() {
+import { Footer } from '@/components/Footer/Footer'
+import { LoginAbout } from './LoginPage/LoginAbout/LoginAbout'
+import { LoginSection } from './LoginPage/LoginSection/LoginSection'
+
+export default function Authentication() {
     return (
         <div className="animation-container">
             <LoginSection />
+            <LoginAbout />
+            <Footer />
         </div>
     )
 }

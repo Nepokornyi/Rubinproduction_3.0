@@ -34,6 +34,12 @@ export const MobileMenu = ({ isCase = false }: { isCase?: boolean }) => {
             position: '-left-6',
             numeration: numerationBase + 2,
         },
+        {
+            label: t('community'),
+            href: '/community',
+            position: '-right-6',
+            numeration: numerationBase + 3,
+        },
     ]
 
     const { showDialog, toggleDialog, handleCloseDialog } = useDialogState()

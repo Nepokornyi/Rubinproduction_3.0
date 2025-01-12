@@ -5,7 +5,7 @@
             "about": "About",
             "portfolio": "Portfolio",
             "contact": "Contact",
-            "login": "Login",
+            "community": "Community",
             "languageSelection1": "cz",
             "languageSelection2": "de"
         }
@@ -36,6 +36,24 @@
         "subtitle": "About your project",
         "agreement": "I agree with terms...",
         "submit": "Send request"
+    },
+    "LoginPage": {
+        "title": "Komunita",
+        "subtitle": "Staňte se součástí naší komunity",
+        "login": "Vstoupit do komunity",
+        "description": "Naše platforma spojuje tvůrce všech úrovní – od začátečníků po profesionály. S námi získáte exkluzivní přístup k vzdělávacím materiálům, workshopům a projektům, které vás posunou dál v kariéře Content Creatora.",
+        "pricing_1": "Pouze za",
+        "pricing_2": "29 kč měsíčně"
+    },
+    "CommunityPage": {
+        "main": {
+            "title": "Nove Video",
+            "topic": "Adobe",
+            "name": "Profese Video Editora za 2 hodiny"
+        },
+        "other": {
+            "title": "Ostatni videa"
+        }
     },
     "ScootyCase": {
         "client": "<strong>Scooty</strong>, a food delivery startup, provides couriers with stable income and flexible schedules. Their platform connects couriers with delivery requests, fostering a balanced work-life dynamic and revolutionizing the industry for sustainability and equity",
