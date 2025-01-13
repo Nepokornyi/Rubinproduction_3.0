@@ -14,7 +14,7 @@ export const Hamburger = ({
     return (
         <motion.div
             style={{ width: container.width, height: container.height }}
-            className="relative md:hidden cursor-pointer"
+            className="relative md:hidden cursor-pointer z-50"
             variants={animations.container}
             onClick={() => toggleOpen()}
             initial="initial"

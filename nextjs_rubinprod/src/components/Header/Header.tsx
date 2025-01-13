@@ -25,6 +25,7 @@ export const Header = ({ isCase = false }: { isCase?: boolean }) => {
                 variants={animation.container}
                 initial="initial"
                 animate="animate"
+                className="z-50"
             >
                 <LinkTransition href="/">
                     <Image

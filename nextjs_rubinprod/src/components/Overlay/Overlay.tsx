@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { ReactNode, useEffect, useState } from 'react'
 import { FlexContainer } from '../FlexContainer/FlexContainer'
-import { Box } from '../Box/Box'
 import { menuVariants } from './config/configOverlay'
 
 type OverlayProps = {
     children: ReactNode
     button?: ReactNode
     zIndex?: string
+    isPortal?: boolean
     open: boolean
 }
 
@@ -17,6 +17,7 @@ export const Overlay = ({
     open,
     button,
     zIndex = 'z-10',
+    isPortal = true,
     children,
 }: OverlayProps) => {
     const [overlayRoot, setOverlayRoot] = useState<HTMLElement | null>(null)
@@ -36,7 +37,7 @@ export const Overlay = ({
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    className={`fixed bg-[#0c0c0c] flex opacity-100 w-full h-full top-0 left-0 origin-top border-none ${zIndex}`}
+                    className={`fixed bg-[#0c0c0c] flex opacity-100 w-screen h-screen top-0 left-0 origin-top border-none ${zIndex}`}
                 >
                     <FlexContainer direction="flex-col" center>
                         {children}
@@ -47,5 +48,7 @@ export const Overlay = ({
         </AnimatePresence>
     )
 
-    return ReactDOM.createPortal(overlayElement, overlayRoot)
+    return isPortal
+        ? ReactDOM.createPortal(overlayElement, overlayRoot)
+        : overlayElement
 }

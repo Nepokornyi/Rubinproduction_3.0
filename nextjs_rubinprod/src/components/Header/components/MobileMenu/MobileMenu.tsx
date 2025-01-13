@@ -70,7 +70,7 @@ export const MobileMenu = ({ isCase = false }: { isCase?: boolean }) => {
     return (
         <>
             {renderButton}
-            <Overlay open={showDialog}>
+            <Overlay open={showDialog} isPortal={false}>
                 <motion.div
                     variants={containerVariants}
                     initial="initial"
