@@ -1,6 +1,7 @@
+import React from 'react'
+import Image from 'next/image'
 import { Button } from '@/components/Button/Button'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
-import React from 'react'
 import { RubinTitle } from './components/RubinTitle'
 import { MainSectionDescription } from './components/MainSectionDescription'
 import { MainSectionSocials } from './components/MainSectionSocials'
@@ -8,6 +9,8 @@ import { Header } from '@/components/Header/Header'
 import { useTranslations } from 'next-intl'
 import { RevealBlock } from '@/components/Reveal/RevealBlock'
 import { LinkTransition } from '@/components/LinkTransition/LinkTransition'
+
+import showreel from '@/assets/img/showreel.jpg'
 
 export const MainSection = () => {
     const t = useTranslations('MainPage')
@@ -35,8 +38,13 @@ export const MainSection = () => {
         <FlexContainer
             direction="flex-row"
             justifyContent="justify-start"
-            className="relative h-screen bg-no-repeat bg-[url('/img/showreel.jpg')] bg-top lg:bg-top bg-cover pt-52 pb-32 overflow-hidden md:items-center items-start"
+            className="relative h-screen pt-52 pb-32 overflow-hidden md:items-center items-start"
         >
+            <Image
+                src={showreel}
+                alt="showreel"
+                className="absolute top-0 left-0 w-screen h-screen object-cover pointer-events-none"
+            />
             <Header />
 
             <FlexContainer
