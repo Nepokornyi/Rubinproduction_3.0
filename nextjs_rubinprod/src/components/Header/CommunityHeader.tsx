@@ -1,7 +1,6 @@
 'use client'
 import Image from 'next/image'
 import { LinkTransition } from '../LinkTransition/LinkTransition'
-import { MobileMenu } from './components/MobileMenu/MobileMenu'
 import { motion } from 'framer-motion'
 import animation from './components/config/configLogo'
 import logoRed from '@/assets/img/RubinLetter.svg'

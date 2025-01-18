@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { CommunityMainSection } from './CommunityPage/CommunityMainSection/CommunityMainSection'
-import { CommunityVideosSection } from './CommunityPage/CommunityVideos/CommunityVideosSection'
+import { CommunityFreeVideos } from './CommunityPage/CommunityMainSection/CommunityFreeVideos'
+import { CommunityPaidVideos } from './CommunityPage/CommunityMainSection/CommunityPaidVideos'
 
 export default function Community() {
     const [isSubscribed, setIsSubscribed] = useState(false)
@@ -28,8 +28,8 @@ export default function Community() {
 
     return (
         <div className="animation-container">
-            <CommunityMainSection isSubscribed={isSubscribed} />
-            <CommunityVideosSection />
+            <CommunityFreeVideos isSubscribed={isSubscribed} />
+            <CommunityPaidVideos />
         </div>
     )
 }

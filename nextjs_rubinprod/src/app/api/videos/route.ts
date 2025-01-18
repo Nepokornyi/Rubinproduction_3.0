@@ -1,6 +1,6 @@
 import { createClient } from '@/utils/server'
 import { NextRequest, NextResponse } from 'next/server'
-import { videoConfig } from '@/config/videos'
+import { paidVideoConfig } from '@/config/paidVideos'
 
 export async function GET(request: NextRequest) {
     const supabase = await createClient()
@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
 
     const isSubscribed = profile.is_subscribed && !isRevoked
 
-    const videos = videoConfig.map((video) => ({
+    const videos = paidVideoConfig.map((video) => ({
         ...video,
         videoUrl: isSubscribed ? video.videoUrl : video.preview,
     }))

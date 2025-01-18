@@ -47,12 +47,12 @@
     },
     "CommunityPage": {
         "main": {
-            "title": "Nove Video",
+            "title": "Bezplatna Videa",
             "topic": "Adobe",
             "name": "Profese Video Editora za 2 hodiny"
         },
         "other": {
-            "title": "Ostatni videa"
+            "title": "Placena Videa"
         }
     },
     "ScootyCase": {
