@@ -1,11 +1,12 @@
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Text } from '@/components/Text/Text'
 import React from 'react'
-import { VimeoVideo } from '../../../components/VimeoVideo/VimeoVideo'
 import { CommunityHeader } from '@/components/Header/CommunityHeader'
 import { useTranslations } from 'next-intl'
+import { CommunityVideosGrid } from '../CommunityVideos/CommunityVideosGrid'
+import { freeVideoConfig } from '@/config/freeVideos'
 
-export const CommunityMainSection = ({
+export const CommunityFreeVideos = ({
     isSubscribed,
 }: {
     isSubscribed: boolean
@@ -30,21 +31,13 @@ export const CommunityMainSection = ({
                 </Text>
                 <FlexContainer
                     direction="flex-col"
-                    width="w-full md:w-4/6"
-                    className="relative bg-[#c4c4c4] mt-12 p-2.5 pt-5 md:p-5 rounded-3xl"
+                    className="relative mt-12 p-2.5 pt-5 md:p-5"
                     center
                 >
-                    <Text variant="nav" className="text-black">
-                        {t('topic')}
-                    </Text>
-                    <Text
-                        variant="h5"
-                        className="text-black mb-5"
-                        textTransform="uppercase"
-                    >
-                        {t('name')}
-                    </Text>
-                    <VimeoVideo id={1042286031} />
+                    <CommunityVideosGrid
+                        content={freeVideoConfig}
+                        variant="free"
+                    />
                 </FlexContainer>
             </FlexContainer>
         </>
