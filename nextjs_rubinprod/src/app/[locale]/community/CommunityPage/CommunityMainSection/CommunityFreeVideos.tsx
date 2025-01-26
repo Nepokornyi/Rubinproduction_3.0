@@ -5,13 +5,11 @@ import { CommunityHeader } from '@/components/Header/CommunityHeader'
 import { useTranslations } from 'next-intl'
 import { CommunityVideosGrid } from '../CommunityVideos/CommunityVideosGrid'
 import { freeVideoConfig } from '@/config/freeVideos'
+import { useSubscriptionContext } from '../../context/SubscriptionContext'
 
-export const CommunityFreeVideos = ({
-    isSubscribed,
-}: {
-    isSubscribed: boolean
-}) => {
+export const CommunityFreeVideos = () => {
     const t = useTranslations('CommunityPage.main')
+    const { isSubscribed } = useSubscriptionContext()
 
     return (
         <>
