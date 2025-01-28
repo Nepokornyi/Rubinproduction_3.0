@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion'
 import React, { useEffect } from 'react'
-
+import {
+    manageSubscription,
+    subscribe,
+} from '@/app/[locale]/community/utils/subscriptionApi'
 import { useDialogState } from '@/hooks/useDialogState'
 import { Overlay } from '@/components/Overlay/Overlay'
 import { containerVariants, linkVariants } from './config/configDropdown'
 import { Box } from '@/components/Box/Box'
 import { Hamburger } from './Hamburger'
 import { Text } from '@/components/Text/Text'
-import { Link } from '@/navigation'
-import { LanguageSelection } from './LanguageSelection'
 import { useTranslations } from 'next-intl'
 import { OverlaySocials } from './Socials'
 import { useRouter } from 'next/navigation'
@@ -27,21 +28,7 @@ export const CommunityMobileMenu = ({
         const locale = window.location.pathname.split('/')[1]
 
         try {
-            const response = await fetch('/api/stripe/subscription', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ locale }),
-            })
-
-            if (!response.ok) {
-                const errorData = await response.json()
-                throw new Error(
-                    errorData.error || 'Failed to initiate subscription'
-                )
-            }
-            const { url } = await response.json()
+            const { url } = await manageSubscription(locale)
             router.push(url)
         } catch (error) {}
     }
@@ -50,21 +37,7 @@ export const CommunityMobileMenu = ({
         const locale = window.location.pathname.split('/')[1]
 
         try {
-            const response = await fetch('/api/stripe/checkout', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ locale }),
-            })
-
-            if (!response.ok) {
-                const errorData = await response.json()
-                throw new Error(
-                    errorData.error || 'Failed to initiate checkout'
-                )
-            }
-            const { url } = await response.json()
+            const { url } = await subscribe(locale)
             router.push(url)
         } catch (error) {}
     }
