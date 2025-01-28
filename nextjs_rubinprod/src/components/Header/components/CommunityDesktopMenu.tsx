@@ -1,4 +1,8 @@
 import { Text } from '@/components/Text/Text'
+import {
+    manageSubscription,
+    subscribe,
+} from '@/app/[locale]/community/utils/subscriptionApi'
 import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import React from 'react'
@@ -18,21 +22,7 @@ export const CommunityDesktopMenu = ({
         const locale = window.location.pathname.split('/')[1]
 
         try {
-            const response = await fetch('/api/stripe/subscription', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ locale }),
-            })
-
-            if (!response.ok) {
-                const errorData = await response.json()
-                throw new Error(
-                    errorData.error || 'Failed to initiate subscription'
-                )
-            }
-            const { url } = await response.json()
+            const { url } = await manageSubscription(locale)
             router.push(url)
         } catch (error) {}
     }
@@ -41,21 +31,7 @@ export const CommunityDesktopMenu = ({
         const locale = window.location.pathname.split('/')[1]
 
         try {
-            const response = await fetch('/api/stripe/checkout', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ locale }),
-            })
-
-            if (!response.ok) {
-                const errorData = await response.json()
-                throw new Error(
-                    errorData.error || 'Failed to initiate checkout'
-                )
-            }
-            const { url } = await response.json()
+            const { url } = await subscribe(locale)
             router.push(url)
         } catch (error) {}
     }
