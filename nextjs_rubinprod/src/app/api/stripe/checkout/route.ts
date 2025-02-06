@@ -40,11 +40,6 @@ export async function POST(request: Request) {
                     quantity: 1,
                 },
             ],
-            // discounts: [
-            //     {
-            //         coupon: 'TDY5XeKz',
-            //     },
-            // ],
             metadata: {
                 user_id: id,
             },
