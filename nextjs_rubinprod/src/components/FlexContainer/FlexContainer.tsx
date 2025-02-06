@@ -18,7 +18,7 @@ type FlexContainerProps = {
     gap?: Gap
     className?: string
     id?: string
-    onClick?: () => void
+    onClick?: (e?: React.MouseEvent<HTMLDivElement>) => void
 }
 
 export const FlexContainer = ({
