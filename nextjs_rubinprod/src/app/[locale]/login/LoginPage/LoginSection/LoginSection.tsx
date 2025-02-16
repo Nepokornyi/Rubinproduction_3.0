@@ -19,7 +19,7 @@ export const LoginSection = () => {
             <Image
                 src={showreel}
                 alt="showreel"
-                className="absolute z-0 top-0 left-0 object-cover pointer-events-none"
+                className="absolute z-0 top-0 left-0 w-screen h-screen object-cover pointer-events-none"
             />
 
             <Header />
