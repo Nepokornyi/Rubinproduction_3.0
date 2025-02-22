@@ -1,15 +1,13 @@
 'use client'
 
-import { Footer } from '@/components/Footer/Footer'
-import { LoginAbout } from './LoginPage/LoginAbout/LoginAbout'
-import { LoginSection } from './LoginPage/LoginSection/LoginSection'
+import { LoginSection } from './LoginPage/components/LoginSection'
+import { Header } from '@/components/Header/Header'
 
 export default function Authentication() {
     return (
         <div className="animation-container">
+            <Header />
             <LoginSection />
-            <LoginAbout />
-            <Footer />
         </div>
     )
 }
