@@ -42,6 +42,11 @@ body {
     transition-duration: 500ms;
 }
 
+.animation-container {
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1.5s ease-in-out forwards; /* Animating fade-in effect */
+}
+
 .page-transition {
     opacity: 0;
     background: black;
@@ -82,9 +87,4 @@ body {
     100% {
         opacity: 1;
     }
-}
-
-.animation-container {
-    opacity: 0; /* Initially hidden */
-    animation: fadeIn 1.5s ease-in-out forwards; /* Animating fade-in effect */
 }
