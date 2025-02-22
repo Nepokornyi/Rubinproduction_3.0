@@ -38,12 +38,17 @@
         "submit": "Anfrage senden"
     },
     "LoginPage": {
-        "title": "Komunita",
+        "registration": "registrace",
+        "login": "přihlásit se",
         "subtitle": "Staňte se součástí naší komunity",
-        "login": "Vstoupit do komunity",
+        "login_button": "Přihlášení",
+        "alternative_login": "Nebo se přihlaste pomocí:",
+        "google_login": "Google",
+        "passwordless": "Bez hesla",
+        "terms_of_use": "Registrací souhlasím se smluvními podmínkami a zásadami ochrany osobních údajů Rubinproduction.",
+
         "description": "Naše platforma spojuje tvůrce všech úrovní – od začátečníků po profesionály. S námi získáte exkluzivní přístup k vzdělávacím materiálům, workshopům a projektům, které vás posunou dál v kariéře Content Creatora.",
-        "pricing_1": "Pouze za",
-        "pricing_2": "29 kč měsíčně"
+        "pricing": "Pouze za 29 kč měsíčně"
     },
     "CommunityPage": {
         "main": {
@@ -52,7 +57,8 @@
             "name": "Profese Video Editora za 2 hodiny"
         },
         "other": {
-            "title": "Placena Videa"
+            "title": "Placena Videa",
+            "callToAction": "Chcete získat přístup k těmto videím? Zaregistrujte se do naší komunity!"
         }
     },
     "ScootyCase": {
