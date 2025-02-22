@@ -34,6 +34,7 @@ export async function POST(request: Request) {
             payment_method_types: ['card'],
             mode: 'subscription',
             customer_email: email,
+            allow_promotion_codes: true,
             line_items: [
                 {
                     price: process.env.STRIPE_PRICE_ID,
