@@ -23,6 +23,7 @@ export const CommunityHeader = ({
                 variants={animation.container}
                 initial="initial"
                 animate="animate"
+                className="z-50"
             >
                 <LinkTransition href="/">
                     <Image

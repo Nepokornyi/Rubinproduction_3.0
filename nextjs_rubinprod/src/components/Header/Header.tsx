@@ -17,7 +17,6 @@ export const Header = ({ isCase = false }: { isCase?: boolean }) => {
     const logo = isCase ? logoWhite : logoRed
 
     return (
-        // or add bg-[#0c0c0c] if don't use client
         <header
             className={`flex justify-between items-center w-full md:w-3/4 fixed md:absolute top-0 left-1/2 transform -translate-x-1/2 p-4 z-50 ${headerStyle} bg-[#0c0c0c] md:bg-transparent transition-colors`}
         >
