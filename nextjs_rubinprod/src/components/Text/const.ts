@@ -11,6 +11,7 @@ export type VariantStyles =
     | 'contact'
     | 'contact-accent'
     | 'instagram'
+    | 'disclaimer'
 
 export type FontWeight =
     | 'font-light'
@@ -45,4 +46,5 @@ export const variantStyles: Record<VariantStyles, string> = {
     contact: 'text-4xl md:text-[56px] lg:text-6xl xl:text-7xl font-bold',
     'contact-accent':
         'text-[38px] md:text-4xl lg:text-4xl xl:text-5xl font-bold',
+    disclaimer: 'text-xs md:text-sm font-light',
 }
