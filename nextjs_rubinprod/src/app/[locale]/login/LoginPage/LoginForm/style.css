@@ -1,0 +1,3 @@
+.form-border-gradient {
+    border-image: linear-gradient(to bottom, transparent, white, transparent) 1;
+}

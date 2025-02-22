@@ -1,0 +1,61 @@
+@property --color-1 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #d91e37;
+}
+
+@property --color-2 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #bf1b32;
+}
+
+@property --color-3 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #d91e37;
+}
+
+@property --color-4 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #bf1b32;
+}
+
+.login-pricing-gradient {
+    --color-1: #d91e37;
+    --color-2: #bf1b32;
+    background: linear-gradient(to top, var(--color-1), var(--color-2));
+    animation: gradient-shift-1 5s infinite alternate ease-in-out;
+}
+
+@keyframes gradient-shift-1 {
+    0% {
+        --color-1: #d91e37;
+        --color-2: #bf1b32;
+    }
+
+    100% {
+        --color-1: #d91e37;
+        --color-2: #fff;
+    }
+}
+
+.login-pricing-gradient-alternative {
+    --color-3: #d91e37;
+    --color-4: #bf1b32;
+    background: linear-gradient(to bottom, var(--color-3), var(--color-4));
+    animation: gradient-shift-2 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes gradient-shift-2 {
+    0% {
+        --color-3: #d91e37;
+        --color-4: #bf1b32;
+    }
+
+    100% {
+        --color-3: #bf1b32;
+        --color-4: white;
+    }
+}
