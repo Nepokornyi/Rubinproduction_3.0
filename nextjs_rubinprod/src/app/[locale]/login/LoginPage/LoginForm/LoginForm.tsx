@@ -13,6 +13,7 @@ import { LoginStatus } from './const'
 import { useTranslations } from 'next-intl'
 import { Text } from '@/components/Text/Text'
 import { FcGoogle } from 'react-icons/fc'
+import { Box } from '@/components/Box/Box'
 
 export const LoginForm = () => {
     const t = useTranslations('LoginPage')
@@ -108,13 +109,17 @@ export const LoginForm = () => {
                 responseStatus={submissionStatus}
                 message={submissionMessage}
             />
+
             <FlexContainer
-                width="w-full md:w-1/2 max-w-[600px]"
+                width="w-full max-w-[410px] md:max-w-[450px]"
                 direction="flex-col"
                 gap="gap-2"
-                className="px-6 lg:px-0"
-                justifyContent="justify-center"
+                className="px-6 py-16 xl:py-32 xl:border border-transparent form-border-gradient xl:bg-gradient-to-b from-transparent via-[#210000] to-transparent"
             >
+                <Text variant="button" padding="px-0" textTransform="uppercase">
+                    {t('login')}
+                </Text>
+
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Input
                         placeholder="tvůj e-mail"
@@ -122,27 +127,33 @@ export const LoginForm = () => {
                         {...register('login')}
                         error={errors.login?.message}
                     />
-                    <FlexContainer direction="flex-col" gap="gap-4">
+                    <FlexContainer
+                        direction="flex-col"
+                        gap="gap-4"
+                        className="pr-6"
+                    >
                         <Button
                             type="submit"
-                            className="mr-6"
                             isDisabled={submissionStatus === 'loading'}
                         >
-                            {t('login')}
+                            {t('login_button')}
                         </Button>
                     </FlexContainer>
                 </form>
-                <FlexContainer
-                    gap="gap-2"
-                    center
-                    className="mt-5"
-                    onClick={handleGoogleAuth}
-                >
-                    <FcGoogle fontSize={36} className="cursor-pointer" />
-                    <Text variant="button" className="p-5 cursor-pointer">
-                        Vstoupit pomoci Google
-                    </Text>
+                <Text fontWeight="font-semibold" padding="px-0">
+                    {t('alternative_login')}
+                </Text>
+                <FlexContainer gap="gap-2" alignItems="items-center">
+                    <Box
+                        className="border border-white p-2 rounded-sm hover:bg-[rgba(217,30,55,0.3)] cursor-pointer duration-500"
+                        onClick={handleGoogleAuth}
+                    >
+                        <FcGoogle fontSize={36} />
+                    </Box>
                 </FlexContainer>
+                <Text variant="disclaimer" padding="px-0">
+                    {t('terms_of_use')}
+                </Text>
             </FlexContainer>
         </>
     )
