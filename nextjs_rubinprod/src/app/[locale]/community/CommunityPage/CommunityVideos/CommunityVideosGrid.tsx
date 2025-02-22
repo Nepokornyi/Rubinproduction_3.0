@@ -36,6 +36,7 @@ export const CommunityVideosGrid = ({
                         <FlexContainer className="px-3 py-3">
                             <Text
                                 variant="socials"
+                                padding="px-0"
                                 className={`${communityGridStyles[variant].title} w-full`}
                             >
                                 {title}
