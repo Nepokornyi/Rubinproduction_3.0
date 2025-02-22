@@ -1,5 +1,6 @@
 import { Button } from '@/components/Button/Button'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
+import { Box } from '@/components/Box/Box'
 import Input from '@/components/Form/Input'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -13,7 +14,8 @@ import { LoginStatus } from './const'
 import { useTranslations } from 'next-intl'
 import { Text } from '@/components/Text/Text'
 import { FcGoogle } from 'react-icons/fc'
-import { Box } from '@/components/Box/Box'
+
+import './style.css'
 
 export const LoginForm = () => {
     const t = useTranslations('LoginPage')
