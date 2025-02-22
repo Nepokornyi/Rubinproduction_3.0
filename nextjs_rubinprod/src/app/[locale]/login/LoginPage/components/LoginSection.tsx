@@ -2,14 +2,11 @@
 import React from 'react'
 import { LoginForm } from '../LoginForm/LoginForm'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
-import { Header } from '@/components/Header/Header'
-import { Text } from '@/components/Text/Text'
-import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import showreel from '@/assets/img/showreel.jpg'
+import { LoginDescription } from './LoginDescription'
 
 export const LoginSection = () => {
-    const t = useTranslations('LoginPage')
     return (
         <FlexContainer
             center
@@ -22,16 +19,12 @@ export const LoginSection = () => {
                 className="absolute z-0 top-0 left-0 w-screen h-screen object-cover pointer-events-none"
             />
 
-            <Header />
             <FlexContainer
-                className="relative"
-                direction="flex-col"
-                justifyContent="justify-center"
-                alignItems="items-center"
+                width="w-full md:w-3/4"
+                gap="gap-10"
+                className="relative px-6 flex-col xl:flex-row items-center"
             >
-                <Text variant="h2" textTransform="uppercase">
-                    {t('title')}
-                </Text>
+                <LoginDescription />
                 <LoginForm />
             </FlexContainer>
         </FlexContainer>
