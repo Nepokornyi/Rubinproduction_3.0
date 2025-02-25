@@ -23,4 +23,25 @@ export const freeVideoConfig = [
         description:
             'Zorganizovat natáčení reklamního spotu není jednoduché - nápad, lokace, tým, technika, modelky, struktura a postprodukce. Ale občas není potřeba mít velké budgety, zvlášť v případě, když děláte projekt do vlastního portfolia.',
     },
+    {
+        id: 1059455885,
+        title: 'Fashion Reklama | Production Day',
+        videoUrl: 1059455885,
+        preview: 1059455885,
+        description: '',
+    },
+    {
+        id: 1059464512,
+        title: 'Video Clip | Production Day',
+        videoUrl: 1059464512,
+        preview: 1059464512,
+        description: '',
+    },
+    {
+        id: 1059461939,
+        title: 'FPV Real Estate | Production Day',
+        videoUrl: 1059461939,
+        preview: 1059461939,
+        description: '',
+    },
 ]

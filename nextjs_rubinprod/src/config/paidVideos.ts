@@ -39,4 +39,11 @@ export const paidVideoConfig = [
         description:
             'Igor Glinka, student filmové školy ze zkušenostmi vedení produkčních týmů, shrnuje výhody a nevýhody natáčení na telefon i kameru. Zjistíte, který nástroj se hodí pro vaše potřeby, a získáte praktické tipy pro tvorbu obsahu.',
     },
+    {
+        id: 6,
+        title: 'Tutorial',
+        videoUrl: 1059480744,
+        preview: 1059480744,
+        description: '',
+    },
 ]
