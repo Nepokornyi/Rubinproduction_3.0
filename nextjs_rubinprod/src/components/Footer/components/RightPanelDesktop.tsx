@@ -18,13 +18,13 @@ export const RightPanelDesktop = () => {
             className: 'col-start-1 row-start-2',
         },
         {
-            href: '#contact',
-            text: t('navigation.contact'),
+            href: '/privacy',
+            text: t('navigation.privacy'),
             className: 'col-start-2 row-start-2',
         },
         {
-            href: '#portfolio',
-            text: t('navigation.portfolio'),
+            href: '/terms',
+            text: t('navigation.terms'),
             className: 'col-start-3 row-start-2',
         },
         {

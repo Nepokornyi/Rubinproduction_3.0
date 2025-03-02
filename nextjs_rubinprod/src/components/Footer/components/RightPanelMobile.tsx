@@ -8,16 +8,12 @@ export const RightPanelMobile = () => {
 
     const LinkList = [
         {
-            href: 'https://www.behance.net/who1snick',
-            text: t('socials.behance'),
+            href: '/privacy',
+            text: t('navigation.privacy'),
         },
         {
-            href: 'https://www.instagram.com/who1snick',
-            text: t('socials.instagram'),
-        },
-        {
-            href: 'https://www.youtube.com/@who1snick466/videos',
-            text: t('socials.youtube'),
+            href: '/terms',
+            text: t('navigation.terms'),
         },
     ]
 

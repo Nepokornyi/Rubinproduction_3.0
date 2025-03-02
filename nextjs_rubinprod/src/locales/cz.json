@@ -126,8 +126,8 @@
         "navigation": {
             "home": "Domů",
             "about": "O nás",
-            "portfolio": "Portfolio",
-            "contact": "Kontakt"
+            "privacy": "Privacy",
+            "terms": "Terms"
         },
         "copyright": "© rubin production 2024"
     }
