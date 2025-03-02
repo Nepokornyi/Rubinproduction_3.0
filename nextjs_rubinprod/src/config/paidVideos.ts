@@ -41,9 +41,10 @@ export const paidVideoConfig = [
     },
     {
         id: 6,
-        title: 'Tutorial',
+        title: 'Střih Fashion Videa | After Effects',
         videoUrl: 1059480744,
         preview: 1059480744,
-        description: '',
+        description:
+            'V tomto podrobném tutoriálu si společně rozebereme postup při střihu fashion videa. Sdělíme tipy na kreativní proces a zapojení programů na vizuální efekty After Effects',
     },
 ]

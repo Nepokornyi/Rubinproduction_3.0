@@ -1,5 +1,13 @@
 export const freeVideoConfig = [
     {
+        id: 1059498916,
+        title: 'Kateřina Sýsová - Cesta fotografa: Od první fotky až po vlastní výstavu',
+        videoUrl: 1059498916,
+        preview: 1059498916,
+        description:
+            'Kateryna Sysova sdílí svou cestu od prvních fotografických pokusů až po vlastní výstavu. Jaké byly její začátky, co ji inspirovalo a jak se dostala tam, kde je dnes?',
+    },
+    {
         id: 1,
         title: 'Mark Bliss ACS - Jak se dostat do Kinematografie?',
         videoUrl: 1042304330,
@@ -25,23 +33,26 @@ export const freeVideoConfig = [
     },
     {
         id: 1059455885,
-        title: 'Fashion Reklama | Production Day',
+        title: 'Jak videotvůrci najít klienty | natáčeni reklamy pro Footshop',
         videoUrl: 1059455885,
         preview: 1059455885,
-        description: '',
+        description:
+            'V dnešním dílu našich týdenních vlogů se podíváme na kejsku jednoho aktuálního projektu našeho klienta - FootShop. Dozvíš se, jak probíhá proces komerčního natáčení, nahledneš do zákulisí tvorby virálních trendových videí a seznámíš se s profi oboru video/fototvorby.',
     },
     {
         id: 1059464512,
         title: 'Video Clip | Production Day',
         videoUrl: 1059464512,
         preview: 1059464512,
-        description: '',
+        description:
+            'V tomto dílu se společně podíváme, jak se nám podařilo klukovi z vesnice natočit klip americké kvality! Krok za krokem. Byla to obrovská výzva ale zároveň velká zkušenost.',
     },
     {
         id: 1059461939,
         title: 'FPV Real Estate | Production Day',
         videoUrl: 1059461939,
         preview: 1059461939,
-        description: '',
+        description:
+            'Jak nestandardní přístupy ve videotvorbě mohou přinést klientovi obrovskou výhodu a nový úhel pohledu na propagaci svých služeb či produktu.',
     },
 ]
