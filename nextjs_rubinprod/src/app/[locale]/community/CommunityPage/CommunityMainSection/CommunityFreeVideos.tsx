@@ -11,10 +11,10 @@ export const CommunityFreeVideos = () => {
     return (
         <>
             <FlexContainer
+                minHeight="min-h-auto"
                 direction="flex-col"
                 alignItems="items-center"
-                minHeight="min-h-auto"
-                className="relative pt-40 px-5 md:px-0"
+                className="relative pt-40"
             >
                 <Text
                     variant="h2"
@@ -25,7 +25,7 @@ export const CommunityFreeVideos = () => {
                 </Text>
                 <FlexContainer
                     direction="flex-col"
-                    className="relative mt-12 p-2.5 pt-5 md:p-5"
+                    className="relative mt-12 pt-5"
                     center
                 >
                     <CommunityVideosGrid
