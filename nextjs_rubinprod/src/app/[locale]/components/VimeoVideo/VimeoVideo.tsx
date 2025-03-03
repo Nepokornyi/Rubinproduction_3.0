@@ -60,11 +60,11 @@ export const VimeoVideo = ({
                 />
             </Box>
             <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 border border-white p-4 rounded-2xl bg-[rgba(28,28,28,0.5)] cursor-pointer hover:bg-[#1c1c1c] transition-colors"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 p-4 rounded-2xl border border-white bg-[rgba(28,28,28,0.5)]  hover:bg-[#1c1c1c] transition-colors cursor-pointer whitespace-nowrap"
                 onClick={handleLockClick}
             >
                 <FaLock className="mt-1.5 text-1xl transition-transform" />
-                <Text>Odemknout za 29Kč</Text>
+                <Text padding="px-0">Odemknout za 29Kč</Text>
             </div>
         </>
     )
