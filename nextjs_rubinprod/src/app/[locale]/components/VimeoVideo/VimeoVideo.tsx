@@ -1,9 +1,11 @@
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaLock } from 'react-icons/fa'
 import { useRouter } from 'next/navigation'
 import { subscribe } from '../../community/utils/subscriptionApi'
 import { Text } from '@/components/Text/Text'
+import { Box } from '@/components/Box/Box'
+import Image from 'next/image'
 
 type VimeoVideoProps = {
     id: number
@@ -17,6 +19,11 @@ export const VimeoVideo = ({
     isSubscribed = true,
 }: VimeoVideoProps) => {
     const router = useRouter()
+    const [thumbnail, setThumbnail] = useState('')
+
+    useEffect(() => {
+        if (!isSubscribed) setThumbnail(`https://vumbnail.com/${id}.jpg`)
+    }, [id, isSubscribed])
 
     const handleSubscribe = async () => {
         const locale = window.location.pathname.split('/')[1]
@@ -42,15 +49,24 @@ export const VimeoVideo = ({
     )
 
     const renderLockedVideo = () => (
-        <FlexContainer
-            width="w-auto"
-            gap="gap-2"
-            className="border border-white p-4 rounded-2xl cursor-pointer hover:bg-[#1c1c1c] transition-colors"
-            onClick={handleLockClick}
-        >
-            <FaLock className="mt-1.5 text-1xl transition-transform" />
-            <Text>Odemknout za 29Kč</Text>
-        </FlexContainer>
+        <>
+            <Box className="w-full h-full">
+                <Image
+                    src={thumbnail}
+                    alt="video preview"
+                    layout="fill"
+                    objectFit="cover"
+                    className="blur-sm"
+                />
+            </Box>
+            <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 border border-white p-4 rounded-2xl bg-[rgba(28,28,28,0.5)] cursor-pointer hover:bg-[#1c1c1c] transition-colors"
+                onClick={handleLockClick}
+            >
+                <FaLock className="mt-1.5 text-1xl transition-transform" />
+                <Text>Odemknout za 29Kč</Text>
+            </div>
+        </>
     )
 
     return (
@@ -58,7 +74,6 @@ export const VimeoVideo = ({
             <FlexContainer
                 width="w-full"
                 className={`bg-[#111111] relative aspect-video ${className}`}
-                center
             >
                 {isSubscribed ? renderVideo() : renderLockedVideo()}
             </FlexContainer>
