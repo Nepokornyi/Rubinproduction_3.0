@@ -88,7 +88,7 @@ export const LoginForm = () => {
             const result = await response.json()
 
             if (response.ok && result.redirectUrl) {
-                window.location.href = result.redirectUrl
+                window.open(result.redirectUrl, '_self')
             } else {
                 setSubmissionStatus('error')
                 setSubmissionMessage(
