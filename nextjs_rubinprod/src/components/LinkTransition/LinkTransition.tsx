@@ -1,7 +1,7 @@
 'use client'
-import { getSleep } from '@/helpers/getSleep'
-import { Link, useRouter } from '@/navigation'
-import React, { MouseEvent, ReactNode } from 'react'
+
+import { Link, usePathname, useRouter } from '@/navigation'
+import React, { MouseEvent, ReactNode, useEffect, useState } from 'react'
 
 type TransitionLinkProps = {
     children: ReactNode
@@ -15,18 +15,38 @@ export const LinkTransition = ({
     className,
 }: TransitionLinkProps) => {
     const router = useRouter()
+    const pathname = usePathname()
+    const [isNavigating, setIsNavigating] = useState(false)
 
-    const handleTransition = async (e: MouseEvent) => {
+    useEffect(() => {
+        if (document.body.classList.contains('page-transition')) {
+            document.body.classList.remove('page-transition')
+        }
+        setIsNavigating(false)
+    }, [pathname])
+
+    const handleTransition = (e: MouseEvent) => {
         e.preventDefault()
-        const body = document.querySelector('body')
 
-        body?.classList.add('page-transition')
-        await getSleep(500)
+        if (isNavigating) return
+        setIsNavigating(true)
 
-        router.push(href)
+        const [targetPath] = href.split('#')
+        const currentPath = pathname.replace(/\/$/, '')
+        const nextPath = targetPath?.replace(/\/$/, '') || ''
 
-        await getSleep(500)
-        body?.classList.remove('page-transition')
+        if (currentPath === nextPath || href.startsWith('#')) {
+            router.push(href)
+            setIsNavigating(false)
+            return
+        }
+
+        const body = document.body
+        body.classList.add('page-transition')
+
+        setTimeout(() => {
+            router.push(href)
+        }, 500)
     }
 
     return (
