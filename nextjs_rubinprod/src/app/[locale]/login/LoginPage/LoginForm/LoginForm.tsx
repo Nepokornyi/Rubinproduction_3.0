@@ -16,6 +16,7 @@ import { Text } from '@/components/Text/Text'
 import { FcGoogle } from 'react-icons/fc'
 
 import './style.css'
+import { LinkTransition } from '@/components/LinkTransition/LinkTransition'
 
 export const LoginForm = () => {
     const t = useTranslations('LoginPage')
@@ -154,7 +155,15 @@ export const LoginForm = () => {
                     </Box>
                 </FlexContainer>
                 <Text variant="disclaimer" padding="px-0">
-                    {t('terms_of_use')}
+                    Registrací souhlasím se{' '}
+                    <LinkTransition href="/terms" className="text-[#d91e37]">
+                        smluvními podmínkami{' '}
+                    </LinkTransition>
+                    a zásadami ochrany{' '}
+                    <LinkTransition href="privacy" className="text-[#d91e37]">
+                        osobních údajů{' '}
+                    </LinkTransition>
+                    Rubinproduction.
                 </Text>
             </FlexContainer>
         </>

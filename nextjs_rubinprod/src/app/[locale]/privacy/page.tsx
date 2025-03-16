@@ -15,7 +15,7 @@ export default function Privacy() {
                 className="pt-32 md:px-[15%]"
             >
                 <PrivacyTermsTitle
-                    title="Privacy Policy - Rubinproduction"
+                    title="Privacy Policy"
                     lastUpdated="Last Updated: 2 March 2025"
                 />
                 <PrivacyTermsParagraph title="1. Introduction">
