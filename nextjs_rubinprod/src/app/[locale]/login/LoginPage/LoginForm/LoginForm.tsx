@@ -17,6 +17,7 @@ import { FcGoogle } from 'react-icons/fc'
 
 import './style.css'
 import { LinkTransition } from '@/components/LinkTransition/LinkTransition'
+import { getSecureBrowserStatus } from '@/helpers/getSecureBrowserStatus'
 
 export const LoginForm = () => {
     const t = useTranslations('LoginPage')
@@ -24,6 +25,7 @@ export const LoginForm = () => {
         useState<LoginStatus>('idle')
     const [submissionMessage, setSubmissionMessage] = useState('')
     const { showDialog, handleOpenDialog, handleCloseDialog } = useDialogState()
+    const { isUnsupportedBrowser } = getSecureBrowserStatus()
 
     const {
         register,
@@ -89,7 +91,10 @@ export const LoginForm = () => {
             const result = await response.json()
 
             if (response.ok && result.redirectUrl) {
-                window.open(result.redirectUrl, '_self')
+                setSubmissionStatus('success')
+                isUnsupportedBrowser
+                    ? window.open(result.redirectUrl, '_blank')
+                    : window.open(result.redirectUrl, '_self')
             } else {
                 setSubmissionStatus('error')
                 setSubmissionMessage(
@@ -146,6 +151,13 @@ export const LoginForm = () => {
                 <Text fontWeight="font-semibold" padding="px-0">
                     {t('alternative_login')}
                 </Text>
+                {true && (
+                    <Text variant="disclaimer" padding="px-0">
+                        Používáš nepodporovaný prohlížeč, pro bezproblémové
+                        přihlášení otevři tuto stranku v běžném prohlížečí, jako
+                        je Chrome nebo Safari.
+                    </Text>
+                )}
                 <FlexContainer gap="gap-2" alignItems="items-center">
                     <Box
                         className="border border-white p-2 rounded-sm hover:bg-[rgba(217,30,55,0.3)] cursor-pointer duration-500"
