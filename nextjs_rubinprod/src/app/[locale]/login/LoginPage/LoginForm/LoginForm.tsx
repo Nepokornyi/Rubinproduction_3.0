@@ -151,7 +151,7 @@ export const LoginForm = () => {
                 <Text fontWeight="font-semibold" padding="px-0">
                     {t('alternative_login')}
                 </Text>
-                {true && (
+                {isUnsupportedBrowser && (
                     <Text variant="disclaimer" padding="px-0">
                         Používáš nepodporovaný prohlížeč, pro bezproblémové
                         přihlášení otevři tuto stranku v běžném prohlížečí, jako
