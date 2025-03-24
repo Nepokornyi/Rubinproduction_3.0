@@ -1,54 +1,61 @@
 import { LinkTransition } from '@/components/LinkTransition/LinkTransition'
 import { Text } from '@/components/Text/Text'
-import { usePathname, useRouter } from '@/navigation'
 import { useTranslations } from 'next-intl'
-import { useParams } from 'next/navigation'
 import React from 'react'
+import { LanguageSelection } from './MobileMenu/LanguageSelection'
+import { CommunityHandlersProp } from '../handlers/communityHandlers'
+import { HeaderType } from './type'
+
+type DesktopMenuProps = {
+    config?: HeaderType[]
+    hasLanguageSelection: boolean
+    handlers?: CommunityHandlersProp
+}
 
 const linkStyling =
     'cursor-pointer relative duration-300 hover:text-[#d91e37] hover:scale-105'
 
-export const DesktopMenu = ({ isCase = false }: { isCase?: boolean }) => {
+export const DesktopMenu = ({
+    config,
+    hasLanguageSelection,
+    handlers,
+}: DesktopMenuProps) => {
     const t = useTranslations('Header.menu')
-    const router = useRouter()
-    const pathname = usePathname()
-    const params = useParams()
-    const languages = ['en', 'de', 'cz']
 
-    const otherLanguages = languages.filter((lang) => lang !== params.locale)
-
-    const handleLanguageChange = (lang: string) => {
-        const nextLocale = lang
-        //@ts-ignore
-        router.replace({ pathname, params }, { locale: nextLocale })
-    }
+    if (!config) return null
 
     return (
         <nav className="hidden md:block">
             <ul className="list-none flex gap-4">
-                {isCase && (
-                    <LinkTransition href="/" className={linkStyling}>
-                        <Text variant="nav">{t('home')}</Text>
-                    </LinkTransition>
+                {config.map((item) => {
+                    const handleClick =
+                        handlers && item.onClick
+                            ? handlers[item.onClick]
+                            : undefined
+                    return (
+                        <li key={item.numeration}>
+                            {item.href ? (
+                                <LinkTransition
+                                    href={item.href}
+                                    className={linkStyling}
+                                >
+                                    <Text variant="nav">{t(item.label)}</Text>
+                                </LinkTransition>
+                            ) : (
+                                <Text
+                                    variant="nav"
+                                    onClick={handleClick}
+                                    className={linkStyling}
+                                >
+                                    {t(item.label)}
+                                </Text>
+                            )}
+                        </li>
+                    )
+                })}
+                {hasLanguageSelection && (
+                    <LanguageSelection variant="desktop" />
                 )}
-                <LinkTransition href="#about" className={linkStyling}>
-                    <Text variant="nav">{t('about')}</Text>
-                </LinkTransition>
-                <LinkTransition href="/#portfolio" className={linkStyling}>
-                    <Text variant="nav">{t('portfolio')}</Text>
-                </LinkTransition>
-                <LinkTransition href="/community" className={linkStyling}>
-                    <Text variant="nav">{t('community')}</Text>
-                </LinkTransition>
-                {otherLanguages.map((lang) => (
-                    <li
-                        key={lang}
-                        onClick={() => handleLanguageChange(lang)}
-                        className={linkStyling}
-                    >
-                        <Text variant="nav">{lang}</Text>
-                    </li>
-                ))}
             </ul>
         </nav>
     )
