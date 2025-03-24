@@ -9,11 +9,12 @@ import { GameChangerFeedbackSection } from './GameChangerPage/GameChangerFeedbac
 import { GameChangerShowReelSectionBottom } from './GameChangerPage/GameChangerShowReelSection/GameChangerShowReelSectionBottom'
 import { GameChangerMarketingSection } from './GameChangerPage/GameChangerMarketingSection/GameChangerMarketingSection'
 import { GameChangerMotionDesignSection } from './GameChangerPage/GameChangerMotionDesignSection/GameChangerMotionDesignSection'
+import { caseHeaderConfig } from '@/components/Header/components/const'
 
 export default function GameChanger() {
     return (
         <div className="animation-container">
-            <Header isCase />
+            <Header isWhiteLogo config={caseHeaderConfig} />
             <GameChangerMainSection />
             <GameChangerAboutSection />
             <GameChangerShowReelSectionTop />

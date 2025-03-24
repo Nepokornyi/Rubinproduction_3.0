@@ -6,15 +6,23 @@ import {
     SubscriptionProvider,
     useSubscriptionContext,
 } from './context/SubscriptionContext'
-import { CommunityHeader } from '@/components/Header/CommunityHeader'
+import { Header } from '@/components/Header/Header'
+import { useCommunityHandlers } from '@/components/Header/handlers/communityHandlers'
+import { getCommunityHeaderConfig } from '@/components/Header/components/const'
 
 export default function Community() {
     const { isSubscribed } = useSubscriptionContext()
+    const config = getCommunityHeaderConfig(isSubscribed)
+    const handlers = useCommunityHandlers()
 
     return (
         <div className="animation-container">
             <SubscriptionProvider>
-                <CommunityHeader isSubscribed={isSubscribed} />
+                <Header
+                    config={config}
+                    hasLanguageSelection={false}
+                    handlers={handlers}
+                />
                 <CommunityFreeVideos />
                 <CommunityPaidVideos />
             </SubscriptionProvider>

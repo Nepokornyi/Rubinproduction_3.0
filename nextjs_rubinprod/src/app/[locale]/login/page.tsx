@@ -6,7 +6,7 @@ import { Header } from '@/components/Header/Header'
 export default function Authentication() {
     return (
         <div className="animation-container">
-            <Header />
+            <Header hasLanguageSelection={false} />
             <LoginSection />
         </div>
     )

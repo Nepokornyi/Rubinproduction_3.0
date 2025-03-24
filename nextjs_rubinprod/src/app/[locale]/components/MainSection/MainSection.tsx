@@ -11,6 +11,7 @@ import { RevealBlock } from '@/components/Reveal/RevealBlock'
 import { LinkTransition } from '@/components/LinkTransition/LinkTransition'
 
 import showreel from '@/assets/img/showreel.jpg'
+import { defaultHeaderConfig } from '@/components/Header/components/const'
 
 export const MainSection = () => {
     const t = useTranslations('MainPage')
@@ -45,7 +46,7 @@ export const MainSection = () => {
                 alt="showreel"
                 className="absolute top-0 left-0 w-screen h-screen object-cover pointer-events-none"
             />
-            <Header />
+            <Header config={defaultHeaderConfig} />
 
             <FlexContainer
                 direction="flex-col"
