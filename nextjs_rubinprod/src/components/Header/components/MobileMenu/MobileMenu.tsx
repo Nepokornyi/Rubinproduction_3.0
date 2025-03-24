@@ -11,36 +11,21 @@ import { Link } from '@/navigation'
 import { LanguageSelection } from './LanguageSelection'
 import { useTranslations } from 'next-intl'
 import { OverlaySocials } from './Socials'
+import { CommunityHandlersProp } from '../../handlers/communityHandlers'
+import { HeaderType } from '../type'
 
-export const MobileMenu = ({ isCase = false }: { isCase?: boolean }) => {
+type MobileMenuProps = {
+    config?: HeaderType[]
+    hasLanguageSelection: boolean
+    handlers?: CommunityHandlersProp
+}
+
+export const MobileMenu = ({
+    config,
+    hasLanguageSelection,
+    handlers,
+}: MobileMenuProps) => {
     const t = useTranslations('Header.menu')
-
-    const menuItems = (numerationBase: number) => [
-        {
-            label: t('about'),
-            href: '#about',
-            position: '-left-6',
-            numeration: numerationBase,
-        },
-        {
-            label: t('portfolio'),
-            href: '/#portfolio',
-            position: '-right-6',
-            numeration: numerationBase + 1,
-        },
-        {
-            label: t('contact'),
-            href: '#contact',
-            position: '-left-6',
-            numeration: numerationBase + 2,
-        },
-        {
-            label: t('community'),
-            href: '/community',
-            position: '-right-6',
-            numeration: numerationBase + 3,
-        },
-    ]
 
     const { showDialog, toggleDialog, handleCloseDialog } = useDialogState()
 
@@ -61,15 +46,11 @@ export const MobileMenu = ({ isCase = false }: { isCase?: boolean }) => {
         }
     }, [handleCloseDialog])
 
-    const renderButton = (
-        <Hamburger open={showDialog} toggleOpen={toggleDialog} />
-    )
-
-    const numerationBase = isCase ? 2 : 1
+    if (!config) return null
 
     return (
         <>
-            {renderButton}
+            <Hamburger open={showDialog} toggleOpen={toggleDialog} />
             <Overlay open={showDialog} isPortal={false}>
                 <motion.div
                     variants={containerVariants}
@@ -77,61 +58,74 @@ export const MobileMenu = ({ isCase = false }: { isCase?: boolean }) => {
                     animate="open"
                     exit="initial"
                 >
-                    <motion.ul>
-                        {isCase && (
-                            <Box className="overflow-hidden text-center py-2 z-20">
-                                <motion.li variants={linkVariants}>
-                                    <Link
-                                        href="/"
-                                        className="no-underline relative"
-                                        onClick={handleCloseDialog}
-                                    >
-                                        <Text
-                                            variant="h2"
-                                            textTransform="uppercase"
-                                        >
-                                            {t('home')}
-                                        </Text>
-                                        <Text className="absolute bottom-0 -right-6">
-                                            {'1'.padStart(2, '0')}
-                                        </Text>
-                                    </Link>
-                                </motion.li>
-                            </Box>
-                        )}
+                    {config && (
+                        <motion.ul>
+                            {config.map((item) => {
+                                const handleClick =
+                                    handlers && item.onClick
+                                        ? handlers[item.onClick]
+                                        : undefined
 
-                        {menuItems(numerationBase).map((item) => (
-                            <Box
-                                key={item.label}
-                                className="overflow-hidden text-center py-2 z-20"
-                            >
-                                <motion.li variants={linkVariants}>
-                                    <Link
-                                        href={item.href}
-                                        className="no-underline relative"
-                                        onClick={handleCloseDialog}
+                                return (
+                                    <Box
+                                        key={item.numeration}
+                                        className="overflow-hidden text-center py-2 z-20"
                                     >
-                                        <Text
-                                            variant="h2"
-                                            textTransform="uppercase"
-                                        >
-                                            {item.label}
-                                        </Text>
-                                        <Text
-                                            className={`absolute bottom-0 ${item.position}`}
-                                        >
-                                            {item.numeration
-                                                .toString()
-                                                .padStart(2, '0')}
-                                        </Text>
-                                    </Link>
-                                </motion.li>
-                            </Box>
-                        ))}
-                    </motion.ul>
-                    <Box className="overflow-hidden text-center py-2">
-                        <LanguageSelection handleClick={handleCloseDialog} />
-                    </Box>
+                                        <motion.li variants={linkVariants}>
+                                            {item.href ? (
+                                                <Link
+                                                    href={item.href}
+                                                    className="no-underline relative"
+                                                    onClick={handleCloseDialog}
+                                                >
+                                                    <Text
+                                                        variant="h2"
+                                                        textTransform="uppercase"
+                                                    >
+                                                        {t(item.label)}
+                                                    </Text>
+                                                    <Text
+                                                        className={`absolute bottom-0 ${item.position}`}
+                                                    >
+                                                        {item.numeration
+                                                            .toString()
+                                                            .padStart(2, '0')}
+                                                    </Text>
+                                                </Link>
+                                            ) : (
+                                                <Box
+                                                    className="cursor-pointer inline-block"
+                                                    onClick={handleClick}
+                                                >
+                                                    <Text
+                                                        variant="h2"
+                                                        textTransform="uppercase"
+                                                    >
+                                                        {t(item.label)}
+                                                    </Text>
+                                                    <Text
+                                                        className={`absolute bottom-0 ${item.position}`}
+                                                    >
+                                                        {item.numeration
+                                                            .toString()
+                                                            .padStart(2, '0')}
+                                                    </Text>
+                                                </Box>
+                                            )}
+                                        </motion.li>
+                                    </Box>
+                                )
+                            })}
+                        </motion.ul>
+                    )}
+                    {hasLanguageSelection && (
+                        <Box className="overflow-hidden text-center py-2">
+                            <LanguageSelection
+                                variant="mobile"
+                                handleClick={handleCloseDialog}
+                            />
+                        </Box>
+                    )}
                     <div className="absolute bottom-12 left-0 w-full overflow-hidden text-center">
                         <OverlaySocials variants={linkVariants} />
                     </div>

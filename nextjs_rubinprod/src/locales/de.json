@@ -6,6 +6,9 @@
             "portfolio": "Portfolio",
             "contact": "Kontakt",
             "community": "Community",
+            "membership": "Členství",
+            "subscription": "Předplatné",
+            "logout": "Odhlásit se",
             "languageSelection1": "en",
             "languageSelection2": "cz"
         }

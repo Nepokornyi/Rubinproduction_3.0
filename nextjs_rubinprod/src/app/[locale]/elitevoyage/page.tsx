@@ -11,11 +11,12 @@ import { EliteVoyageTravelSection } from './EliteVoyagePage/EliteVoyageTravelSec
 import { EliteVoyageRecruitmentSection } from './EliteVoyagePage/EliteVoyageRecruitmentSection/EliteVoyageRecruitmentSection'
 import { EliteVoyageEmployeeSection } from './EliteVoyagePage/EliteVoyageEmployeeSection/EliteVoyageEmployeeSection'
 import { EliteVoyageFeedbackSection } from './EliteVoyagePage/EliteVoyageFeedbackSection/EliteVoyageFeedbackSection'
+import { caseHeaderConfig } from '@/components/Header/components/const'
 
 export default function EliteVoyage() {
     return (
         <div className="animation-container">
-            <Header isCase />
+            <Header isWhiteLogo config={caseHeaderConfig} />
             <EliteVoyageMainSection />
             <EliteVoyageAboutSection />
             <EliteVoyageShowReelTopSection />

@@ -4,11 +4,12 @@ import { Header } from '@/components/Header/Header'
 import React from 'react'
 import { PrivacyTermsTitle } from '../components/PrivacyTerms/PrivacyTermsTitle'
 import { PrivacyTermsParagraph } from '../components/PrivacyTerms/PrivacyTermsParagraph'
+import { PrivacyTermsHeaderConfig } from '@/components/Header/components/const'
 
 export default function Privacy() {
     return (
         <>
-            <Header />
+            <Header config={PrivacyTermsHeaderConfig} />
             <FlexContainer
                 direction="flex-col"
                 gap="gap-10"

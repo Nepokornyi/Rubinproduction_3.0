@@ -10,11 +10,12 @@ import { ScootyClipSection } from './ScootyPage/ScootyClipSection/ScootyClipSect
 import { ScootySolutionSection } from './ScootyPage/ScootySolutionSection/ScootySolutionSection'
 import { ScootyFeedbackSection } from './ScootyPage/ScootyFeedbackSection/ScootyFeedbackSection'
 import { ContactSection } from '../components/ContactSection/ContactSection'
+import { caseHeaderConfig } from '@/components/Header/components/const'
 
 export default function Scooty() {
     return (
         <div className="animation-container">
-            <Header isCase />
+            <Header isWhiteLogo config={caseHeaderConfig} />
             <ScootyMainSection />
             <ScootyAboutSection />
             <ScootyShowReelSection />
