@@ -10,11 +10,25 @@ import { useScrollHeader } from '@/hooks/useScrollHeader'
 import { motion } from 'framer-motion'
 import animation from './components/config/configLogo'
 import { LinkTransition } from '../LinkTransition/LinkTransition'
+import { CommunityHandlersProp } from './handlers/communityHandlers'
+import { HeaderType } from './components/type'
 
-export const Header = ({ isCase = false }: { isCase?: boolean }) => {
+type HeaderProps = {
+    isWhiteLogo?: boolean
+    config?: HeaderType[]
+    hasLanguageSelection?: boolean
+    handlers?: CommunityHandlersProp
+}
+
+export const Header = ({
+    isWhiteLogo = false,
+    config,
+    hasLanguageSelection = true,
+    handlers,
+}: HeaderProps) => {
     const headerStyle = useScrollHeader()
 
-    const logo = isCase ? logoWhite : logoRed
+    const logo = isWhiteLogo ? logoWhite : logoRed
 
     return (
         <header
@@ -34,8 +48,16 @@ export const Header = ({ isCase = false }: { isCase?: boolean }) => {
                     />
                 </LinkTransition>
             </motion.div>
-            <DesktopMenu isCase={isCase} />
-            <MobileMenu isCase={isCase} />
+            <DesktopMenu
+                config={config}
+                hasLanguageSelection={hasLanguageSelection}
+                handlers={handlers}
+            />
+            <MobileMenu
+                config={config}
+                hasLanguageSelection={hasLanguageSelection}
+                handlers={handlers}
+            />
         </header>
     )
 }
