@@ -43,7 +43,7 @@ export const VimeoVideo = ({
     const renderVideo = () => (
         <iframe
             src={`https://player.vimeo.com/video/${id}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+            allow="fullscreen;"
             className={`w-full h-full outline-none ${className}`}
         />
     )
