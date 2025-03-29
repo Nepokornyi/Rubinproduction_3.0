@@ -1,14 +1,11 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
-import createIntlMiddleware from 'next-intl/middleware'
-import { locales, defaultLocale } from './intl.config'
+import createMiddleware from 'next-intl/middleware'
+import { locales } from './intl.config'
 import { getCurrentLocale } from './helpers/getCurrentLocale'
+import { routing } from './i18n/routing'
 
-const handleI18nRouting = createIntlMiddleware({
-    locales,
-    defaultLocale,
-    localePrefix: 'always',
-})
+const handleI18nRouting = createMiddleware(routing)
 
 export async function middleware(request: NextRequest) {
     let response = handleI18nRouting(request)

@@ -1,4 +1,4 @@
-import { NextIntlClientProvider } from 'next-intl'
+import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { getMessages } from 'next-intl/server'
@@ -12,6 +12,8 @@ import {
     GoogleAnalyticsBody,
     GoogleAnalyticsHead,
 } from './integrations/GoogleAnalytics'
+import { routing } from '@/i18n/routing'
+import { notFound } from 'next/navigation'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -26,15 +28,20 @@ export default async function LocaleLayout({
     params,
 }: Readonly<{
     children: React.ReactNode
-    params: { locale: string }
+    params: Promise<{ locale: string }>
 }>) {
+    const { locale } = await params
+    if (!hasLocale(routing.locales, locale)) {
+        notFound()
+    }
+
     const messages = await getMessages()
 
     const GTM_ID = process.env.GTM_ID
     const FB_PIXEL_ID = process.env.FB_PIXEL_ID
 
     return (
-        <html lang={params.locale}>
+        <html lang={locale}>
             <head>
                 <GoogleAnalyticsHead gtmId={GTM_ID} />
                 <FacebookPixelHead pixelId={FB_PIXEL_ID} />
