@@ -51,13 +51,15 @@ export const VimeoVideo = ({
     const renderLockedVideo = () => (
         <>
             <Box className="w-full h-full">
-                <Image
-                    src={thumbnail}
-                    alt="video preview"
-                    layout="fill"
-                    objectFit="cover"
-                    className="blur-sm"
-                />
+                {thumbnail && (
+                    <Image
+                        src={thumbnail}
+                        alt="video preview"
+                        layout="fill"
+                        objectFit="cover"
+                        className="blur-sm"
+                    />
+                )}
             </Box>
             <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 p-4 rounded-2xl border border-white bg-[rgba(28,28,28,0.5)]  hover:bg-[#1c1c1c] transition-colors cursor-pointer whitespace-nowrap"
