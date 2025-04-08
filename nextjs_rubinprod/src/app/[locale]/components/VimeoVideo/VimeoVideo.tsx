@@ -9,21 +9,18 @@ import Image from 'next/image'
 
 type VimeoVideoProps = {
     id: number
-    className?: string
     isSubscribed?: boolean
+    thumbnail?: string
+    className?: string
 }
 
 export const VimeoVideo = ({
     id,
+    isSubscribed = false,
+    thumbnail,
     className = 'rounded-2xl',
-    isSubscribed = true,
 }: VimeoVideoProps) => {
     const router = useRouter()
-    const [thumbnail, setThumbnail] = useState('')
-
-    useEffect(() => {
-        if (!isSubscribed) setThumbnail(`https://vumbnail.com/${id}.jpg`)
-    }, [id, isSubscribed])
 
     const handleSubscribe = async () => {
         const locale = window.location.pathname.split('/')[1]
@@ -48,28 +45,26 @@ export const VimeoVideo = ({
         />
     )
 
-    const renderLockedVideo = () => (
-        <>
-            <Box className="w-full h-full">
-                {thumbnail && (
+    const renderLockedVideo = () =>
+        thumbnail ? (
+            <>
+                <Box className="w-full h-full">
                     <Image
                         src={thumbnail}
                         alt="video preview"
                         layout="fill"
-                        objectFit="cover"
                         className="blur-sm"
                     />
-                )}
-            </Box>
-            <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 p-4 rounded-2xl border border-white bg-[rgba(28,28,28,0.5)]  hover:bg-[#1c1c1c] transition-colors cursor-pointer whitespace-nowrap"
-                onClick={handleLockClick}
-            >
-                <FaLock className="mt-1.5 text-1xl transition-transform" />
-                <Text padding="px-0">Odemknout za 29Kč</Text>
-            </div>
-        </>
-    )
+                </Box>
+                <div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 p-4 rounded-2xl border border-white bg-[rgba(28,28,28,0.5)]  hover:bg-[#1c1c1c] transition-colors cursor-pointer whitespace-nowrap"
+                    onClick={handleLockClick}
+                >
+                    <FaLock className="mt-1.5 text-1xl transition-transform" />
+                    <Text padding="px-0">Odemknout za 29Kč</Text>
+                </div>
+            </>
+        ) : null
 
     return (
         <>

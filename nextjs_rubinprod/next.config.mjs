@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin()
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['vumbnail.com'],
+        domains: ['i.vimeocdn.com'],
     },
 }
 
