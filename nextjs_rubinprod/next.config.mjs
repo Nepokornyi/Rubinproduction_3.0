@@ -5,7 +5,15 @@ const withNextIntl = createNextIntlPlugin()
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['i.vimeocdn.com'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'i.vimeocdn.com',
+                port: '',
+                pathname: '/video/**',
+                search: '',
+            },
+        ],
     },
 }
 
