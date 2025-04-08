@@ -30,25 +30,32 @@ export async function POST(request: NextRequest) {
 
     const { data: profile, error } = await supabase
         .from('profiles')
-        .select('subscription_id')
+        .select('subscription_id, subscription_revocation_date')
         .eq('id', user.id)
         .single()
 
-    if (error) {
+    if (error || !profile) {
         return NextResponse.json({ error }, { status: 403 })
     }
 
     let isSubscribed = false
-    let availableSubscription = profile.subscription_id
 
-    if (availableSubscription) {
+    if (profile.subscription_id) {
         try {
             const subscription = await stripe.subscriptions.retrieve(
-                availableSubscription
+                profile.subscription_id
             )
             isSubscribed = subscription.status === 'active'
         } catch (error) {
             console.error('[Stripe Error]: ', error)
+        }
+    }
+
+    if (!isSubscribed && profile.subscription_revocation_date) {
+        const now = new Date()
+        const revokeDate = new Date(profile.subscription_revocation_date)
+        if (revokeDate > now) {
+            isSubscribed = true
         }
     }
 
