@@ -3,29 +3,25 @@ import { Text } from '@/components/Text/Text'
 import React, { useEffect, useState } from 'react'
 import { CommunityVideosGrid } from '../CommunityVideos/CommunityVideosGrid'
 import { useTranslations } from 'next-intl'
+import { paidVideoConfig } from '@/config/paidVideos'
 
 export const CommunityPaidVideos = () => {
     const t = useTranslations('CommunityPage.other')
-    const [videos, setVideos] = useState<[]>([])
+    const [videoConfig, setVideoConfig] = useState<[]>([])
 
     useEffect(() => {
         const fetchVideos = async () => {
-            try {
-                const response = await fetch('/api/videos', {
-                    method: 'GET',
-                })
+            const slugs = Object.keys(paidVideoConfig)
+            const res = await fetch('/api/paid-videos', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application-json' },
+                body: JSON.stringify({ slugs }),
+            })
 
-                if (!response.ok) {
-                    throw new Error('Failed to fetch videos')
-                }
-
-                const { videos } = await response.json()
-                setVideos(videos)
-            } catch (error) {
-                console.error(error)
-                setVideos([])
-            }
+            const data = await res.json()
+            setVideoConfig(data)
         }
+
         fetchVideos()
     }, [])
 
@@ -44,7 +40,7 @@ export const CommunityPaidVideos = () => {
             >
                 {t('title')}
             </Text>
-            <CommunityVideosGrid content={videos} variant="paid" />
+            <CommunityVideosGrid content={videoConfig} variant="paid" />
         </FlexContainer>
     )
 }

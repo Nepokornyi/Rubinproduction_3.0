@@ -19,7 +19,7 @@ export const CommunityVideosGrid = ({
 
     return (
         <Box className="w-full grid grid-cols-1 px-5 gap-5 lg:grid-cols-2 auto-rows-auto">
-            {content.map(({ title, description, videoUrl }) => (
+            {content.map(({ title, description, videoUrl, thumbnail }) => (
                 <FlexContainer
                     key={title}
                     direction="flex-col"
@@ -28,6 +28,7 @@ export const CommunityVideosGrid = ({
                     <Box className="w-full">
                         <VimeoVideo
                             id={videoUrl}
+                            thumbnail={thumbnail}
                             isSubscribed={
                                 variant === 'free' ? true : isSubscribed
                             }
