@@ -1,51 +1,139 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Video Atelier Platform
 
-## Getting Started
+A professional platform for a creative video making atelier, featuring a public-facing landing page and a subscription-based community area.
 
-First, run the development server:
+## 🎬 Project Overview
+
+This application consists of two main components:
+
+-   **Landing Page**: A business card showcasing services, portfolio, and contact information
+-   **Community Page**: A subscription-based platform where users can access free and premium content
+
+## 🛠️ Technology Stack
+
+-   **Framework**: Next.js 15
+-   **Language**: TypeScript
+-   **Styling**: TailwindCSS
+-   **Authentication**: Supabase
+-   **Payments**: Stripe
+-   **Animation**: Framer Motion, GSAP
+-   **Form Handling**: React Hook Form with Zod validation, Mailchimp
+-   **Internationalization**: i18next, next-intl
+
+## 📋 Prerequisites
+
+-   Node.js 18+
+-   Yarn package manager
+-   Supabase account
+-   Stripe account
+
+## 🚀 Getting Started
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/your-username/your-repo-name.git
+
+# Navigate to project directory
+cd your-repo-name
+
+# Install dependencies
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Create a `.env.local` file in the root directory with the following variables:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+# Base configuration
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
 
-## Learn More
+# Supabase configuration
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 
-To learn more about Next.js, take a look at the following resources:
+# Stripe configuration
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_PRICE_ID=your_stripe_price_id
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#Mailchimp configuration
+MAILCHIMP_KEY=your_mailchimp_key
+MAILCHIMP_SERVER_PREFIX=your_mailchimp_server_prefix
+MAILCHIMP_AUDIENCE_ID=your_mailchimp_audience_id
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Set up your Supabase database tables (see Database Schema section)
+3. Configure Stripe products and prices for subscription tiers
 
-## Deploy on Vercel
+### Running the Development Server
 
-install vercel CLI
+```bash
+# Start the development server
+yarn dev
+```
 
--   yarn add vercel
--   run $ vercel
+### Building for Production
 
-### Login Setup
+```bash
+# Build the application
+yarn build
 
-Google OAuth Credentials:
+# Start the production server
+yarn start
+```
 
-1. Go to the Google Cloud Console
-2. Create a new project or select an existing one
-3. Go to the APIs & Services > Credentials section
-4. Create Credentials > OAuth 2.0 Client IDs
+App is deployed on Vercel, to deploy app using CLI:
 
--   Application Type: Web application
--   Authorized redirect URIs: Add http://localhost:3000/api/auth/callback/google (replace with your production domain later)
+```bash
+# Install Vercel CLI
+yarn add -g vercel
 
-5. Copy the Client ID and Client Secret into your .env file
+# run to link the project (First Time setup)
+vercel
+```
+
+## 🧪 Code Quality Tools
+
+This project uses several tools to ensure code quality:
+
+-   **TypeScript**: Static type checking (`yarn check:type`)
+-   **ESLint**: Code linting (`yarn lint`)
+-   **Madge**: Circular dependency detection (`yarn check:circular-dependencies`)
+-   **Knip**: Dead code detection (`yarn check:dead-code`)
+-   **Security Audits**: Dependency security checks (`yarn check:security`)
+
+Run all checks with:
+
+```bash
+yarn check:code
+```
+
+## 🔒 Authentication
+
+Authentication is handled using Supabase. Users can:
+
+-   Sign up/login with email/google
+-   Access community content based on subscription level
+
+## 💰 Subscription System
+
+The platform uses Stripe for subscription management:
+
+-   Free tier: Access to basic community content
+-   Premium tier: Access to exclusive content and features
+
+## 🌐 Internationalization
+
+The application supports multiple languages using i18next and next-intl.
+
+## 🔄 Deployment
+
+Instructions for deploying to your preferred hosting platform:
+
+1. Set up environment variables on your hosting platform
+2. Deploy using the platform's recommended method
+3. Configure Stripe webhooks to point to your production URL
