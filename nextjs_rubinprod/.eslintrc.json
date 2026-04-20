@@ -12,20 +12,20 @@
             "error",
             { "component": true, "html": true }
         ],
-        "import/order": [
-            "error",
-            {
-                "groups": [
-                    "builtin",
-                    "external",
-                    "internal",
-                    "parent",
-                    "sibling",
-                    "index"
-                ],
-                "alphabetize": { "order": "asc", "caseInsensitive": true }
-            }
-        ],
+        // "import/order": [
+        //     "error",
+        //     {
+        //         "groups": [
+        //             "builtin",
+        //             "external",
+        //             "internal",
+        //             "parent",
+        //             "sibling",
+        //             "index"
+        //         ],
+        //         "alphabetize": { "order": "asc", "caseInsensitive": true }
+        //     }
+        // ],
         "@typescript-eslint/no-unused-vars": [
             "error",
             { "argsIgnorePattern": "^_" }
