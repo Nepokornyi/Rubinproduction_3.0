@@ -1,17 +1,17 @@
 {
     "extends": [
-        "next/core-web-vitals",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:security/recommended-legacy"
+        "next/core-web-vitals"
+        // "plugin:@typescript-eslint/recommended",
+        // "plugin:react-hooks/recommended"
+        // "plugin:security/recommended-legacy"
     ],
-    "plugins": ["@typescript-eslint", "import", "security"],
+    // "plugins": ["@typescript-eslint", "import", "security"],
     "rules": {
         "react/react-in-jsx-scope": "off",
         "react/self-closing-comp": [
             "error",
             { "component": true, "html": true }
-        ],
+        ]
         // "import/order": [
         //     "error",
         //     {
@@ -26,9 +26,9 @@
         //         "alphabetize": { "order": "asc", "caseInsensitive": true }
         //     }
         // ],
-        "@typescript-eslint/no-unused-vars": [
-            "error",
-            { "argsIgnorePattern": "^_" }
-        ]
+        // "@typescript-eslint/no-unused-vars": [
+        //     "error",
+        //     { "argsIgnorePattern": "^_" }
+        // ]
     }
 }

@@ -66,13 +66,13 @@ export const LoginForm = () => {
 
             setSubmissionStatus('success')
             setSubmissionMessage(
-                'Zkontroluj si prosím svüj mail. Poslali jsme ti odkaz.'
+                'Zkontroluj si prosím svüj mail. Poslali jsme ti odkaz.',
             )
             handleOpenDialog()
             reset()
-        } catch (error: any) {
+        } catch (error: unknown) {
             setSubmissionStatus('error')
-            setSubmissionMessage(error.message)
+            setSubmissionMessage((error as Error).message)
             handleOpenDialog()
         }
     }
@@ -98,13 +98,15 @@ export const LoginForm = () => {
             } else {
                 setSubmissionStatus('error')
                 setSubmissionMessage(
-                    result.message || 'Something went wrong. Please try again.'
+                    result.message || 'Something went wrong. Please try again.',
                 )
                 handleOpenDialog()
             }
-        } catch (err: any) {
+        } catch (err: unknown) {
             setSubmissionStatus('error')
-            setSubmissionMessage(err.message || 'Unexpected error occurred.')
+            setSubmissionMessage(
+                (err as Error).message || 'Unexpected error occurred.',
+            )
             handleOpenDialog()
         }
     }
