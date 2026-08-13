@@ -25,6 +25,7 @@ export const SubscriptionProvider = ({
                 const data = await response.json()
                 setIsSubscribed(data.isSubscribed || false)
             } catch (error) {
+                console.log(error)
                 setIsSubscribed(false)
             }
         }

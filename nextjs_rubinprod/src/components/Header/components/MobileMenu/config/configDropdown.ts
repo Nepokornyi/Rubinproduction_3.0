@@ -1,3 +1,5 @@
+import { Variants } from 'framer-motion'
+
 const containerVariants = {
     initial: {
         transition: {
@@ -14,7 +16,7 @@ const containerVariants = {
     },
 }
 
-const linkVariants = {
+const linkVariants: Variants = {
     initial: {
         y: '30vh',
         transition: {

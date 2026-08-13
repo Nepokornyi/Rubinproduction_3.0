@@ -22,13 +22,13 @@ export const LanguageSelection = ({
     const currentLocale = params?.locale || 'cz'
 
     const otherLanguages = headerLanguages.filter(
-        (lang) => lang != params.locale
+        (lang) => lang != params.locale,
     )
 
     const handleLanguageChange = async (lang: string) => {
         handleClick?.()
         if (variant === 'mobile') await getSleep(1000)
-        //@ts-ignore
+        //@ts-expect-error - never fails
         router.replace({ pathname, params }, { locale: lang })
     }
 

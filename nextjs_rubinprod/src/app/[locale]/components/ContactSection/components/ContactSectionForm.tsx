@@ -64,6 +64,7 @@ export const ContactSectionForm = ({
                 handleOpenDialog()
             }
         } catch (error) {
+            console.log(error)
             setSubmissionStatus('error')
             setSubmissionMessage('Something went wrong')
             handleOpenDialog()

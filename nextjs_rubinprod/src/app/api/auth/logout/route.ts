@@ -1,7 +1,7 @@
 import { createClient } from '@/utils/server'
 import { NextRequest, NextResponse } from 'next/server'
 
-export async function POST(request: NextRequest) {
+export async function POST(_request: NextRequest) {
     const supabase = await createClient()
 
     try {
@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
         if (error) {
             return NextResponse.json(
                 { error: 'Failed to log out' },
-                { status: 500 }
+                { status: 500 },
             )
         }
 
@@ -21,9 +21,10 @@ export async function POST(request: NextRequest) {
 
         return response
     } catch (error) {
+        console.log(error)
         return NextResponse.json(
             { error: 'Unexpected error occurred' },
-            { status: 500 }
+            { status: 500 },
         )
     }
 }

@@ -1,30 +1,15 @@
 import { forwardRef, InputHTMLAttributes } from 'react'
 import { Text } from '../Text/Text'
-import {
-    ErrorVariants,
-    ErrorVariantsList,
-    InputVariants,
-    InputVariantsList,
-} from './types'
+import { ErrorVariants, InputVariants, InputVariantsList } from './types'
 import { FlexContainer } from '../FlexContainer/FlexContainer'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     error?: string
     color?: InputVariantsList
-    errorColor?: ErrorVariantsList
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-    (
-        {
-            error,
-            color = 'default',
-            errorColor = 'default',
-            className,
-            ...props
-        },
-        ref
-    ) => {
+    ({ error, color = 'default', className, ...props }, ref) => {
         return (
             <FlexContainer direction="flex-col" gap={'gap-1'} className="my-4">
                 <input
@@ -43,7 +28,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 )}
             </FlexContainer>
         )
-    }
+    },
 )
 
 Input.displayName = 'Input'

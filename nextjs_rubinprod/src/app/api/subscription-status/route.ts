@@ -6,7 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
     apiVersion: '2024-12-18.acacia',
 })
 
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
     const supabase = await createClient()
 
     const {
@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
     }
 
     const subscription = await stripe.subscriptions.retrieve(
-        profile.subscription_id
+        profile.subscription_id,
     )
 
     const isActive = subscription.status === 'active'

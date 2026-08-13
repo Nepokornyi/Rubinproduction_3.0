@@ -1,5 +1,5 @@
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { FaLock } from 'react-icons/fa'
 import { useRouter } from 'next/navigation'
 import { subscribe } from '../../community/utils/subscriptionApi'
@@ -28,7 +28,9 @@ export const VimeoVideo = ({
         try {
             const { url } = await subscribe(locale)
             router.push(url)
-        } catch (error) {}
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     const handleLockClick = (e?: React.MouseEvent<HTMLDivElement>) => {

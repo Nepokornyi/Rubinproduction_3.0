@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
         const event = stripe.webhooks.constructEvent(
             payload,
             sig,
-            process.env.STRIPE_WEBHOOK_SECRET!
+            process.env.STRIPE_WEBHOOK_SECRET!,
         )
 
         if (event.type === 'checkout.session.completed') {
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
 
             if (userId) {
                 const subscription = await stripe.subscriptions.retrieve(
-                    subscriptionId as string
+                    subscriptionId as string,
                 )
 
                 await supabase
@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
                         is_subscribed: true,
                         subscription_id: subscriptionId,
                         subscription_revocation_date: new Date(
-                            subscription.current_period_end * 1000
+                            subscription.current_period_end * 1000,
                         ),
                     })
                     .eq('id', userId)
@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
                             is_subscribed: true,
                             subscription_id: null,
                             subscription_revocation_date: new Date(
-                                currentPeriodEnd * 1000
+                                currentPeriodEnd * 1000,
                             ),
                         })
                         .eq('id', userId)
@@ -109,6 +109,7 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json({ received: true })
     } catch (error) {
+        console.log(error)
         return NextResponse.json({ error: 'Webhook Error' }, { status: 400 })
     }
 }

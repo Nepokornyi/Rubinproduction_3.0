@@ -21,9 +21,10 @@ export async function POST(request: NextRequest) {
                 message:
                     'Magic link sent successfully. Please check your email.',
             }),
-            { status: 200, headers: { 'Content-Type': 'application/json' } }
+            { status: 200, headers: { 'Content-Type': 'application/json' } },
         )
     } catch (error) {
+        console.log(error)
         const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
         return NextResponse.redirect(`${baseUrl}/error`)
     }

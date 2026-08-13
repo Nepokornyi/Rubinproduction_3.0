@@ -27,9 +27,10 @@ export async function POST(request: NextRequest) {
                 message: 'Redirecting to Google for authentication.',
                 redirectUrl: data.url,
             }),
-            { status: 200, headers: { 'Content-Type': 'application/json' } }
+            { status: 200, headers: { 'Content-Type': 'application/json' } },
         )
     } catch (error) {
+        console.log(error)
         const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
         return NextResponse.redirect(`${baseUrl}/error`)
     }

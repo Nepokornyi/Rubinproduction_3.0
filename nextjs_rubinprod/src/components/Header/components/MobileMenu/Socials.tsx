@@ -1,10 +1,10 @@
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Text } from '@/components/Text/Text'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import React from 'react'
 
 type OverlaySocialsProps = {
-    variants: any
+    variants: Variants
 }
 
 export const OverlaySocials = ({ variants }: OverlaySocialsProps) => {

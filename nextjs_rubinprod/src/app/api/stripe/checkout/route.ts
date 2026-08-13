@@ -21,7 +21,7 @@ export async function POST(request: Request) {
             },
             {
                 status: 401,
-            }
+            },
         )
     }
 
@@ -49,10 +49,10 @@ export async function POST(request: Request) {
         })
 
         return NextResponse.json({ url: checkoutSession.url })
-    } catch (error: any) {
+    } catch (error: unknown) {
         return NextResponse.json(
-            { error: error?.message || 'Stripe Checkout Error' },
-            { status: 500 }
+            { error: (error as Error)?.message || 'Stripe Checkout Error' },
+            { status: 500 },
         )
     }
 }

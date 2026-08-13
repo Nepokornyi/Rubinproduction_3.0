@@ -13,7 +13,9 @@ export const useCommunityHandlers = () => {
         try {
             const { url } = await manageSubscription(locale)
             router.push(url)
-        } catch (error) {}
+        } catch (error) {
+            console.log(error)
+        }
     }
     const handleSubscribe = async () => {
         const locale = window.location.pathname.split('/')[1]
@@ -21,7 +23,9 @@ export const useCommunityHandlers = () => {
         try {
             const { url } = await subscribe(locale)
             router.push(url)
-        } catch (error) {}
+        } catch (error) {
+            console.log(error)
+        }
     }
     const handleLogout = async () => {
         try {
@@ -32,7 +36,9 @@ export const useCommunityHandlers = () => {
             if (response.ok) {
                 router.refresh()
             }
-        } catch (error) {}
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return {

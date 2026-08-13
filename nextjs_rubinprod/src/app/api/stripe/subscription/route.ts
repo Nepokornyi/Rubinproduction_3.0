@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
             },
             {
                 status: 401,
-            }
+            },
         )
     }
 
@@ -38,13 +38,13 @@ export async function POST(request: NextRequest) {
     if (profileError || !profile?.subscription_id) {
         return NextResponse.json(
             { error: 'Subscription ID not found' },
-            { status: 400 }
+            { status: 400 },
         )
     }
 
     try {
         const subscription = await stripe.subscriptions.retrieve(
-            profile.subscription_id
+            profile.subscription_id,
         )
 
         const customerId = subscription.customer as string
@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
         if (!customerId) {
             return NextResponse.json(
                 { error: 'Customer ID not found' },
-                { status: 400 }
+                { status: 400 },
             )
         }
 
@@ -63,9 +63,10 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json({ url: session.url }, { status: 200 })
     } catch (error) {
+        console.log(error)
         return NextResponse.json(
             { error: 'Stripe Billing Portal Error' },
-            { status: 500 }
+            { status: 500 },
         )
     }
 }
