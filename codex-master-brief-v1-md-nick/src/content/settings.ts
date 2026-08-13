@@ -5,8 +5,7 @@ export const settings: SiteSettings = {
     title: 'who1snick — Hybrid Production for Music Videos',
     description:
         'Hybrid production, AI VFX enhancement, performance snippets and campaign visuals for music.',
-    canonicalUrl:
-        process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.rubinproduction.eu',
+    canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
     locale: 'en',
     instagramHandle: '@who1snick',
     instagramUrl: 'https://www.instagram.com/who1snick/',
