@@ -4,9 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { CleanMedia } from "@/components/media/CleanMedia";
 import { CarouselControls } from "@/components/services/CarouselControls";
+import { useInView } from "@/lib/useInView";
 import type { BeforeAfterSlide } from "@/types/content";
 
 const AUTO_ADVANCE_MS = 3500;
+const STALLED_ADVANCE_MS = 9000;
+const PLAYBACK_KICKSTART_MS = 900;
 
 export function BeforeAfterCarousel({ slides, label }: { slides: BeforeAfterSlide[]; label: string }) {
   const [current, setCurrent] = useState(0);
@@ -14,9 +17,11 @@ export function BeforeAfterCarousel({ slides, label }: { slides: BeforeAfterSlid
   const [paused, setPaused] = useState(false);
   const [beforeReady, setBeforeReady] = useState(false);
   const [afterReady, setAfterReady] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
   const beforeRef = useRef<HTMLVideoElement>(null);
   const afterRef = useRef<HTMLVideoElement>(null);
   const reducedMotion = useReducedMotion();
+  const inView = useInView(rootRef, { rootMargin: "200px 0px" });
   const pairReady = beforeReady && afterReady;
   const slide = slides[current];
 
@@ -29,14 +34,23 @@ export function BeforeAfterCarousel({ slides, label }: { slides: BeforeAfterSlid
   const next = () => select(current + 1);
 
   useEffect(() => {
-    if (paused || reducedMotion || slides.length < 2) return;
-    const timer = window.setInterval(() => {
+    if (paused || reducedMotion || slides.length < 2 || !inView) return;
+    const timer = window.setTimeout(() => {
       setBeforeReady(false);
       setAfterReady(false);
       setCurrent((value) => (value + 1) % slides.length);
-    }, AUTO_ADVANCE_MS);
-    return () => window.clearInterval(timer);
-  }, [paused, reducedMotion, slides.length]);
+    }, pairReady ? AUTO_ADVANCE_MS : STALLED_ADVANCE_MS);
+    return () => window.clearTimeout(timer);
+  }, [current, inView, pairReady, paused, reducedMotion, slides.length]);
+
+  useEffect(() => {
+    if (pairReady || reducedMotion || !inView) return;
+    const timer = window.setTimeout(() => {
+      void beforeRef.current?.play()?.catch(() => undefined);
+      void afterRef.current?.play()?.catch(() => undefined);
+    }, PLAYBACK_KICKSTART_MS);
+    return () => window.clearTimeout(timer);
+  }, [current, inView, pairReady, reducedMotion]);
 
   useEffect(() => {
     const before = beforeRef.current;
@@ -66,6 +80,7 @@ export function BeforeAfterCarousel({ slides, label }: { slides: BeforeAfterSlid
 
   return (
     <div
+      ref={rootRef}
       className="before-after-carousel"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}

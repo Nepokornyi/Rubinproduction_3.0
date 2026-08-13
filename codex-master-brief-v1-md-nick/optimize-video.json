@@ -1,0 +1,17 @@
+{
+  "crf": 24,
+  "maxWidth": 1280,
+  "rules": [
+    {
+      "match": "^assets/showreel/",
+      "crf": 18,
+      "maxWidth": 1920,
+      "_note": "Full-screen hero. Its source is only 960x540, so this is encoded near-transparently to stay as close to that ceiling as possible. Replacing the source with a 1920x1080 export is the real fix."
+    },
+    {
+      "match": "^assets/cases/",
+      "crf": 22,
+      "_note": "Opens in the lightbox at ~1300px, so it gets looked at closely."
+    }
+  ]
+}

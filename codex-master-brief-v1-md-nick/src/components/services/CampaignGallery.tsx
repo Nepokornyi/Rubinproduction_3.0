@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { CleanMedia } from "@/components/media/CleanMedia";
 import { CarouselControls } from "@/components/services/CarouselControls";
+import { useInView } from "@/lib/useInView";
 import type { CampaignSlide } from "@/types/content";
 
 const AUTO_ADVANCE_MS = 4200;
@@ -12,20 +13,23 @@ export function CampaignGallery({ slides }: { slides: CampaignSlide[] }) {
   const [current, setCurrent] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [paused, setPaused] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
   const reducedMotion = useReducedMotion();
+  const inView = useInView(rootRef, { rootMargin: "200px 0px" });
   const slide = slides[current];
   const select = (index: number) => setCurrent((index + slides.length) % slides.length);
   const previous = () => select(current - 1);
   const next = () => select(current + 1);
 
   useEffect(() => {
-    if (paused || reducedMotion || slides.length < 2) return;
+    if (paused || reducedMotion || slides.length < 2 || !inView) return;
     const timer = window.setInterval(() => setCurrent((value) => (value + 1) % slides.length), AUTO_ADVANCE_MS);
     return () => window.clearInterval(timer);
-  }, [paused, reducedMotion, slides.length]);
+  }, [inView, paused, reducedMotion, slides.length]);
 
   return (
     <div
+      ref={rootRef}
       className="campaign-carousel"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -51,7 +55,6 @@ export function CampaignGallery({ slides }: { slides: CampaignSlide[] }) {
                 key={tile.id}
                 {...tile}
                 active
-                unoptimized
                 className={`campaign-tile campaign-tile--${tile.shape} campaign-slot--${tile.slot}`}
                 sizes="(max-width: 767px) 50vw, 32vw"
               />

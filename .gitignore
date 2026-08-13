@@ -1,0 +1,4 @@
+# Shared media tooling and the original (pre-optimisation) video sources.
+# The sites only carry the delivery encodes; originals stay local so the repo
+# does not grow by the weight of footage nothing is served from.
+/media-tools

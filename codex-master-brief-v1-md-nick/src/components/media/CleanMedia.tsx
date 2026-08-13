@@ -1,8 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
+import { useConstrainedNetwork } from "@/lib/network";
+import { requestVideoSlot } from "@/lib/videoLoadQueue";
+
+const POSTER_SETTLE_MS = 2200;
 
 type CleanMediaProps = {
   poster: string;
@@ -42,10 +46,15 @@ export const CleanMedia = forwardRef<HTMLVideoElement, CleanMediaProps>(function
 ) {
   const rootRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const releaseSlotRef = useRef<(() => void) | null>(null);
   const reducedMotion = useReducedMotion();
+  const constrainedNetwork = useConstrainedNetwork();
   const [videoReady, setVideoReady] = useState(false);
-  const [videoFailed, setVideoFailed] = useState(false);
+  const [posterSettled, setPosterSettled] = useState(false);
   const [inView, setInView] = useState(priority);
+  const [loadVideo, setLoadVideo] = useState(false);
+
+  const wantsVideo = Boolean(videoSrc) && !reducedMotion && !constrainedNetwork;
   const isRevealed = videoReady && revealVideo;
 
   const assignVideoRef = (node: HTMLVideoElement | null) => {
@@ -53,6 +62,11 @@ export const CleanMedia = forwardRef<HTMLVideoElement, CleanMediaProps>(function
     if (typeof forwardedRef === "function") forwardedRef(node);
     else if (forwardedRef) forwardedRef.current = node;
   };
+
+  const releaseSlot = useCallback(() => {
+    releaseSlotRef.current?.();
+    releaseSlotRef.current = null;
+  }, []);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -70,33 +84,61 @@ export const CleanMedia = forwardRef<HTMLVideoElement, CleanMediaProps>(function
   }, [priority]);
 
   useEffect(() => {
+    if (loadVideo) return;
+    if (!wantsVideo || !(priority || inView)) {
+      releaseSlot();
+      return;
+    }
+    if (priority) {
+      setLoadVideo(true);
+      return;
+    }
+    if (releaseSlotRef.current) return;
+    releaseSlotRef.current = requestVideoSlot(() => setLoadVideo(true));
+  }, [inView, loadVideo, priority, releaseSlot, wantsVideo]);
+
+  useEffect(() => releaseSlot, [releaseSlot]);
+
+  useEffect(() => {
     const video = videoRef.current;
     if (!video || controlledPlayback) return;
-    const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-    if (!active || !inView || reducedMotion || connection?.saveData) {
+    if (!active || !inView) {
       video.pause();
       return;
     }
     const playback = video.play();
     void playback?.catch(() => undefined);
-  }, [active, controlledPlayback, inView, reducedMotion]);
+  }, [active, controlledPlayback, inView, loadVideo]);
+
+  useEffect(() => {
+    if (posterSettled) return;
+    if (!wantsVideo) {
+      setPosterSettled(true);
+      return;
+    }
+    if (!loadVideo) return;
+    const timer = window.setTimeout(() => setPosterSettled(true), POSTER_SETTLE_MS);
+    return () => window.clearTimeout(timer);
+  }, [loadVideo, posterSettled, wantsVideo]);
 
   const handleReady = () => {
-    setVideoFailed(false);
+    releaseSlot();
     setVideoReady(true);
+    setPosterSettled(true);
     onVideoReadyChange?.(true);
   };
 
   const handleError = () => {
+    releaseSlot();
     setVideoReady(false);
-    setVideoFailed(true);
+    setPosterSettled(true);
     onVideoReadyChange?.(false);
   };
 
   const rootClasses = [
     "clean-media",
     isRevealed ? "is-video-ready" : "",
-    videoFailed || !videoSrc ? "is-poster-settled" : "",
+    posterSettled ? "is-poster-settled" : "",
     className,
   ].filter(Boolean).join(" ");
 
@@ -110,15 +152,14 @@ export const CleanMedia = forwardRef<HTMLVideoElement, CleanMediaProps>(function
       ) : showPoster && inView ? (
         <Image className="clean-media__poster" src={poster} alt={alt} fill priority={priority} loading={priority ? undefined : "eager"} sizes={sizes} unoptimized={unoptimized} />
       ) : null}
-      {videoSrc ? (
+      {videoSrc && loadVideo ? (
         <video
           ref={assignVideoRef}
           className={`clean-media__video${isRevealed ? " is-ready" : ""}`}
           muted
-          autoPlay={!controlledPlayback}
           playsInline
           loop
-          preload={priority ? "auto" : active && inView ? "metadata" : "none"}
+          preload="auto"
           onLoadedData={handleReady}
           onCanPlay={handleReady}
           onError={handleError}
