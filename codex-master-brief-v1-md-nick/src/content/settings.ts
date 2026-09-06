@@ -4,7 +4,7 @@ import type { SiteSettings } from '@/types/content'
 export const settings: SiteSettings = {
     title: 'who1snick — Hybrid Production for Music Videos',
     description:
-        'Hybrid production, AI VFX enhancement, performance snippets and campaign visuals for music.',
+        'VFX enhancement, performance snippets, music video post-production and full visual campaigns for artists.',
     canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
     locale: 'en',
     instagramHandle: '@who1snick',

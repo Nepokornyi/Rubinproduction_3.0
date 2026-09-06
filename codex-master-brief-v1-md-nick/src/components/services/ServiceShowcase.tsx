@@ -9,7 +9,11 @@ import type { ServiceOffer } from "@/types/content";
 
 export function ServiceShowcase({ service }: { service: ServiceOffer }) {
   const reducedMotion = useReducedMotion();
-  const titleLines = service.name === "Performance Snippet" ? ["Performance", "Snippet"] : [service.name];
+  const titleLines = service.name === "Performance Snippet"
+    ? ["Performance", "Snippet"]
+    : service.name === "Music Video Post Production"
+      ? ["Music Video", "Post Production"]
+      : [service.name];
   return (
     <article className="service-showcase" id={service.id}>
       <header className="service-showcase__header">
@@ -43,7 +47,13 @@ export function ServiceShowcase({ service }: { service: ServiceOffer }) {
           {service.note ? <p className="service-note">{service.note}</p> : null}
         </motion.div>
       </header>
-      {service.presentation === "before-after" && service.beforeAfterSlides ? <BeforeAfterCarousel slides={service.beforeAfterSlides} label={service.name} /> : null}
+      {service.presentation === "before-after" && service.beforeAfterSlides ? (
+        <BeforeAfterCarousel
+          slides={service.beforeAfterSlides}
+          label={service.name}
+          comparisonLabels={service.comparisonLabels}
+        />
+      ) : null}
       {service.presentation === "campaign" && service.campaignSlides ? <CampaignGallery slides={service.campaignSlides} /> : null}
     </article>
   );

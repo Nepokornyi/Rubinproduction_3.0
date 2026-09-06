@@ -29,12 +29,16 @@ export type CampaignSlide = {
 };
 
 export type ServiceOffer = {
-  id: "visual-upgrade" | "performance-snippet" | "campaign";
+  id: "visual-upgrade" | "performance-snippet" | "music-video-post-production" | "campaign";
   number: string;
   name: string;
   price: string;
   description: string;
   note?: string;
+  comparisonLabels?: {
+    before: string;
+    after: string;
+  };
   presentation: "before-after" | "campaign";
   beforeAfterSlides?: BeforeAfterSlide[];
   campaignSlides?: CampaignSlide[];

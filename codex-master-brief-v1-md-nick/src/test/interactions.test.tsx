@@ -37,10 +37,24 @@ describe("before/after carousel", () => {
     const user = userEvent.setup();
     const slides = services[0].beforeAfterSlides;
     if (!slides) throw new Error("Visual Upgrade slides are required");
-    render(<BeforeAfterCarousel slides={slides} label="AI VFX Enhance" />);
+    render(<BeforeAfterCarousel slides={slides} label="VFX Enhance" />);
     expect(screen.getByText("01 / 06")).toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: "Next AI VFX Enhance slide" }));
+    await user.click(screen.getByRole("button", { name: "Next VFX Enhance slide" }));
     expect(screen.getByText("02 / 06")).toBeInTheDocument();
+  });
+
+  it("supports project-specific comparison labels", () => {
+    const slides = services[2].beforeAfterSlides;
+    if (!slides) throw new Error("Music Video Post Production slides are required");
+    render(
+      <BeforeAfterCarousel
+        slides={slides}
+        label="Music Video Post Production"
+        comparisonLabels={{ before: "Music Video", after: "Editing Process" }}
+      />,
+    );
+    expect(screen.getByText("Music Video")).toBeInTheDocument();
+    expect(screen.getByText("Editing Process")).toBeInTheDocument();
   });
 });
 

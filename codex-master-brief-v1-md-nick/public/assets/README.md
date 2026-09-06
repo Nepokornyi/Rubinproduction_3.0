@@ -10,7 +10,7 @@ The current WebP files are neutral content placeholders. Replace them in place a
 
 The same video is used on desktop and mobile. On mobile it fills and crops automatically. The poster is slightly blurred until the video can play, then the video fades in.
 
-## AI VFX Enhance carousel
+## VFX Enhance carousel
 
 Directory: `services/visual-upgrade/`
 
@@ -25,6 +25,16 @@ Directory: `services/performance-snippet/`
 - `before-01.webp` / `before-01.mp4`
 - `after-01.webp` / `after-01.mp4`
 - Repeat through `06`.
+
+## Music Video Post Production carousel
+
+Directory: `services/music-video-post-production/`
+
+- `music-video-01.webp` / `music-video-01.mp4` — final music video
+- `editing-process-01.webp` / `editing-process-01.mp4` — editing process or timeline
+- Repeat through `03`.
+
+The section contains three cases. The two videos in a numbered pair wait for each other and begin together. Keep every file at 16:9. WebP files remain visible as loading previews until both matching videos are ready.
 
 ## Campaign grids
 

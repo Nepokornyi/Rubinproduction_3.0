@@ -11,7 +11,15 @@ const AUTO_ADVANCE_MS = 3500;
 const STALLED_ADVANCE_MS = 9000;
 const PLAYBACK_KICKSTART_MS = 900;
 
-export function BeforeAfterCarousel({ slides, label }: { slides: BeforeAfterSlide[]; label: string }) {
+export function BeforeAfterCarousel({
+  slides,
+  label,
+  comparisonLabels = { before: "Before", after: "After" },
+}: {
+  slides: BeforeAfterSlide[];
+  label: string;
+  comparisonLabels?: { before: string; after: string };
+}) {
   const [current, setCurrent] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [paused, setPaused] = useState(false);
@@ -102,11 +110,11 @@ export function BeforeAfterCarousel({ slides, label }: { slides: BeforeAfterSlid
         <AnimatePresence mode="wait" initial={false}>
           <motion.div key={slide.id} className="before-after-slide" initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -12 }} transition={{ duration: reducedMotion ? 0 : 0.24 }}>
             <div className="comparison-item">
-              <p>Before</p>
+              <p>{comparisonLabels.before}</p>
               <CleanMedia ref={beforeRef} {...slide.before} active controlledPlayback revealVideo={pairReady} onVideoReadyChange={setBeforeReady} sizes="(max-width: 767px) 100vw, 50vw" />
             </div>
             <div className="comparison-item">
-              <p>After</p>
+              <p>{comparisonLabels.after}</p>
               <CleanMedia ref={afterRef} {...slide.after} active controlledPlayback revealVideo={pairReady} onVideoReadyChange={setAfterReady} sizes="(max-width: 767px) 100vw, 50vw" />
             </div>
           </motion.div>
