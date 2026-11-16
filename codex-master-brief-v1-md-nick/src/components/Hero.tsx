@@ -11,12 +11,14 @@ export function Hero() {
 
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
+      <link rel="preload" as="image" href={heroMedia.poster} media="(min-width:768px)" fetchPriority="high" />
+      <link rel="preload" as="image" href={heroMedia.mobilePoster} media="(max-width:767px)" fetchPriority="high" />
       <div className="hero__media" aria-hidden="true">
         <CleanMedia {...heroMedia} priority sizes="100vw" />
       </div>
       <div className="hero__scrim" aria-hidden="true" />
       <div className="container hero__copy">
-        <AnimatedHeadline as="h1" id="hero-title" lines={["Hybrid", "Production", "for Your", "Music Videos"]} immediate />
+        <AnimatedHeadline as="h1" id="hero-title" lines={["Visual Content", "for Your", "Music Release"]} immediate fadeOnly />
         <motion.div
           initial={reducedMotion ? false : { opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}

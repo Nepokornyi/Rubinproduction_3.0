@@ -2,6 +2,7 @@ export type MediaContent = {
   id: string;
   poster: string;
   videoSrc?: string;
+  previewSrc?: string;
   alt: string;
 };
 
@@ -26,10 +27,13 @@ export type CampaignTile = MediaContent & {
 export type CampaignSlide = {
   id: string;
   tiles: CampaignTile[];
+  reels?: MediaContent[];
+  photos?: MediaContent[];
+  bts?: MediaContent;
 };
 
 export type ServiceOffer = {
-  id: "visual-upgrade" | "performance-snippet" | "music-video-post-production" | "campaign";
+  id: "mystery-box" | "your-footage-our-edit" | "music-video-production" | "campaign";
   number: string;
   name: string;
   price: string;
@@ -39,7 +43,11 @@ export type ServiceOffer = {
     before: string;
     after: string;
   };
-  presentation: "before-after" | "campaign";
+  presentation: "before-after" | "campaign" | "work-grid" | "offer";
+  titleLines?: string[];
+  workSamples?: MediaContent[];
+  process?: { title: string; description: string }[];
+  included?: string[];
   beforeAfterSlides?: BeforeAfterSlide[];
   campaignSlides?: CampaignSlide[];
 };

@@ -7,6 +7,7 @@ type AnimatedHeadlineProps = {
   lines: string[];
   id?: string;
   immediate?: boolean;
+  fadeOnly?: boolean;
 };
 
 const containerVariants: Variants = {
@@ -36,7 +37,7 @@ const lineVariants: Variants = {
   },
 };
 
-export function AnimatedHeadline({ as, lines, id, immediate = false }: AnimatedHeadlineProps) {
+export function AnimatedHeadline({ as, lines, id, immediate = false, fadeOnly = false }: AnimatedHeadlineProps) {
   const reducedMotion = useReducedMotion();
   const MotionHeading = as === "h1" ? motion.h1 : as === "h2" ? motion.h2 : motion.h3;
   const label = lines.join(" ");
@@ -53,7 +54,7 @@ export function AnimatedHeadline({ as, lines, id, immediate = false }: AnimatedH
     >
       {lines.map((line) => (
         <span className="animated-headline__mask" aria-hidden="true" key={line}>
-          <motion.span className="animated-headline__line" variants={lineVariants}>
+          <motion.span className="animated-headline__line" variants={fadeOnly ? { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 1.1, ease: "easeOut" } } } : lineVariants}>
             {line}
           </motion.span>
         </span>

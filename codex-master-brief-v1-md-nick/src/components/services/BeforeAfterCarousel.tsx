@@ -4,12 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { CleanMedia } from "@/components/media/CleanMedia";
 import { CarouselControls } from "@/components/services/CarouselControls";
-import { useInView } from "@/lib/useInView";
 import type { BeforeAfterSlide } from "@/types/content";
 
 const AUTO_ADVANCE_MS = 3500;
-const STALLED_ADVANCE_MS = 9000;
-const PLAYBACK_KICKSTART_MS = 900;
 
 export function BeforeAfterCarousel({
   slides,
@@ -25,11 +22,9 @@ export function BeforeAfterCarousel({
   const [paused, setPaused] = useState(false);
   const [beforeReady, setBeforeReady] = useState(false);
   const [afterReady, setAfterReady] = useState(false);
-  const rootRef = useRef<HTMLDivElement>(null);
   const beforeRef = useRef<HTMLVideoElement>(null);
   const afterRef = useRef<HTMLVideoElement>(null);
   const reducedMotion = useReducedMotion();
-  const inView = useInView(rootRef, { rootMargin: "200px 0px" });
   const pairReady = beforeReady && afterReady;
   const slide = slides[current];
 
@@ -42,23 +37,14 @@ export function BeforeAfterCarousel({
   const next = () => select(current + 1);
 
   useEffect(() => {
-    if (paused || reducedMotion || slides.length < 2 || !inView) return;
-    const timer = window.setTimeout(() => {
+    if (paused || reducedMotion || slides.length < 2) return;
+    const timer = window.setInterval(() => {
       setBeforeReady(false);
       setAfterReady(false);
       setCurrent((value) => (value + 1) % slides.length);
-    }, pairReady ? AUTO_ADVANCE_MS : STALLED_ADVANCE_MS);
-    return () => window.clearTimeout(timer);
-  }, [current, inView, pairReady, paused, reducedMotion, slides.length]);
-
-  useEffect(() => {
-    if (pairReady || reducedMotion || !inView) return;
-    const timer = window.setTimeout(() => {
-      void beforeRef.current?.play()?.catch(() => undefined);
-      void afterRef.current?.play()?.catch(() => undefined);
-    }, PLAYBACK_KICKSTART_MS);
-    return () => window.clearTimeout(timer);
-  }, [current, inView, pairReady, reducedMotion]);
+    }, AUTO_ADVANCE_MS);
+    return () => window.clearInterval(timer);
+  }, [paused, reducedMotion, slides.length]);
 
   useEffect(() => {
     const before = beforeRef.current;
@@ -88,7 +74,6 @@ export function BeforeAfterCarousel({
 
   return (
     <div
-      ref={rootRef}
       className="before-after-carousel"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}

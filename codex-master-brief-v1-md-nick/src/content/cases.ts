@@ -1,17 +1,11 @@
 import type { WorkItem } from "@/types/content";
+import { services } from "./services";
 
-export const works: WorkItem[] = Array.from({ length: 6 }, (_, index) => {
-  const number = String(index + 1).padStart(2, "0");
-  return {
-    id: `work-${number}`,
-    artist: "Artist name",
-    track: "Track title",
-    publicationUrl: "",
-    media: {
-      id: `work-${number}-media`,
-      poster: `/assets/cases/case-${number}/poster.webp`,
-      videoSrc: `/assets/cases/case-${number}/primary.mp4`,
-      alt: `Work ${number} content placeholder`,
-    },
-  };
-});
+// Reuse the real portfolio if the legacy Works component is enabled later.
+export const works: WorkItem[] = services[1].workSamples!.slice(0, 6).map((media, index) => ({
+  id: `work-${String(index + 1).padStart(2, "0")}`,
+  artist: "Rubin Production",
+  track: "Selected music video",
+  publicationUrl: "",
+  media,
+}));

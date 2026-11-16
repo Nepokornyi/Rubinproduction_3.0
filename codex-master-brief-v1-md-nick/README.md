@@ -1,25 +1,17 @@
-# who1snick — Hybrid Music Video Production
+# Rubin Production — music videos and release campaigns
 
-A mobile-first one-page website for Nick Rubin. The current structure contains a full-screen responsive showreel, four services, swipeable media carousels, six selected-work slots, an Instagram contact section and a minimal footer.
+A one-page site for the production house of Nick Rubin. It is live at
+https://www.rubinproduction.eu (Vercel project `rubinprod`, root directory is
+this folder).
 
-The site is local-only. It has not been published or connected to external analytics or form services.
+Next.js 16 · React 19 · TypeScript · Tailwind 4 · framer-motion · pnpm 11.0.8
 
 ## Run locally
 
-Requirements: Node.js 20.9+ and pnpm.
-
 ```bash
 pnpm install
-pnpm dev
-```
-
-Open `http://localhost:3000`.
-
-Production preview:
-
-```bash
-pnpm build
-pnpm start
+cp .env.example .env.local
+pnpm dev            # http://localhost:3000
 ```
 
 ## Checks
@@ -29,46 +21,54 @@ pnpm lint
 pnpm typecheck
 pnpm test
 pnpm build
+pnpm check:launch   # fails on purpose while launch-blockers.json is not empty
 ```
 
-`pnpm check:launch` intentionally fails while unresolved production requirements remain in `src/content/launch-blockers.json`. Robots metadata remains `noindex` until that list is empty.
+While `src/content/launch-blockers.json` has items, the site is `noindex`
+(`layout.tsx` and `robots.ts`). A deploy does not change this.
 
-## Edit content
+## Page and content
 
-- `src/content/services.ts` — service titles, descriptions, prices, notes and carousel media paths.
-- `src/content/cases.ts` — six artists, tracks and work media.
-- `src/content/settings.ts` — site metadata, Instagram handle and URL.
-- `src/app/page.tsx` — section headings and section-level text.
+One route: hero → "The offer" (Snippet, Music Video, Campaign, Mystery Box) →
+contact form → footer.
 
-## Replace media
+- `src/content/services.ts` — copy, prices and media paths of the four services.
+- `src/content/settings.ts` — metadata, Instagram link and hero media.
+- `src/app/page.tsx` — the intro text of "The offer".
 
-See `public/assets/README.md` for the complete filename map.
+## Media
 
-In normal use, replace an existing WebP with the same filename. To use video, add the matching MP4. The WebP acts as a lightweight blurred preview until the matching video is ready. A video element is only mounted once its block is near the viewport, so nothing offscreen touches the network; playback pauses when it leaves. Reduced-motion visitors and anyone on Data Saver or a 3G-or-worse connection get the poster and no video at all. At most three clips load at once, so a screenful of tiles cannot starve each other.
+- Each work has a WebP poster, a small silent `-preview.mp4` for the tile, and a
+  full MP4 with audio. The full MP4 loads only when a visitor opens the player.
+- The client supplies the media already encoded. Do not run
+  `media-tools/optimize-video.mjs` on this site. It removes audio, and its
+  archive holds the originals of the old site.
+- `next.config.ts` caches `/assets/*` for 30 days. If you replace a file and
+  keep its name, visitors can see the old file for up to 30 days. Give a changed
+  file a new name.
 
-Every MP4 shipped here is a delivery encode: capped at 1280px wide, constant-quality H.264 at the per-path CRF set in `optimize-video.json`, no audio track, moov atom first. After dropping in a new source video, re-run the shared optimiser from the site root:
+## Deploy
 
-```bash
-node ../media-tools/optimize-video.mjs            # optimise public/**/*.mp4
-node ../media-tools/optimize-video.mjs --dry-run  # list what it would touch
-node ../media-tools/optimize-video.mjs --restore  # put the originals back
-```
+Vercel builds this folder on push. `vercel.json` pins pnpm 11.0.8.
 
-The untouched sources are archived in `media-tools/originals/<site-name>/` outside the repo, so the site only carries delivery copies and re-running never compounds compression. That folder is not in version control — keep your own backup of anything you cannot re-export.
+Set these variables in Vercel → Project → Settings → Environment Variables
+(Production):
 
-The hero uses the same desktop showreel on mobile and crops it with `object-fit: cover`, so no second video is required. Its responsive WebP poster appears blurred while the showreel loads. Before/after carousels use two 16:9 slots side-by-side on desktop and stacked on mobile; both videos wait for each other, reset to zero and start together. The Music Video Post Production carousel is the same component with three pairs labelled "Music Video" and "Editing Process". Campaign grids use only 16:9, 9:16 and 1:1 cells. Selected work is a 3-column desktop / 2-column mobile grid and opens in a centered viewer over a blurred page.
+| Variable | Value |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | `https://www.rubinproduction.eu` |
+| `NEXT_PUBLIC_BOOKING_URL` | `https://calendar.app.google/gXA7UNdPKJyUhJuK9` |
+| `LEADS_ENABLED` | `true` only after email delivery works |
+| `RESEND_API_KEY` | from the Resend dashboard |
+| `LEADS_FROM_EMAIL` | an address on a domain that is verified in Resend |
+| `LEADS_TO_EMAIL` | the inbox of Nick that gets the briefs (set in Vercel, not in this public repo) |
 
-Service and Campaign carousels advance automatically, support swipe and manual controls, and pause while hovered or keyboard-focused. Motion is minimized when the visitor enables reduced motion.
+After you change a variable, redeploy. The home page is static, so the on/off
+state of the form is fixed at build time.
 
-See `DEVELOPER_HANDOFF.md` for the deployment checklist and production configuration.
+`/api/enquiry` accepts requests only from the origin in `NEXT_PUBLIC_SITE_URL`.
+The form does not work on Vercel preview URLs.
 
-## Current page structure
-
-1. Sticky header: `who1snick`, Services, Start a project.
-2. Hero: “Hybrid Production for Your Music Videos”, CTA over a responsive showreel.
-3. Four services: VFX Enhance, Performance Snippet, Music Video Post Production, Campaign.
-4. Selected work: six dense, clickable 16:9 video slots without caption bars.
-5. Instagram contact CTA.
-6. Minimal footer.
-
-The previous Approach, detailed scope tables, Remote AI Visual, Music Video, Process, Designed-not-random, About, FAQ and enquiry form sections have been removed from the rendered page.
+The DNS of `rubinproduction.eu` is at Websupport, not at Vercel. Add the DNS
+records for Resend there. The domain also has mailboxes at Websupport, so do not
+change its root MX or SPF records.

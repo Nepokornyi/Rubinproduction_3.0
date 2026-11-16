@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { launchBlockers, settings } from "@/content/settings";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import "./globals.css";
+import "./mobile.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(settings.canonicalUrl),
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     url: "/",
     title: settings.title,
     description: settings.description,
-    siteName: "who1snick",
+    siteName: "Rubin Production",
   },
   twitter: { card: "summary", title: settings.title, description: settings.description },
   robots: { index: launchBlockers.length === 0, follow: launchBlockers.length === 0 },
