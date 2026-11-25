@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { launchBlockers, settings } from "@/content/settings";
 import { CustomCursor } from "@/components/ui/CustomCursor";
-import "./globals.css";
-import "./mobile.css";
+import "../globals.css";
+import "../mobile.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(settings.canonicalUrl),

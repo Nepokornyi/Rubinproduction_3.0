@@ -29,12 +29,27 @@ While `src/content/launch-blockers.json` has items, the site is `noindex`
 
 ## Page and content
 
-One route: hero → "The offer" (Snippet, Music Video, Campaign, Mystery Box) →
+Main route `/`: hero → "The offer" (Snippet, Music Video, Campaign, Mystery Box) →
 contact form → footer.
 
 - `src/content/services.ts` — copy, prices and media paths of the four services.
 - `src/content/settings.ts` — metadata, Instagram link and hero media.
-- `src/app/page.tsx` — the intro text of "The offer".
+- `src/app/(site)/page.tsx` — the intro text of "The offer".
+
+## Masterclass page
+
+`/masterclass` is the campaign page of Nick and Kaiber: a hero, a free intro
+lesson, and a form that sends the Green Smoke masterclass by email. The code is
+in `src/app/masterclass/`, the media in `public/assets/masterclass/`.
+
+- The form posts from the browser to Flodesk form `6b049cacf2bf2efd7c1729b5`.
+  It needs no env variable and no API key, and it works on preview URLs.
+- Flodesk sends the emails. The segments, the workflow and the email text are in
+  the Flodesk account of Nick, not in this repo.
+- The workshop copy changes to "Keep learning with Nick" after 7 January 2027
+  (Prague time). No deploy is necessary.
+- When Nick has a registration link for the workshop, set `WEBINAR_SIGNUP_URL`
+  in `src/app/masterclass/page.tsx`.
 
 ## Media
 
